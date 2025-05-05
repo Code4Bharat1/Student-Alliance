@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 
 const Footer = () => {
   return (
+    // this is footer section
     <footer className="text-white bg-gradient-to-r from-blue-500 to-purple-600">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-0 md:gap-8">
