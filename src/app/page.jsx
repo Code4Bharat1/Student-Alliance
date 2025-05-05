@@ -16,6 +16,7 @@ import React from 'react';
 const HomePage = () => {
   return (
     <>
+    {/* this is page.jsx */}
     <Navbar/>
     <Hero/>
     <WhatsAppWidget/>
