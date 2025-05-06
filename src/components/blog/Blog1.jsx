@@ -1,5 +1,6 @@
 'use client';
 
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -24,45 +25,198 @@ const blogData = [
     image: '/images/IFPD-school.jpg',
     link: '/blog-d3',
   },
+  {
+    title: 'Top Live Streaming Equipment for Beginners: Cameras, Microphones & More',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/live .jpg',
+    link: '/blog-d4',
+  },
+  {
+    title: 'AIWaft 4K Ultra HD Alpha Webcam: Unmatched Quality at an Affordable Price',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/webcam.jpg',
+    link: '/blog-d5',
+  },
+  {
+    title: 'Top 5 Best Digital Board Companies in India – Why AIWAFT Leads the Way',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/digital.png',
+    link: '/blog-d6',
+  },
+  {
+    title: 'Start Teaching on an Online Teaching Platform & Earn from Home',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/online.png',
+    link: '/blog-d9',
+  },
+  {
+    title: '86-Inch Digital Boards: Features, Pricing, and Why Maxhub U3 Series is a Top Choice',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/866i.png',
+    link: '/blog-d8',
+  },
+  {
+    title: 'Complete Guide to Digital Board Prices for Teaching',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/smart.jpg',
+    link: '/blog-d10',
+  },
+  {
+    title: '5 Key Strategies to Scale Your Online Coaching Business in 2024 with High-Quality Video Tools',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/coching.png',
+    link: '/blog-d7',
+  },
+  {
+    title: 'How to Start an Offline Coaching Center: Costs and Requirements',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/hqdefault.jpg',
+    link: '/blog-d3',
+  },
+  {
+    title: 'Hybrid Teaching Module Earned Crores: A Deep Dive into Success',
+    date: 'Tuesday, August 29, 2023',
+    image: '/images/physicswala.png',
+    link: '/blog-d3',
+  },
+  
 ];
 
 export default function Blog() {
   return (
-    <section className="bg-white text-black py-4 px-4 md:px-16">
-      <h2 className="text-4xl font-bold text-center mb-10">Blogs</h2>
+    <section className="bg-gradient-to-b from-white to-gray-50 text-black py-12 px-4 md:px-16">
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-4xl font-bold text-center mb-10 relative">
+          <span className="relative inline-block">
+            Latest Blogs
+            <motion.span 
+              className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            />
+          </span>
+        </h2>
+      </motion.div>
+
+      <h3 className="text-2xl font-bold text-gray-800 p-4 mb-6 border-l-4 border-blue-500 pl-3">IFPD</h3>
+      
       <div className="grid md:grid-cols-3 gap-8">
         {blogData.map((blog, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: index * 0.2 }}
-            className="rounded-xl overflow-hidden shadow-lg border-gray-600 hover:shadow-2xl transition-shadow bg-white"
-          >
-            <Image
-              src={blog.image}
-              alt={blog.title}
-              width={500}
-              height={300}
-              className="w-full h-52 object-cover"
-            />
-            <div className="p-5 text-center">
-              <p className="text-md text-gray-700 font-semibold mb-2">{blog.date}</p>
-              <p className="text-lg font-medium text-gray-800">{blog.title}</p>
-            </div>
-            <div className="bg-white px-6 py-3">
-              <Link href={blog.link}>
-                <button className="bg-blue-500 text-white px-5 py-2 rounded-lg w-full font-bold hover:bg-blue-600 transition-colors duration-300">
-                  READ MORE
-                </button>
-              </Link>
-            </div>
-          </motion.div>
+          <React.Fragment key={index}>
+            <motion.div
+              initial={{ opacity: 0, y: 40, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: index * 0.1,
+                whileHover: { duration: 0.3 }
+              }}
+              viewport={{ once: true }}
+              className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-2xl transition-all bg-white group"
+            >
+              <div className="overflow-hidden">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    width={500}
+                    height={300}
+                    className="w-full h-52 object-cover transform transition-transform duration-300 group-hover:scale-105"
+                  />
+                </motion.div>
+              </div>
+              
+              <div className="p-5 text-center">
+                <p className="text-md text-gray-600 font-medium mb-2">{blog.date}</p>
+                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">{blog.title}</h3>
+              </div>
+              
+              <div className="px-6 pb-6">
+                <Link href={blog.link}>
+                  <motion.button
+                    initial={{ background: "linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)" }}
+                    whileHover={{ 
+                      scale: 1.05,
+                      background: "linear-gradient(135deg, #2563EB 0%, #4F46E5 100%)",
+                      boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)"
+                    }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ 
+                      duration: 0.3,
+                      hover: { duration: 0.2 }
+                    }}
+                    className="relative w-full py-3 px-6 rounded-lg font-bold text-white overflow-hidden"
+                  >
+                    <span className="relative z-10 flex items-center justify-center">
+                      READ MORE
+                      <motion.span
+                        initial={{ x: -20, opacity: 0 }}
+                        whileHover={{ x: 5, opacity: 1 }}
+                        transition={{ duration: 0.3 }}
+                        className="ml-2"
+                      >
+                        →
+                      </motion.span>
+                    </span>
+                    <motion.span
+                      className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-10"
+                      whileHover={{ opacity: 0.1 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  </motion.button>
+                </Link>
+              </div>
+            </motion.div>
+
+            {index === 2 && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="md:col-span-3 text-left mt-8 mb-4"
+              >
+                <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Studio Setup</h3>
+              </motion.div>
+            )}
+
+            {index === 5 && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="md:col-span-3 text-left mt-8 mb-4"
+              >
+                <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Online Teaching</h3>
+              </motion.div>
+            )}
+            
+            {index === 8 && (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="md:col-span-3 text-left mt-8 mb-4"
+              >
+                <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Coaching Growth</h3>
+              </motion.div>
+            )}
+          </React.Fragment>
         ))}
       </div>
-      <WhatsAppWidget/>
+      
+      <WhatsAppWidget />
     </section>
-
-    
   );
 }
