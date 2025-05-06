@@ -9,6 +9,7 @@ import Hero from '@/components/Hero';
 import Highlight from '@/components/Highlight';
 import Navbar from '@/components/Navbar';
 import Service from '@/components/Service';
+import ShopByCat from '@/components/Shopby/ShopByCat';
 import Testimonial from '@/components/Testimonial/Testimonial';
 import WhatsAppWidget from '@/components/WhatsApp/WhatApp';
 import React from 'react';
@@ -21,6 +22,7 @@ const HomePage = () => {
     <Hero/>
     <WhatsAppWidget/>
     <Service/>
+    <ShopByCat/>
     <WhyChoose/>
     <Categories/>
     <Features/>
