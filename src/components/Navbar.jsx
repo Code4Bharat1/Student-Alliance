@@ -43,7 +43,7 @@ const Navbar = () => {
         { href: "/home", label: "Home" },
         { href: "/about", label: "About us" },
         { href: "/product", label: "Products" },
-        { href: "/kits", label: "STEM & Robotics" },
+        { href: "/shop1", label: "Shop" },
         { href: "/gallery", label: "Gallery" },
         { href: "/franchise", label: "Franchise" },
         { href: "/blog", label: "Blog" },
@@ -57,10 +57,10 @@ const Navbar = () => {
               className="flex items-center text-black hover:text-blue-600 focus:outline-none"
             >
               {label}
-              <ChevronDownIcon className="h-4 w-4 ml-1" />
+              <ChevronDownIcon className="h-4 w-7 ml-1" />
             </button>
             {isDropdownOpen && (
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-1 z-10 w-30">
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-md mt-1 z-10 w-50">
                 <Link
                   href="/Prod"
                   className="block px-4 py-2 text-sm text-black hover:bg-blue-100"
@@ -72,6 +72,13 @@ const Navbar = () => {
                   className="block px-4 py-2 text-sm text-black hover:bg-blue-100"
                 >
                   3D Printers
+                </Link>
+
+                <Link
+                  href="/kits"
+                  className="block px-4 py-2 text-sm text-black hover:bg-blue-100"
+                >
+                  STEM & Robotics
                 </Link>
               </div>
             )}
