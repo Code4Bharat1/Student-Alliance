@@ -100,7 +100,7 @@ const Shop = () => {
       rating: 5,
       category: "Camera",
       isNew: false,
-      image: "/Shop/WebCam (1).png",
+      image: "/Shop/cam7.png",
       cartLink: "addtocart/camcart7",
     },
     {
@@ -111,7 +111,7 @@ const Shop = () => {
       rating: 5,
       category: "Camera",
       isNew: false,
-      image: "/Shop/WebCam (2).png",
+      image: "/Shop/cam8.png",
       cartLink: "addtocart/camcart8",
     },
     {
@@ -122,7 +122,7 @@ const Shop = () => {
       rating: 5,
       category: "Camera",
       isNew: false,
-      image: "/Shop/WebCam (3).png",
+      image: "/Shop/cam9.png",
       cartLink: "addtocart/camcart9",
     },
     {
@@ -133,7 +133,7 @@ const Shop = () => {
       rating: 5,
       category: "Camera",
       isNew: false,
-      image: "/Shop/WebCam (4).png",
+      image: "/Shop/cam10.png",
       cartLink: "addtocart/camcart10",
     },
     {
@@ -144,19 +144,8 @@ const Shop = () => {
       rating: 5,
       category: "Camera",
       isNew: false,
-      image: "/Shop/WebCam (5).png",
+      image: "/Shop/cam11.png",
       cartLink: "addtocart/camcart11",
-    },
-    {
-      id: 12,
-      name: "Logitech C930-E Webcam - Full HD",
-      price: 25000,
-      discount: 2000,
-      rating: 5,
-      category: "Camera",
-      isNew: false,
-      image: "/Shop/WebCam (6).png",
-      cartLink: "addtocart/camcart12",
     },
     {
       id: 13,
@@ -166,8 +155,8 @@ const Shop = () => {
       rating: 5,
       category: "Camera",
       isNew: false,
-      image: "/Shop/WebCam (7).png",
-      cartLink: "addtocart/camcart13",
+      image: "/Shop/cam12.png",
+      cartLink: "addtocart/camcart12",
     },
   ];
 
