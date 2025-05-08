@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const Shop = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -34,6 +35,7 @@ const Shop = () => {
       category: "Camera",
       isNew: true,
       image: "/Shop/cam1.jpg",
+      cartLink: "/addtocart/camcart1",
     },
     {
       id: 2,
@@ -44,6 +46,7 @@ const Shop = () => {
       category: "Camera",
       isNew: false,
       image: "/Shop/cam2.jpg",
+      cartLink: "/addtocart/camcart2",
     },
     {
       id: 3,
@@ -54,6 +57,7 @@ const Shop = () => {
       category: "Camera",
       isNew: true,
       image: "/Shop/cam3.jpg",
+      cartLink: "addtocart/camcart3",
     },
     {
       id: 4,
@@ -64,6 +68,7 @@ const Shop = () => {
       category: "Camera",
       isNew: false,
       image: "/Shop/cam4.jpg",
+      cartLink: "addtocart/camcart4",
     },
     {
       id: 5,
@@ -74,6 +79,7 @@ const Shop = () => {
       category: "Camera",
       isNew: true,
       image: "/Shop/cam5.jpg",
+      cartLink: "addtocart/camcart5",
     },
     {
       id: 6,
@@ -84,6 +90,84 @@ const Shop = () => {
       category: "Camera",
       isNew: false,
       image: "/Shop/cam6.jpg",
+      cartLink: "addtocart/camcart6",
+    },
+    {
+      id: 7,
+      name: "Evota 4K Webcam",
+      price: 20000,
+      discount: 2000,
+      rating: 5,
+      category: "Camera",
+      isNew: false,
+      image: "/Shop/WebCam (1).png",
+      cartLink: "addtocart/camcart7",
+    },
+    {
+      id: 8,
+      name: "AIWAFT 4K Webcam with A1 Auto",
+      price: 20000,
+      discount: 8000,
+      rating: 5,
+      category: "Camera",
+      isNew: false,
+      image: "/Shop/WebCam (2).png",
+      cartLink: "addtocart/camcart8",
+    },
+    {
+      id: 9,
+      name: "AIWaft EPTZ 4K Webcam - Ultra HD",
+      price: 9000,
+      discount: 1000,
+      rating: 5,
+      category: "Camera",
+      isNew: false,
+      image: "/Shop/WebCam (3).png",
+      cartLink: "addtocart/camcart9",
+    },
+    {
+      id: 10,
+      name: "Logitech MeetUp HD 1 Wx Optical",
+      price: 15000,
+      discount: 3000,
+      rating: 5,
+      category: "Camera",
+      isNew: false,
+      image: "/Shop/WebCam (4).png",
+      cartLink: "addtocart/camcart10",
+    },
+    {
+      id: 11,
+      name: "Logitech C920e Webcam — Full HD",
+      price: 20000,
+      discount: 5000,
+      rating: 5,
+      category: "Camera",
+      isNew: false,
+      image: "/Shop/WebCam (5).png",
+      cartLink: "addtocart/camcart11",
+    },
+    {
+      id: 12,
+      name: "Logitech C930-E Webcam - Full HD",
+      price: 25000,
+      discount: 2000,
+      rating: 5,
+      category: "Camera",
+      isNew: false,
+      image: "/Shop/WebCam (6).png",
+      cartLink: "addtocart/camcart12",
+    },
+    {
+      id: 13,
+      name: "Logitech BCC950 ConferenceCam ",
+      price: 34000,
+      discount: 8000,
+      rating: 5,
+      category: "Camera",
+      isNew: false,
+      image: "/Shop/WebCam (7).png",
+      cartLink: "addtocart/camcart13",
     },
   ];
 
@@ -174,7 +258,7 @@ const Shop = () => {
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="appearance-none bg-white border border-gray-300 rounded-md pl-3 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="appearance-none bg-white border border-gray-300 rounded-md pl-3 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-black"
               >
                 {sortOptions.map((option) => (
                   <option key={option} value={option}>
@@ -199,6 +283,8 @@ const Shop = () => {
           </div>
         </motion.div>
 
+        
+
         {/* Products */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -219,7 +305,6 @@ const Shop = () => {
               className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300"
             >
               <div className="relative">
-                {/* Placeholder for product image - replace with actual image */}
                 <img
                   src={product.image}
                   alt={product.name}
@@ -246,9 +331,7 @@ const Shop = () => {
                       <svg
                         key={i}
                         className={`h-5 w-5 ${
-                          i < product.rating
-                            ? "text-yellow-400"
-                            : "text-gray-300"
+                          i < product.rating ? "text-yellow-400" : "text-gray-300"
                         }`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
@@ -275,38 +358,19 @@ const Shop = () => {
                       </span>
                     )}
                   </div>
-                  <button className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
+                  <Link
+                    href={product.cartLink}
+                    className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300"
+                  >
                     Add to Cart
-                  </button>
+                  </Link>
                 </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
 
-        {/* Special Offer Banner */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.6, duration: 0.5 }}
-          whileHover={{ scale: 1.02 }}
-          className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl overflow-hidden shadow-xl"
-        >
-          <div className="p-8 sm:p-12 flex flex-col sm:flex-row items-center justify-between">
-            <div className="mb-6 sm:mb-0 sm:mr-8">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-                Limited Time Offer!
-              </h2>
-              <p className="text-blue-100 max-w-md">
-                Get 20% off on all PTZ cameras this week only. Don't miss this
-                amazing deal!
-              </p>
-            </div>
-            <button className="px-6 py-3 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 transition-all duration-300 shadow-lg">
-              Shop Now
-            </button>
-          </div>
-        </motion.div>
+        
       </div>
     </div>
   );
