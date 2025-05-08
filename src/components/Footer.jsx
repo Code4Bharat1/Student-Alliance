@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 const Footer = () => {
   return (
     // this is footer section
-    <footer className="text-white bg-gradient-to-r from-blue-500 to-purple-600">
+    <footer className="text-white bg-gray-800">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-0 md:gap-8">
           {/* Get In Touch */}
@@ -45,7 +45,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-indigo-800 p-2 rounded-full hover:bg-white hover:text-indigo-800 transition-all duration-300"
+                  className="bg-gray-700 p-2 rounded-full hover:bg-white hover:text-white transition-all duration-300"
                   whileHover={{ y: -5, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >

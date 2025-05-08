@@ -1,7 +1,8 @@
 import BlogsDetail6 from '@/components/blog/BlogDetail6'
+import Footer from '@/components/Footer'
 import Navbar from '@/components/Navbar'
 import React from 'react'
-import Footer from '../../../Student-Alliance/src/components/Footer'
+
 
 const Page = () => {
   return (

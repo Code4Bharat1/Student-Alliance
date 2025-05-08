@@ -1,6 +1,7 @@
 "use client"
 
 import Blog from '@/components/blog/Blog1'
+import Brand from '@/components/Brand/Brand'
 import Footer from '@/components/Footer'
 import Categories from '@/components/Franchise/Category'
 import WhyChoose from '@/components/Franchise/Choose'
@@ -22,6 +23,7 @@ const Page = () => {
       <WhatsAppWidget/>
       <Service/>
       <ShopByCat/>
+      <Brand/>
       <WhyChoose/>
       <Categories/>
       <Features/>

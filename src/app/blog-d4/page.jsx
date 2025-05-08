@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../../../Student-Alliance/src/components/Navbar'
-import Footer from '../../../Student-Alliance/src/components/Footer'
 import BlogsDetail4 from '@/components/blog/BlogDetail4'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
 const Page = () => {
   return (
