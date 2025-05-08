@@ -71,13 +71,13 @@ const blogData = [
     title: 'How to Start an Offline Coaching Center: Costs and Requirements',
     date: 'Tuesday, August 29, 2023',
     image: '/images/hqdefault.jpg',
-    link: '/blog-d3',
+    link: '/blog-d11',
   },
   {
     title: 'Hybrid Teaching Module Earned Crores: A Deep Dive into Success',
     date: 'Tuesday, August 29, 2023',
     image: '/images/physicswala.png',
-    link: '/blog-d3',
+    link: '/blog-d12',
   },
   
 ];
