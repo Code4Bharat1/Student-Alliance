@@ -9,7 +9,7 @@ export default function BlogsDetail5() {
     <div className="px-4 py-8 md:px-16 lg:px-32 bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <section className="mb-10 relative w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 z-0"></div>
+        <div className="absolute  inset-0 bg-gradient-to-r from-blue-50 to-purple-50 z-0"></div>
         
         <motion.div
           className="container mx-auto px-4 py-16 md:py-24 relative z-10"
@@ -54,7 +54,7 @@ export default function BlogsDetail5() {
                   alt="AIWaft 4K Webcam"
                   width={800}
                   height={500}
-                  className="w-full h-auto"
+                  className="w-full h-60"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -101,7 +101,7 @@ export default function BlogsDetail5() {
           >
             <div className="h-48 relative">
               <Image
-                src="/images/4k-feature.jpg"
+                src="/images/4k_res.png"
                 alt="4K Resolution"
                 fill
                 className="object-cover"
@@ -141,7 +141,7 @@ export default function BlogsDetail5() {
           >
             <div className="h-48 relative">
               <Image
-                src="/images/zoom-feature.jpg"
+                src="/images/zoom.jpeg"
                 alt="Zoom capabilities"
                 fill
                 className="object-cover"
@@ -181,7 +181,7 @@ export default function BlogsDetail5() {
           >
             <div className="h-48 relative">
               <Image
-                src="/images/ai-feature.jpg"
+                src="/images/AI-Cam.png"
                 alt="AI tracking"
                 fill
                 className="object-cover"

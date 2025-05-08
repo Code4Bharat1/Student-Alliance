@@ -115,7 +115,7 @@ export default function BlogsDetail10() {
           >
             <div className="h-48 relative">
               <Image
-                src="/images/size-comparison.jpg"
+                src="/images/board-size.png"
                 alt="Board size comparison"
                 fill
                 className="object-cover"
@@ -155,7 +155,7 @@ export default function BlogsDetail10() {
           >
             <div className="h-48 relative">
               <Image
-                src="/images/brand-logos.jpg"
+                src="/images/brand.png"
                 alt="Brand logos"
                 fill
                 className="object-cover"
@@ -178,9 +178,7 @@ export default function BlogsDetail10() {
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Maxhub</span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Viewsonic</span>
               </div>
-              <p className="text-red-500 font-medium text-sm">
-                Avoid cheap local brands with poor warranties
-              </p>
+             
             </div>
           </motion.div>
 
@@ -192,7 +190,7 @@ export default function BlogsDetail10() {
           >
             <div className="h-48 relative">
               <Image
-                src="/images/board-features.jpg"
+                src="/images/board-feature.png"
                 alt="Board features"
                 fill
                 className="object-cover"
@@ -235,7 +233,7 @@ export default function BlogsDetail10() {
         <div className="md:flex">
           <div className="md:w-1/2 relative h-96 md:h-auto">
             <Image
-              src="/images/classroom-setting.jpg"
+              src="/images/smart-buy.png"
               alt="Classroom with digital board"
               fill
               className="object-cover"

@@ -45,7 +45,7 @@ const Footer = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-gray-700 p-2 rounded-full hover:bg-white hover:text-white transition-all duration-300"
+                  className="bg-gray-800 p-2 rounded-full hover:bg-white hover:text-white transition-all duration-300"
                   whileHover={{ y: -5, scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                 >

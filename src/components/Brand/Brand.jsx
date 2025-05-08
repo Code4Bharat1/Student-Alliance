@@ -6,32 +6,32 @@ const Brand = () => {
   const cards = [
     {
       id: 1,
-      img: "/path/to/image1.png",
+      img: "/shop/brand1.png",
       link: "/page1",
     },
     {
       id: 2,
-      img: "/path/to/image2.png",
+      img: "/shop/brand2.png",
       link: "/page2",
     },
     {
       id: 3,
-      img: "/path/to/image3.png",
+      img: "/shop/brand3.png",
       link: "/page3",
     },
     {
       id: 4,
-      img: "/path/to/image4.png",
+      img: "/shop/brand4.png",
       link: "/page4",
     },
     {
       id: 5,
-      img: "/path/to/image5.png",
+      img: "/shop/brand5.png",
       link: "/page5",
     },
     {
       id: 6,
-      img: "/path/to/image6.png",
+      img: "/shop/brand6.png",
       link: "/page6",
     },
   ];
@@ -39,8 +39,8 @@ const Brand = () => {
   return (
     <section className="py-10 bg-gray-100">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-8">Shop By Brand</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <h2 className="text-3xl text-black font-bold mb-8">Shop By Brand</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
           {cards.map((card) => (
             <Link href={card.link} key={card.id}>
               <div className="group relative block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
@@ -49,7 +49,7 @@ const Brand = () => {
                   alt={`Card ${card.id}`}
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition duration-300"></div>
+                <div className="absolute inset-0 bg-opacity-0 group-hover:bg-opacity-40 transition duration-300"></div>
               </div>
             </Link>
           ))}

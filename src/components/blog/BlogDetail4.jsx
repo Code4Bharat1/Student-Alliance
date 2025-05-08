@@ -54,7 +54,7 @@ export default function BlogsDetail4() {
                   alt="Live streaming setup"
                   width={800}
                   height={500}
-                  className="w-full h-auto"
+                  className="w-full h-70"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -142,7 +142,7 @@ export default function BlogsDetail4() {
           >
             <div className="h-48 relative">
               <Image
-                src="/images/easy.png"
+                src="/images/microphone.jpg"
                 alt="Streaming microphone"
                 fill
                 className="object-cover"
@@ -182,7 +182,7 @@ export default function BlogsDetail4() {
           >
             <div className="h-48 relative">
               <Image
-                src="/images/lighting.jpg"
+                src="/images/easy.png"
                 alt="Streaming lighting setup"
                 fill
                 className="object-cover"
@@ -221,7 +221,7 @@ export default function BlogsDetail4() {
         <div className="md:flex">
           <div className="md:w-1/2 relative h-96 md:h-auto">
             <Image
-              src="/images/stream-setup.jpg"
+              src="/images/setup.jpg"
               alt="Complete streaming setup"
               fill
               className="object-cover"
