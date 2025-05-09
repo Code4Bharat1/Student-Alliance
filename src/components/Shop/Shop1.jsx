@@ -1,13 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import Link from "next/link";
 import WhatsAppWidget from "../WhatsApp/WhatApp";
 
 const Shop = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [sortBy, setSortBy] = useState("Featured");
+  const controls = useAnimation();
 
   const filters = [
     "All",
@@ -171,7 +172,8 @@ const Shop = () => {
         products.filter((product) => product.category === activeFilter)
       );
     }
-  }, [activeFilter]);
+    controls.start({ opacity: 1, y: 0 });
+  }, [activeFilter, controls]);
 
   useEffect(() => {
     let sorted = [...filteredProducts];
@@ -186,13 +188,11 @@ const Shop = () => {
         sorted.sort((a, b) => b.rating - a.rating);
         break;
       default:
-        // Featured - keep original order
         break;
     }
     setFilteredProducts(sorted);
   }, [sortBy]);
 
-  // Format currency for Indian Rupees
   const formatINR = (amount) => {
     return new Intl.NumberFormat("en-IN", {
       style: "currency",
@@ -202,53 +202,66 @@ const Shop = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 py-8 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header with animation */}
+        {/* Header with enhanced animation */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-16"
         >
-          <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
-            Professional AV Equipment
+          <h1 className="text-5xl font-bold text-gray-900 sm:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+            Premium AV Solutions
           </h1>
-          <p className="mt-5 max-w-xl mx-auto text-xl text-gray-500">
-            High-quality audio visual solutions for your business needs
-          </p>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+            className="mt-6 max-w-2xl mx-auto text-xl text-gray-600"
+          >
+            Discover cutting-edge audio-visual technology for your professional needs
+          </motion.p>
         </motion.div>
 
-        {/* Filters */}
+        {/* Filters with hover effects */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.2, duration: 0.5 }}
-          className="mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+          className="mb-12"
         >
-          <div className="flex flex-wrap justify-center gap-2 mb-6">
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
             {filters.map((filter) => (
-              <button
+              <motion.button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                whileHover={{ scale: 1.05, boxShadow: "0 4px 12px rgba(0,0,0,0.1)" }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${
                   activeFilter === filter
-                    ? "bg-blue-600 text-white shadow-lg"
-                    : "bg-white text-gray-700 hover:bg-gray-100 shadow"
+                    ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-xl"
+                    : "bg-white text-gray-700 hover:bg-gray-50 shadow"
                 }`}
               >
                 {filter}
-              </button>
+              </motion.button>
             ))}
           </div>
 
           <div className="flex justify-between items-center">
-            <p className="text-gray-600">{filteredProducts.length} products</p>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-gray-600 font-medium"
+            >
+              {filteredProducts.length} products found
+            </motion.p>
             <div className="relative">
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value)}
-                className="appearance-none bg-white border border-gray-300 rounded-md pl-3 pr-8 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-black"
+                className="appearance-none bg-white border border-gray-200 rounded-lg pl-4 pr-10 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-800 shadow-sm hover:shadow-md transition-all"
               >
                 {sortOptions.map((option) => (
                   <option key={option} value={option}>
@@ -256,9 +269,9 @@ const Shop = () => {
                   </option>
                 ))}
               </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-gray-500">
                 <svg
-                  className="h-4 w-4"
+                  className="h-5 w-5"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -273,69 +286,76 @@ const Shop = () => {
           </div>
         </motion.div>
 
-        
-
-        {/* Products */}
+        {/* Products with enhanced animations */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.4, duration: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          animate={controls}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
         >
           {filteredProducts.map((product, index) => (
             <motion.div
               key={product.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.5 }}
+              transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
               whileHover={{
-                y: -5,
-                boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.1)",
+                y: -10,
+                boxShadow: "0 15px 30px rgba(0,0,0,0.15)",
+                transition: { duration: 0.3 },
               }}
-              className="bg-white rounded-xl overflow-hidden shadow-md transition-all duration-300"
+              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
             >
-              <div className="relative">
-                <img
+              <div className="relative group">
+                <motion.img
                   src={product.image}
                   alt={product.name}
-                  className="h-80 w-full object-cover"
+                  className="h-64 w-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  whileHover={{ scale: 1.05 }}
                 />
                 {product.isNew && (
-                  <div className="absolute top-2 right-2 bg-green-500 text-white text-xs font-bold px-2 py-1 rounded-full">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute top-3 right-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow"
+                  >
                     NEW
-                  </div>
+                  </motion.div>
                 )}
                 {product.discount > 0 && (
-                  <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    className="absolute top-3 left-3 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow"
+                  >
                     ₹{product.discount.toLocaleString("en-IN")} OFF
-                  </div>
+                  </motion.div>
                 )}
               </div>
               <div className="p-6">
                 <div className="flex justify-between items-start">
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
                     {product.name}
                   </h3>
                   <div className="flex items-center">
                     {[...Array(5)].map((_, i) => (
-                      <svg
+                      <motion.svg
                         key={i}
                         className={`h-5 w-5 ${
-                          i < product.rating ? "text-yellow-400" : "text-gray-300"
+                          i < product.rating ? "text-yellow-400" : "text-gray-200"
                         }`}
                         fill="currentColor"
                         viewBox="0 0 20 20"
+                        whileHover={{ scale: 1.2 }}
                       >
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
+                      </motion.svg>
                     ))}
                   </div>
                 </div>
                 <div className="mt-4 flex items-center justify-between">
-                  <div>
+                  <div className="flex items-center space-x-2">
                     {product.discount > 0 ? (
                       <>
-                        <span className="text-gray-500 line-through mr-2">
+                        <span className="text-gray-400 line-through text-sm">
                           {formatINR(product.price)}
                         </span>
                         <span className="text-xl font-bold text-gray-900">
@@ -350,7 +370,7 @@ const Shop = () => {
                   </div>
                   <Link
                     href={product.cartLink}
-                    className="px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300"
+                    className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300"
                   >
                     See More
                   </Link>
@@ -360,7 +380,7 @@ const Shop = () => {
           ))}
         </motion.div>
 
-        <WhatsAppWidget/>
+        <WhatsAppWidget />
       </div>
     </div>
   );
