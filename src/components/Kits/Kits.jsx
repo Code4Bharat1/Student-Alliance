@@ -2,66 +2,89 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import WhatsAppWidget from "../WhatsApp/WhatApp";
 
 const kits = [
   {
     title: "Multi-function 14WD Robot Car Kit",
     image: "/images/k1.jpg",
+    link: "/kitsDetails/kits-d1",
   },
   {
     title: "Make A Line Follower Robot Using Motor Driver",
     image: "/images/k2.jpg",
+    link: "/product1",
   },
   {
     title: "Advance Smart Robot Car Kit 4wd Robot Car Kit",
     image: "/images/k3.jpg",
+    link: "/product1",
   },
   {
     title: "Make a Line Follower Robot Car Motor Driver",
     image: "/images/k4.jpg",
+    link: "/product1",
   },
   {
     title: "Smart Learning Robotics IOT Kit",
     image: "/images/k5.jpg",
+    link: "/product1",
   },
   {
     title: "Ultimate Uno R3 Kit compatible",
     image: "/images/k6.jpg",
+    link: "/product1",
   },
   {
     title: "Make A Line Follower Robot",
     image: "/images/k7.jpg",
+    link: "/product1",
   },
   {
     title: "Make an IoT based robotic Wi-Fi car",
     image: "/images/k8.jpg",
+    link: "/product1",
   },
   {
     title: "4WD 4 Wheel Smart Car Chassis DIY LWD Double-Deck Smart",
     image: "/images/k9.jpg",
+    link: "/product1",
   },
   {
     title: "DIY Dinosaur STEM Kit Kids",
     image: "/images/k10.jpg",
-  }, {
+    link: "/product1",
+  },
+  {
     title: "Crowbits-Creator Kit Based on Arduino",
     image: "/images/k11.jpg",
-  }, {
+    link: "/product1",
+  },
+  {
     title: "2 Wheel Smart Car Chassis Kit",
     image: "/images/k12.jpg",
-  }, {
+    link: "/product1",
+  },
+  {
     title: "4 Wheel Robotic Platform DIY",
     image: "/images/k13.jpg",
-  }, {
+    link: "/product1",
+  },
+  {
     title: "Make A Line Follower Robot",
     image: "/images/k14.jpg",
-  }, {
+    link: "/product1",
+  },
+  {
     title: "DIY Balance Scale STEM Kit DIY Balance Scale Lever Wooden",
     image: "/images/k15.jpg",
-  }, {
+    link: "/product1",
+  },
+  {
     title: "DIY Password Case STEM Kit Portable Unassembled",
     image: "/images/k16.jpg",
+    link: "/product1",
   },
 ];
 
@@ -97,18 +120,30 @@ const KitsSection = () => {
                 <h3 className="text-lg font-medium text-center text-gray-800">
                   {kit.title}
                 </h3>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg shadow"
-                >
-                  BUY NOW
-                </motion.button>
+                {kit.link ? (
+                  <a href={kit.link} target="_blank" rel="noopener noreferrer">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg shadow"
+                    >
+                      BUY NOW
+                    </motion.button>
+                  </a>
+                ) : (
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    className="bg-gray-400 text-white font-semibold px-4 py-2 rounded-lg shadow cursor-not-allowed"
+                    disabled
+                  >
+                    Link Unavailable
+                  </motion.button>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-      <WhatsAppWidget/>
+      <WhatsAppWidget />
     </section>
   );
 };

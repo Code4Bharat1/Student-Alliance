@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
+import WhatsAppWidget from "../WhatsApp/WhatApp";
 
 const Shop = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -359,7 +360,7 @@ const Shop = () => {
           ))}
         </motion.div>
 
-        
+        <WhatsAppWidget/>
       </div>
     </div>
   );

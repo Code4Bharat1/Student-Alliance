@@ -12,7 +12,7 @@ const Brand = () => {
     {
       id: 2,
       img: "/shop/brand2.png",
-      link: "/page2",
+      link: "/shop1",
     },
     {
       id: 3,
