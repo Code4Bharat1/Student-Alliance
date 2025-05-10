@@ -125,7 +125,7 @@ const KitsDetail2 = () => {
                     value={quantity}
                     onChange={(e) => setQuantity(parseInt(e.target.value))}
                   >
-                    {[1, 2, 3, 4, 5,5,6].map(num => (
+                    {[1, 2, 3, 4, 5,6].map(num => (
                       <option key={num} value={num}>{num}</option>
                     ))}
                   </select>
