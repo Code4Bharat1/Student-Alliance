@@ -56,7 +56,7 @@ const blogData = [
     link: '/blog-d8',
   },
   {
-    title: 'Complete Guide to Digital Board Prices for Teaching',
+    title: 'Get the best  interactive displays for your classroom Complete Guide to Latest Digital Board Prices',
     date: 'Tuesday, August 29, 2023',
     image: '/images/smart.jpg',
     link: '/blog-d10',
@@ -68,13 +68,14 @@ const blogData = [
     link: '/blog-d7',
   },
   {
-    title: 'How to Start an Offline Coaching Center: Costs and Requirements',
+    title: 'Start an Offline Coaching Center Costs and Requirements How to Start an Offline Coaching',
+  
     date: 'Tuesday, August 29, 2023',
     image: '/images/hqdefault.jpg',
     link: '/blog-d11',
   },
   {
-    title: 'Hybrid Teaching Module Earned Crores: A Deep Dive into Success',
+    title: 'Hybrid Teaching Module Earned Crores: A Deep Dive into Success, innovative hybrid teaching',
     date: 'Tuesday, August 29, 2023',
     image: '/images/physicswala.png',
     link: '/blog-d12',
