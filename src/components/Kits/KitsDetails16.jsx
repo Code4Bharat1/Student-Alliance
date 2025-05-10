@@ -62,7 +62,7 @@ const KitsDetail16 = () => {
             </div>
 
             <p className="text-gray-600 leading-relaxed border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 rounded">
-        DIY Password Case STEM Kit empowers children to learn through hands-on exploration and play. STEM Kit is geared towards learning, curiosity, and education, focusing on developing kids' skills in science, technology, engineering, and mathematics (STEM). DIY Password Case STEM Kit is an essential component of modern-day learning, and our educational kit offers a fun, engaging way to encourage children to explore and learn. With our toys, kids will have a blast developing practical, logical thinking, creativity, problem-solving skills, and more. DIY Password Case STEM Kit is perfect for parents and educators looking for a fun way to keep children away from mobile and PC games. This DIY STEM Kit will give kids the opportunity to learn and explore without staring at a screen, making them an excellent alternative to traditional digital entertainment. Package Included: 1 x DIY Password Case STEM Kit Portable Unassembled Password Case Material DIY Wooden Puzzle for Kids
+        DIY Password Case STEM Kit empowers children to learn through hands-on exploration and play. STEM Kit is geared towards learning, curiosity, and education, focusing on developing kids' skills in science, technology, engineering, and mathematics (STEM). DIY Password Case STEM Kit is an essential component of modern-day learning, and our educational kit offers a fun, engaging way to encourage children to explore and learn.
             </p>
 
             {/* Features */}

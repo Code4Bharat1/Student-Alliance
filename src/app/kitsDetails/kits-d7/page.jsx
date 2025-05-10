@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../../../../Student-Alliance/src/components/Navbar'
 import KitsDetail7 from '@/components/Kits/KitsDetail7'
-import Footer from '../../../../Student-Alliance/src/components/Footer'
+import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
 
 const Page = () => {
   return (

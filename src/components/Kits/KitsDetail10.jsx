@@ -62,7 +62,7 @@ const KitsDetail10 = () => {
             </div>
 
             <p className="text-gray-600 leading-relaxed border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 rounded">
-        DIY Dinosaur STEM Kit empowers children to learn through hands-on exploration and play.STEM Kit is geared towards learning, curiosity, and education, focusing on developing kids' skills in science, technology, engineering, and mathematics (STEM). DIY Dinosaur STEM Kit is an essential component of modern-day learning, and our educational toys offer a fun, engaging way to encourage children to explore and learn. With STEM Kit, kids will have a blast developing practical, logical thinking, creativity, problem-solving skills, and more. DIY Dinosaur STEM Kit is perfect for parents and educators looking for a fun way to keep children away from mobile and PC games. This DIY STEM Kit will give kids the opportunity to learn and explore without staring at a screen, making them an excellent alternative to traditional digital entertainment. Package Included: 1 x DIY Dinosaur STEM Kit Kids Electric Dinosaur Robot DIY Assembly Model Science Discovery STEM Education Physics Experiment Kit Gift
+        DIY Dinosaur STEM Kit empowers children to learn through hands-on exploration and play.STEM Kit is geared towards learning, curiosity, and education, focusing on developing kids' skills in science, technology, engineering, and mathematics (STEM). DIY Dinosaur STEM Kit is an essential component of modern-day learning, and our educational toys offer a fun, engaging way to encourage children to explore and learn.
             </p>
 
             {/* Features */}

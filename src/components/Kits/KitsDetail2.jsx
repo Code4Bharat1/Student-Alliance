@@ -62,7 +62,8 @@ const KitsDetail2 = () => {
             </div>
 
             <p className="text-gray-600 leading-relaxed border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 rounded">
-          SPECIFICATIONS L293D Motor Driver Module This particular Motor Driver Module is a quadruple high-current half-H driver. Supply-Voltage: 5 V VSS Power Supply: 36 V Separate Input-Logic Supply Thermal Shutdown Output Current 600 mA Per Channel Highest Output Current 1.2 A Per Channel IR Sensor Module This particular Sensor Module has a built-in IR transmitter and IR receiver that sends out IR energy and looks for reflected IR energy to detect presence of any obstacle in front of the sensor module. The module has on board potentiometer that lets user adjust detection range. The sensor has very good and stable response even in ambient light or in complete darkness. Operating Voltage: 3.3V – 5.0V Detection range:2cm – 30cm (Adjustable using potentiometer) Current Consumption:at 3.3V : ~23 mA,at 5.0V: ~43 mA Active output level: Outputs Low logic level when obstacle is detected On board Obstacle Detection LED indicator
+          L293D Motor Driver Module: Quadruple high-current half-H driver with 5V supply voltage, 36V power supply, 600mA output current per channel (1.2A max), and thermal shutdown protection.
+          IR Sensor Module: Built-in IR transmitter and receiver for obstacle detection with adjustable range (2cm–30cm) via potentiometer. Operates at 3.3V–5V with stable performance even in darkness, featuring a detection LED indicator.
             </p>
 
             {/* Features */}

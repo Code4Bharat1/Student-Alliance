@@ -62,7 +62,7 @@ const KitsDetail13 = () => {
             </div>
 
             <p className="text-gray-600 leading-relaxed border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 rounded">
-         This is a 4 wheel robotic platform DIY with DC gear motor and wheels. This is a best kit for any type of robotic project. The provided material can construct a basic robot capable of moving forward and reverse with effective right and left turn capabilities. No ball castor is required in this set. This is basically used for DIY in robotic section. You can make an own four wheel car robot with using this metallic 4 wheel chassis. It comes with 4 robotic wheels and 4 dc motors for better experience for DIY. Chassis Color: Black Chassis Material: High quality metal Wheel Color: Black & White Wheel Dimension: 7 x 2 Wheel Material: Plastic and Rubber Motor RPM: 500 RPM Features: Ease to use. Ease of interfacing. Long life. Operating Temperature Max 100°C. Application: Automotive. Robotics Projects. DIY projects. Arduino projects. Raspberry-Pi projects. Electrical/Electronic projects. Package Included: 1x Black Chassis 4x White Small Tyre 4x Central Shaft DC Motor
+         This is a 4 wheel robotic platform DIY with DC gear motor and wheels. This is a best kit for any type of robotic project. The provided material can construct a basic robot capable of moving forward and reverse with effective right and left turn capabilities. No ball castor is required in this set. This is basically used for DIY in robotic section.
             </p>
 
             {/* Features */}
