@@ -172,7 +172,7 @@ const Shop = () => {
       category: "Digital Board",
       isNew: false,
       image: "/Shop/digital-d1.jpg",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/digital1",
     },
     {
       id: 15,
@@ -183,7 +183,7 @@ const Shop = () => {
       category: "Digital Board",
       isNew: false,
       image: "/Shop/digital-d2.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/digital2",
     },
     {
       id: 16,
