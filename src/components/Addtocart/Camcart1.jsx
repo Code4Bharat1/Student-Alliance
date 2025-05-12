@@ -58,7 +58,7 @@ export default function Camcart1() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft 4K PTZ Camera Pro Lens
+                AIWaft 4K PTZ Camera | Live Streaming, Online Teaching & Classroom Recording | Auto-Tracking | 12X Optical Zoom | Best for Online Classes in India
               </h1>
             </div>
 
@@ -102,6 +102,37 @@ export default function Camcart1() {
                 </svg>
                 In stock • Ready to ship
               </div>
+            </div>
+
+            {/* Key Features */}
+            <div className="mb-8 grid grid-cols-2 gap-3">
+              {[
+                "4K Ultra HD Resolution",
+                "12X Optical Zoom",
+                "360° Pan Range",
+                "Auto Tracking",
+                "3-Year Warranty",
+                "Includes Remote",
+              ].map((feature, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <div className="text-purple-500">
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700">{feature}</span>
+                </div>
+              ))}
             </div>
 
             {/* Quantity Selector */}
