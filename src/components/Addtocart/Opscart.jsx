@@ -5,12 +5,12 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import { CheckCircleIcon } from "@heroicons/react/solid";
 
-export default function CableCart2() {
+export default function OpsCart() {
   const [quantity, setQuantity] = useState(1);
   
   // Base price and discount information
-  const basePrice = 4500;
-  const originalPrice = 5500;
+  const basePrice = 36000;
+  const originalPrice = 50000;
   const pricePerUnit = basePrice;
   
   // Calculate current price based on quantity
@@ -29,8 +29,8 @@ export default function CableCart2() {
           <div className="flex flex-col lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
-                src="/shop/cable1.png"
-                alt="AIWaft 10M USB 2.0 Extension Cable, Male to Female"
+                src="/shop/opsx.png"
+                alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
                 priority
@@ -43,24 +43,24 @@ export default function CableCart2() {
             {/* About Section Image - Moved to left side */}
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/aboutcable1.png"
-                alt="4K PTZ Camera Features"
+                src="/shop/aboutops1.png"
+                alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
               />
             </div>
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/aboutcable1-1.png"
-                alt="4K PTZ Camera Features"
+                src="/shop/aboutops1-1.png"
+                alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
               />
             </div>
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/aboutcable1-2.png"
-                alt="4K PTZ Camera Features"
+                src="/shop/aboutops1-2.png"
+                alt="AIWaft OPS SRX900 for Interactive Displayss"
                 fill
                 className="object-contain p-8"
               />
@@ -71,7 +71,7 @@ export default function CableCart2() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft 10m USB 3.0 Extension Cable, Male to Female
+                AIWaft OPS SRX900 for Interactive Displays
               </h1>
             </div>
 
@@ -113,10 +113,10 @@ export default function CableCart2() {
             {/* Key Features */}
             <div className="mb-8 grid grid-cols-2 gap-3">
               {[
-                "10M USB 2.0 Extension",
-                "Type A male to type A female",
-                "480Mbps transfer",
-                "10 Meters / 32 Feet.",
+                "Interactive flat panel displays",
+                "Intel i5/i7 processors",
+                "12th Gen",
+                "4K60Hz visuals",
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
@@ -204,35 +204,35 @@ export default function CableCart2() {
                 </div>
               ))}
             </div>
+            <br /> <br /> 
 
-            {/* About Section Content */}
-<div className="mt-12 border-t border-gray-100 pt-8">
+              {/* OPS Module Features */}
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    AIWaft 10M USB 2.0 Extension Cable Features
+    Features of the AIWaft OPS SRX900 Upgrade Module
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
     <li className="flex items-start">
       <span className="text-purple-500 mr-2">•</span>
-      <span>Active repeater cable with gold connectors & built-in amplification</span>
+      <span>12th Gen i5/i7 processors for fast interactive display performance</span>
     </li>
     <li className="flex items-start">
       <span className="text-purple-500 mr-2">•</span>
-      <span>USB 2.0 Type A male to female (480Mbps transfer rate)</span>
+      <span>Intel Iris-Xe graphics for HD visuals with vibrant clarity</span>
     </li>
     <li className="flex items-start">
       <span className="text-purple-500 mr-2">•</span>
-      <span>Extends USB devices (printers, scanners, etc.) up to 10M/32ft</span>
+      <span>HDMI/DP/Type-C ports support 4K60Hz dual/triple display setups</span>
     </li>
     <li className="flex items-start">
       <span className="text-purple-500 mr-2">•</span>
-      <span>Plug-and-play - no external power required</span>
+      <span>Advanced connectivity: HDMI 2.0, DP 1.4, and JAE 80PIN</span>
     </li>
     <li className="flex items-start">
       <span className="text-purple-500 mr-2">•</span>
-      <span>Premium shielding for reliable signal transmission</span>
+      <span>Expandable up to 64GB DDR4 RAM and 1TB NVMe/SATA storage</span>
     </li>
   </ul>
-</div>
+
 
             {/* Clean Product Specifications Table with Brand Highlight */}
             <div className="mt-12 border-t border-gray-100 pt-8">
@@ -253,121 +253,139 @@ export default function CableCart2() {
           </td>
         </tr>
 
-        {/* Normal Specification Rows */}
+        {/* OPS Module Specifications */}
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connector Type
+            Manufacturer
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            USB 2.0
+            AIWaft Pvt Ltd
           </td>
         </tr>
 
         <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Model
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            SRX900
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Model Year
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            2024
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Operating System
+          </td>
+          <td className="px-6 py-4 text-sm text-gray-500">
+            Linux, Windows 8, Windows 10, Windows 11
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Processor
+          </td>
+          <td className="px-6 py-4 text-sm text-gray-500">
+            Intel® Core™ i5-1235U / i5-1245U / i7-1255U / i7-1265U (3.3 GHz)
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Graphics
+          </td>
+          <td className="px-6 py-4 text-sm text-gray-500">
+            Intel Iris Xe Graphics (8GB)
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Memory
+          </td>
+          <td className="px-6 py-4 text-sm text-gray-500">
+            8GB DDR4 (Expandable to 64GB via 2x SO-DIMM slots)
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Storage
+          </td>
+          <td className="px-6 py-4 text-sm text-gray-500">
+            1TB SSD (NVMe & SATA support)
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Display Support
+          </td>
+          <td className="px-6 py-4 text-sm text-gray-500">
+            4K60Hz via HDMI/DP/Type-C (dual/triple display)
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Connectivity
+          </td>
+          <td className="px-6 py-4 text-sm text-gray-500">
+            HDMI 2.0, DP 1.4, USB 3.0/2.0, Type-C, Bluetooth, JAE 80PIN
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Resolution
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            3840 x 2160 (4K UHD)
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Dimensions
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            18 x 11.9 x 3 cm
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Weight
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            1.2 kg
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Special Features
+          </td>
+          <td className="px-6 py-4 text-sm text-gray-500">
+            12th Gen Intel, TPM 2.0 Security, Expandable Storage, Triple Display
+          </td>
+        </tr>
+
+        <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
             Compatible Devices
           </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            Laptop, Gaming Console, Monitor, Camera, Printer
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Special Feature
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            24 Gold Plated Connectors, Plug & Play, 5000+ Bend Lifespan
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Phone Models
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Scanner, Personal Computer, Printer
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Colour
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Black
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connector Gender
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Male-to-Female
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Shape
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Round
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Number of Pins
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Net Quantity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1 Count
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Item Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            180 Grams
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connectivity Technology
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            USB
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            USB 2.0 Type A Male to A Female Cable
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Number of Items
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
+            Interactive Flat Panel Displays, Monitors
           </td>
         </tr>
 
@@ -376,16 +394,16 @@ export default function CableCart2() {
             Mounting Hardware
           </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            1 USB 2.0 Type A Male to A Female Active Extension/Repeater Cable
+            Power cable, mounting brackets, 19V/4.7A adapter
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
+            Use Case
           </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            AIWaft
+            Education, business, digital signage, interactive displays
           </td>
         </tr>
 
@@ -394,7 +412,7 @@ export default function CableCart2() {
             Packer
           </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018 / aiwaft20@gmail.com / +91 9691688972
+            AIWaft Pvt Ltd
           </td>
         </tr>
 
@@ -402,8 +420,8 @@ export default function CableCart2() {
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
             Generic Name
           </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            USB 2.0 Type A Male to A Female Cable
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            AIWaft OPS SRX900
           </td>
         </tr>
       </tbody>

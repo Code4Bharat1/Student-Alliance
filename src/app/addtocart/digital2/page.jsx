@@ -1,7 +1,7 @@
 import React from 'react'
-import Navbar from '../../../../Student-Alliance/src/components/Navbar'
-import Digital2 from '@/components/Addtocart/Digital2'
 import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import Digital2 from '@/components/Addtocart/Digital2'
 
 const Page = () => {
   return (

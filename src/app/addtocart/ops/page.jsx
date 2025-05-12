@@ -1,13 +1,13 @@
-import React from 'react'
-import Digital1 from '@/components/Addtocart/Digital1'
-import Navbar from '@/components/Navbar'
+import OpsCart from '@/components/Addtocart/Opscart'
 import Footer from '@/components/Footer'
+import Navbar from '@/components/Navbar'
+import React from 'react'
 
 const Page = () => {
   return (
     <div>
       <Navbar/>
-      <Digital1/>
+      <OpsCart/>
       <Footer/>
     </div>
   )

@@ -60,9 +60,6 @@ export default function Camcart1() {
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
                 AIWaft 4K PTZ Camera Pro Lens
               </h1>
-              <p className="text-lg text-gray-600">
-                12X Zoom • Auto Tracking • 4K Resolution
-              </p>
             </div>
 
             {/* Rating */}
