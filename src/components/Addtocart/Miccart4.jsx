@@ -3,42 +3,34 @@
 import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
+import { CheckCircleIcon } from "@heroicons/react/solid";
 
-export default function Digital2() {
-  const sizeOptions = {
-    "65": { unitPrice: 89843, originalPrice: 140000 },
-    "75": { unitPrice: 105468, originalPrice: 170000 },
-    "86": { unitPrice: 175781, originalPrice: 270000 }
-  };
-
+export default function MicCart4() {
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState("65");
+  
+  // Base price and discount information
+  const basePrice = 32000;
+  const originalPrice = 42000;
+  const pricePerUnit = basePrice;
+  
+  // Calculate current price based on quantity
+  const currentPrice = quantity * pricePerUnit;
+  const currentOriginalPrice = quantity * originalPrice;
+  const totalSavings = currentOriginalPrice - currentPrice;
 
-  const { unitPrice, originalPrice } = sizeOptions[selectedSize];
-  const totalPrice = unitPrice * quantity;
-  const totalOriginalPrice = originalPrice * quantity;
-  const totalSavings = (originalPrice - unitPrice) * quantity;
-
-  const increment = () => setQuantity(q => q + 1);
-  const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
-
-  const formatPrice = (price) =>
-    new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      maximumFractionDigits: 0,
-    }).format(price);
+  const increment = () => setQuantity((q) => q + 1);
+  const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 p-8">
-          {/* Left Section */}
+          {/* Left Section: Main Product Image */}
           <div className="flex flex-col lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
-                src="/shop/digital-d1.jpg"
-                alt="AIWaft 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals"
+                src="/shop/mic4.png"
+                alt="SENNHEISER XSW 1-ME3-A Wireless Headset Mic"
                 fill
                 className="object-contain p-8"
                 priority
@@ -51,7 +43,7 @@ export default function Digital2() {
             {/* About Section Image - Moved to left side */}
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D21.png"
+                src="/shop/aboutmic4.png"
                 alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
@@ -59,7 +51,7 @@ export default function Digital2() {
             </div>
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D22.png"
+                src="/shop/aboutmic4-1.png"
                 alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
@@ -67,41 +59,27 @@ export default function Digital2() {
             </div>
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D23.png"
+                src="/shop/aboutmic4-2.png"
                 alt="AIWaft OPS SRX900 for Interactive Displayss"
                 fill
                 className="object-contain p-8"
               />
             </div>
-             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/D24.png"
-                alt="AIWaft OPS SRX900 for Interactive Displayss"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-             
-            
-          
           </div>
 
-          {/* Right Section */}
+          {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-               AIWaft 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals
+                SENNHEISER XSW 1-ME3-A Wireless Headset Mic
               </h1>
-              <p className="text-lg text-gray-600">
-                Shop with Confidence – Your Transaction is 100% Secure.
-              </p>
             </div>
 
             {/* Rating */}
             <div className="flex items-center gap-2 mb-6">
-              <div className="flex text-yellow-500">
-                {[...Array(4)].map((_, i) => (
-                  <StarIcon key={i} className="w-5 h-5" />
+              <div className="flex">
+                {[...Array(5)].map((_, i) => (
+                  <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -111,83 +89,51 @@ export default function Digital2() {
             </div>
 
             {/* Price Section */}
-            <div className="mb-6 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
+            <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
                 <span className="text-4xl font-bold text-gray-900">
-                  {formatPrice(totalPrice)}
+                  ₹{currentPrice.toLocaleString()}
                 </span>
                 <span className="text-lg text-gray-500 line-through">
-                  {formatPrice(totalOriginalPrice)}
+                  ₹{currentOriginalPrice.toLocaleString()}
                 </span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save {formatPrice(totalSavings)}
+                  Save ₹ {totalSavings.toLocaleString()}
                 </span>
+              </div>
+              <div className="text-sm text-gray-500 mb-2">
+                ₹{pricePerUnit.toLocaleString()} per unit
               </div>
               <div className="flex items-center text-green-600 font-medium">
-                <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
+                <CheckCircleIcon className="w-5 h-5 mr-1" />
                 In stock • Ready to ship
               </div>
-            </div>
-
-            {/* Size Selector */}
-            <div className="mb-10">
-              <div className="flex items-center justify-between mb-3">
-                <h3 className="text-base font-bold text-gray-800">Select Your Size</h3>
-                <span className="text-xs text-gray-500">
-                  {selectedSize ? `Selected: ${sizeOptions[selectedSize].label}` : ""}
-                </span>
-              </div>
-
-              <div className="grid grid-cols-3 gap-3">
-                {Object.entries(sizeOptions).map(([size, { label }]) => (
-                  <button
-                    key={size}
-                    onClick={() => setSelectedSize(size)}
-                    className={`relative rounded-xl p-4 font-medium text-center transition-all duration-200 transform
-          ${selectedSize === size
-                        ? "border-2 border-indigo-500 text-indigo-600 bg-indigo-50 scale-[1.02] shadow-sm"
-                        : "border border-gray-200 text-gray-700 hover:border-indigo-300 hover:shadow-md"
-                      }`}
-                  >
-                    {selectedSize === size && (
-                      <div className="absolute -top-2 -right-2 bg-indigo-500 text-white rounded-full w-5 h-5 flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                    )}
-                    <span className="block text-lg font-semibold">{size}"</span>
-                    <span className="block text-xs text-gray-500 mt-1">{label}</span>
-                  </button>
-                ))}
-              </div>
-
-              {selectedSize && (
-                <div className="mt-3 text-sm text-indigo-600 flex items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2h-1V9z" clipRule="evenodd" />
-                  </svg>
-                  {sizeOptions[selectedSize].description}
-                </div>
-              )}
             </div>
 
             {/* Key Features */}
             <div className="mb-8 grid grid-cols-2 gap-3">
               {[
-                "High-Resolution Display",
-                "Available in 65, 75, and 86 inches",
-                "Multi-Touch Capability",
-                "Interactive Pen & Fast Response",
-                "Built-in OS/Software",
-                "Wireless Connectivity & Collaboration"
+                "Advanced Noise Reduction",
+                "High-Fidelity Audio",
+                "Handles High Volume",
+                "Real-Time Monitoring",
+                "Smart Controls",
+                "Perfect for Creators",
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <span className="text-gray-700">{feature}</span>
@@ -198,7 +144,9 @@ export default function Digital2() {
             {/* Quantity Selector */}
             <div className="mb-8 text-gray-700">
               <div className="flex items-center gap-4">
-                <span className="text-sm font-medium text-gray-700">Quantity:</span>
+                <span className="text-sm font-medium text-gray-700">
+                  Quantity:
+                </span>
                 <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
                   <button
                     onClick={decrement}
@@ -206,7 +154,9 @@ export default function Digital2() {
                   >
                     −
                   </button>
-                  <div className="px-6 py-2 text-lg border-x border-gray-200 font-medium">{quantity}</div>
+                  <div className="px-6 py-2 text-lg border-x border-gray-200 font-medium">
+                    {quantity}
+                  </div>
                   <button
                     onClick={increment}
                     className="px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 transition"
@@ -220,8 +170,18 @@ export default function Digital2() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
                 </svg>
                 ADD TO CART
               </button>
@@ -235,26 +195,53 @@ export default function Digital2() {
               {[
                 { icon: "🚚", text: "Free Shipping" },
                 { icon: "🔄", text: "Easy Returns" },
-                { icon: "🛡️", text: "2-Year Warranty" },
-                { icon: "💳", text: "Secure Payment" }
+                { icon: "💳", text: "Secure Payment" },
               ].map((badge, i) => (
-                <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
+                <div
+                  key={i}
+                  className="flex items-center gap-2 text-sm text-gray-600"
+                >
                   <span className="text-lg">{badge.icon}</span>
                   <span>{badge.text}</span>
                 </div>
               ))}
             </div>
-<br /> <br />
-             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-   Description
+            <br /> <br /> 
+
+              {/* OPS Module Features */}
+  <h2 className="text-2xl font-bold text-gray-900 mb-6">
+    About This Product
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
-    <li className="flex items-start">
-     Introducing the AIWaft Interactive Flat Panel, a cutting-edge smart board designed to enhance collaborative learning and presentations. With a high-resolution 4K/8K display and multi-touch capability, this smart board ensures a seamless experience for education and business environments. Featuring wireless connectivity, built-in OS, and fast response with the interactive pen, the AIWaft smart board allows for smooth and efficient collaboration.
-    </li>
-  </ul>
-           {/* Clean Product Specifications Table with Brand Highlight */}
-<div className="mt-12 border-t border-gray-100 pt-8">
+  <li className="flex items-start">
+    <span className="text-purple-500 mr-2">•</span>
+    <span>Exceptional audio clarity for live performances and monitoring</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-500 mr-2">•</span>
+    <span>Simple plug-and-play setup for speeches and presentations</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-500 mr-2">•</span>
+    <span>120ft (36m) wireless range for unrestricted movement</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-500 mr-2">•</span>
+    <span>10 selectable channels for interference-free operation</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-500 mr-2">•</span>
+    <span>High-fidelity sound with minimal latency (48kHz/24bit)</span>
+  </li>
+  <li className="flex items-start">
+    <span className="text-purple-500 mr-2">•</span>
+    <span>Advanced noise reduction for crystal-clear transmission</span>
+  </li>
+</ul>
+
+
+            {/* Clean Product Specifications Table with Brand Highlight */}
+          <div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
     Technical Specifications
   </h2>
@@ -272,105 +259,31 @@ export default function Digital2() {
           </td>
         </tr>
 
+        {/* Wireless Microphone Specifications */}
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
             Manufacturer
           </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            AIWaft Private Limited<br />
-            AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018<br />
-            aiwaft20@gmail.com<br />
-            9691688972
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            AIWaft Pvt Ltd
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name 65-inch
+            Model
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIW2065
+            AIWMIC20
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name 75-inch
+            Connectivity
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIW2075
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name 86-inch
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIW2086
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Flash Memory Installed Size
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            128 GB
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            RAM Memory Installed Size
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            8 GB
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Operating System
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Android 13
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Processor Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Android
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Graphics Card Description
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Integrated
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Resolution
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            4K
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Devices
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            IOS, Win, Mac, Android
+            2.4GHz Wireless
           </td>
         </tr>
 
@@ -379,124 +292,142 @@ export default function Digital2() {
             Special Features
           </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            Glossy Screen, Ultrawide Screen, Touch Screen, Built-In Speakers
+            Long range (100m), Noise Reduction, Real-time monitoring, Hi-Fi audio
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Mounting Hardware
+            Compatible Devices
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Interactive Flat Panel: The main display unit
+          <td className="px-6 py-4 text-sm text-gray-500">
+            Headphone
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Number of items
+            Included Components
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
+          <td className="px-6 py-4 text-sm text-gray-500">
+            RX-1N, TX-1N, MIC-1N, STACKING ELEMENTS-2N, PS UNIT-1N, ANTENNAS-2N, BAT-2N
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Display Type
+            Polar Pattern
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            LED
+            Unidirectional
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Standing screen display size
+            Audio Sensitivity
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            65 Inches, 75 Inches, 86 Inches
+            52 dB
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Aspect Ratio
+            Item Weight
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            16:9
+            613 Grams
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Screen Resolution
+            Dimensions
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3840 x 2160
+            34.8 x 34.5 x 8.6 Centimeters
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Resolution
+            Power Source
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1080 Pixels
+            Battery Powered
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Cellular technology
+            Number of Batteries
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            4G
+            2 AA batteries required. (included)
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Total USB ports
+            Material
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            7
+            Metal
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connector Type
+            Number of Channels
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Wi-Fi
+            10
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Device interface - primary
+            Frequency Range
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Touchscreen with Stylus Support
+            548 - 572 MHz
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Packer
+            Frequency Response
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft
+            16000 Hz
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Net Quantity
+            Noise Level
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1.0 count
+            3 dB
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Manufacturer
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            Sennheiser electronic GmbH & Co. KG
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Imported By
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            Sennheiser Electronics India Pvt Ltd
           </td>
         </tr>
 
@@ -505,26 +436,14 @@ export default function Digital2() {
             Generic Name
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Interactive Flat Panel
+            Wireless Microphone
           </td>
         </tr>
-
-        {/* Existing specifications below */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Backlight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            D-LED
-          </td>
-        </tr>
-
-        {/* ... rest of your existing specifications ... */}
-        
       </tbody>
     </table>
   </div>
 </div>
+
           </div>
         </div>
       </div>
