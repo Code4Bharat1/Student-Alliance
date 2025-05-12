@@ -4,12 +4,19 @@ import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
-
 export default function Camcart12() {
   const [quantity, setQuantity] = useState(1);
 
+  const basePrice = 26000;
+  const originalPrice = 34000;
+  const unitDiscount = originalPrice - basePrice;
+
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
+
+  const totalPrice = basePrice * quantity;
+  const totalOriginalPrice = originalPrice * quantity;
+  const totalDiscount = unitDiscount * quantity;
 
   return (
     <div className="bg-white min-h-screen">
@@ -29,14 +36,13 @@ export default function Camcart12() {
                 HOT DEAL
               </div>
             </div>
-            
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-              Logitech BCC950 ConferenceCam
+                Logitech BCC950 ConferenceCam
               </h1>
               <p className="text-lg text-gray-600">
                 12X Zoom • Auto Tracking • 4K Resolution
@@ -59,10 +65,10 @@ export default function Camcart12() {
             {/* Price Section */}
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
-                <span className="text-4xl font-bold text-gray-900">₹26,000</span>
-                <span className="text-lg text-gray-500 line-through">₹34,000</span>
+                <span className="text-4xl font-bold text-gray-900">₹{totalPrice.toLocaleString()}</span>
+                <span className="text-lg text-gray-500 line-through">₹{totalOriginalPrice.toLocaleString()}</span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹8,000
+                  Save ₹{totalDiscount.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
@@ -149,4 +155,3 @@ export default function Camcart12() {
     </div>
   );
 }
-

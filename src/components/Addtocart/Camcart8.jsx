@@ -4,9 +4,15 @@ import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
-
 export default function Camcart8() {
   const [quantity, setQuantity] = useState(1);
+
+  const pricePerUnit = 12000;
+  const originalPricePerUnit = 20000;
+
+  const totalPrice = quantity * pricePerUnit;
+  const totalOriginalPrice = quantity * originalPricePerUnit;
+  const totalDiscount = totalOriginalPrice - totalPrice;
 
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
@@ -20,7 +26,7 @@ export default function Camcart8() {
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
                 src="/shop/cam8.png"
-                alt="AIWAFT 4K Webcam with A1 Auto"
+                alt="AIWAFT 4K Webcam with AI Auto"
                 fill
                 className="object-contain p-8"
                 priority
@@ -29,14 +35,13 @@ export default function Camcart8() {
                 HOT DEAL
               </div>
             </div>
-            
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-              AIWAFT 4K Webcam with A1 Auto
+                AIWAFT 4K Webcam with AI Auto
               </h1>
               <p className="text-lg text-gray-600">
                 12X Zoom • Auto Tracking • 4K Resolution
@@ -47,7 +52,7 @@ export default function Camcart8() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} filled={i < 4} />
+                  <StarIcon key={i} className={`w-5 h-5 ${i < 4 ? 'text-yellow-400' : 'text-gray-300'}`} />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -59,10 +64,10 @@ export default function Camcart8() {
             {/* Price Section */}
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
-                <span className="text-4xl font-bold text-gray-900">₹12,000</span>
-                <span className="text-lg text-gray-500 line-through">₹20,000</span>
+                <span className="text-4xl font-bold text-gray-900">₹{totalPrice.toLocaleString()}</span>
+                <span className="text-lg text-gray-500 line-through">₹{totalOriginalPrice.toLocaleString()}</span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹8,000
+                  Save ₹{totalDiscount.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
@@ -149,4 +154,3 @@ export default function Camcart8() {
     </div>
   );
 }
-

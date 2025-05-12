@@ -4,12 +4,18 @@ import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
-
 export default function Camcart10() {
+  const pricePerUnit = 12000;
+  const originalPricePerUnit = 15000;
+
   const [quantity, setQuantity] = useState(1);
 
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
+
+  const totalPrice = pricePerUnit * quantity;
+  const totalOriginalPrice = originalPricePerUnit * quantity;
+  const totalSavings = totalOriginalPrice - totalPrice;
 
   return (
     <div className="bg-white min-h-screen">
@@ -29,14 +35,13 @@ export default function Camcart10() {
                 HOT DEAL
               </div>
             </div>
-            
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-              Logitech MeetUp HD 1 Wx Optical
+                Logitech MeetUp HD 1 Wx Optical
               </h1>
               <p className="text-lg text-gray-600">
                 12X Zoom • Auto Tracking • 4K Resolution
@@ -59,10 +64,10 @@ export default function Camcart10() {
             {/* Price Section */}
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
-                <span className="text-4xl font-bold text-gray-900">₹12,000</span>
-                <span className="text-lg text-gray-500 line-through">₹15,000</span>
+                <span className="text-4xl font-bold text-gray-900">₹{totalPrice.toLocaleString()}</span>
+                <span className="text-lg text-gray-500 line-through">₹{totalOriginalPrice.toLocaleString()}</span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹3,000
+                  Save ₹{totalSavings.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
@@ -149,4 +154,3 @@ export default function Camcart10() {
     </div>
   );
 }
-

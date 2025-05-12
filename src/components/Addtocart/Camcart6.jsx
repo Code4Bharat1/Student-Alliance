@@ -1,12 +1,13 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
-
 export default function Camcart6() {
   const [quantity, setQuantity] = useState(1);
+  const unitPrice = 65000;
+  const oldUnitPrice = 80000;
 
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
@@ -29,14 +30,13 @@ export default function Camcart6() {
                 HOT DEAL
               </div>
             </div>
-            
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-              Evota lox HD PTZ Camera
+                Evota lox HD PTZ Camera
               </h1>
               <p className="text-lg text-gray-600">
                 12X Zoom • Auto Tracking • 4K Resolution
@@ -59,15 +59,23 @@ export default function Camcart6() {
             {/* Price Section */}
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
-                <span className="text-4xl font-bold text-gray-900">₹65,000</span>
-                <span className="text-lg text-gray-500 line-through">₹80,000</span>
+                <span className="text-4xl font-bold text-gray-900">
+                  ₹{(quantity * unitPrice).toLocaleString()}
+                </span>
+                <span className="text-lg text-gray-500 line-through">
+                  ₹{(quantity * oldUnitPrice).toLocaleString()}
+                </span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹15,000
+                  Save ₹{(quantity * (oldUnitPrice - unitPrice)).toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
                 <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 In stock • Ready to ship
               </div>
@@ -85,8 +93,18 @@ export default function Camcart6() {
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                   </div>
                   <span className="text-gray-700">{feature}</span>
@@ -119,8 +137,18 @@ export default function Camcart6() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
                 </svg>
                 ADD TO CART
               </button>
@@ -149,4 +177,3 @@ export default function Camcart6() {
     </div>
   );
 }
-

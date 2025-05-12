@@ -1,12 +1,15 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
-
 export default function Camcart3() {
   const [quantity, setQuantity] = useState(1);
+
+  const basePrice = 40000;
+  const originalPrice = 50000;
+  const discountAmount = originalPrice - basePrice;
 
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
@@ -29,7 +32,6 @@ export default function Camcart3() {
                 HOT DEAL
               </div>
             </div>
-            
           </div>
 
           {/* Right Section: Details */}
@@ -47,7 +49,7 @@ export default function Camcart3() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} filled={i < 4} />
+                  <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -59,15 +61,23 @@ export default function Camcart3() {
             {/* Price Section */}
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
-                <span className="text-4xl font-bold text-gray-900">₹40,000</span>
-                <span className="text-lg text-gray-500 line-through">₹50,000</span>
+                <span className="text-4xl font-bold text-gray-900">
+                  ₹{(basePrice * quantity).toLocaleString()}
+                </span>
+                <span className="text-lg text-gray-500 line-through">
+                  ₹{(originalPrice * quantity).toLocaleString()}
+                </span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹10,000
+                  Save ₹{(discountAmount * quantity).toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
                 <svg className="w-5 h-5 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                    clipRule="evenodd"
+                  />
                 </svg>
                 In stock • Ready to ship
               </div>
@@ -81,7 +91,7 @@ export default function Camcart3() {
                 "360° Pan Range",
                 "Auto Tracking",
                 "3-Year Warranty",
-                "Includes Remote"
+                "Includes Remote",
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
@@ -105,7 +115,9 @@ export default function Camcart3() {
                   >
                     −
                   </button>
-                  <div className="px-6 py-2 text-lg border-x border-gray-200 font-medium">{quantity}</div>
+                  <div className="px-6 py-2 text-lg border-x border-gray-200 font-medium">
+                    {quantity}
+                  </div>
                   <button
                     onClick={increment}
                     className="px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 transition"
@@ -120,7 +132,12 @@ export default function Camcart3() {
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
                 </svg>
                 ADD TO CART
               </button>
@@ -135,7 +152,7 @@ export default function Camcart3() {
                 { icon: "🚚", text: "Free Shipping" },
                 { icon: "🔄", text: "Easy Returns" },
                 { icon: "🛡️", text: "2-Year Warranty" },
-                { icon: "💳", text: "Secure Payment" }
+                { icon: "💳", text: "Secure Payment" },
               ].map((badge, i) => (
                 <div key={i} className="flex items-center gap-2 text-sm text-gray-600">
                   <span className="text-lg">{badge.icon}</span>
@@ -149,4 +166,3 @@ export default function Camcart3() {
     </div>
   );
 }
-

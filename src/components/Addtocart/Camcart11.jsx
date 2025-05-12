@@ -4,10 +4,15 @@ import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
-
 export default function Camcart11() {
   const [quantity, setQuantity] = useState(1);
 
+  // Constants
+  const unitPrice = 15000;
+  const originalPrice = 20000;
+  const discountPerUnit = 5000;
+
+  // Handlers
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
 
@@ -29,14 +34,13 @@ export default function Camcart11() {
                 HOT DEAL
               </div>
             </div>
-            
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-              Logitech C920e Webcam — Full HD
+                Logitech C920e Webcam — Full HD
               </h1>
               <p className="text-lg text-gray-600">
                 12X Zoom • Auto Tracking • 4K Resolution
@@ -47,7 +51,7 @@ export default function Camcart11() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} filled={i < 4} />
+                  <StarIcon key={i} filled={i < 4} className="w-5 h-5 text-yellow-400" />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -59,10 +63,14 @@ export default function Camcart11() {
             {/* Price Section */}
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
-                <span className="text-4xl font-bold text-gray-900">₹15,000</span>
-                <span className="text-lg text-gray-500 line-through">₹20,000</span>
+                <span className="text-4xl font-bold text-gray-900">
+                  ₹{(unitPrice * quantity).toLocaleString()}
+                </span>
+                <span className="text-lg text-gray-500 line-through">
+                  ₹{(originalPrice * quantity).toLocaleString()}
+                </span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹5,000
+                  Save ₹{(discountPerUnit * quantity).toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
@@ -149,4 +157,3 @@ export default function Camcart11() {
     </div>
   );
 }
-
