@@ -5,9 +5,16 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Digital2() {
+  const sizeOptions = {
+    "65": { unitPrice: 80000, originalPrice: 150000 },
+    "75": { unitPrice: 120000, originalPrice: 170000 },
+    "86": { unitPrice: 140000, originalPrice: 190000 }
+  };
+
   const [quantity, setQuantity] = useState(1);
-  const unitPrice = 100000;
-  const originalPrice = 150000;
+  const [selectedSize, setSelectedSize] = useState("65");
+
+  const { unitPrice, originalPrice } = sizeOptions[selectedSize];
   const totalPrice = unitPrice * quantity;
   const totalOriginalPrice = originalPrice * quantity;
   const totalSavings = (originalPrice - unitPrice) * quantity;

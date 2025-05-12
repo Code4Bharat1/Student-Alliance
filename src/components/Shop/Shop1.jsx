@@ -352,7 +352,7 @@ const Shop = () => {
       category: "OPS",
       isNew: false,
       image: "/Shop/opsx.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/ops",
     },
     //Stand
     {
