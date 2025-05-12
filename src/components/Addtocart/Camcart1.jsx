@@ -158,84 +158,92 @@ export default function Camcart1() {
             </div>
 
             {/* About Section Content (without image) */}
-            <div className="mt-12 border-t border-gray-100 pt-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                About This Product: Features of the 4K PTZ Camera
-              </h2>
-              <ul className="space-y-4 text-gray-700">
-                {[
-                  "Ultra HD 4K Video: Capture sharp 4K footage at 60fps with 12x optical zoom, ideal for classroom recording.",
-                  "AI Tracking & Low Light Performance: Features advanced auto-tracking and gesture control for effortless usability.",
-                  "Versatile Connectivity: Equipped with HDMI, USB 3.0, LAN, RS232, and 3G-SDI for live streaming and dual streaming.",
-                  "Wide Pan-Tilt Control: Offers ±170° pan and -30° to +30° tilt range with 255 preset positions for flexible movement.",
-                  "Durable & Compatible: Works seamlessly with Windows, macOS, Linux, and Android for integration with any teaching setup.",
-                ].map((text, i) => (
-                  <li key={i} className="flex items-start">
-                    <span className="text-purple-500 mr-2">•</span>
-                    <span>{text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+           <div className="mt-12 border-t border-gray-100 pt-8">
+  <h2 className="text-2xl font-bold text-gray-900 mb-6">
+    About This Product: Features of the 4K PTZ Camera
+  </h2>
+  <ul className="space-y-4 text-gray-700">
+    {[
+      "Ultra HD 4K Video: Capture sharp 4K footage at 60fps with 12x optical zoom, ideal for classroom recording.",
+      "AI Tracking & Low Light Performance: Features advanced auto-tracking and gesture control for effortless usability.",
+      "Versatile Connectivity: Equipped with HDMI, USB 3.0, LAN, RS232, and 3G-SDI for live streaming and dual streaming.",
+      "Wide Pan-Tilt Control: Offers ±170° pan and -30° to +30° tilt range with 255 preset positions for flexible movement.",
+      "Durable & Compatible: Works seamlessly with Windows, macOS, Linux, and Android for integration with any teaching setup.",
+    ].map((text, i) => (
+      <li key={i} className="flex items-start">
+        <span className="text-purple-500 mr-2">•</span>
+        <span className="break-words">{text}</span>
+      </li>
+    ))}
+  </ul>
+</div>
 
-            {/* Technical Specifications Table */}
-            <div className="mt-12 border-t border-gray-100 pt-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                Technical Specifications
-              </h2>
-              <div className="overflow-hidden rounded-lg border border-gray-200">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <tbody className="divide-y divide-gray-200 bg-white">
-                    {[
-                      { name: "Brand", value: "AIWaft", highlight: true },
-                      { name: "Color", value: "Black" },
-                      { name: "Model Number", value: "AIW20A1" },
-                      {
-                        name: "Included Components",
-                        value: "Camera, Remote, Cable (1.5m), Adapter, Wall Mount",
-                      },
-                      {
-                        name: "Connectivity",
-                        value: "HDMI, USB 3.0, LAN, RS232, 3G-SDI",
-                      },
-                      { name: "Dimensions", value: "20 × 13 × 17.6 cm" },
-                      { name: "Weight", value: "1.3 kg" },
-                      { name: "Optical Zoom", value: "12×" },
-                      {
-                        name: "Resolution",
-                        value: "3840 × 2160 pixels (4K UHD)",
-                      },
-                      { name: "Sensor Type", value: "CMOS" },
-                      { name: "Viewing Angle", value: "170°" },
-                      {
-                        name: "Compatibility",
-                        value: "Windows, macOS, Linux, Android, iOS",
-                      },
-                      {
-                        name: "Manufacturer",
-                        value: "AIWaft Pvt Ltd",
-                      },
-                    ].map((spec, i) => (
-                      <tr
-                        key={i}
-                        className={`${spec.highlight ? "bg-blue-50" : i % 2 === 0 ? "" : "bg-gray-50"}`}
-                      >
-                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                          {spec.name}
-                        </td>
-                        <td
-                          className={`px-6 py-4 whitespace-nowrap text-sm ${
-                            spec.highlight ? "font-bold text-blue-800" : "text-gray-500"
-                          }`}
-                        >
-                          {spec.value}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
+{/* Technical Specifications Table */}
+<div className="mt-12 border-t border-gray-100 pt-8">
+  <h2 className="text-2xl font-bold text-gray-900 mb-6">
+    Technical Specifications
+  </h2>
+  <div className="overflow-x-auto">
+    <div className="inline-block min-w-full align-middle">
+      <div className="overflow-hidden rounded-lg border border-gray-200">
+        <table className="min-w-full divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-200 bg-white">
+            {[
+              { name: "Brand", value: "AIWaft", highlight: true },
+              { name: "Color", value: "Black" },
+              { name: "Model Number", value: "AIW20A1" },
+              {
+                name: "Included Components",
+                value: "Camera, Remote, Cable (1.5m), Adapter, Wall Mount",
+              },
+              {
+                name: "Connectivity",
+                value: "HDMI, USB 3.0, LAN, RS232, 3G-SDI",
+              },
+              { name: "Dimensions", value: "20 × 13 × 17.6 cm" },
+              { name: "Weight", value: "1.3 kg" },
+              { name: "Optical Zoom", value: "12×" },
+              {
+                name: "Resolution",
+                value: "3840 × 2160 pixels (4K UHD)",
+              },
+              { name: "Sensor Type", value: "CMOS" },
+              { name: "Viewing Angle", value: "170°" },
+              {
+                name: "Compatibility",
+                value: "Windows, macOS, Linux, Android, iOS",
+              },
+              {
+                name: "Manufacturer",
+                value: "AIWaft Pvt Ltd",
+              },
+            ].map((spec, i) => (
+              <tr
+                key={i}
+                className={`${spec.highlight ? "bg-blue-50" : i % 2 === 0 ? "" : "bg-gray-50"}`}
+              >
+                <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  {spec.name}
+                </td>
+                <td
+                  className={`px-4 sm:px-6 py-4 text-sm ${
+                    spec.highlight 
+                      ? "font-bold text-blue-800" 
+                      : "text-gray-500"
+                  } ${spec.name.length > 15 ? "whitespace-normal" : "whitespace-nowrap"}`}
+                >
+                  {spec.value}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
           </div>
         </div>
       </div>

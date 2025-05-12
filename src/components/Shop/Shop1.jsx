@@ -239,7 +239,7 @@ const Shop = () => {
       category: "Mic",
       isNew: false,
       image: "/Shop/Mic1.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/mic1",
     },
     {
       id: 21,
@@ -250,7 +250,7 @@ const Shop = () => {
       category: "Mic",
       isNew: false,
       image: "/Shop/Mic2.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/mic2",
     },
     {
       id: 22,
@@ -261,7 +261,7 @@ const Shop = () => {
       category: "Mic",
       isNew: false,
       image: "/Shop/Mic3.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/mic3",
     },
     {
       id: 23,
@@ -272,7 +272,7 @@ const Shop = () => {
       category: "Mic",
       isNew: false,
       image: "/Shop/Mic4.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/mic4",
     },
     //cable
     {
@@ -307,7 +307,7 @@ const Shop = () => {
       category: "Speaker",
       isNew: false,
       image: "/Shop/speaker1.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/speaker1",
     },
     {
       id: 27,
@@ -318,7 +318,7 @@ const Shop = () => {
       category: "Speaker",
       isNew: false,
       image: "/Shop/speaker2.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/speaker2",
     },
     {
       id: 28,
@@ -329,7 +329,7 @@ const Shop = () => {
       category: "Speaker",
       isNew: false,
       image: "/Shop/speaker2.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/speaker3",
     },
     {
       id: 29,
@@ -340,7 +340,7 @@ const Shop = () => {
       category: "Speaker",
       isNew: false,
       image: "/Shop/speaker2.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/speaker4",
     },
     //OPS
     {
@@ -364,7 +364,7 @@ const Shop = () => {
       category: "Stand",
       isNew: false,
       image: "/Shop/stand.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/stand",
     },
     //Lighting
     {
@@ -376,7 +376,7 @@ const Shop = () => {
       category: "Lighting",
       isNew: false,
       image: "/Shop/light1.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/light1",
     },
     {
       id: 33,
@@ -387,7 +387,7 @@ const Shop = () => {
       category: "Lighting",
       isNew: false,
       image: "/Shop/light2.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/light2",
     },
     {
       id: 34,
@@ -398,7 +398,7 @@ const Shop = () => {
       category: "Lighting",
       isNew: false,
       image: "/Shop/light3.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/light3",
     },
     {
       id: 35,
@@ -409,7 +409,7 @@ const Shop = () => {
       category: "Lighting",
       isNew: false,
       image: "/Shop/light4.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/light4",
     },
     {
       id: 36,
@@ -420,7 +420,7 @@ const Shop = () => {
       category: "Lighting",
       isNew: false,
       image: "/Shop/light5.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/light5",
     },
     {
       id: 37,
@@ -431,7 +431,7 @@ const Shop = () => {
       category: "Lighting",
       isNew: false,
       image: "/Shop/light6.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/light6",
     },
   ];
 
