@@ -194,7 +194,7 @@ const Shop = () => {
       category: "Digital Board",
       isNew: false,
       image: "/Shop/digital-d3.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/digital3",
     },
     {
       id: 17,
@@ -205,7 +205,7 @@ const Shop = () => {
       category: "Digital Board",
       isNew: false,
       image: "/Shop/digital-d4.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/digital4",
     },
     {
       id: 18,
@@ -216,7 +216,7 @@ const Shop = () => {
       category: "Digital Board",
       isNew: false,
       image: "/Shop/digital-d5.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/digital5",
     },
     {
       id: 19,
@@ -227,7 +227,7 @@ const Shop = () => {
       category: "Digital Board",
       isNew: false,
       image: "/Shop/digital-d6.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/digital6",
     },
     //mic
     {

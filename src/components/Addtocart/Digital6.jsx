@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
-export default function Digital2() {
+export default function Digital6() {
   const sizeOptions = {
-    "65": { unitPrice: 89843, originalPrice: 140000 },
-    "75": { unitPrice: 105468, originalPrice: 170000 },
-    "86": { unitPrice: 175781, originalPrice: 270000 }
+    "65": { unitPrice: 85937, originalPrice: 130000},
+    "75": { unitPrice: 93750, originalPrice: 150000 },
+    "86": { unitPrice: 164062, originalPrice: 260000 }
   };
 
   const [quantity, setQuantity] = useState(1);
@@ -37,21 +37,21 @@ export default function Digital2() {
           <div className="flex flex-col lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
-                src="/shop/digital-d1.jpg"
+                src="/shop/digital-d6.png"
                 alt="AIWaft 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals"
                 fill
                 className="object-contain p-8"
                 priority
               />
               <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                HOT DEAL
+                COMING SOON
               </div>
             </div>
 
             {/* About Section Image - Moved to left side */}
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D21.png"
+                src="/shop/D41.png"
                 alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
@@ -59,7 +59,7 @@ export default function Digital2() {
             </div>
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D22.png"
+                src="/shop/D42.png"
                 alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
@@ -67,15 +67,15 @@ export default function Digital2() {
             </div>
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D23.png"
-                alt="AIWaft OPS SRX900 for Interactive Displayss"
+                src="/shop/D43.png"
+                alt="Maxhub Digital Board | U3 Series"
                 fill
                 className="object-contain p-8"
               />
             </div>
              <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D24.png"
+                src="/shop/D44.png"
                 alt="AIWaft OPS SRX900 for Interactive Displayss"
                 fill
                 className="object-contain p-8"
@@ -90,7 +90,7 @@ export default function Digital2() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-               AIWaft 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals
+              Maxhub Digital Board | E21 Series
               </h1>
               <p className="text-lg text-gray-600">
                 Shop with Confidence – Your Transaction is 100% Secure.
@@ -177,12 +177,7 @@ export default function Digital2() {
             {/* Key Features */}
             <div className="mb-8 grid grid-cols-2 gap-3">
               {[
-                "High-Resolution Display",
-                "Available in 65, 75, and 86 inches",
-                "Multi-Touch Capability",
-                "Interactive Pen & Fast Response",
-                "Built-in OS/Software",
-                "Wireless Connectivity & Collaboration"
+                
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
@@ -250,279 +245,90 @@ export default function Digital2() {
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
     <li className="flex items-start">
-     Introducing the AIWaft Interactive Flat Panel, a cutting-edge smart board designed to enhance collaborative learning and presentations. With a high-resolution 4K/8K display and multi-touch capability, this smart board ensures a seamless experience for education and business environments. Featuring wireless connectivity, built-in OS, and fast response with the interactive pen, the AIWaft smart board allows for smooth and efficient collaboration.
+  
     </li>
   </ul>
-           {/* Clean Product Specifications Table with Brand Highlight */}
+{/* Technical Specifications Table */}
 <div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
     Technical Specifications
   </h2>
-
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            AIWaft Private Limited<br />
-            AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018<br />
-            aiwaft20@gmail.com<br />
-            9691688972
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name 65-inch
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIW2065
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name 75-inch
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIW2075
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name 86-inch
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIW2086
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Flash Memory Installed Size
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            128 GB
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            RAM Memory Installed Size
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            8 GB
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Operating System
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Android 13
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Processor Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Android
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Graphics Card Description
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Integrated
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Resolution
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            4K
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Devices
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            IOS, Win, Mac, Android
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Special Features
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Glossy Screen, Ultrawide Screen, Touch Screen, Built-In Speakers
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Mounting Hardware
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Interactive Flat Panel: The main display unit
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Number of items
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Display Type
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            LED
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Standing screen display size
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            65 Inches, 75 Inches, 86 Inches
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Aspect Ratio
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            16:9
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Screen Resolution
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3840 x 2160
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Resolution
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1080 Pixels
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Cellular technology
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            4G
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Total USB ports
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            7
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connector Type
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Wi-Fi
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Device interface - primary
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Touchscreen with Stylus Support
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Packer
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Net Quantity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1.0 count
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Interactive Flat Panel
-          </td>
-        </tr>
-
-        {/* Existing specifications below */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Backlight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            D-LED
-          </td>
-        </tr>
-
-        {/* ... rest of your existing specifications ... */}
-        
-      </tbody>
-    </table>
+  <div className="overflow-x-auto">
+    <div className="inline-block min-w-full align-middle">
+      <div className="overflow-hidden rounded-lg border border-gray-200">
+        <table className="min-w-full divide-y divide-gray-200">
+          <tbody className="divide-y divide-gray-200 bg-white">
+            {[
+              { name: "Brand", value: "AIWaft", highlight: true },
+              { name: "Model 65", value: "E6521" },
+              { name: "Model 75", value: "E7521" },
+              { name: "Model 86", value: "E8621" },
+              { name: "Backlight Life (typ.)", value: "50,000 Hours" },
+              { name: "Resolution", value: "3840(H) X 2160(V)" },
+              { 
+                name: "Contrast Ratio", 
+                value: "1,200: 1 (Typ.)\n50,000: 1 (Dynamic)",
+                whitespace: "pre-line" 
+              },
+              { name: "Colour Depth", value: "1.07B (10bit)" },
+              { name: "Colour Accuracy", value: "Delta E ≤ 2" },
+              { 
+                name: "Eyes Care", 
+                value: "TÜV Low Blue Light\nTÜV Flicker Free",
+                whitespace: "pre-line"
+              },
+              { name: "Panel Brightness", value: "400 nits" },
+              { name: "Operating System", value: "Android 13.0" },
+              { name: "Backlight Life (typ.)", value: "50,000 Hours" },
+              { name: "RAM", value: "8GB" },
+              { name: "ROM", value: "64GB" },
+              { name: "CPU", value: "2.0GHz quad-core ARM A55" },
+              { name: "GPU", value: "Mali-G52 MP2" },
+              { name: "Sound Channel", value: "2.0" },
+              { name: "Power Output", value: "2×20W" },
+              { 
+                name: "Touch Technology", 
+                value: "Intelligent Touchscreen Technology (infrared recognition)" 
+              },
+              { 
+                name: "Multitouch Capabilities", 
+                value: "Up to 40 touch points (OS dependent)" 
+              },
+             
+            ].map((spec, i) => (
+              <tr
+                key={i}
+                className={`${
+                  spec.highlight
+                    ? "bg-blue-50"
+                    : i % 2 === 0
+                    ? ""
+                    : "bg-gray-50"
+                }`}
+              >
+                <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                  {spec.name}
+                </td>
+                <td
+                  className={`px-4 sm:px-6 py-4 text-sm ${
+                    spec.highlight
+                      ? "font-bold text-blue-800"
+                      : "text-gray-500"
+                  } ${
+                    spec.whitespace ? spec.whitespace : 
+                    (spec.name.length > 15 || spec.value.length > 50
+                      ? "whitespace-normal"
+                      : "whitespace-nowrap")
+                  }`}
+                >
+                  {spec.value}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
 </div>
           </div>
