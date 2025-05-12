@@ -6,7 +6,7 @@ import { StarIcon } from "@heroicons/react/solid";
 import { CheckCircleIcon } from "@heroicons/react/solid";
 
 
-export default function Camcart1() {
+export default function CableCart2() {
   const [quantity, setQuantity] = useState(1);
 
   const increment = () => setQuantity((q) => q + 1);
@@ -20,8 +20,8 @@ export default function Camcart1() {
           <div className="flex flex-col lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
-                src="/shop/cam1.jpg"
-                alt="AIWaft 4K PTZ Camera Pro"
+                src="/shop/cable1.png"
+                alt="AIWaft 10m USB 3.0 Extension Cable, Male to Female"
                 fill
                 className="object-contain p-8"
                 priority
@@ -35,7 +35,7 @@ export default function Camcart1() {
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
                 src="/shop/aboutcam1.png" // Replace with your about section image if different
-                alt="4K PTZ Camera Features"
+                alt="AIWaft 10m USB 3.0 Extension Cable, Male to Female"
                 fill
                 className="object-contain p-8"
               />
@@ -48,21 +48,13 @@ export default function Camcart1() {
                 className="object-contain p-8"
               />
             </div>
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/aboutcam1-2.png" // Replace with your about section image if different
-                alt="4K PTZ Camera Features"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft 4K PTZ Camera Pro Lens
+                AIWaft 10m USB 3.0 Extension Cable, Male to Female
               </h1>
               <p className="text-lg text-gray-600">
                 12X Zoom • Auto Tracking • 4K Resolution
@@ -86,13 +78,13 @@ export default function Camcart1() {
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
                 <span className="text-4xl font-bold text-gray-900">
-                  ₹40,000
+                  ₹4500
                 </span>
                 <span className="text-lg text-gray-500 line-through">
-                  ₹60,000
+                  ₹5500
                 </span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹20,000
+                  Save ₹ 1000
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">

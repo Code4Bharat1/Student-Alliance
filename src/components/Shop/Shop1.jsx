@@ -284,7 +284,7 @@ const Shop = () => {
       category: "Cable",
       isNew: false,
       image: "/Shop/cable1.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/cable1",
     },
     {
       id: 25,
@@ -295,7 +295,7 @@ const Shop = () => {
       category: "Cable",
       isNew: false,
       image: "/Shop/cable1.png",
-      cartLink: "addtocart/camcart12",
+      cartLink: "addtocart/cable2",
     },
     //Speaker
     {
