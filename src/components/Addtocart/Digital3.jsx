@@ -4,11 +4,11 @@ import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
-export default function Digital1() {
+export default function Digital3() {
   const sizeOptions = {
-    "65": { unitPrice: 100000, originalPrice: 150000 },
-    "75": { unitPrice: 121093, originalPrice: 190000 },
-    "86": { unitPrice: 180000, originalPrice: 240000 }
+    "65": { unitPrice: 118000, originalPrice: 150000 },
+    "75": { unitPrice: 185000, originalPrice: 230000 },
+    "86": { unitPrice: 314000, originalPrice: 364000 }
   };
 
   const [quantity, setQuantity] = useState(1);
@@ -37,8 +37,8 @@ export default function Digital1() {
           <div className="flex flex-col lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
-                src="/shop/digital-d1.jpg"
-                alt="AIWaft 4K PTZ Camera Pro"
+                src="/shop/digital-d3.png"
+                alt="AIWaft 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals"
                 fill
                 className="object-contain p-8"
                 priority
@@ -51,7 +51,7 @@ export default function Digital1() {
             {/* About Section Image - Moved to left side */}
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D11.png"
+                src="/shop/D41.png"
                 alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
@@ -59,7 +59,7 @@ export default function Digital1() {
             </div>
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D12.png"
+                src="/shop/D42.png"
                 alt="AIWaft OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
@@ -67,28 +67,21 @@ export default function Digital1() {
             </div>
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D13.png"
-                alt="AIWaft OPS SRX900 for Interactive Displayss"
+                src="/shop/D43.png"
+                alt="Maxhub Digital Board | U3 Series"
                 fill
                 className="object-contain p-8"
               />
             </div>
              <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/D14.png"
+                src="/shop/D44.png"
                 alt="AIWaft OPS SRX900 for Interactive Displayss"
                 fill
                 className="object-contain p-8"
               />
             </div>
-             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/D15.png"
-                alt="AIWaft OPS SRX900 for Interactive Displayss"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
+             
             
           
           </div>
@@ -97,7 +90,7 @@ export default function Digital1() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft Turbo Tab – AI-Powered 4K Interactive Flat Panel | Smart Digital Board for Teaching, Classrooms & Online Learning | Android 14, Multi-Touch
+              Maxhub Digital Board | U3 Series
               </h1>
               <p className="text-lg text-gray-600">
                 Shop with Confidence – Your Transaction is 100% Secure.
@@ -184,12 +177,12 @@ export default function Digital1() {
             {/* Key Features */}
             <div className="mb-8 grid grid-cols-2 gap-3">
               {[
-                "Smart interactive panel with AI integration",
+                "High-Resolution Display",
                 "Available in 65, 75, and 86 inches",
-                "Up to 40-point touch for smooth interaction",
-                "EDLA certified for seamless app integration",
-                "Wi-Fi 6, Bluetooth 5.0, HDMI, USB-C & more",
-                "Perfect for schools, colleges, and offices"
+                "Multi-Touch Capability",
+                "Interactive Pen & Fast Response",
+                "Built-in OS/Software",
+                "Wireless Connectivity & Collaboration"
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
@@ -251,24 +244,17 @@ export default function Digital1() {
                 </div>
               ))}
             </div>
-
 <br /> <br />
              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    AIWaft Turbo Tab Details
+   Description
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
     <li className="flex items-start">
-      Upgrade your classroom with the AIWaft Turbo Tab, a next-gen AI-powered interactive flat panel designed for seamless teaching and collaboration. With a 4K Ultra HD display available in 65, 75, and 86 inches, it delivers crystal-clear visuals and smooth multi-touch functionality.
-      <br/>
-Powered by Android 14 (EDLA Certified) and a Quad-Core ARM Cortex A73 processor, it ensures fast performance, making it perfect for digital classrooms, online teaching, and corporate presentations. The zero bonding technology enhances writing accuracy, while AG toughened glass ensures durability.
-
-
+     Introducing the AIWaft Interactive Flat Panel, a cutting-edge smart board designed to enhance collaborative learning and presentations. With a high-resolution 4K/8K display and multi-touch capability, this smart board ensures a seamless experience for education and business environments. Featuring wireless connectivity, built-in OS, and fast response with the interactive pen, the AIWaft smart board allows for smooth and efficient collaboration.
     </li>
   </ul>
-
-
-            {/* Clean Product Specifications Table with Brand Highlight */}
-          <div className="mt-12 border-t border-gray-100 pt-8">
+           {/* Clean Product Specifications Table with Brand Highlight */}
+<div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
     Technical Specifications
   </h2>
@@ -290,198 +276,56 @@ Powered by Android 14 (EDLA Certified) and a Quad-Core ARM Cortex A73 processor,
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
             Manufacturer
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Number
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Turbo Tab
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Screen Size
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            65, 75, 86 inch
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Backlight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            D-LED
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Resolution
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            4K, 3840 x 2160 (Ultra HD)
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Aspect Ratio
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            16:9
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Brightness (Typical)
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            450 nits
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Contrast Ratio
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1200:1 (Min), 5000:1 (Typ)
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Glass Protection
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AG Toughened Glass 7 Mohs
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Frequency
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            60Hz
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Response Time
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            &lt;8ms
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            NTSC
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            72%
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Haze
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            25%
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color Depth
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            10 Bit
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Operating Hours
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            24h x 7
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Viewing Angle
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            178/178
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Touch Technology
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Infrared Optical
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Touch Points
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Up to 40 Points Multi-touch
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Bonding
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Zero Bonding
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Minimum Touch Objective
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3mm
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Writing Height
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2mm
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Touch Accuracy
-          </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            ±1.5mm for 90% of the screen area<br />
-            ±2mm around 10% of the edges
+            AIWaft Private Limited<br />
+            AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018<br />
+            aiwaft20@gmail.com<br />
+            9691688972
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Model Name 65-inch
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            AIW2065
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Model Name 75-inch
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            AIW2075
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Model Name 86-inch
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            AIW2086
+          </td>
+        </tr>
+
+        <tr>
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            Flash Memory Installed Size
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            128 GB
+          </td>
+        </tr>
+
+        <tr className="bg-gray-50">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+            RAM Memory Installed Size
+          </td>
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+            8 GB
           </td>
         </tr>
 
@@ -490,157 +334,67 @@ Powered by Android 14 (EDLA Certified) and a Quad-Core ARM Cortex A73 processor,
             Operating System
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Android 14 EDLA Certified
+            Android 13
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Processor
+            Processor Brand
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Quad Core ARM Cortex A73x4
+            Android
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            GPU
+            Graphics Card Description
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Mali G52
+            Integrated
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            System Memory
+            Resolution
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            8GB DDR4
+            4K
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Internal Storage
+            Compatible Devices
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            128GB eMMC
+            IOS, Win, Mac, Android
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            HDMI In
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            HDMI Out
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            VGA In
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            DP In
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            C-Type
+            Special Features
           </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            2 (1xFront Full Function 65W+1X Rear USB 2.0 + DP +5V3A)
+            Glossy Screen, Ultrawide Screen, Touch Screen, Built-In Speakers
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio In
+            Mounting Hardware
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
+            Interactive Flat Panel: The main display unit
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            RJ45 (LAN)
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2 (1X In + 1X Out)
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            RS232
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Touch Out
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3 USB Type-B
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            USB 3.0
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            USB 2.0
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            SPDIF
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            TF Card Slot
+            Number of items
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
             1
@@ -649,129 +403,124 @@ Powered by Android 14 (EDLA Certified) and a Quad-Core ARM Cortex A73 processor,
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio Out
+            Display Type
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
+            LED
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Wireless
+            Standing screen display size
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Wi-Fi 6
+            65 Inches, 75 Inches, 86 Inches
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Bluetooth
+            Aspect Ratio
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            BT 5.0
+            16:9
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            OPS Slot
+            Screen Resolution
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Available
+            3840 x 2160
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Speaker Type
+            Resolution
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Built-in Speaker
+            1080 Pixels
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Speaker Output
+            Cellular technology
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2X 20W
+            4G
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Operating Temperature
+            Total USB ports
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            0°C - 40°C
+            7
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Storage Temperature
+            Connector Type
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            -20°C - 60°C
+            Wi-Fi
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Operating Humidity
+            Device interface - primary
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            10%RH - 90%RH
+            Touchscreen with Stylus Support
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Storage Humidity
+            Packer
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            10%RH - 90%RH
+            AIWaft
           </td>
         </tr>
 
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimension (mm)
+            Net Quantity
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1720 X 1025 X 89.5 mm
+            1.0 count
           </td>
         </tr>
 
         <tr className="bg-gray-50">
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Weight (Kg)
+            Generic Name
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            70
+            Interactive Flat Panel
           </td>
         </tr>
 
+        {/* Existing specifications below */}
         <tr>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power
+            Backlight
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            100-240 V AC, 50 Hz, ±10% Wide Range
+            D-LED
           </td>
         </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Standard Accessories
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            AC Power Cord, 2X Stylus, Remote Control, Wall Mount Bracket
-          </td>
-        </tr>
+        {/* ... rest of your existing specifications ... */}
+        
       </tbody>
     </table>
   </div>
