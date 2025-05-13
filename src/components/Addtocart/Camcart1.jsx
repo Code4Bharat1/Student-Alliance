@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import React, { useRef, useEffect } from 'react'; //scroll in mobile
 import { StarIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 export default function Camcart1() {
@@ -17,42 +18,87 @@ export default function Camcart1() {
   const totalDiscountPrice = discountPrice * quantity;
   const totalSaved = totalDiscountPrice - totalPrice;
 
+  //Scroll in Mobile
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollContainerRef = useRef(null);
+  const images = ["/shop/cam1.jpg", "/shop/aboutcam1.png", "/shop/aboutcam1-1.png", "/shop/aboutcam1-2.png"];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollContainerRef.current) {
+        const scrollLeft = scrollContainerRef.current.scrollLeft;
+        const containerWidth = scrollContainerRef.current.clientWidth;
+        const newIndex = Math.round(scrollLeft / containerWidth);
+        setActiveIndex(newIndex);
+      }
+    };
+
+    const container = scrollContainerRef.current;
+    container?.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      container?.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 p-8">
-          {/* Left Section: Main Product Image */}
-          <div className="flex flex-col lg:w-1/2">
-            <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
-              <Image
-                src="/shop/cam1.jpg"
-                alt="AIWaft 4K PTZ Camera Pro"
-                fill
-                className="object-contain p-8"
-                priority
-              />
-              <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                HOT DEAL
-              </div>
-            </div>
 
-            {/* About Section Images */}
-            {["aboutcam1.png", "aboutcam1-1.png", "aboutcam1-2.png"].map(
-              (img, i) => (
-                <div
-                  key={i}
-                  className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50"
-                >
-                  <Image
-                    src={`/shop/${img}`}
-                    alt="4K PTZ Camera Features"
-                    fill
-                    className="object-contain p-8"
-                  />
+          {/* Left Section: Main Product Image */}
+         <div className="lg:w-1/2">
+      <div className="relative">
+        {/* Scrollable container */}
+        <div 
+          ref={scrollContainerRef}
+          className="flex flex-row lg:flex-col overflow-x-auto snap-x snap-mandatory space-x-4 lg:space-x-0 pb-4 lg:pb-0 hide-scrollbar"
+        >
+          {images.map((img, i) => (
+            <div
+              key={i}
+              className="relative rounded-xl overflow-hidden aspect-square bg-gray-50 min-w-[85vw] sm:min-w-[60vw] lg:min-w-0 snap-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <Image
+                src={img}
+                alt={i === 0 ? "AIWaft 4K PTZ Camera Pro" : `Feature ${i}`}
+                fill
+                className="object-contain p-8 hover:scale-105 transition-transform duration-500"
+                priority={i === 0}
+              />
+              {i === 0 && (
+                <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                  HOT DEAL
                 </div>
-              )
-            )}
-          </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        {/* Scroll indicators with active state */}
+        <div className="lg:hidden flex justify-center space-x-2 mt-4">
+          {images.map((_, i) => (
+            <div 
+              key={i}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${i === activeIndex ? 'bg-purple-600 w-4' : 'bg-gray-300 bg-opacity-60'}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Style to hide scrollbar but keep functionality */}
+      <style jsx>{`
+        .hide-scrollbar::-webkit-scrollbar {
+          display: none;
+        }
+        .hide-scrollbar {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
+    </div>
+
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">

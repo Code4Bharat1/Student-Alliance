@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import React, { useRef, useEffect } from 'react'; //scroll in mobile
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Digital2() {
@@ -22,6 +23,29 @@ export default function Digital2() {
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
 
+  //Scroll in Mobile
+        const [activeIndex, setActiveIndex] = useState(0);
+        const scrollContainerRef = useRef(null);
+        const images = ["/shop/digital-d2.png", "/shop/D21.png", "/shop/D22.png", "/shop/D23.png", "/shop/D24.png", ];
+      
+        useEffect(() => {
+          const handleScroll = () => {
+            if (scrollContainerRef.current) {
+              const scrollLeft = scrollContainerRef.current.scrollLeft;
+              const containerWidth = scrollContainerRef.current.clientWidth;
+              const newIndex = Math.round(scrollLeft / containerWidth);
+              setActiveIndex(newIndex);
+            }
+          };
+      
+          const container = scrollContainerRef.current;
+          container?.addEventListener('scroll', handleScroll);
+          
+          return () => {
+            container?.removeEventListener('scroll', handleScroll);
+          };
+        }, []);
+
   const formatPrice = (price) =>
     new Intl.NumberFormat("en-IN", {
       style: "currency",
@@ -34,57 +58,56 @@ export default function Digital2() {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 p-8">
           {/* Left Section */}
-          <div className="flex flex-col lg:w-1/2">
-            <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
-              <Image
-                src="/shop/digital-d1.jpg"
-                alt="AIWaft 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals"
-                fill
-                className="object-contain p-8"
-                priority
-              />
-              <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                HOT DEAL
-              </div>
-            </div>
-
-            {/* About Section Image - Moved to left side */}
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/D21.png"
-                alt="AIWaft OPS SRX900 for Interactive Displays"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/D22.png"
-                alt="AIWaft OPS SRX900 for Interactive Displays"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/D23.png"
-                alt="AIWaft OPS SRX900 for Interactive Displayss"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/D24.png"
-                alt="AIWaft OPS SRX900 for Interactive Displayss"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-             
-            
-          
-          </div>
+         <div className="lg:w-1/2">
+                         <div className="relative">
+                           {/* Scrollable container */}
+                           <div 
+                             ref={scrollContainerRef}
+                             className="flex flex-row lg:flex-col overflow-x-auto snap-x snap-mandatory space-x-4 lg:space-x-0 pb-4 lg:pb-0 hide-scrollbar"
+                           >
+                             {images.map((img, i) => (
+                               <div
+                                 key={i}
+                                 className="relative rounded-xl overflow-hidden aspect-square bg-gray-50 min-w-[85vw] sm:min-w-[60vw] lg:min-w-0 snap-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+                               >
+                                 <Image
+                                   src={img}
+                                   alt={i === 0 ? "AIWaft OPS SRX900 for Interactive Displays" : `Feature ${i}`}
+                                   fill
+                                   className="object-contain p-8 hover:scale-105 transition-transform duration-500"
+                                   priority={i === 0}
+                                 />
+                                 {i === 0 && (
+                                   <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                                     HOT DEAL
+                                   </div>
+                                 )}
+                               </div>
+                             ))}
+                           </div>
+                   
+                           {/* Scroll indicators with active state */}
+                           <div className="lg:hidden flex justify-center space-x-2 mt-4">
+                             {images.map((_, i) => (
+                               <div 
+                                 key={i}
+                                 className={`w-3 h-3 rounded-full transition-all duration-300 ${i === activeIndex ? 'bg-purple-600 w-4' : 'bg-gray-300 bg-opacity-60'}`}
+                               />
+                             ))}
+                           </div>
+                         </div>
+                   
+                         {/* Style to hide scrollbar but keep functionality */}
+                         <style jsx>{`
+                           .hide-scrollbar::-webkit-scrollbar {
+                             display: none;
+                           }
+                           .hide-scrollbar {
+                             -ms-overflow-style: none;
+                             scrollbar-width: none;
+                           }
+                         `}</style>
+                       </div>
 
           {/* Right Section */}
           <div className="lg:w-1/2">
