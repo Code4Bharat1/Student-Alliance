@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
-
+import Link from "next/link";
 export default function Camcart1() {
   const [quantity, setQuantity] = useState(1);
 
@@ -163,9 +163,11 @@ export default function Camcart1() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
+             <Link href='/mycart'>
               <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
                 ADD TO CART
               </button>
+             </Link>
               <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>

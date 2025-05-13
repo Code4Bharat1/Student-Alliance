@@ -242,106 +242,135 @@ export default function LightCart2() {
 
 
             {/* Clean Product Specifications Table with Brand Highlight */}
-         <div className="mt-12 border-t border-gray-100 pt-8">
+<div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">Technical Specifications</h2>
 
   <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Brand</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">AIWaft</td>
-        </tr>
+    <div className="overflow-x-auto"> {/* Added this wrapper div */}
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {/* Highlighted Brand Row */}
+          <tr className="bg-blue-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Brand</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">AIWaft</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Manufacturer</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIWaft Pvt Ltd</td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Manufacturer</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIWaft Pvt Ltd</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIW20RL</td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIW20RL</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Ring Fill Light</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">RL 18 ring light</td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Ring Fill Light</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">RL 18 ring light</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Input Voltage</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">110V-220V</td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Input Voltage</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">110V-220V</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Frequency</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">50/60HZ</td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Frequency</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">50/60HZ</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Total Power</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45W</td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Total Power</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45W</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Luminance</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4500lm</td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Luminance</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">4500lm</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CCT</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2700K-6500K</td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CCT</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2700K-6500K</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CRI</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">85</td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CRI</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">85</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Lighting Mode</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 Modes Cold/Warm/Neutral white</td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Lighting Mode</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 Modes Cold/Warm/Neutral white</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Dimming Mode</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Remote Control + Knob</td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Dimming Mode</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Remote Control + Knob</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Outer Diameter</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45CM</td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Outer Diameter</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">45CM</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Inner Diameter</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">34cm</td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Inner Diameter</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">34cm</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Material</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ABS shell + Curved PC cover</td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Material</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ABS shell + Curved PC cover</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Light Diffusion Lampshade</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">PC frosted surface</td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Light Diffusion Lampshade</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">PC frosted surface</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Assembly Method</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Snap + Ultrasonic</td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Assembly Method</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Snap + Ultrasonic</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Standard Accessories</td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">18" Arc Ring Light, Remote control, Phone holders, Handle bag</td>
-        </tr>
-      </tbody>
-    </table>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Thickness of Light Source Plate</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.2mm</td>
+          </tr>
+
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">LED Lamp Beads</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Model 2835, 480pcs</td>
+          </tr>
+
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Power of LED Lamp Beads</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0.2w/pcs</td>
+          </tr>
+
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Supply Line</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3m 0.5 square meter</td>
+          </tr>
+
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Standard Accessories</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">18" Arc Ring Light, 1 pcs Remote control, 3 meter cable with plug, 2pcs phone holder, 1pc handle bag</td>
+          </tr>
+
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Patent</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ZL201930358041.1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+
+
 
           </div>
         </div>

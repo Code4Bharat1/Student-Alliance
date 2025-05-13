@@ -41,6 +41,8 @@ export default function Camcart5() {
                           "Aboutcam5-img1.png",
                           "Aboutcam5-img2.png",
                           "Aboutcam5-img3.png",
+                          "Aboutcam5-img4.png",
+                          "Aboutcam5-img5.png",
                         ].map((img, i) => (
                           <div
                             key={i}
