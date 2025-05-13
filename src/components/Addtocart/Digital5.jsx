@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import React, { useRef, useEffect } from 'react'; //scroll in mobile
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Digital5() {
