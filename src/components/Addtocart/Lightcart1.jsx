@@ -242,198 +242,201 @@ export default function LightCart1() {
 
 
             {/* Clean Product Specifications Table with Brand Highlight */}
-           <div className="mt-12 border-t border-gray-100 pt-8">
+          <div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
     Technical Specifications
   </h2>
 
   <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
-          </td>
-        </tr>
+    <div className="overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {/* Highlighted Brand Row */}
+          <tr className="bg-blue-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+              Brand
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+              AIWaft
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft Pvt Ltd
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Manufacturer
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              AIWaft Pvt Ltd
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWRL13
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Model
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              AIWRL13
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Material
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            ABS + PC
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Material
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              ABS + PC
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Size
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            380 × 330 × 40 mm
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Size
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              380 × 330 × 40 mm
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Net Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            0.52 kg
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Net Weight
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              0.52 kg
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            15W (5V USB)
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Power
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              15W (5V USB)
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color Temperature
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2700K–6500K
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Color Temperature
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              2700K–6500K
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Brightness
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Up to 860LM
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Brightness
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              Up to 860LM
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimming Range
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            10–100%
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Dimming Range
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              10–100%
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            LED Beads
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            84 White + 84 Yellow
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              LED Beads
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              84 White + 84 Yellow
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Accessories
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Phone Holder
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Accessories
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              Phone Holder
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Input Voltage
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            220V
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Input Voltage
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              220V
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Output Voltage/Current
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            5V3A
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Output Voltage/Current
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              5V3A
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Actual Color Rendering Index
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            RA≥80
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Actual Color Rendering Index
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              RA≥80
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Overall Lumens
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            720LM (white light), 684LM (Warm light), 860LM (Neutral light)
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Overall Lumens
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              720LM (white light), 684LM (Warm light), 860LM (Neutral light)
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimming Mode
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Keystroke
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Dimming Mode
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              Keystroke
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            LED Lamp Bead Light Source
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2385 yellow and white light 84 each
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              LED Lamp Bead Light Source
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              2385 yellow and white light 84 each
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Lamp Bead Diffusion Angle
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            120 degrees
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Lamp Bead Diffusion Angle
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              120 degrees
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Standard Configuration
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Ring light, 1 mobile phone clip, 1 mobile phone holder
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+              Standard Configuration
+            </td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              Ring light, 1 mobile phone clip, 1 mobile phone holder
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
+
           </div>
         </div>
       </div>

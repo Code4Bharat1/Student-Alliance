@@ -5,12 +5,12 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import { CheckCircleIcon } from "@heroicons/react/solid";
 
-export default function LightCart3() {
+export default function LightCart4() {
   const [quantity, setQuantity] = useState(1);
   
   // Base price and discount information
-  const basePrice = 53000;
-  const originalPrice = 60000;
+  const basePrice = 41300;
+  const originalPrice = 50000;
   const pricePerUnit = basePrice;
   
   // Calculate current price based on quantity
@@ -29,8 +29,8 @@ export default function LightCart3() {
           <div className="flex flex-col lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
-                src="/shop/light3.png"
-                alt="Diamond solution- 9 lights"
+                src="/shop/light4.png"
+                alt="Gold solution - 7 lights"
                 fill
                 className="object-contain p-8"
                 priority
@@ -43,8 +43,8 @@ export default function LightCart3() {
             {/* About Section Image - Moved to left side */}
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
-                src="/shop/aboutlight3.png"
-                alt="Diamond solution- 9 lights"
+                src="/shop/aboutlight4.png"
+                alt="Gold solution - 7 lights"
                 fill
                 className="object-contain p-8"
               />
@@ -55,7 +55,7 @@ export default function LightCart3() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                Diamond solution- 9 lights
+                Gold solution - 7 lights
               </h1>
             </div>
 
@@ -190,21 +190,21 @@ export default function LightCart3() {
             </div>
             <br /> <br /> 
 
-                {/* Features */}
+              {/* Features */}
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
   About This Product
 </h2>
 <li className="flex items-start">
     <span className="text-purple-500 mr-2">•</span>
-    <span className="text-black"><strong>Professional Lighting Grid:</strong> Strategically placed panels create uniform, shadow-free illumination for studio-quality results</span>
+    <span className="text-black"><strong>Easy Installation:</strong>Quick and hassle-free setup with simple mounting options for immediate illumination.</span>
   </li>
   <li className="flex items-start">
     <span className="text-purple-500 mr-2">•</span>
-    <span className="text-black"><strong>Clean Aesthetic:</strong> Unified black frames and hidden wiring maintain a polished, distraction-free environment</span>
+    <span className="text-black"><strong>Superior Brightness:</strong> Provides clear, bright light to enhance visibility and comfort.</span>
   </li>
   <li className="flex items-start">
     <span className="text-purple-500 mr-2">•</span>
-    <span className="text-black"><strong>Modular Design:</strong> Easy-to-reposition panels adapt to any shooting scenario or space configuration</span>
+    <span className="text-black"><strong>Environmentally Friendly:</strong>  Emits less heat and contains no hazardous materials like mercury.</span>
   </li>
 
 <br />
@@ -214,18 +214,14 @@ export default function LightCart3() {
 <ul className="space-y-3 text-gray-700 text-sm">
   <li className="flex items-start">
     <span className="text-purple-500 mr-2">•</span>
-    <span><strong>4 Upper LED Panels:</strong> 2×2 LEDs each with sleek black frames and hidden underground cabling for a clutter-free, professional setup</span>
+    <span><strong>4 Upper LED Panels:</strong> 22 LEDs each with black frames and underground cabling.</span>
   </li>
   <li className="flex items-start">
     <span className="text-purple-500 mr-2">•</span>
-    <span><strong>3 Lower LED Panels:</strong> 2×2 LEDs each on movable floor stands with black frames and discreet cabling for flexible positioning</span>
-  </li>
-  <li className="flex items-start">
-    <span className="text-purple-500 mr-2">•</span>
-    <span><strong>2 Side LED Panels:</strong> Balanced left & right lighting with height-adjustable floor stands for perfect angle customization</span>
-  </li>
-  
+    <span><strong>3 Lower LED Panels:</strong> 22 LEDs each with floor movable stands, black frames, and underground cabling.</span>
+  </li> 
 </ul>
+
 
 
           </div>
