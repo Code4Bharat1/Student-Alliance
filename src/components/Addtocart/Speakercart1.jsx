@@ -246,148 +246,93 @@ export default function SpeakerCart1() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
-          </td>
-        </tr>
+  <div className="overflow-x-auto rounded-lg border border-gray-200">
+  <table className="min-w-full divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 bg-white">
+      <tr className="bg-blue-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Brand</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">AIWaft</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIW20B1</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Colour</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Black</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Included Components</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">M3B Speakerphone, USB Dongle for Bluetooth, Instructions</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Polar Pattern</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Omnidirectional</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Power Source</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Battery Powered</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Number of Batteries</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 Lithium Polymer batteries required.</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Signal-to-Noise Ratio</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">95 dB</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Hardware Platform</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Laptop, Smartphone</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Manufacturer</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIWaft Pvt Ltd</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">UPC</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">747607503748</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Number of Items</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Speakers Nominal Output Power</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5 Watts</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Speaker Surround Sound Channel Configuration</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.0</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Speakers Maximum Output Power</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10 Watts</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Batteries Included</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Batteries Required</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Yes</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Mounting Type</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ceiling Mount</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Includes Rechargeable Battery</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Yes</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Item Weight</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">798 g</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        {/* Conference Speaker Specifications */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIW20B1 (M3B Speakerphone)
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Black
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Included Components
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Speakerphone, Bluetooth USB dongle, User manual
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio Technology
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Omnidirectional pickup, 95dB SNR
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Rechargeable Li-Po battery (included)
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Speaker Output
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            5W RMS (10W peak)
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connectivity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Bluetooth via USB dongle
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Devices
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Laptops, Smartphones
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            798g
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Mounting
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Ceiling mount compatible
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft Pvt Ltd
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Package Contents
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1 Speakerphone unit with accessories
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            UPC
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            747607503748
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Conference Speakerphone System
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
           </div>
         </div>

@@ -246,139 +246,155 @@ export default function MicCart2() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Ahuja
-          </td>
-        </tr>
+ <div className="overflow-x-auto rounded-lg border border-gray-200">
+  <table className="min-w-[1200px] divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 bg-white">
+      <tr className="bg-blue-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+          Compatible Devices
+        </td>
+        <td className="px-6 py-4 text-sm text-blue-800">
+          Laptop, Camera, Smartphone, Personal Computer, Camera, Smartphone
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Colour
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">Black</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Polar Pattern
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">Omnidirectional</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Included Components
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          5M long cable with collar mic, TRRS to TRS connector, Pouch, Windshield/Spong
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item Weight
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">240 Grams</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Impedance
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">1000 Ohm</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item dimensions (L x W x H)
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          6 x 4 x 4 Centimeters
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Material
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">Plastic</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Signal-to-Noise Ratio
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">74 dB</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Hardware Platform
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">Laptops, Smartphones</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Frequency Response
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">15000 Hz</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Noise Level
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">74 dB</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Manufacturer
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Ahuja, AHUJA RADIOS 215, Okhla Industrial Estate, New Delhi-110 020, India
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Product Dimensions
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">6 x 4 x 4 cm; 240 g</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item model number
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">MTP-20</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Manufacturer
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">Ahuja</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item Weight
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">240 g</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Manufacturer Code
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">B08G4XZ4ZR</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Packer
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          AHUJA RADIOS 215, Okhla Industrial Estate, New Delhi-110 020, India
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Date First Available
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">18 August 2020</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Net Quantity
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">1 Piece</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Generic Name
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">Microphone</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        {/* Wired Microphone Specifications */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            MTP-20
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Black
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Polar Pattern
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Omnidirectional
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Included Components
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            5M cable with collar mic, TRRS-TRS adapter, Pouch, Windshield
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            240g
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Impedance
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1000 Ohm
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimensions
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            6 x 4 x 4 cm
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Material
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Plastic
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio Specifications
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            74dB SNR, 15kHz frequency response
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Devices
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Laptops, Smartphones, PCs, Cameras
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Ahuja Radios, Okhla Industrial Estate, New Delhi
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Package Contents
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1 Piece
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Wired Omnidirectional Microphone
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
           </div>
         </div>

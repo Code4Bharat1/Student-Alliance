@@ -246,130 +246,131 @@ export default function MicCart() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
-          </td>
-        </tr>
+ <div className="overflow-x-auto rounded-lg border border-gray-200">
+  <table className="min-w-[900px] divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 bg-white">
+      {/* Highlighted Brand Row */}
+      <tr className="bg-blue-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+          Brand
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+          AIWaft
+        </td>
+      </tr>
 
-        {/* Wireless Microphone Specifications */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft Pvt Ltd
-          </td>
-        </tr>
+      {/* Wireless Microphone Specifications */}
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Manufacturer
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          AIWaft Pvt Ltd
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWMIC20
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Model
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          AIWMIC20
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connectivity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2.4GHz Wireless
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Connectivity
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          2.4GHz Wireless
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Special Features
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Long range (100m), Noise Reduction, Real-time monitoring, Hi-Fi audio
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Special Features
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Long range (100m), Noise Reduction, Real-time monitoring, Hi-Fi audio
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Devices
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Smartphones, Tablets, Laptops, Cameras, PCs
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Compatible Devices
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Smartphones, Tablets, Laptops, Cameras, PCs
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Included Components
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            2 Microphones, Receiver, Charging Case, Cables, Clips, Manual
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Included Components
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          2 Microphones, Receiver, Charging Case, Cables, Clips, Manual
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            115g
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Weight
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          115g
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power Source
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Rechargeable Li-ion Battery
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Power Source
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          Rechargeable Li-ion Battery
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio Quality
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            48kHz/24bit, 70dB SNR, 20Hz-20kHz range
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Audio Quality
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          48kHz/24bit, 70dB SNR, 20Hz-20kHz range
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimensions
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3.5 x 2.8 x 8.5 cm
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Dimensions
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          3.5 x 2.8 x 8.5 cm
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Package Contents
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            1 Count (2 mics + accessories)
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Package Contents
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          1 Count (2 mics + accessories)
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Wireless Lavalier Microphone
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Generic Name
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          Wireless Lavalier Microphone
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 </div>
           </div>
         </div>

@@ -243,130 +243,149 @@ export default function MicCart3() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Sennheiser
-          </td>
-        </tr>
+ <div className="overflow-x-auto rounded-lg border border-gray-200">
+  <table className="min-w-[1000px] divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 bg-white">
+      <tr className="bg-blue-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+          Included Components
+        </td>
+        <td className="px-6 py-4 text-sm text-blue-800">
+          ME 2 clip-on Microphone, Safety Guide, Quick Guide
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Polar Pattern
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Omnidirectional
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Audio Sensitivity
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          36 dB
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item Weight
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          23 Grams
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Impedance
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          2200 Ohm
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item Dimensions (L x W x H)
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          17 x 11 x 1.5 Centimeters
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Manufacturer
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Sennheiser, Am Labor 1, 30900 Wedemark, Germany Sennheiser electronic GmbH & Co. KG
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Product Dimensions
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          17 x 11 x 1.5 cm; 23 g
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item Model Number
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          507437
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item Weight
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          23 g
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          ASIN
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          B08CGN4ZB3
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Date First Available
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          2 May 2020
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Packer
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Am Labor 1, 30900 Wedemark, Germany Sennheiser electronic GmbH & Co. KG
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Importer
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Sennheiser Electronics India Pvt. Ltd.
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item Dimensions LxWxH
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          17 x 11 x 1.5 Centimeters
+        </td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Net Quantity
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          ME 2 clip-on Microphone, Safety Guide, Quick Guide
+        </td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Generic Name
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Microphone
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        {/* Sennheiser ME 2 Microphone Specifications */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            507437 (ME 2)
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Included Components
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            ME 2 clip-on microphone, Safety Guide, Quick Guide
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Polar Pattern
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Omnidirectional
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio Sensitivity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            36 dB
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            23g (Ultra-lightweight)
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Impedance
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2200 Ohm
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimensions
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            17 x 11 x 1.5 mm (Compact size)
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Sennheiser electronic GmbH & Co. KG, Germany
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Package Contents
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1 Microphone unit with accessories
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Frequency Response
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            20 Hz - 20 kHz
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connector Type
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3.5mm mini-jack
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Clip-on Lavalier Microphone
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
           </div>
         </div>

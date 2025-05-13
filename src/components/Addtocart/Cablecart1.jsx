@@ -240,175 +240,176 @@ export default function CableCart1() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
-          </td>
-        </tr>
+ <div className="overflow-x-auto rounded-lg border border-gray-200">
+  <table className="min-w-max divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 bg-white">
+      {/* Highlighted Brand Row */}
+      <tr className="bg-blue-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+          Brand
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+          AIWaft
+        </td>
+      </tr>
 
-        {/* Normal Specification Rows */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connector Type
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            USB 2.0
-          </td>
-        </tr>
+      {/* Normal Specification Rows */}
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Connector Type
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          USB 2.0
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Devices
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Laptop, Gaming Console, Monitor, Camera, Printer
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Compatible Devices
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Laptop, Gaming Console, Monitor, Camera, Printer
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Special Feature
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            24 Gold Plated Connectors, Plug & Play, 5000+ Bend Lifespan
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Special Feature
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          24 Gold Plated Connectors, Plug & Play, 5000+ Bend Lifespan
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Phone Models
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Scanner, Personal Computer, Printer
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Compatible Phone Models
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          Scanner, Personal Computer, Printer
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Colour
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Black
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Colour
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          Black
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connector Gender
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Male-to-Female
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Connector Gender
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          Male-to-Female
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Shape
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Round
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Shape
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          Round
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Number of Pins
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Number of Pins
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          1
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Net Quantity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1 Count
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Net Quantity
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          1 Count
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Item Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            180 Grams
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Item Weight
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          180 Grams
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connectivity Technology
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            USB
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Connectivity Technology
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          USB
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            USB 2.0 Type A Male to A Female Cable
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Model Name
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          USB 2.0 Type A Male to A Female Cable
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Number of Items
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Number of Items
+        </td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          1
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Mounting Hardware
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            1 USB 2.0 Type A Male to A Female Active Extension/Repeater Cable
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Mounting Hardware
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          1 USB 2.0 Type A Male to A Female Active Extension/Repeater Cable
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            AIWaft
-          </td>
-        </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Manufacturer
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          AIWaft
+        </td>
+      </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Packer
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018 / aiwaft20@gmail.com / +91 9691688972
-          </td>
-        </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Packer
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018 / aiwaft20@gmail.com / +91 9691688972
+        </td>
+      </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            USB 2.0 Type A Male to A Female Cable
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          Generic Name
+        </td>
+        <td className="px-6 py-4 text-sm text-gray-500">
+          USB 2.0 Type A Male to A Female Cable
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 </div>
           </div>
         </div>

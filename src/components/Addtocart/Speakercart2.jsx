@@ -246,157 +246,109 @@ export default function SpeakerCart2() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Ahuja
-          </td>
-        </tr>
+ <div className="overflow-x-auto rounded-lg border border-gray-200">
+  <table className="min-w-full divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 bg-white">
+      <tr className="bg-blue-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Material</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Plastic</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model Name</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">PS300TM</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Speaker Type</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Bookshelf</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Special Feature</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Multi Room Audio</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Recommended Uses For Product</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">For Music Player Players, For DVD Players</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Subwoofer Diameter</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">18 Inches</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Controller Type</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Remote Control</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Surround Sound Channel Configuration</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Colour</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Multicolor</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Included Components</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ahuja PS300TM 10 Watt speaker</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Product Dimensions</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">13D x 15W x 19H Centimeters</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Age Range (Description)</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Adult</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Item Weight</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.18 Kilograms</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Is Waterproof</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">False</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Warranty Type</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Limited</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Item Model Number</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AHUJA PS300TM</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Power Source</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AC</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Voltage</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">100 Volts</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Item Weight (Exact)</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 kg 180 g</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Manufacturer</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AHUJA</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Country of Origin</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">India</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ASIN</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">B09Z6QY96V</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Date First Available</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">29 April 2022</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Generic Name</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">PA Systems</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        {/* Speaker Specifications */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            PS300TM
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Speaker Type
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Bookshelf
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Special Features
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Multi-room audio, Remote control
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Recommended Use
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Music players, DVD players
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power Specifications
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            100V AC, 10W (6W/3W/1.5W selectable)
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio Configuration
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1-channel, 18" subwoofer
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Multicolor
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Material
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Plastic
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimensions
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            13D x 15W x 19H cm
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1.18 kg
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Included Components
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Ahuja PS300TM 10W speaker unit
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Warranty
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Limited warranty
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Country of Origin
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            India
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            ASIN
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            B09Z6QY96V
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            PA System Speaker
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
           </div>
         </div>

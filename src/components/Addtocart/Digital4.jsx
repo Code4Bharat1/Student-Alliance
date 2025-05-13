@@ -264,541 +264,311 @@ Eyes Care: TUV Low Blue light, TUV Flicker-free with ambient light sensor and an
     Technical Specifications
   </h2>
 
+ <div className="mt-12 border-t border-gray-100 pt-8">
+  <h2 className="text-2xl font-bold text-gray-900 mb-6">
+    Technical Specifications
+  </h2>
+
   <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          
-        </tr>
+    <div className="overflow-x-auto">
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {/* Highlighted Brand Row */}
+          <tr className="bg-blue-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Brand</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">AIWaft</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-             RAM
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-           8GB
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            8GB
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">RAM</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8GB</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            SSD
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            128GB
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">SSD</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">128GB</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Windows
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            10
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Windows</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model 65"
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            E6520C
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model 65"</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">E6520C</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model 75"
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            E7520C
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model 75"</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">E7520C</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model 86"
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            E8620C
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model 86"</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">E8620C</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Glass
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Anti-glare, Tempered
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Glass</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Anti-glare, Tempered</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Bonding
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Zero parallax
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Bonding</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Zero parallax</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Viewing Angle
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            178° (H/V)
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Viewing Angle</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">178° (H/V)</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Aspect Ratio
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            16:9
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Aspect Ratio</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">16:9</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Backlight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            DLED
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Backlight</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">DLED</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Resolution
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3840 x 2160
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Resolution</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3840 x 2160</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Contrast Ratio
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1200:1
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Contrast Ratio</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1200:1</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color Depth
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1.078 (10bit)
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Color Depth</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1.078 (10bit)</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color Gamut (typ.)
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            72% NTSC
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Color Gamut (typ.)</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">72% NTSC</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color Accuracy
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Delta E ≤ 2
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Color Accuracy</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Delta E ≤ 2</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Refresh Rate
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            60Hz
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Refresh Rate</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">60Hz</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Response Time
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            8ms
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Response Time</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8ms</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Operating System
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Android
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Operating System</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Android</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            CPU
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2.0GHz quad core ARM A55
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">CPU</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.0GHz quad core ARM A55</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            GPU
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Mali-G52 MP2
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">GPU</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Mali-G52 MP2</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Operating Temperature
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            0°C - 40°C
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Operating Temperature</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">0°C - 40°C</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Storage Temperature
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            -20°C - 60°C
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Storage Temperature</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">-20°C - 60°C</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Operating Humidity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            10% -90% RH
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Operating Humidity</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10% -90% RH</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Storage Humidity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            10% -90% RH
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Storage Humidity</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10% -90% RH</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Sound Channel
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2.0
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Sound Channel</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.0</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power Output
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2 x 12W
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Power Output</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 x 12W</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Touch Sensor
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Infrared (IR)
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Touch Sensor</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Infrared (IR)</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Touch Tool
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Finger, Gesture, Stylus
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Touch Tool</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Finger, Gesture, Stylus</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Multitouch Capabilities
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Up to 40 touch points (OS dependent)
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Multitouch Capabilities</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Up to 40 touch points (OS dependent)</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Response Time
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            ≤ 10ms
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Touch Accuracy</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">±1.5mm</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Touch Accuracy
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            ±1.5mm
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Object Recognition Range</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">23mm</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Object Recognition Range
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            23mm
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Stylus Type</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Passive dual nibs</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Stylus Type
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Passive dual nibs
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Supported Operating System (Touch Return)</td>
+            <td className="px-6 py-4 text-sm text-gray-500">Windows 10/Windows8/Windows7/WindowsXP/Android/Linux/Mac OS X/Chrome OS</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Supported Operating System (Touch Return)
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Windows 10/Windows8/Windows7/WindowsXP/Android/Linux/Mac OS X/Chrome OS
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Screen Share</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Yes</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Screen Share
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Yes
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">On Board Apps</td>
+            <td className="px-6 py-4 text-sm text-gray-500">Browser, Cloud Drive, System Keeper, Note, Palette, Annotate, Timer, Screen Record, Split Screen, Screen Lock, etc.</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power Output
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Yes
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Dimension (W x H x D)</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1488.1 x 896.3 x 88.3 mm</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            On Board Apps
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Browser, Cloud Drive, System Keeper, Note, Palette, Annotate, Timer, Screen Record, Split Screen, Screen Lock, etc.
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Shipping Dimension (W x H x D)</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1628 x 1024 x 208 mm</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimension (W x H x D)
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1488.1 x 896.3 x 88.3 mm
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">VESA</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">600 x 400 mm, M8 x 25 mm</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Shipping Dimension (W x H x D)
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1628 x 1024 x 208 mm
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Accessory</td>
+            <td className="px-6 py-4 text-sm text-gray-500">
+              3m Power Cord<br />
+              1.4m HDMI Cable<br />
+              5m USB Touch Cable (Type A-B)<br />
+              1.8m USB Type-C Cable<br />
+              Remote Control
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            VESA
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            600 x 400 mm, M8 x 25 mm
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">OPS Slot</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Yes, 3840 x 2160 @ 60fps</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Accessory
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            3m Power Cord<br />
-            1.4m HDMI Cable<br />
-            5m USB Touch Cable (Type A-B)<br />
-            1.8m USB Type-C Cable<br />
-            Remote Control
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">OPS Compatible</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">OPS62A</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            OPS Slot
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Yes, 3840 x 2160 @ 60fps
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Wired</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1000baseT RJ45 x 2</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            OPS Compatible
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            OPS62A
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Wi-Fi</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2.4Ghz, 5Ghz band 802.11ac/b/g/n/a/ax</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Wired
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1000baseT RJ45 x 2
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">HDMI</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              HDMI 2.0 In x 3<br />
+              HDMI Out x 1 (Up to 4K @ 60fps)
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Wi-Fi
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2.4Ghz, 5Ghz band 802.11ac/b/g/n/a/ax
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Touch</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">USB Type-B x 2</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            HDMI
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            HDMI 2.0 In x 3<br />
-            HDMI Out x 1 (Up to 4K @ 60fps)
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Control</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">RS-232 x 1</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Touch
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            USB Type-B x 2
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Analog</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">VGA In x 1</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Control
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            RS-232 x 1
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Audio</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              Audio In x 1<br />
+              Audio Out x 1<br />
+              S/PDIF Out x 1
+            </td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Analog
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            VGA In x 1
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">USB Type-A</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+              USB 3.0 x 4<br />
+              USB 2.0 x 1
+            </td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Audio In x 1<br />
-            Audio Out x 1<br />
-            S/PDIF Out x 1
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Multifunction Port</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">USB Type-C x 1</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            USB Type-A
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            USB 3.0 x 4<br />
-            USB 2.0 x 1
-          </td>
-        </tr>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">TÜV Rheinland Flicker Free</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Yes, 3840 x 2160 @ 60fps</td>
+          </tr>
 
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Multifunction Port
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            USB Type-C x 1
-          </td>
-        </tr>
+          <tr>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">TÜV Rheinland Low Blue Light</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">OPS62A</td>
+          </tr>
 
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            TÜV Rheinland Flicker Free
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Yes, 3840 x 2160 @ 60fps
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            TÜV Rheinland Low Blue Light
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            OPS62A
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            SGS Antibacterial
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Stylus, Power Button Protection Glass (optional)
-          </td>
-        </tr>
-
-        {/* Existing specifications below */}
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Flash Memory Installed Size
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            128 GB
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          <tr className="bg-gray-50">
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">SGS Antibacterial</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Stylus, Power Button Protection Glass (optional)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+</div>
 </div>
           </div>
         </div>

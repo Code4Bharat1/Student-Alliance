@@ -259,24 +259,25 @@ export default function Digital2() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
+ <div className="overflow-hidden rounded-lg border border-gray-200">
+  <div className="overflow-x-auto">
     <table className="min-w-full divide-y divide-gray-200">
       <tbody className="divide-y divide-gray-200 bg-white">
         {/* Highlighted Brand Row */}
         <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800 w-1/4">
             Brand
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800 w-3/4">
             AIWaft
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Manufacturer
           </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
+          <td className="px-6 py-4 text-sm text-gray-500 w-3/4">
             AIWaft Private Limited<br />
             AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018<br />
             aiwaft20@gmail.com<br />
@@ -285,245 +286,233 @@ export default function Digital2() {
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Model Name 65-inch
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             AIW2065
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Model Name 75-inch
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             AIW2075
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Model Name 86-inch
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             AIW2086
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Flash Memory Installed Size
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             128 GB
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             RAM Memory Installed Size
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             8 GB
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Operating System
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             Android 13
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Processor Brand
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             Android
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Graphics Card Description
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             Integrated
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Resolution
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             4K
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Compatible Devices
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             IOS, Win, Mac, Android
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Special Features
           </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
+          <td className="px-6 py-4 text-sm text-gray-500 w-3/4">
             Glossy Screen, Ultrawide Screen, Touch Screen, Built-In Speakers
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Mounting Hardware
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             Interactive Flat Panel: The main display unit
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Number of items
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             1
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Display Type
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             LED
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Standing screen display size
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             65 Inches, 75 Inches, 86 Inches
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Aspect Ratio
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             16:9
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Screen Resolution
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             3840 x 2160
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Resolution
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             1080 Pixels
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Cellular technology
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             4G
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Total USB ports
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             7
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Connector Type
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             Wi-Fi
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Device interface - primary
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             Touchscreen with Stylus Support
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Packer
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             AIWaft
           </td>
         </tr>
 
         <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Net Quantity
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             1.0 count
           </td>
         </tr>
 
         <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 w-1/4">
             Generic Name
           </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
             Interactive Flat Panel
           </td>
         </tr>
-
-        {/* Existing specifications below */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Backlight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            D-LED
-          </td>
-        </tr>
-
-        {/* ... rest of your existing specifications ... */}
-        
       </tbody>
     </table>
   </div>
+</div>
 </div>
           </div>
         </div>

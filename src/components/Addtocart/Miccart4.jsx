@@ -246,202 +246,133 @@ export default function MicCart4() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
-          </td>
-        </tr>
+ <div className="overflow-x-auto rounded-lg border border-gray-200">
+  <table className="min-w-max divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 bg-white">
+      <tr className="bg-blue-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Compatible Devices</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Headphone</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Colour</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Black</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Included Components</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">(RX-1N,TX-1N,MIC-1N, STACKING ELEMENTS-2N,PS UNIT-1N, ANTENNAS-2N,BAT-2N)</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Polar Pattern</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Unidirectional</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Audio Sensitivity</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">52 dB</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Item Weight</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">613 Grams</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Impedance</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">600 Ohm</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Microphone Form Factor</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Microphone System</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Item Dimensions L x W x H</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">34.8 x 34.5 x 8.6 Centimeters</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Power Source</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Battery Powered</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Number of Batteries</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 AA batteries required. (included)</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Material</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Metal</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Number of Channels</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">10</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Frequency Range</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">548 - 572 MHz</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Frequency Response</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">16000 Hz</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Noise Level</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">3 dB</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Manufacturer</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Sennheiser electronic GmbH & Co. KG, Sennheiser Electronics GmbH</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Product Dimensions</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">34.8 x 34.5 x 8.6 cm; 613 g</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Batteries</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">2 AA batteries required. (included)</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Item Model Number</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">XSW 1-ME3-A</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Size</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">XSW 1-ME3-A-Headworn set</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Battery Type</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">NiMH</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Country of Origin</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Taiwan</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Imported By</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Sennheiser Electronics India Pvt Ltd. 104-ABC, 1st Floor, Time Tower, M.G Road, Gurgaon-122002. Haryana.</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">ASIN</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">B01N13N6ZK</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Date First Available</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">6 March 2017</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Packer</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Sennheiser electronic GmbH & Co. KG, Am Labor 1, 30900 Wedemark, Germany</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Importer</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Sennheiser Electronics India Pvt Ltd. 104-ABC, 1st Floor, Time Tower, M.G Road, Gurgaon-122002. Haryana.</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Net Quantity</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 Count</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-gray-900">Generic Name</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Wireless Microphone</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        {/* Wireless Microphone Specifications */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft Pvt Ltd
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWMIC20
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connectivity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2.4GHz Wireless
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Special Features
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Long range (100m), Noise Reduction, Real-time monitoring, Hi-Fi audio
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Compatible Devices
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Headphone
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Included Components
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            RX-1N, TX-1N, MIC-1N, STACKING ELEMENTS-2N, PS UNIT-1N, ANTENNAS-2N, BAT-2N
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Polar Pattern
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Unidirectional
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio Sensitivity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            52 dB
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Item Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            613 Grams
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimensions
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            34.8 x 34.5 x 8.6 Centimeters
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power Source
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Battery Powered
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Number of Batteries
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            2 AA batteries required. (included)
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Material
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Metal
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Number of Channels
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            10
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Frequency Range
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            548 - 572 MHz
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Frequency Response
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            16000 Hz
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Noise Level
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            3 dB
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Sennheiser electronic GmbH & Co. KG
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Imported By
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Sennheiser Electronics India Pvt Ltd
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Wireless Microphone
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
 
           </div>

@@ -247,166 +247,137 @@ export default function SpeakerCart3() {
     Technical Specifications
   </h2>
 
-  <div className="overflow-hidden rounded-lg border border-gray-200">
-    <table className="min-w-full divide-y divide-gray-200">
-      <tbody className="divide-y divide-gray-200 bg-white">
-        {/* Highlighted Brand Row */}
-        <tr className="bg-blue-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Brand
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            Ahuja
-          </td>
-        </tr>
+ <div className="overflow-x-auto rounded-lg border border-gray-200">
+  <table className="min-w-full divide-y divide-gray-200">
+    <tbody className="divide-y divide-gray-200 bg-white">
+      <tr className="bg-blue-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Model</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">PS-400TM</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Special Feature</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">16 Watt wired Speaker</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Recommended Uses For Product</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">For Smartphones or Tablets, For Televisions Tablets</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Subwoofer Diameter</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">18 Inches</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Net Quantity</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 Piece</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Controller Type</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Remote Control</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Colour</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">WHITE</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Included Components</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">SPEAKER, USER MANUAL</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Product Dimensions</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">25.2D x 19W x 19.1H Centimeters</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Age Range (Description)</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Adult</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Item Weight</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1800 Grams</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Impedance</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">8 Ohm</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Is Waterproof</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">false</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Number of Items</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Wireless Communication Technology</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Bluetooth</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Power Source</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ac</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Tweeter Diameter</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 Inches</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Connectivity Protocol</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Bluetooth</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Manufacturer</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">ahuja, AHUJA RADIOS 215, Okhla Industrial Estate, New Delhi-110 020, India</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">PS-400TM</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Item model number</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">PS-400TM</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Audio input compatible with the item</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Auxiliary</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Speaker amplification type</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Passive</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Voltage</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">100 Volts</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Wattage</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">16 Watts</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Batteries Required</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">No</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Country of Origin</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">India</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Item Weight</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1 kg 800 g</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">ASIN</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">B0B21H7YLR</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Date First Available</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">23 May 2022</td>
+      </tr>
+      <tr className="bg-gray-50">
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Generic Name</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Ps400Tm</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-        {/* Speaker Specifications */}
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Model
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            PS-400TM
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Special Features
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            16W wired speaker with Bluetooth
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Recommended Use
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Smartphones, Tablets, Televisions
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Speaker Configuration
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            18" subwoofer, 1" tweeter
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Color
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            White
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Included Components
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Speaker, User manual
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Dimensions
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            25.2D x 19W x 19.1H cm
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Weight
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            1.8 kg
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Audio Specifications
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            8 Ohm impedance, Passive amplification
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Connectivity
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Bluetooth, Auxiliary input
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Power
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            100V AC, 16W
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Control
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Remote control
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Manufacturer
-          </td>
-          <td className="px-6 py-4 text-sm text-gray-500">
-            Ahuja Radios, Okhla Industrial Estate, New Delhi
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Country of Origin
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            India
-          </td>
-        </tr>
-
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            ASIN
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            B0B21H7YLR
-          </td>
-        </tr>
-
-        <tr className="bg-gray-50">
-          <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-            Generic Name
-          </td>
-          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            Bluetooth Speaker System
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 </div>
           </div>
         </div>
