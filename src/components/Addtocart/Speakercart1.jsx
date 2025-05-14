@@ -2,11 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import React, { useRef, useEffect } from 'react'; //scroll in mobile
 import { StarIcon } from "@heroicons/react/solid";
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import { useRouter } from 'next/navigation';
 
 export default function SpeakerCart1() {
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
   
   // Base price and discount information
   const basePrice = 15000;
@@ -21,57 +24,137 @@ export default function SpeakerCart1() {
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
+  // Product details
+  const product = {
+    id: 5,
+    name: "AIWaft Conference Speaker with Microphone",
+    price: basePrice,
+    image: "/shop/speaker1.png",
+    description: "Professional conference speaker with built-in microphone for clear audio in meetings and presentations",
+  };
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+      quantity: quantity,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
+  };
+
+  //Scroll in Mobile
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollContainerRef = useRef(null);
+  const images = ["/shop/speaker1.png", "/shop/aboutspeaker1.png", "/shop/aboutspeaker1-1.png", "/shop/aboutspeaker1-2.png"];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollContainerRef.current) {
+        const scrollLeft = scrollContainerRef.current.scrollLeft;
+        const containerWidth = scrollContainerRef.current.clientWidth;
+        const newIndex = Math.round(scrollLeft / containerWidth);
+        setActiveIndex(newIndex);
+      }
+    };
+
+    const container = scrollContainerRef.current;
+    container?.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      container?.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-12 p-8">
-          {/* Left Section: Main Product Image */}
-          <div className="flex flex-col lg:w-1/2">
-            <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
-              <Image
-                src="/shop/speaker1.png"
-                alt="AIWaft Conference Speaker with Microphone"
-                fill
-                className="object-contain p-8"
-                priority
-              />
-              <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                HOT DEAL
+          {/* Left Section */}
+          <div className="lg:w-1/2">
+            <div className="relative">
+              {/* Scrollable container */}
+              <div
+                ref={scrollContainerRef}
+                className="flex flex-row lg:flex-col overflow-x-auto snap-x snap-mandatory space-x-4 lg:space-x-0 pb-4 lg:pb-0 hide-scrollbar"
+              >
+                {images.map((img, i) => (
+                  <div
+                    key={i}
+                    className="relative rounded-xl overflow-hidden aspect-square bg-gray-50 min-w-[85vw] sm:min-w-[60vw] lg:min-w-0 snap-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <Image
+                      src={img}
+                      alt={
+                        i === 0
+                          ? product.name
+                          : `Feature ${i}`
+                      }
+                      fill
+                      className="object-contain p-8 hover:scale-105 transition-transform duration-500"
+                      priority={i === 0}
+                    />
+                    {i === 0 && (
+                      <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                        HOT DEAL
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Scroll indicators with active state */}
+              <div className="lg:hidden flex justify-center space-x-2 mt-4">
+                {images.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      i === activeIndex
+                        ? "bg-purple-600 w-4"
+                        : "bg-gray-300 bg-opacity-60"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
 
-            {/* About Section Image - Moved to left side */}
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/aboutspeaker1.png"
-                alt="AIWaft Metal Floor Digital Board Stand"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/aboutspeaker1-1.png"
-                alt="AIWaft Metal Floor Digital Board Stand"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/aboutspeaker1-2.png"
-                alt="AIWaft Metal Floor Digital Board Stand"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
+            {/* Style to hide scrollbar but keep functionality */}
+            <style jsx>{`
+              .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+              .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+            `}</style>
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft Conference Speaker with Microphone
+                {product.name}
               </h1>
             </div>
 
@@ -169,7 +252,10 @@ export default function SpeakerCart1() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
+              <button
+                onClick={handleAddToCart}
+                className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="none"

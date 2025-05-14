@@ -7,6 +7,8 @@ import { CheckCircleIcon } from "@heroicons/react/solid";
 
 export default function OpsCart() {
   const [quantity, setQuantity] = useState(1);
+  const [cartItems, setCartItems] = useState([]);
+  const [isAdded, setIsAdded] = useState(false);
   
   // Base price and discount information
   const basePrice = 36000;
@@ -21,9 +23,36 @@ export default function OpsCart() {
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
+  const addToCart = () => {
+    const newItem = {
+      id: "ops-srx900", // Unique identifier for the product
+      name: "AIWaft OPS SRX900 for Interactive Displays",
+      price: basePrice,
+      originalPrice: originalPrice,
+      quantity: quantity,
+      image: "/shop/opsx.png"
+    };
+
+    setCartItems([...cartItems, newItem]);
+    setIsAdded(true);
+    
+    // Reset the added state after 3 seconds
+    setTimeout(() => setIsAdded(false), 3000);
+  };
+
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        {/* Cart Notification */}
+        {isAdded && (
+          <div className="fixed top-4 right-4 z-50">
+            <div className="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center animate-fade-in">
+              <CheckCircleIcon className="w-6 h-6 mr-2" />
+              <span>Item added to cart! ({quantity} x AIWaft OPS SRX900)</span>
+            </div>
+          </div>
+        )}
+
         <div className="flex flex-col lg:flex-row gap-12 p-8">
           {/* Left Section: Main Product Image */}
           <div className="flex flex-col lg:w-1/2">
@@ -167,7 +196,10 @@ export default function OpsCart() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
+              <button 
+                onClick={addToCart}
+                className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -206,34 +238,34 @@ export default function OpsCart() {
             </div>
             <br /> <br /> 
 
-              {/* OPS Module Features */}
-  <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    Features of the AIWaft OPS SRX900 Upgrade Module
-  </h2>
-  <ul className="space-y-3 text-gray-700 text-sm">
-    <li className="flex items-start">
-      <span className="text-purple-500 mr-2">•</span>
-      <span>12th Gen i5/i7 processors for fast interactive display performance</span>
-    </li>
-    <li className="flex items-start">
-      <span className="text-purple-500 mr-2">•</span>
-      <span>Intel Iris-Xe graphics for HD visuals with vibrant clarity</span>
-    </li>
-    <li className="flex items-start">
-      <span className="text-purple-500 mr-2">•</span>
-      <span>HDMI/DP/Type-C ports support 4K60Hz dual/triple display setups</span>
-    </li>
-    <li className="flex items-start">
-      <span className="text-purple-500 mr-2">•</span>
-      <span>Advanced connectivity: HDMI 2.0, DP 1.4, and JAE 80PIN</span>
-    </li>
-    <li className="flex items-start">
-      <span className="text-purple-500 mr-2">•</span>
-      <span>Expandable up to 64GB DDR4 RAM and 1TB NVMe/SATA storage</span>
-    </li>
-  </ul>
+            {/* OPS Module Features */}
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">
+              Features of the AIWaft OPS SRX900 Upgrade Module
+            </h2>
+            <ul className="space-y-3 text-gray-700 text-sm">
+              <li className="flex items-start">
+                <span className="text-purple-500 mr-2">•</span>
+                <span>12th Gen i5/i7 processors for fast interactive display performance</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-500 mr-2">•</span>
+                <span>Intel Iris-Xe graphics for HD visuals with vibrant clarity</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-500 mr-2">•</span>
+                <span>HDMI/DP/Type-C ports support 4K60Hz dual/triple display setups</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-500 mr-2">•</span>
+                <span>Advanced connectivity: HDMI 2.0, DP 1.4, and JAE 80PIN</span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-purple-500 mr-2">•</span>
+                <span>Expandable up to 64GB DDR4 RAM and 1TB NVMe/SATA storage</span>
+              </li>
+            </ul>
 
-
+            {/* Technical Specifications */}
             {/* Clean Product Specifications Table with Brand Highlight */}
             <div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
