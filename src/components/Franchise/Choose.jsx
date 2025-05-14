@@ -54,9 +54,7 @@ export default function WhyChoose() {
               <p className="text-sm text-gray-700">{feature.description}</p>
             </div>
             <div className="p-4 text-center">
-              <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-5 rounded-full transition">
-                Learn More
-              </button>
+             
             </div>
           </motion.div>
         ))}
