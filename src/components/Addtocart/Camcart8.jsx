@@ -5,17 +5,18 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Camcart8() {
+  const unitPrice = 4444; // Base price per unit
+  const originalPrice = 6999; // Original price per unit
+  const discountPerUnit = originalPrice - unitPrice; // Discount per unit
+
   const [quantity, setQuantity] = useState(1);
-
-  const pricePerUnit = 12000;
-  const originalPricePerUnit = 20000;
-
-  const totalPrice = quantity * pricePerUnit;
-  const totalOriginalPrice = quantity * originalPricePerUnit;
-  const totalDiscount = totalOriginalPrice - totalPrice;
 
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
+
+  const totalPrice = unitPrice * quantity;
+  const totalOriginalPrice = originalPrice * quantity;
+  const totalDiscount = discountPerUnit * quantity;
 
   return (
     <div className="bg-white min-h-screen">
@@ -26,7 +27,7 @@ export default function Camcart8() {
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
                 src="/shop/cam8.png"
-                alt="AIWAFT 4K Webcam with AI Auto"
+                alt="Evota 4K PTZ Camera 12X Optical"
                 fill
                 className="object-contain p-8"
                 priority
@@ -35,16 +36,38 @@ export default function Camcart8() {
                 HOT DEAL
               </div>
             </div>
+             {/* About Section Images */}
+                        {[
+                          "cam8-1.png",
+                          "cam8-2.png",
+                          "cam8-3.png",
+                           "cam8-4.png",
+                            "cam8-5.png",
+                        
+                          
+                        ].map((img, i) => (
+                          <div
+                            key={i}
+                            className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50"
+                          >
+                            <Image
+                              src={`/shop/${img}`}
+                              alt="4K PTZ Camera Features"
+                              fill
+                              className="object-contain p-8"
+                            />
+                          </div>
+                        ))}
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWAFT 4K Webcam with AI Auto
+            AIWAFT 4K Webcam with AI Auto Focus for Streaming, Video Conferencing, Zoom, YouTube & Live Streaming | Best 4K Webcam for Laptops & PC in India
               </h1>
               <p className="text-lg text-gray-600">
-                12X Zoom • Auto Tracking • 4K Resolution
+               Shop with Confidence – Your Transaction is 100% Secure.
               </p>
             </div>
 
@@ -52,7 +75,7 @@ export default function Camcart8() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} className={`w-5 h-5 ${i < 4 ? 'text-yellow-400' : 'text-gray-300'}`} />
+                  <StarIcon key={i} className={`w-5 h-5 ${i < 4 ? "text-yellow-400" : "text-gray-200"}`} />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -81,12 +104,10 @@ export default function Camcart8() {
             {/* Key Features */}
             <div className="mb-8 grid grid-cols-2 gap-3">
               {[
-                "4K Ultra HD Resolution",
-                "12X Optical Zoom",
-                "360° Pan Range",
-                "Auto Tracking",
-                "3-Year Warranty",
-                "Includes Remote"
+                "Ultra-Clear 4K Quality",
+                "AI Auto-Focus Technology",
+                "Built-In Dual Microphones",
+                "Enhanced EPTZ Functionality",
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
@@ -147,6 +168,92 @@ export default function Camcart8() {
                   <span>{badge.text}</span>
                 </div>
               ))}
+            </div>
+
+            {/* About Section Content (without image) */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                About This Product:  Evota 10X HD PTZ Camera
+              </h2>
+              <ul className="space-y-4 text-gray-700">
+                {[
+                  "The Evota 4K Webcam delivers outstanding 1080P Full HD resolution with smooth 30fps streaming, a wide 120° field of view, and superior low-light performance. Ideal for video conferencing, streaming, and online meetings, this webcam combines advanced CMOS sensor technology and noise reduction for clear, high-quality visuals and sound.",
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-purple-500 mr-2">•</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Technical Specifications Table */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Technical Specifications
+              </h2>
+  <div className="overflow-x-auto">
+  <div className="inline-block min-w-full align-middle">
+    <div className="overflow-hidden rounded-lg border border-gray-200">
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {[
+             { name: "Brand", value: "AIWaft" },
+  { name: "Manufacturer", value: "AIWaft Private Limited" },
+  { name: "Model Name", value: "VEOαCAM" },
+  { name: "Product Dimensions", value: "5.72 x 10.6 x 5.55 cm; 150 g" },
+  { name: "Item model number", value: "VEOαCAM" },
+  { name: "Operating System", value: "Windows" },
+  { name: "Compatible Devices", value: "Linux Devices, macOS Devices, Android Devices, Windows PCs" },
+  { name: "Special Features", value: "2D Noise Reduction for enhanced low-light performance., EPTZ Support for flexible framing and zooming., 4k for smooth, high-quality video., AI Auto-Focus ensures sharp and clear visuals., Dual Omnidirectional Microphones for superior audio clarity." },
+  { name: "Mounting Hardware", value: "User Manual, Warranty Card, AIWaft 4K EPTZ Webcam unit, 1.5m USB2.0 cable" },
+  { name: "Number of items", value: "1" },
+  { name: "Image Aspect Ratio", value: "16:9" },
+  { name: "Has Image Stabilisation", value: "No" },
+  { name: "Digital zoom", value: "3 x" },
+  { name: "Min Focal Length", value: "1.89 Millimeters" },
+  { name: "Video Capture Resolution", value: "4K" },
+  { name: "Batteries Included", value: "No" },
+  { name: "Connector Type", value: "USB" },
+  { name: "Form Factor", value: "Compact" },
+  { name: "Lens type", value: "Wide Angle" },
+  { name: "Media type", value: "Video" },
+  { name: "Horizontal View Angle", value: "69.8" },
+  { name: "Vertical viewing angle", value: "54.5" },
+  { name: "Diagonal viewing angle", value: "81.5" },
+  { name: "Generic Name", value: "HD USB Webcam" },
+  { name: "Flicker", value: "50HZ/60HZ" },
+  { name: "WDR/Backlight contrast", value: "Support" },
+  { name: "Backlight Compensation", value: "Support" },
+  { name: "Mirror, Flip", value: "Support" },
+  { name: "Sensitivity", value: "-26±2dB RL-2.2K V1=2.0V" },
+  { name: "Saturation/Contrast", value: "Support" },
+  { name: "Input Voltage", value: "USB5V" },
+  { name: "Product certification", value: "ROHS, FCC, CE" },
+  { name: "Item Dimensions LxWxH", value: "5.7 x 10.6 x 5.5 Centimeters" },
+  { name: "Is there a timer?", value: "No" },
+  { name: "Item Weight", value: "150 g" },
+  { name: "Manufacturer", value: "AIWaft Private Limited" },
+          ].map((spec, i) => (
+            <tr
+              key={i}
+              className={i % 2 === 0 ? "" : "bg-gray-50"}
+            >
+              <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                {spec.name}
+              </td>
+              <td className="px-4 sm:px-6 py-4 text-sm text-gray-500 whitespace-normal">
+                {spec.value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  
+
+                </div>
+              </div>
             </div>
           </div>
         </div>

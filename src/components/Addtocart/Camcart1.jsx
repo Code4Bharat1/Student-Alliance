@@ -8,8 +8,8 @@ import Link from "next/link";
 export default function Camcart1() {
   const [quantity, setQuantity] = useState(1);
 
-  const basePrice = 40000;
-  const discountPrice = 60000;
+  const basePrice = 75000;
+  const discountPrice = 95000;
 
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
@@ -154,11 +154,11 @@ export default function Camcart1() {
             <div className="mb-8 grid grid-cols-2 gap-3">
               {[
                 "4K Ultra HD Resolution",
-                "12X Optical Zoom",
-                "360° Pan Range",
-                "Auto Tracking",
-                "3-Year Warranty",
-                "Includes Remote",
+                "AI Tracking & Low Light Performance",
+                "Versatile Connectivity",
+                "Wide Pan-Tilt Control",
+                "Durable & Compatible",
+                "Supports HDMI, USB 3.0, LAN, RS232",
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
@@ -209,15 +209,27 @@ export default function Camcart1() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-             <Link href='/mycart'>
               <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
                 ADD TO CART
               </button>
-             </Link>
               <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>
+
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-4 justify-center border-t border-gray-100 pt-6">
@@ -262,64 +274,64 @@ export default function Camcart1() {
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
     Technical Specifications
   </h2>
-  <div className="overflow-x-auto">
-    <div className="inline-block min-w-full align-middle">
-      <div className="overflow-hidden rounded-lg border border-gray-200">
-        <table className="min-w-full divide-y divide-gray-200">
+<div className="overflow-x-auto">
+      <div className="overflow-hidden rounded-lg border border-gray-200 min-w-[1000px]">
+        <table className="min-w-full w-max divide-y divide-gray-200">
           <tbody className="divide-y divide-gray-200 bg-white">
             {[
-              { name: "Brand", value: "AIWaft", highlight: true },
-              { name: "Color", value: "Black" },
-              { name: "Model Number", value: "AIW20A1" },
-              {
-                name: "Included Components",
-                value: "Camera, Remote, Cable (1.5m), Adapter, Wall Mount",
-              },
-              {
-                name: "Connectivity",
-                value: "HDMI, USB 3.0, LAN, RS232, 3G-SDI",
-              },
-              { name: "Dimensions", value: "20 × 13 × 17.6 cm" },
-              { name: "Weight", value: "1.3 kg" },
-              { name: "Optical Zoom", value: "12×" },
-              {
-                name: "Resolution",
-                value: "3840 × 2160 pixels (4K UHD)",
-              },
-              { name: "Sensor Type", value: "CMOS" },
-              { name: "Viewing Angle", value: "170°" },
-              {
-                name: "Compatibility",
-                value: "Windows, macOS, Linux, Android, iOS",
-              },
-              {
-                name: "Manufacturer",
-                value: "AIWaft Pvt Ltd",
-              },
-            ].map((spec, i) => (
-              <tr
-                key={i}
-                className={`${spec.highlight ? "bg-blue-50" : i % 2 === 0 ? "" : "bg-gray-50"}`}
-              >
-                <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                  {spec.name}
-                </td>
-                <td
-                  className={`px-4 sm:px-6 py-4 text-sm ${
-                    spec.highlight 
-                      ? "font-bold text-blue-800" 
-                      : "text-gray-500"
-                  } ${spec.name.length > 15 ? "whitespace-normal" : "whitespace-nowrap"}`}
-                >
-                  {spec.value}
-                </td>
+              ['Brand', 'AIWaft'],
+              ['Colour', 'Black'],
+              ['Number of Items', '1'],
+              ['Included Components', 'Camera, Remote, Cable (1.5 meter), Adapter & Wall Mount.'],
+              ['Wireless Communication Technology', 'HDMI USB 3.0 LAN (RJ-45) RS232 3G-SDI'],
+              ['Form Factor', 'Desktop or mounted form factor'],
+              ['Viewing Angle', '170 Degrees'],
+              ['Item dimensions L x W x H', '20 x 13 x 17.6 Centimeters'],
+              ['Flash Memory Type', 'SD'],
+              ['Optical Zoom', '12 x'],
+              ['Maximum Shutter Speed', '1/10000s Seconds'],
+              ['Focus Type', 'Auto Focus'],
+              ['Zoom Type', 'Optical, Digital'],
+              ['Video Capture Format', '4K'],
+              ['Specific Uses For Product', 'Broadcasting and Live Events, Security and Surveillance, Video Conferencing and Telepresence, Education and Training, Telemedicine and Remote Healthcare, Content Creation and Production, Wildlife Monitoring and Nature Documentaries.'],
+              ['Net Quantity', '1.00 count'],
+              ['Photo Sensor Technology', 'CMOS'],
+              ['Maximum Webcam Image Resolution', '8.51 MP'],
+              ['Control Method', 'Remote'],
+              ['Manufacturer', 'AIWaft Pvt Ltd, aiwaft20@gmail.com'],
+              ['Model', 'AIW20A1'],
+              ['Product Dimensions', '20 x 13 x 17.6 cm; 1.3 kg'],
+              ['Operating System', 'Linux, Windows, iOS, Android'],
+              ['Special Features', 'Create multiple scenes, auto-track movements, adjust color contrast, and control pan-tilt-zoom all via remote with this versatile camera.'],
+              ['Image Aspect Ratio', '16:9'],
+              ['Image stabilization technology', 'Digital'],
+              ['Digital Zoom', '16 x'],
+              ['Resolution', '3840 x 2160 Pixels'],
+              ['Minimum Shutter Speed', '1/30s Seconds'],
+              ['Minimum diaphragm opening', '1.8 f'],
+              ['Min Focal Length', '4.4 Millimeters'],
+              ['Total USB ports', '1'],
+              ['Lens type', 'Zoom'],
+              ['Media type', 'H.264 SVC, H.264 AVC, H.265, MJPEG'],
+              ['Is there a timer?', 'No'],
+              ['Includes remote', 'Yes'],
+              ['Item Weight', '1 kg 300 g'],
+              ['Packer', 'AIWaft Pvt Ltd'],
+              ['Importer', 'AIWaft'],
+              ['Item Dimensions LxWxH', '20 x 13 x 17.6 Centimeters'],
+              ['Generic Name', '4K PTZ Camera']
+            ].map(([key, value], index) => (
+              <tr key={key} className={index % 2 === 0 ? 'bg-blue-50' : ''}>
+                <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-black" >{key}</td>
+                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-800">{value}</td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-    </div>
-  </div>
+</div>
+
+
 </div>
 
 

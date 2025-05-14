@@ -5,9 +5,9 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Camcart9() {
-  const unitPrice = 8000;
-  const originalPrice = 9000;
-  const discountPerUnit = originalPrice - unitPrice;
+  const unitPrice = 19000; // Base price per unit
+  const originalPrice = 40000; // Original price per unit
+  const discountPerUnit = originalPrice - unitPrice; // Discount per unit
 
   const [quantity, setQuantity] = useState(1);
 
@@ -27,7 +27,7 @@ export default function Camcart9() {
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
                 src="/shop/cam9.png"
-                alt="AIWaft EPTZ 4K Webcam - Ultra HD"
+                alt="Evota 4K PTZ Camera 12X Optical"
                 fill
                 className="object-contain p-8"
                 priority
@@ -36,16 +36,36 @@ export default function Camcart9() {
                 HOT DEAL
               </div>
             </div>
+             {/* About Section Images */}
+                        {[
+                          "cam9-1.png",
+                          "cam9-2.png",
+                          "cam9-3.png",
+                          
+                          
+                        ].map((img, i) => (
+                          <div
+                            key={i}
+                            className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50"
+                          >
+                            <Image
+                              src={`/shop/${img}`}
+                              alt="4K PTZ Camera Features"
+                              fill
+                              className="object-contain p-8"
+                            />
+                          </div>
+                        ))}
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft EPTZ 4K Webcam - Ultra HD
+               AIWaft EPTZ 4K Webcam – Ultra HD Webcam for PC & Laptop | Auto Framing, Noise Suppression, Low-Light Correction | Best for Zoom, YouTube, Streaming & Gaming
               </h1>
               <p className="text-lg text-gray-600">
-                12X Zoom • Auto Tracking • 4K Resolution
+               Shop with Confidence – Your Transaction is 100% Secure.
               </p>
             </div>
 
@@ -53,7 +73,7 @@ export default function Camcart9() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} className="w-5 h-5 text-yellow-400" />
+                  <StarIcon key={i} className={`w-5 h-5 ${i < 4 ? "text-yellow-400" : "text-gray-200"}`} />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -82,12 +102,10 @@ export default function Camcart9() {
             {/* Key Features */}
             <div className="mb-8 grid grid-cols-2 gap-3">
               {[
-                "4K Ultra HD Resolution",
-                "12X Optical Zoom",
-                "360° Pan Range",
-                "Auto Tracking",
-                "3-Year Warranty",
-                "Includes Remote"
+                " 4K UHD resolution with an advanced 8.42MP sensor and 12MP fixed lens.",
+                "Auto Framing Support",
+                "Video, control, and power all through one USB cable.",
+                "Wide 120° Field of View",
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
@@ -148,6 +166,82 @@ export default function Camcart9() {
                   <span>{badge.text}</span>
                 </div>
               ))}
+            </div>
+
+            {/* About Section Content (without image) */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+               About AIWaft EPTZ 4K Webcam
+
+              </h2>
+              <ul className="space-y-4 text-gray-700">
+                {[
+                  "Introducing the AIWaft EPTZ 4K Webcam, a cutting-edge solution designed to elevate your video communication and content creation experiences. Whether you're an educator, YouTuber, or professional, this webcam offers unparalleled clarity and functionality. .",
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-purple-500 mr-2">•</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Technical Specifications Table */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Technical Specifications
+              </h2>
+             <div className="overflow-x-auto">
+  <div className="inline-block min-w-full align-middle">
+    <div className="overflow-hidden rounded-lg border border-gray-200">
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {[
+             { name: "Brand", value: "AIWaft" },
+  { name: "Manufacturer", value: "AIWaft Private Limited" },
+  { name: "Sensor", value: "1/2.8 inch high quality, 8.42 megapixel SONY CMOS sensor" },
+  { name: "Video Format", value: `YUY2/NV12: 1280*720@15; 1024*576@20; 640*480@30
+MJPG: 3840*2160@30; 2560*1440@30; 1920*1080@30; 1280*720@30; 1024*576@30; 640*480@30
+H.264/H.265: 3840*2160@30; 2560*1440@30; 1920*1080@30; 1280*720@30; 1024*576@30; 640*480@30` },
+  { name: "Optical Zoom", value: "12 megapixel fixed lens" },
+  { name: "Digital Zoom", value: "4X" },
+  { name: "Field of Viewing", value: "120°" },
+  { name: "Sensor Resolution", value: "8.42 megapixel" },
+  { name: "Control Port", value: "USB2.0 (UVC/UAC)" },
+  { name: "Video Port", value: "USB2.0" },
+  { name: "S/N Ratio", value: ">50dB" },
+  { name: "Focal Length", value: "f＝2.20mm" },
+  { name: "Minimum Lux", value: "0.1 lux" },
+  { name: "White Balance", value: "Auto/Manual" },
+  { name: "Iris", value: "F 2.2" },
+  { name: "Electronic Shutter", value: "Auto" },
+  { name: "Anti-Flicker", value: "50HZ/60HZ/OFF" },
+  { name: "WDR", value: "Supported" },
+  { name: "Polar distance", value: "3~5 meters" },
+  { name: "Sensitivity", value: "-26±2dB RL=2.2KΩ Vs=2.0V" },
+  { name: "Input Voltage", value: "4.4~5.25V@500mA (USB port)" },
+  { name: "Dimension (L x W x H)", value: "199mm×92.5mm×65mm" },
+  { name: "Net Weight", value: "0.32KG" },
+          ].map((spec, i) => (
+            <tr
+              key={i}
+              className={i % 2 === 0 ? "" : "bg-gray-50"}
+            >
+              <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                {spec.name}
+              </td>
+              <td className="px-4 sm:px-6 py-4 text-sm text-gray-500 whitespace-normal">
+                {spec.value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  
+
+                </div>
+              </div>
             </div>
           </div>
         </div>

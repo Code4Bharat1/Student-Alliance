@@ -5,17 +5,18 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Camcart10() {
-  const pricePerUnit = 12000;
-  const originalPricePerUnit = 15000;
+  const unitPrice = 90000; // Base price per unit
+  const originalPrice = 114000; // Original price per unit
+  const discountPerUnit = originalPrice - unitPrice; // Discount per unit
 
   const [quantity, setQuantity] = useState(1);
 
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
 
-  const totalPrice = pricePerUnit * quantity;
-  const totalOriginalPrice = originalPricePerUnit * quantity;
-  const totalSavings = totalOriginalPrice - totalPrice;
+  const totalPrice = unitPrice * quantity;
+  const totalOriginalPrice = originalPrice * quantity;
+  const totalDiscount = discountPerUnit * quantity;
 
   return (
     <div className="bg-white min-h-screen">
@@ -26,7 +27,7 @@ export default function Camcart10() {
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
                 src="/shop/cam10.png"
-                alt="Logitech MeetUp HD 1 Wx Optical"
+                alt="Evota 4K PTZ Camera 12X Optical"
                 fill
                 className="object-contain p-8"
                 priority
@@ -35,16 +36,37 @@ export default function Camcart10() {
                 HOT DEAL
               </div>
             </div>
+             {/* About Section Images */}
+                        {[
+                          "cam10-1.jpg",
+                          "cam10-2.jpg",
+                          "cam10-3.jpg",
+                          "cam10-4.jpg",
+                          
+                          
+                        ].map((img, i) => (
+                          <div
+                            key={i}
+                            className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50"
+                          >
+                            <Image
+                              src={`/shop/${img}`}
+                              alt="4K PTZ Camera Features"
+                              fill
+                              className="object-contain p-8"
+                            />
+                          </div>
+                        ))}
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                Logitech MeetUp HD 1 Wx Optical
+               Logitech MeetUp HD 100x Optical Zoom Video and Audio Conferencing System for Small Meeting Rooms, Black
               </h1>
               <p className="text-lg text-gray-600">
-                12X Zoom • Auto Tracking • 4K Resolution
+               Shop with Confidence – Your Transaction is 100% Secure.
               </p>
             </div>
 
@@ -52,7 +74,7 @@ export default function Camcart10() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} filled={i < 4} />
+                  <StarIcon key={i} className={`w-5 h-5 ${i < 4 ? "text-yellow-400" : "text-gray-200"}`} />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -67,7 +89,7 @@ export default function Camcart10() {
                 <span className="text-4xl font-bold text-gray-900">₹{totalPrice.toLocaleString()}</span>
                 <span className="text-lg text-gray-500 line-through">₹{totalOriginalPrice.toLocaleString()}</span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹{totalSavings.toLocaleString()}
+                  Save ₹{totalDiscount.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
@@ -78,26 +100,7 @@ export default function Camcart10() {
               </div>
             </div>
 
-            {/* Key Features */}
-            <div className="mb-8 grid grid-cols-2 gap-3">
-              {[
-                "4K Ultra HD Resolution",
-                "12X Optical Zoom",
-                "360° Pan Range",
-                "Auto Tracking",
-                "3-Year Warranty",
-                "Includes Remote"
-              ].map((feature, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className="text-purple-500">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">{feature}</span>
-                </div>
-              ))}
-            </div>
+           
 
             {/* Quantity Selector */}
             <div className="mb-8 text-gray-700">
@@ -147,6 +150,84 @@ export default function Camcart10() {
                   <span>{badge.text}</span>
                 </div>
               ))}
+            </div>
+
+            {/* About Section Content (without image) */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+             About This Product
+
+              </h2>
+              <ul className="space-y-4 text-gray-700">
+                {[
+                  "Logitech 4K Webcam| Rear Webcam Resolution ?1 MP | Lithium Battery Energy Content ?10 Watt Hours| Optical Zoom 100x | Image Capture Speed 30fps",
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-purple-500 mr-2">•</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Technical Specifications Table */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Technical Specifications
+              </h2>
+             <div className="overflow-x-auto">
+  <div className="inline-block min-w-full align-middle">
+    <div className="overflow-hidden rounded-lg border border-gray-200">
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {[
+             { name: "Brand", value: "Logitech" },
+  { name: "Photo Sensor Technology", value: "CMOS" },
+  { name: "Video Capture Resolution", value: "4K" },
+  { name: "Maximum Aperture", value: "4f" },
+  { name: "Flash Memory Type", value: "SD" },
+  { name: "Video Capture Format", value: "MOV" },
+  { name: "Supported Audio Format", value: "AAC, MP3, PCM" },
+  { name: "Screen Size", value: "3 Inches" },
+  { name: "Connectivity Technology", value: "Bluetooth, USB" },
+  { name: "Colour", value: "Black" },
+  { name: "Manufacturer", value: "Logitech" },
+  { name: "Form Factor", value: "Compact" },
+  { name: "Item Height", value: "6.1 Inches" },
+  { name: "Item Width", value: "6.1 Inches" },
+  { name: "Standing screen display size", value: "3 Inches" },
+  { name: "Product Dimensions", value: "9.7 x 15.49 x 15.49 cm; 1.04 kg" },
+  { name: "Item model number", value: "960-001101" },
+  { name: "Wireless Type", value: "Bluetooth" },
+  { name: "Rear Webcam Resolution", value: "1 MP" },
+  { name: "Power Source", value: "Battery Powered" },
+  { name: "Are Batteries Included", value: "No" },
+  { name: "Lithium Battery Energy Content", value: "10 Watt Hours" },
+  { name: "Lithium Battery Weight", value: "1 Grams" },
+  { name: "Included Components", value: "Battery" },
+  { name: "Item Weight", value: "1 kg 40 g" },
+  { name: "Date First Available", value: "23 May 2017" },
+  { name: "Item Dimensions LxWxH", value: "9.7 x 15.5 x 15.5 Centimeters" },
+          ].map((spec, i) => (
+            <tr
+              key={i}
+              className={i % 2 === 0 ? "" : "bg-gray-50"}
+            >
+              <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                {spec.name}
+              </td>
+              <td className="px-4 sm:px-6 py-4 text-sm text-gray-500 whitespace-normal">
+                {spec.value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  
+
+                </div>
+              </div>
             </div>
           </div>
         </div>

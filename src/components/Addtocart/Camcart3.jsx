@@ -7,8 +7,8 @@ import { StarIcon } from "@heroicons/react/solid";
 export default function Camcart3() {
   const [quantity, setQuantity] = useState(1);
 
-  const basePrice = 40000;
-  const originalPrice = 50000;
+  const basePrice = 66000;
+  const originalPrice = 80000;
   const discountAmount = originalPrice - basePrice;
 
   const increment = () => setQuantity((q) => q + 1);
@@ -228,7 +228,7 @@ export default function Camcart3() {
                 Technical Specifications
               </h2>
 
-              <div className="overflow-hidden rounded-lg border border-gray-200">
+              <div className="overflow-x-auto rounded-lg border border-gray-200">
                 <table className="min-w-full divide-y divide-gray-200">
                   <tbody className="divide-y divide-gray-200 bg-white">
                     {/* Highlighted Brand Row */}

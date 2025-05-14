@@ -7,7 +7,7 @@ import { StarIcon } from "@heroicons/react/solid";
 export default function Camcart2() {
   const [quantity, setQuantity] = useState(1);
 
-  const basePrice = 30000;
+  const basePrice = 95000;
   const discountPrice = 40000;
 
   const increment = () => setQuantity((q) => q + 1);
@@ -172,12 +172,26 @@ export default function Camcart2() {
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
               <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
+                <svg
+                  className="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                  />
+                </svg>
                 ADD TO CART
               </button>
               <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>
+
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-4 justify-center border-t border-gray-100 pt-6">
@@ -224,7 +238,8 @@ export default function Camcart2() {
                 Technical Specifications
               </h2>
 
-              <div className="overflow-hidden rounded-lg border border-gray-200">
+              <div className="overflow-x-auto rounded-lg border border-gray-200">
+                 
                 <table className="min-w-full divide-y divide-gray-200">
                   <tbody className="divide-y divide-gray-200 bg-white">
                     {/* Highlighted Brand Row */}

@@ -5,12 +5,18 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Camcart7() {
+  const unitPrice = 31000; // Base price per unit
+  const originalPrice = 37000; // Original price per unit
+  const discountPerUnit = originalPrice - unitPrice; // Discount per unit
+
   const [quantity, setQuantity] = useState(1);
-  const unitPrice = 18000;
-  const originalPrice = 20000;
 
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
+
+  const totalPrice = unitPrice * quantity;
+  const totalOriginalPrice = originalPrice * quantity;
+  const totalDiscount = discountPerUnit * quantity;
 
   return (
     <div className="bg-white min-h-screen">
@@ -21,7 +27,7 @@ export default function Camcart7() {
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
                 src="/shop/cam7.png"
-                alt="Evota 4K Webcam"
+                alt="Evota 4K PTZ Camera 12X Optical"
                 fill
                 className="object-contain p-8"
                 priority
@@ -30,16 +36,36 @@ export default function Camcart7() {
                 HOT DEAL
               </div>
             </div>
+             {/* About Section Images */}
+                        {[
+                          "cam7-1.png",
+                          "cam7-2.png",
+                          "cam7-3.png",
+                        
+                          
+                        ].map((img, i) => (
+                          <div
+                            key={i}
+                            className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50"
+                          >
+                            <Image
+                              src={`/shop/${img}`}
+                              alt="4K PTZ Camera Features"
+                              fill
+                              className="object-contain p-8"
+                            />
+                          </div>
+                        ))}
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                Evota 4K Webcam
+             Evota 4K Webcam
               </h1>
               <p className="text-lg text-gray-600">
-                12X Zoom • Auto Tracking • 4K Resolution
+               Shop with Confidence – Your Transaction is 100% Secure.
               </p>
             </div>
 
@@ -47,7 +73,7 @@ export default function Camcart7() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} filled={i < 4} />
+                  <StarIcon key={i} className={`w-5 h-5 ${i < 4 ? "text-yellow-400" : "text-gray-200"}`} />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -59,10 +85,10 @@ export default function Camcart7() {
             {/* Price Section */}
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
-                <span className="text-4xl font-bold text-gray-900">₹{unitPrice * quantity}</span>
-                <span className="text-lg text-gray-500 line-through">₹{originalPrice * quantity}</span>
+                <span className="text-4xl font-bold text-gray-900">₹{totalPrice.toLocaleString()}</span>
+                <span className="text-lg text-gray-500 line-through">₹{totalOriginalPrice.toLocaleString()}</span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹{(originalPrice - unitPrice) * quantity}
+                  Save ₹{totalDiscount.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
@@ -76,12 +102,10 @@ export default function Camcart7() {
             {/* Key Features */}
             <div className="mb-8 grid grid-cols-2 gap-3">
               {[
-                "4K Ultra HD Resolution",
-                "12X Optical Zoom",
-                "360° Pan Range",
-                "Auto Tracking",
-                "3-Year Warranty",
-                "Includes Remote"
+                "Support 1080P Full HD with super resolution up to 1080P@30fps/25fps",
+                "This device has full functionality, 2.0 connectivity, a power supply",
+                "Built-in Microphone",
+                "Easy installation",
               ].map((feature, i) => (
                 <div key={i} className="flex items-center gap-2">
                   <div className="text-purple-500">
@@ -142,6 +166,70 @@ export default function Camcart7() {
                   <span>{badge.text}</span>
                 </div>
               ))}
+            </div>
+
+            {/* About Section Content (without image) */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                About This Product:  Evota 10X HD PTZ Camera
+              </h2>
+              <ul className="space-y-4 text-gray-700">
+                {[
+                  "The Evota 4K Webcam delivers outstanding 1080P Full HD resolution with smooth 30fps streaming, a wide 120° field of view, and superior low-light performance. Ideal for video conferencing, streaming, and online meetings, this webcam combines advanced CMOS sensor technology and noise reduction for clear, high-quality visuals and sound.",
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-purple-500 mr-2">•</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Technical Specifications Table */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Technical Specifications
+              </h2>
+  <div className="overflow-x-auto">
+  <div className="inline-block min-w-full align-middle">
+    <div className="overflow-hidden rounded-lg border border-gray-200">
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {[
+            { name: "Brand", value: "Evota" },
+            { name: "Colour", value: "Black" },
+            { name: "Photo Sensor Technology", value: "CMOS" },
+            { name: "Video Capture Resolution", value: "1080p, 720p" },
+            { name: "Operating System", value: "Windows® 7 (1080p and under only), Windows 8.1, Windows 10 or higher, macOS™ 10.10 or higher, Google™ Chromebook™ Version 29.0.1547.70 or higher" },
+            { name: "Manufacturer", value: "evota, IECS House, A-2, C-Block Community Centre, Naraina Vihar, New Delhi - 110028 (India)" },
+            { name: "Package Dimensions", value: "11.5 x 3 x 2.5 cm; 1 Kilograms" },
+            { name: "Item part number", value: "EDU PRO 4K" },
+            { name: "Country of Origin", value: "India" },
+            { name: "ASIN", value: "B0C5CZ1H65" },
+            { name: "Date First Available", value: "16 May 2023" },
+            { name: "Net Quantity", value: "1.00 count" },
+            { name: "Communication Interface", value: "1xRS232 In: 8pin Min DIN, Max Distance: 30m, Protocol: VISCA/Pelco-D/Pelco-P" },
+            { name: "Power Jack", value: "JEITA type (DC IN 12V)/USB B type（DC IN 5V）" },
+          ].map((spec, i) => (
+            <tr
+              key={i}
+              className={i % 2 === 0 ? "" : "bg-gray-50"}
+            >
+              <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                {spec.name}
+              </td>
+              <td className="px-4 sm:px-6 py-4 text-sm text-gray-500 whitespace-normal">
+                {spec.value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  
+
+                </div>
+              </div>
             </div>
           </div>
         </div>

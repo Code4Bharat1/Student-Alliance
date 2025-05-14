@@ -6,8 +6,8 @@ import { StarIcon } from "@heroicons/react/solid";
 
 export default function Camcart4() {
   const [quantity, setQuantity] = useState(1);
-  const unitPrice = 12000;
-  const originalPrice = 15000;
+  const unitPrice = 50000;
+  const originalPrice = 55000;
   const totalPrice = unitPrice * quantity;
   const totalOriginalPrice = originalPrice * quantity;
   const totalSavings = (originalPrice - unitPrice) * quantity;

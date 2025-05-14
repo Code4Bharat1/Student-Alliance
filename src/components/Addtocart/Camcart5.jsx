@@ -5,8 +5,8 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Camcart5() {
-  const unitPrice = 20000; // Base price per unit
-  const originalPrice = 25000; // Original price per unit
+  const unitPrice = 75000; // Base price per unit
+  const originalPrice = 95000; // Original price per unit
   const discountPerUnit = originalPrice - unitPrice; // Discount per unit
 
   const [quantity, setQuantity] = useState(1);
@@ -42,7 +42,7 @@ export default function Camcart5() {
                           "Aboutcam5-img2.png",
                           "Aboutcam5-img3.png",
                           "Aboutcam5-img4.png",
-                          "Aboutcam5-img5.png",
+                          
                         ].map((img, i) => (
                           <div
                             key={i}
@@ -193,145 +193,54 @@ export default function Camcart5() {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
                 Technical Specifications
               </h2>
-              <div className="overflow-x-auto">
-                <div className="inline-block min-w-full align-middle">
-                  <div className="overflow-hidden rounded-lg border border-gray-200">
-                    <table className="min-w-full divide-y divide-gray-200">
-                      <tbody className="divide-y divide-gray-200 bg-white">
-                        {[
-                          { name: "Brand", value: "AIWaft", highlight: true },
-                          { name: "Color", value: "Black" },
-                          { name: "Model", value: "Evota – C12HUL" },
-                          { name: "Type", value: "Evota 4k PTZ Camera" },
-                          { name: "Model Number", value: "AIW20A1" },
-                          {
-                            name: "Included Components",
-                            value: "Camera, Remote, Cable (1.5m), Adapter, Wall Mount",
-                          },
-                          {
-                            name: "Connectivity",
-                            value: "HDMI, USB 3.0, LAN, RS232, 3G-SDI",
-                          },
-                          { name: "Dimensions", value: "200mm x 176mm x 130mm (W x H x D)" },
-                          { name: "Weight", value: "1.41 kg" },
-                          { name: "Optical Zoom", value: "12X (f 4.4mm ~ 52.8mm, F1.8 ~ F2.6)" },
-                          {
-                            name: "Resolution",
-                            value: "2160p @ 60fps, 1080P @ 60fps, 720P @ 60fps",
-                          },
-                          { name: "Video Format", value: "H.264 AVC, H.264 SVC, H.265, MJPEG" },
-                          { name: "Digital Zoom", value: "16X" },
-                          { name: "Sensor Type", value: "CMOS" },
-                          { name: "Sensor", value: "1/2.5'', CMOS, Effective Pixel: 8.51M" },
-                          { name: "Viewing Angle", value: "170°" },
-                          {
-                            name: "Horizontal Angle of View",
-                            value: "71° ~ 8.2°"
-                          },
-                          {
-                            name: "Vertical Angle of view",
-                            value: "42.7° ~ 4.5°"
-                          },
-                          {
-                            name: "Compatibility",
-                            value: "Windows, Mac OS X, Linux, Android",
-                          },
-                          {
-                            name: "Manufacturer",
-                            value: "AIWaft Pvt Ltd",
-                          },
-                          {
-                            name: "Minimal Illumination",
-                            value: "0.05 Lux @ (F1.8, AGC ON)"
-                          },
-                          {
-                            name: "White Balance",
-                            value: "Automatic, one-click, manual"
-                          },
-                          { name: "Backlight Compensation", value: "Support" },
-                          { name: "Video S/N", value: "≥55dB" },
-                          {
-                            name: "Digital Noise Reduction",
-                            value: "2D&3D Digital Noise Reduction"
-                          },
-                          { name: "PAN Range", value: "±170°" },
-                          { name: "Tilt Range", value: "-30° ~ +30°" },
-                          {
-                            name: "Input/Output Interface",
-                            value: "HDMI, USB 3.0, LAN(RJ-45), RS232, 3G-SDI, Line In"
-                          },
-                          { name: "No. of Preset", value: "255 Preset" },
-                          { name: "Input Voltage", value: "DC 12V" },
-                          { name: "Power Consumption", value: "12W (Max)" },
-                          {
-                            name: "Operating Temperature",
-                            value: "-10°C ~ 40°C"
-                          },
-                          { name: "Scanning Mode", value: "Progressive" },
-                          { name: "Lens Mount", value: "M12" },
-                          { name: "Lens", value: "Focus: f=2.8mm, FOV: 120°" },
-                          { name: "Autofocus", value: "Support" },
-                          { name: "Shutter", value: "1/30s ~ 1/10000s" },
-                          { name: "Camera bracket", value: "Bracket with damper" },
-                          {
-                            name: "Operating System",
-                            value: "Windows® 7 (1080P and under only), Windows 8.1, Windows 10 or higher mac OS™ 10.10 or higher Google™ Chrome book™ Version 29.0.1547.70 or higher Linux"
-                          },
-                          {
-                            name: "Hardware Requirement",
-                            value: "2.4 GHz Intel® Core 2 Duo processor or higher 2 GB RAM or more USB 2.0 port (USB 3.0 required for 4K)"
-                          },
-                          {
-                            name: "Color System / Compression",
-                            value: "H.265 / H.264 / MJPEG / YUY2"
-                          },
-                          {
-                            name: "USB Video Communication Protocol",
-                            value: "UVC v1.0/v1.1"
-                          },
-                          { name: "UVC PTZ", value: "Support(EPTZ)" },
-                          {
-                            name: "USB Interface",
-                            value: "1xUSB 3.0: Type B, female"
-                          },
-                          {
-                            name: "HDMI Interface",
-                            value: "1xHDMI: Version 1.4)"
-                          },
-                          { name: "MTBF", value: "30000h" },
-                          { name: "Part code", value: "PPU-IVC-4K-120AF" }
-                        ].map((spec, i) => (
-                          <tr
-                            key={i}
-                            className={`${
-                              spec.highlight
-                                ? "bg-blue-50"
-                                : i % 2 === 0
-                                ? ""
-                                : "bg-gray-50"
-                            }`}
-                          >
-                            <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                              {spec.name}
-                            </td>
-                            <td
-                              className={`px-4 sm:px-6 py-4 text-sm ${
-                                spec.highlight
-                                  ? "font-bold text-blue-800"
-                                  : "text-gray-500"
-                              } ${
-                                spec.name.length > 15 || spec.value.length > 50
-                                  ? "whitespace-normal"
-                                  : "whitespace-nowrap"
-                              }`}
-                            >
-                              {spec.value}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+             <div className="overflow-x-auto">
+  <div className="inline-block min-w-full align-middle">
+    <div className="overflow-hidden rounded-lg border border-gray-200">
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {[
+            { name: "Model", value: "Evota – C12HUL" },
+            { name: "Type", value: "Evota 4k PTZ Camera" },
+            { name: "Resolution", value: "2160p @ 60fps, 1080P @ 60fps, 720P @ 60fps" },
+            { name: "Video Format", value: "H.264 AVC, H.264 SVC, H.265, MJPEG" },
+            { name: "Optical Zoom", value: "12X (f 4.4mm ~ 52.8mm, F1.8 ~ F2.6)" },
+            { name: "Digital Zoom", value: "16X" },
+            { name: "Minimal Illumination", value: "0.05 Lux @ (F1.8, AGC ON)" },
+            { name: "White Balance", value: "Automatic, one-click, manual" },
+            { name: "Backlight Compensation", value: "Support" },
+            { name: "Video S/N", value: "≥55dB" },
+            { name: "Digital Noise Reduction", value: "2D&3D Digital Noise Reduction" },
+            { name: "Sensor", value: "1 / 2.5”, CMOS, Effective Pixel: 8.51M" },
+            { name: "PAN Range", value: "±170°" },
+            { name: "Tilt Range", value: "-30° ~ +30°" },
+            { name: "Horizontal Angle of View", value: "71 ° ~ 8.2 °" },
+            { name: "Vertical Angle of view", value: "42.7 ° ~ 4.5 °" },
+            { name: "Input/Output Interface", value: "HDMI, USB 3.0, LAN(RJ-45), RS232, 3G-SDI, Line In" },
+            { name: "Operating System Support of Evota 4k PTZ Camera", value: "Windows, Mac OS X, Linux, Android" },
+            { name: "No. of Preset", value: "255 Preset" },
+            { name: "Input Voltage", value: "DC 12V" },
+            { name: "Power Consumption", value: "12W (Max)" },
+            { name: "Operating Temperature", value: "-10 ° C ~ 40 ° C" },
+            { name: "Dimension (W X H X D)", value: "200mm x 176mm x 130mm" },
+            { name: "Net weight", value: "1.41 Kg" },
+          ].map((spec, i) => (
+            <tr
+              key={i}
+              className={i % 2 === 0 ? "" : "bg-gray-50"}
+            >
+              <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                {spec.name}
+              </td>
+              <td className="px-4 sm:px-6 py-4 text-sm text-gray-500 whitespace-normal">
+                {spec.value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  
+
                 </div>
               </div>
             </div>

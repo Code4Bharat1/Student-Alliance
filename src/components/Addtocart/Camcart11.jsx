@@ -5,16 +5,18 @@ import { useState } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 
 export default function Camcart11() {
+  const unitPrice = 9000; // Base price per unit
+  const originalPrice = 11000; // Original price per unit
+  const discountPerUnit = originalPrice - unitPrice; // Discount per unit
+
   const [quantity, setQuantity] = useState(1);
 
-  // Constants
-  const unitPrice = 15000;
-  const originalPrice = 20000;
-  const discountPerUnit = 5000;
-
-  // Handlers
   const increment = () => setQuantity(q => q + 1);
   const decrement = () => setQuantity(q => (q > 1 ? q - 1 : 1));
+
+  const totalPrice = unitPrice * quantity;
+  const totalOriginalPrice = originalPrice * quantity;
+  const totalDiscount = discountPerUnit * quantity;
 
   return (
     <div className="bg-white min-h-screen">
@@ -25,7 +27,8 @@ export default function Camcart11() {
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
                 src="/shop/cam11.png"
-                alt="Logitech C920e Webcam — Full HD"
+                alt="Logitech C920e Webcam – Full HD 1080p/30FPS
+"
                 fill
                 className="object-contain p-8"
                 priority
@@ -34,16 +37,37 @@ export default function Camcart11() {
                 HOT DEAL
               </div>
             </div>
+             {/* About Section Images */}
+                        {[
+                          "cam11-1.png",
+                          "cam11-2.png",
+                          "cam11-3.png",
+                          
+                          
+                        ].map((img, i) => (
+                          <div
+                            key={i}
+                            className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50"
+                          >
+                            <Image
+                              src={`/shop/${img}`}
+                              alt="4K PTZ Camera Features"
+                              fill
+                              className="object-contain p-8"
+                            />
+                          </div>
+                        ))}
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                Logitech C920e Webcam — Full HD
+              Logitech C920e Webcam – Full HD 1080p/30FPS
+
               </h1>
               <p className="text-lg text-gray-600">
-                12X Zoom • Auto Tracking • 4K Resolution
+               Shop with Confidence – Your Transaction is 100% Secure.
               </p>
             </div>
 
@@ -51,7 +75,7 @@ export default function Camcart11() {
             <div className="flex items-center gap-2 mb-6">
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
-                  <StarIcon key={i} filled={i < 4} className="w-5 h-5 text-yellow-400" />
+                  <StarIcon key={i} className={`w-5 h-5 ${i < 4 ? "text-yellow-400" : "text-gray-200"}`} />
                 ))}
               </div>
               <span className="text-sm text-gray-500">6 reviews</span>
@@ -63,14 +87,10 @@ export default function Camcart11() {
             {/* Price Section */}
             <div className="mb-8 p-6 bg-gradient-to-r from-purple-50 to-blue-50 rounded-xl">
               <div className="flex items-end gap-4 mb-2">
-                <span className="text-4xl font-bold text-gray-900">
-                  ₹{(unitPrice * quantity).toLocaleString()}
-                </span>
-                <span className="text-lg text-gray-500 line-through">
-                  ₹{(originalPrice * quantity).toLocaleString()}
-                </span>
+                <span className="text-4xl font-bold text-gray-900">₹{totalPrice.toLocaleString()}</span>
+                <span className="text-lg text-gray-500 line-through">₹{totalOriginalPrice.toLocaleString()}</span>
                 <span className="text-sm bg-red-100 text-red-700 px-2 py-1 rounded-full font-semibold">
-                  Save ₹{(discountPerUnit * quantity).toLocaleString()}
+                  Save ₹{totalDiscount.toLocaleString()}
                 </span>
               </div>
               <div className="flex items-center text-green-600 font-medium">
@@ -81,26 +101,7 @@ export default function Camcart11() {
               </div>
             </div>
 
-            {/* Key Features */}
-            <div className="mb-8 grid grid-cols-2 gap-3">
-              {[
-                "4K Ultra HD Resolution",
-                "12X Optical Zoom",
-                "360° Pan Range",
-                "Auto Tracking",
-                "3-Year Warranty",
-                "Includes Remote"
-              ].map((feature, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className="text-purple-500">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <span className="text-gray-700">{feature}</span>
-                </div>
-              ))}
-            </div>
+          
 
             {/* Quantity Selector */}
             <div className="mb-8 text-gray-700">
@@ -150,6 +151,97 @@ export default function Camcart11() {
                   <span>{badge.text}</span>
                 </div>
               ))}
+            </div>
+
+            {/* About Section Content (without image) */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                About This Product
+              </h2>
+              <ul className="space-y-4 text-gray-700">
+                {[
+                "W125999483 Designed to perfection Compact construction Sleek design",
+ 
+                ].map((text, i) => (
+                  <li key={i} className="flex items-start">
+                    <span className="text-purple-500 mr-2">•</span>
+                    <span>{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Technical Specifications Table */}
+            <div className="mt-12 border-t border-gray-100 pt-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
+                Technical Specifications
+              </h2>
+             <div className="overflow-x-auto">
+  <div className="inline-block min-w-full align-middle">
+    <div className="overflow-hidden rounded-lg border border-gray-200">
+      <table className="min-w-full divide-y divide-gray-200">
+        <tbody className="divide-y divide-gray-200 bg-white">
+          {[
+            { name: "Brand", value: "Logitech" },
+  { name: "Manufacturer", value: "Logitech" },
+  { name: "Model", value: "60-001360" },
+  { name: "Model Name", value: "C920E BUSINESS WEBCAM" },
+  { name: "Product Dimensions", value: "150 x 5 x 5 cm; 162 g" },
+  { name: "Batteries", value: "1 A batteries required." },
+  { name: "Memory Storage Capacity", value: "1 GB" },
+  { name: "Flash memory type", value: "Micro SD" },
+  { name: "Resolution", value: "1080p" },
+  { name: "Compatible Devices", value: "Laptop, Personal Computer" },
+  { name: "Special Features", value: "Low Light" },
+  { name: "Mounting Hardware", value: "USB Cable" },
+  { name: "Number of items", value: "1" },
+  { name: "Display Technology", value: "LCD" },
+  { name: "Standing screen display size", value: "75" },
+  { name: "Image Aspect Ratio", value: "16:9" },
+  { name: "Image stabilization technology", value: "Digital" },
+  { name: "Has Image Stabilisation", value: "Yes" },
+  { name: "Optical zoom", value: "5 x" },
+  { name: "Digital zoom", value: "3 x" },
+  { name: "Resolution", value: "FHD" },
+  { name: "Minimum diaphragm opening", value: "10 Millimeters" },
+  { name: "Min Focal Length", value: "78" },
+  { name: "Audio input compatible with the item", value: "Microphone" },
+  { name: "Video Capture Resolution", value: "1080p" },
+  { name: "Batteries Included", value: "No" },
+  { name: "Batteries Required", value: "No" },
+  { name: "Connector Type", value: "USB" },
+  { name: "Device interface - primary", value: "Buttons" },
+  { name: "Form Factor", value: "Compact" },
+  { name: "Lens type", value: "Zoom" },
+  { name: "Does it contain liquid?", value: "No" },
+  { name: "Includes Rechargeable Battery", value: "No" },
+  { name: "Is there a timer?", value: "No" },
+  { name: "Country of Origin", value: "China" },
+  { name: "Item Weight", value: "162 g" },
+  { name: "Net Quantity", value: "1.0 count" },
+  { name: "ASIN", value: "B08T8KYD1D" },
+  { name: "Date First Available", value: "12 January 2021" },
+  { name: "Item Dimensions LxWxH", value: "150 x 5 x 5 Centimeters" },
+          ].map((spec, i) => (
+            <tr
+              key={i}
+              className={i % 2 === 0 ? "" : "bg-gray-50"}
+            >
+              <td className="px-4 sm:px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                {spec.name}
+              </td>
+              <td className="px-4 sm:px-6 py-4 text-sm text-gray-500 whitespace-normal">
+                {spec.value}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  
+
+                </div>
+              </div>
             </div>
           </div>
         </div>
