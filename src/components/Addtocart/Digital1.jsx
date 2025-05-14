@@ -43,7 +43,7 @@ export default function Digital1() {
   // Product details
   const product = {
     id: 5, // Different ID from previous products
-    name: "AIWaft Turbo Tab – AI-Powered 4K Interactive Flat Panel",
+    name: "Student Alliance Turbo Tab – AI-Powered 4K Interactive Flat Panel",
     basePrice: unitPrice,
     image: "/shop/digital-d1.jpg",
     description: "Smart Digital Board for Teaching, Classrooms & Online Learning with Android 14 and Multi-Touch",
@@ -332,11 +332,11 @@ export default function Digital1() {
 
 <br /> <br />
              <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    AIWaft Turbo Tab Details
+    Student Alliance Turbo Tab Details
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
     <li className="flex items-start">
-      Upgrade your classroom with the AIWaft Turbo Tab, a next-gen AI-powered interactive flat panel designed for seamless teaching and collaboration. With a 4K Ultra HD display available in 65, 75, and 86 inches, it delivers crystal-clear visuals and smooth multi-touch functionality.
+      Upgrade your classroom with the Student Alliance Turbo Tab, a next-gen AI-powered interactive flat panel designed for seamless teaching and collaboration. With a 4K Ultra HD display available in 65, 75, and 86 inches, it delivers crystal-clear visuals and smooth multi-touch functionality.
       <br/>
 Powered by Android 14 (EDLA Certified) and a Quad-Core ARM Cortex A73 processor, it ensures fast performance, making it perfect for digital classrooms, online teaching, and corporate presentations. The zero bonding technology enhances writing accuracy, while AG toughened glass ensures durability.
 
@@ -360,7 +360,7 @@ Powered by Android 14 (EDLA Certified) and a Quad-Core ARM Cortex A73 processor,
             Brand
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
+           Student Alliance
           </td>
         </tr>
 
@@ -369,7 +369,7 @@ Powered by Android 14 (EDLA Certified) and a Quad-Core ARM Cortex A73 processor,
             Manufacturer
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft
+            Student Alliance
           </td>
         </tr>
 

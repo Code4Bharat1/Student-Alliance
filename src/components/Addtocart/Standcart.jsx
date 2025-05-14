@@ -27,7 +27,7 @@ export default function StandCart() {
   // Product details
   const product = {
     id: 2,
-    name: "AIWaft Metal Floor Digital Board Stand",
+    name: "Student Alliance Metal Floor Digital Board Stand",
     price: basePrice,
     image: "/shop/stand.png",
     description: "Sturdy steel frame supports TVs up to 55\" (58kg weight capacity) with universal VESA compatibility",
@@ -107,7 +107,7 @@ export default function StandCart() {
                       src={img}
                       alt={
                         i === 0
-                          ? "AIWaft Metal Floor Digital Board Stand"
+                          ? "Student Alliance Metal Floor Digital Board Stand"
                           : `Feature ${i}`
                       }
                       fill
@@ -344,7 +344,7 @@ export default function StandCart() {
             Brand
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
+           Student Alliance
           </td>
         </tr>
 
@@ -354,7 +354,7 @@ export default function StandCart() {
             Model
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft TV Stand on Wheels
+            Student Alliance TV Stand on Wheels
           </td>
         </tr>
 
@@ -426,7 +426,7 @@ export default function StandCart() {
             Manufacturer
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-            AIWaft Pvt Ltd
+           Student Alliance Pvt Ltd
           </td>
         </tr>
 

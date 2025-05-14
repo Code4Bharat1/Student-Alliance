@@ -335,7 +335,7 @@ export default function Digital3() {
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
     <li className="flex items-start">
-     Introducing the AIWaft Interactive Flat Panel, a cutting-edge smart board designed to enhance collaborative learning and presentations. With a high-resolution 4K/8K display and multi-touch capability, this smart board ensures a seamless experience for education and business environments. Featuring wireless connectivity, built-in OS, and fast response with the interactive pen, the AIWaft smart board allows for smooth and efficient collaboration.
+     Introducing the Student Alliance Interactive Flat Panel, a cutting-edge smart board designed to enhance collaborative learning and presentations. With a high-resolution 4K/8K display and multi-touch capability, this smart board ensures a seamless experience for education and business environments. Featuring wireless connectivity, built-in OS, and fast response with the interactive pen, the Student Alliance smart board allows for smooth and efficient collaboration.
     </li>
   </ul>
            {/* Clean Product Specifications Table with Brand Highlight */}

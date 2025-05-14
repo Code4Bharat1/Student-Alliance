@@ -26,7 +26,7 @@ export default function Camcart2() {
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
                 src="/shop/cam2.jpg"
-                alt="AIWaft 4K PTZ Camera Pro"
+                alt="Student Alliance 4K PTZ Camera Pro"
                 fill
                 className="object-contain p-8"
                 priority
@@ -61,7 +61,7 @@ export default function Camcart2() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft 4K PTZ Camera Pro Lens – 12X Zoom, Auto Tracking, Best
+                Student Alliance 4K PTZ Camera Pro Lens – 12X Zoom, Auto Tracking, Best
                 for Online Teaching, Live Streaming & Classroom Recording,
                 HDMI/SDI/USB/IP
               </h1>
@@ -248,7 +248,7 @@ export default function Camcart2() {
                         Brand
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-                        AIWaft
+                        Student Alliance
                       </td>
                     </tr>
 
@@ -258,7 +258,7 @@ export default function Camcart2() {
                         Manufacturer
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        AIWaft Private Limited
+                       Student Alliance Private Limited
                       </td>
                     </tr>
 

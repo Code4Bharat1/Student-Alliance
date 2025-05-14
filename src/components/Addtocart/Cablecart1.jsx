@@ -27,7 +27,7 @@ export default function CableCart1() {
   // Product details
   const product = {
     id: 66,
-    name: "AIWaft 10M USB 2.0 Extension Cable, Male to Female",
+    name: "Student Alliance 10M USB 2.0 Extension Cable, Male to Female",
     price: basePrice,
     image: "/shop/cable1.png",
     description: "10M USB 2.0 Extension Cable with Type A male to type A female connectors",
@@ -328,7 +328,7 @@ export default function CableCart1() {
           Brand
         </td>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-          AIWaft
+          Student Alliance
         </td>
       </tr>
 
@@ -464,7 +464,7 @@ export default function CableCart1() {
           Manufacturer
         </td>
         <td className="px-6 py-4 text-sm text-gray-500">
-          AIWaft
+         Student Alliance
         </td>
       </tr>
 

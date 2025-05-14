@@ -32,7 +32,7 @@ const Shop = () => {
     //camera
     {
       id: 1,
-      name: "AIWaft 4K PTZ Camera",
+      name: "Student Alliance 4K PTZ Camera",
       price: 60000,
       discount: 20000,
       rating: 5,
@@ -43,7 +43,7 @@ const Shop = () => {
     },
     {
       id: 2,
-      name: "AIWaft 4K PTZ Camera Pro",
+      name: "Student Alliance 4K PTZ Camera Pro",
       price: 40000,
       discount: 10000,
       rating: 5,
@@ -109,7 +109,7 @@ const Shop = () => {
     },
     {
       id: 8,
-      name: "AIWAFT 4K Webcam with A1 Auto",
+      name: "Student Alliance 4K Webcam with A1 Auto",
       price: 20000,
       discount: 8000,
       rating: 5,
@@ -120,7 +120,7 @@ const Shop = () => {
     },
     {
       id: 9,
-      name: "AIWaft EPTZ 4K Webcam - Ultra HD",
+      name: "Student Alliance EPTZ 4K Webcam - Ultra HD",
       price: 9000,
       discount: 1000,
       rating: 5,
@@ -165,7 +165,7 @@ const Shop = () => {
     //Digital Board
     {
       id: 14,
-      name: "AIWaft Turbo Tab – AI-Powered 4K Interactive Flat Panel",
+      name: "Student Alliance Turbo Tab – AI-Powered 4K Interactive Flat Panel",
       price: 150000,
       discount: 50000,
       rating: 5,
@@ -176,7 +176,7 @@ const Shop = () => {
     },
     {
       id: 15,
-      name: "AIWaft 4K Interactive Flat Panel ",
+      name: "Student Alliance 4K Interactive Flat Panel ",
       price: 150000,
       discount: 70000,
       rating: 5,
@@ -232,7 +232,7 @@ const Shop = () => {
     //mic
     {
       id: 20,
-      name: "AIWaft Wireless Microphone | 48kHz/24bit Audio ",
+      name: "Student Alliance Wireless Microphone | 48kHz/24bit Audio ",
       price: 6999,
       discount: 4000,
       rating: 5,
@@ -277,7 +277,7 @@ const Shop = () => {
     //cable
     {
       id: 24,
-      name: "AIWaft 10M USB 2.0 Extension Cable, Male to Female",
+      name: "Student Alliance 10M USB 2.0 Extension Cable, Male to Female",
       price: 4500,
       discount: 1000,
       rating: 5,
@@ -288,7 +288,7 @@ const Shop = () => {
     },
     {
       id: 25,
-      name: "AIWaft 10m USB 3.0 Extension Cable, Male to Female",
+      name: "Student Alliance 10m USB 3.0 Extension Cable, Male to Female",
       price: 5500,
       discount: 1000,
       rating: 5,
@@ -300,7 +300,7 @@ const Shop = () => {
     //Speaker
     {
       id: 26,
-      name: "AIWaft Conference Speaker with Microphone",
+      name: "Student Alliance Conference Speaker with Microphone",
       price: 20000,
       discount: 5000,
       rating: 5,
@@ -345,7 +345,7 @@ const Shop = () => {
     //OPS
     {
       id: 30,
-      name: "AIWaft OPS SRX900 for Interactive Displays",
+      name: "Student Alliance OPS SRX900 for Interactive Displays",
       price: 50000,
       discount: 14000,
       rating: 5,
@@ -357,7 +357,7 @@ const Shop = () => {
     //Stand
     {
       id: 31,
-      name: "AIWaft Metal Floor Digital Board Stand",
+      name: "Student Alliance Metal Floor Digital Board Stand",
       price: 36000,
       discount: 10000,
       rating: 5,
@@ -369,7 +369,7 @@ const Shop = () => {
     //Lighting
     {
       id: 32,
-      name: "AIWaft 13-Inch Ring Light with Phone Holder",
+      name: "Student Alliance 13-Inch Ring Light with Phone Holder",
       price: 3999,
       discount: 2849,
       rating: 5,
@@ -380,7 +380,7 @@ const Shop = () => {
     },
     {
       id: 33,
-      name: "AIWaft 18-Inch Ring Light with Stand & Phone Holder",
+      name: "Student Alliance 18-Inch Ring Light with Stand & Phone Holder",
       price: 6000,
       discount: 2150,
       rating: 5,

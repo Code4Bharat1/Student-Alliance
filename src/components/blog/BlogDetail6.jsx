@@ -37,7 +37,7 @@ export default function BlogsDetail6() {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4, duration: 0.6 }}
               >
-                Discover why AIWAFT leads the market with superior quality and service
+                Discover why Student Alliance leads the market with superior quality and service
               </motion.p>
             </div>
             
@@ -71,7 +71,7 @@ export default function BlogsDetail6() {
           >
             <div className="text-gray-500 font-medium">Featured Brands:</div>
             <div className="flex flex-wrap justify-center gap-4">
-              <div className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">AIWAFT</div>
+              <div className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">Student Alliance</div>
               <div className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">LG</div>
               <div className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">ViewSonic</div>
               <div className="bg-white px-4 py-2 rounded-lg shadow-sm border border-gray-100">Maxhub</div>
@@ -89,7 +89,7 @@ export default function BlogsDetail6() {
       <section className="mb-24">
         <h2 className="text-3xl font-bold text-center mb-16 relative">
           <span className="relative inline-block">
-            Why AIWAFT Leads the Market
+            Why Student Alliance Leads the Market
             <span className="absolute bottom-0 left-0 w-full h-2 bg-blue-200 -z-10"></span>
           </span>
         </h2>
@@ -109,7 +109,7 @@ export default function BlogsDetail6() {
             <div className="p-6">
               <h3 className="text-xl font-bold mb-3 text-blue-600">Economical Pricing</h3>
               <p className="text-gray-700">
-                AIWAFT offers the most cost-effective solutions without compromising quality, making advanced digital boards accessible to more institutions.
+                Student Alliance offers the most cost-effective solutions without compromising quality, making advanced digital boards accessible to more institutions.
               </p>
             </div>
           </motion.div>

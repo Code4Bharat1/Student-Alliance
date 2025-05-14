@@ -27,7 +27,7 @@ export default function SpeakerCart1() {
   // Product details
   const product = {
     id: 5,
-    name: "AIWaft Conference Speaker with Microphone",
+    name: "Student Alliance Conference Speaker with Microphone",
     price: basePrice,
     image: "/shop/speaker1.png",
     description: "Professional conference speaker with built-in microphone for clear audio in meetings and presentations",
@@ -337,7 +337,7 @@ export default function SpeakerCart1() {
     <tbody className="divide-y divide-gray-200 bg-white">
       <tr className="bg-blue-50">
         <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Brand</td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">AIWaft</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Student Alliance</td>
       </tr>
       <tr>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model</td>
@@ -373,7 +373,7 @@ export default function SpeakerCart1() {
       </tr>
       <tr>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Manufacturer</td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIWaft Pvt Ltd</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Student Alliance Pvt Ltd</td>
       </tr>
       <tr className="bg-gray-50">
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">UPC</td>

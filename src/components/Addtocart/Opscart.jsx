@@ -26,7 +26,7 @@ export default function OpsCart() {
   const addToCart = () => {
     const newItem = {
       id: "ops-srx900", // Unique identifier for the product
-      name: "AIWaft OPS SRX900 for Interactive Displays",
+      name: "Student Alliance OPS SRX900 for Interactive Displays",
       price: basePrice,
       originalPrice: originalPrice,
       quantity: quantity,
@@ -48,7 +48,7 @@ export default function OpsCart() {
           <div className="fixed top-4 right-4 z-50">
             <div className="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center animate-fade-in">
               <CheckCircleIcon className="w-6 h-6 mr-2" />
-              <span>Item added to cart! ({quantity} x AIWaft OPS SRX900)</span>
+              <span>Item added to cart! ({quantity} x Student Alliance OPS SRX900)</span>
             </div>
           </div>
         )}
@@ -59,7 +59,7 @@ export default function OpsCart() {
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
                 src="/shop/opsx.png"
-                alt="AIWaft OPS SRX900 for Interactive Displays"
+                alt="Student Alliance OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
                 priority
@@ -73,7 +73,7 @@ export default function OpsCart() {
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
                 src="/shop/aboutops1.png"
-                alt="AIWaft OPS SRX900 for Interactive Displays"
+                alt="Student Alliance OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
               />
@@ -81,7 +81,7 @@ export default function OpsCart() {
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
                 src="/shop/aboutops1-1.png"
-                alt="AIWaft OPS SRX900 for Interactive Displays"
+                alt="Student Alliance OPS SRX900 for Interactive Displays"
                 fill
                 className="object-contain p-8"
               />
@@ -89,7 +89,7 @@ export default function OpsCart() {
             <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
               <Image
                 src="/shop/aboutops1-2.png"
-                alt="AIWaft OPS SRX900 for Interactive Displayss"
+                alt="Student Alliance OPS SRX900 for Interactive Displayss"
                 fill
                 className="object-contain p-8"
               />
@@ -100,7 +100,7 @@ export default function OpsCart() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft OPS SRX900 for Interactive Displays
+                Student Alliance OPS SRX900 for Interactive Displays
               </h1>
             </div>
 
@@ -240,7 +240,7 @@ export default function OpsCart() {
 
             {/* OPS Module Features */}
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Features of the AIWaft OPS SRX900 Upgrade Module
+              Features of the Student Alliance OPS SRX900 Upgrade Module
             </h2>
             <ul className="space-y-3 text-gray-700 text-sm">
               <li className="flex items-start">
@@ -277,11 +277,11 @@ export default function OpsCart() {
     <tbody className="divide-y divide-gray-200 bg-white">
       <tr>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Brand</td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIWaft</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Student Alliance</td>
       </tr>
       <tr>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Manufacturer</td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIWaft Pvt Ltd, AIWaft Pvt Ltd</td>
+        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Student Alliance Pvt Ltd, Student Alliance Pvt Ltd</td>
       </tr>
       <tr>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Model</td>
@@ -318,7 +318,7 @@ export default function OpsCart() {
       <tr>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Specific Uses For Product</td>
         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-          The AIWaft OPS is ideal for upgrading interactive flat panel displays with advanced computing power, 4K video output, and extensive connectivity options, making it perfect for educational, business, and presentation environments.
+          The Student Alliance OPS is ideal for upgrading interactive flat panel displays with advanced computing power, 4K video output, and extensive connectivity options, making it perfect for educational, business, and presentation environments.
         </td>
       </tr>
       <tr>

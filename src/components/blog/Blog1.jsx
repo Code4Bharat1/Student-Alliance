@@ -9,74 +9,61 @@ import WhatsAppWidget from '../WhatsApp/WhatApp';
 const blogData = [
   {
     title: 'IFPD for Home Use',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/IFPD-home.png',
     link: '/blog-d1',
   },
   {
     title: 'IFPD for Work and Office',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/IFPD-work.png',
     link: '/blog-d2',
   },
   {
     title: 'IFPD for Schools and Classes',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/IFPD-school.jpg',
     link: '/blog-d3',
   },
   {
     title: 'Top Live Streaming Equipment for Beginners: Cameras, Microphones & More',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/live .jpg',
     link: '/blog-d4',
   },
   {
-    title: 'AIWaft 4K Ultra HD Alpha Webcam: Unmatched Quality at an Affordable Price',
-    date: 'Tuesday, August 29, 2023',
+    title: 'Student Alliance 4K Ultra HD Alpha Webcam: Unmatched Quality at an Affordable Price',
     image: '/images/webcam.jpg',
     link: '/blog-d5',
   },
   {
-    title: 'Top 5 Best Digital Board Companies in India – Why AIWAFT Leads the Way',
-    date: 'Tuesday, August 29, 2023',
+    title: 'Top 5 Best Digital Board Companies in India – Why Student Alliance Leads the Way',
     image: '/images/digital.png',
     link: '/blog-d6',
   },
   {
     title: 'Start Teaching on an Online Teaching Platform & Earn from Home',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/online.png',
     link: '/blog-d9',
   },
   {
     title: '86-Inch Digital Boards: Features, Pricing, and Why Maxhub U3 Series is a Top Choice',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/866i.png',
     link: '/blog-d8',
   },
   {
     title: 'Get the best  interactive displays for your classroom Complete Guide to Latest Digital Board Prices',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/smart.jpg',
     link: '/blog-d10',
   },
   {
     title: '5 Key Strategies to Scale Your Online Coaching Business in 2024 with High-Quality Video Tools',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/coching.png',
     link: '/blog-d7',
   },
   {
     title: 'Start an Offline Coaching Center Costs and Requirements How to Start an Offline Coaching',
-  
-    date: 'Tuesday, August 29, 2023',
     image: '/images/hqdefault.jpg',
     link: '/blog-d11',
   },
   {
     title: 'Hybrid Teaching Module Earned Crores: A Deep Dive into Success, innovative hybrid teaching',
-    date: 'Tuesday, August 29, 2023',
     image: '/images/physicswala.png',
     link: '/blog-d12',
   },

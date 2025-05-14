@@ -237,7 +237,7 @@ export default function Camcart4() {
                     <table className="min-w-full divide-y divide-gray-200">
                       <tbody className="divide-y divide-gray-200 bg-white">
                         {[
-                          { name: "Brand", value: "AIWaft", highlight: true },
+                          { name: "Brand", value: "Student Alliance", highlight: true },
                           { name: "Color", value: "Black" },
                           { name: "Model Number", value: "AIW20A1" },
                           {
@@ -264,7 +264,7 @@ export default function Camcart4() {
                           },
                           {
                             name: "Manufacturer",
-                            value: "AIWaft Pvt Ltd",
+                            value: "Student Alliance Pvt Ltd",
                           },
                           { name: "Digital Zoom", value: "8X" },
                           {

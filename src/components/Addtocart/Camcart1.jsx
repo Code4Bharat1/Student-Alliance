@@ -62,7 +62,7 @@ export default function Camcart1() {
             >
               <Image
                 src={img}
-                alt={i === 0 ? "AIWaft 4K PTZ Camera Pro" : `Feature ${i}`}
+                alt={i === 0 ? "Student Alliance 4K PTZ Camera Pro" : `Feature ${i}`}
                 fill
                 className="object-contain p-8 hover:scale-105 transition-transform duration-500"
                 priority={i === 0}
@@ -104,7 +104,7 @@ export default function Camcart1() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft 4K PTZ Camera | Live Streaming, Online Teaching & Classroom Recording | Auto-Tracking | 12X Optical Zoom | Best for Online Classes in India
+                Student Alliance 4K PTZ Camera | Live Streaming, Online Teaching & Classroom Recording | Auto-Tracking | 12X Optical Zoom | Best for Online Classes in India
               </h1>
             </div>
 
@@ -279,7 +279,7 @@ export default function Camcart1() {
         <table className="min-w-full w-max divide-y divide-gray-200">
           <tbody className="divide-y divide-gray-200 bg-white">
             {[
-              ['Brand', 'AIWaft'],
+              ['Brand', 'Student Alliance'],
               ['Colour', 'Black'],
               ['Number of Items', '1'],
               ['Included Components', 'Camera, Remote, Cable (1.5 meter), Adapter & Wall Mount.'],
@@ -298,7 +298,7 @@ export default function Camcart1() {
               ['Photo Sensor Technology', 'CMOS'],
               ['Maximum Webcam Image Resolution', '8.51 MP'],
               ['Control Method', 'Remote'],
-              ['Manufacturer', 'AIWaft Pvt Ltd, aiwaft20@gmail.com'],
+              ['Manufacturer', 'Student Alliance Pvt Ltd, aiwaft20@gmail.com'],
               ['Model', 'AIW20A1'],
               ['Product Dimensions', '20 x 13 x 17.6 cm; 1.3 kg'],
               ['Operating System', 'Linux, Windows, iOS, Android'],
@@ -316,8 +316,8 @@ export default function Camcart1() {
               ['Is there a timer?', 'No'],
               ['Includes remote', 'Yes'],
               ['Item Weight', '1 kg 300 g'],
-              ['Packer', 'AIWaft Pvt Ltd'],
-              ['Importer', 'AIWaft'],
+              ['Packer', 'Student Alliance Pvt Ltd'],
+              ['Importer', 'Student Alliance'],
               ['Item Dimensions LxWxH', '20 x 13 x 17.6 Centimeters'],
               ['Generic Name', '4K PTZ Camera']
             ].map(([key, value], index) => (

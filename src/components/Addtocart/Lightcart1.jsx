@@ -114,7 +114,7 @@ export default function LightCart1() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                AIWaft 13-Inch Ring Light with Phone Holder, 2700K-6500K Dimmable LED, 15W USB Powered, 10-100% Brightness Control for Video, Makeup & Live Streaming
+                Student Alliance 13-Inch Ring Light with Phone Holder, 2700K-6500K Dimmable LED, 15W USB Powered, 10-100% Brightness Control for Video, Makeup & Live Streaming
               </h1>
             </div>
 
@@ -253,7 +253,7 @@ export default function LightCart1() {
 
               {/* OPS Module Features */}
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    About AIWaft 13-inch Ring Light
+    About Student Alliance 13-inch Ring Light
   </h2>
  <ul className="space-y-3 text-gray-700 text-sm">
   <li className="flex items-start">
@@ -300,7 +300,7 @@ export default function LightCart1() {
               Brand
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-              AIWaft
+             Student Alliance
             </td>
           </tr>
 
@@ -309,7 +309,7 @@ export default function LightCart1() {
               Manufacturer
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              AIWaft Pvt Ltd
+              Student Alliance Pvt Ltd
             </td>
           </tr>
 

@@ -114,7 +114,7 @@ export default function LightCart2() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-               AIWaft 18-Inch Ring Light with Stand & Phone Holder
+               Student Alliance 18-Inch Ring Light with Stand & Phone Holder
               </h1>
             </div>
 
@@ -253,12 +253,12 @@ export default function LightCart2() {
 
               {/* About Features */}
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    AIWaft 18-Inch Ring Light with Stand & Phone Holder
+    Student Alliance 18-Inch Ring Light with Stand & Phone Holder
   </h2>
  <ul className="space-y-3 text-gray-700 text-sm">
   <li className="flex items-start">
     <span className="text-purple-500 mr-2">•</span>
-    <span>The AIWaft 18-inch ring light is the perfect lighting solution for YouTube videos, live streaming, makeup tutorials, photography, and professional shoots</span>
+    <span>The Student Alliance 18-inch ring light is the perfect lighting solution for YouTube videos, live streaming, makeup tutorials, photography, and professional shoots</span>
   </li>
   <li className="flex items-start">
     <span className="text-purple-500 mr-2">•</span>
@@ -295,12 +295,12 @@ export default function LightCart2() {
           {/* Highlighted Brand Row */}
           <tr className="bg-blue-50">
             <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Brand</td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">AIWaft</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Student Alliance</td>
           </tr>
 
           <tr>
             <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Manufacturer</td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">AIWaft Pvt Ltd</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Student Alliance Pvt Ltd</td>
           </tr>
 
           <tr className="bg-gray-50">

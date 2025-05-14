@@ -27,7 +27,7 @@ export default function BlogsDetail5() {
                 transition={{ delay: 0.2, duration: 0.6 }}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  AIWaft 4K Ultra HD Alpha Webcam
+                  Student Alliance 4K Ultra HD Alpha Webcam
                 </span>
               </motion.h1>
               
@@ -51,7 +51,7 @@ export default function BlogsDetail5() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/webcam.jpg"
-                  alt="AIWaft 4K Webcam"
+                  alt="Student Alliance 4K Webcam"
                   width={800}
                   height={500}
                   className="w-full h-60"

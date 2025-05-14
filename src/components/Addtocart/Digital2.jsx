@@ -28,7 +28,7 @@ export default function Digital2() {
   // Product details
   const product = {
     id: 7,
-    name: "AIWaft 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals",
+    name: "Student Alliance 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals",
     basePrice: unitPrice,
     image: "/shop/digital-d2.png",
     description: "High-resolution interactive display with multi-touch capability and built-in Android OS",
@@ -320,7 +320,7 @@ export default function Digital2() {
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
     <li className="flex items-start">
-     Introducing the AIWaft Interactive Flat Panel, a cutting-edge smart board designed to enhance collaborative learning and presentations. With a high-resolution 4K/8K display and multi-touch capability, this smart board ensures a seamless experience for education and business environments. Featuring wireless connectivity, built-in OS, and fast response with the interactive pen, the AIWaft smart board allows for smooth and efficient collaboration.
+     Introducing the Student Alliance Interactive Flat Panel, a cutting-edge smart board designed to enhance collaborative learning and presentations. With a high-resolution 4K/8K display and multi-touch capability, this smart board ensures a seamless experience for education and business environments. Featuring wireless connectivity, built-in OS, and fast response with the interactive pen, the Student Alliance smart board allows for smooth and efficient collaboration.
     </li>
   </ul>
            {/* Clean Product Specifications Table with Brand Highlight */}
@@ -339,7 +339,7 @@ export default function Digital2() {
             Brand
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800 w-3/4">
-            AIWaft
+           Student Alliance
           </td>
         </tr>
 
@@ -348,7 +348,7 @@ export default function Digital2() {
             Manufacturer
           </td>
           <td className="px-6 py-4 text-sm text-gray-500 w-3/4">
-            AIWaft Private Limited<br />
+            Student Alliance Private Limited<br />
             AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018<br />
             aiwaft20@gmail.com<br />
             9691688972
@@ -558,7 +558,7 @@ export default function Digital2() {
             Packer
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 w-3/4">
-            AIWaft
+            Student Alliance
           </td>
         </tr>
 

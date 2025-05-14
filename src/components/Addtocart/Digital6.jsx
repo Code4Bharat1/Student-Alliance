@@ -330,7 +330,7 @@ export default function Digital6() {
         <table className="min-w-full divide-y divide-gray-200">
           <tbody className="divide-y divide-gray-200 bg-white">
             {[
-              { name: "Brand", value: "AIWaft", highlight: true },
+              { name: "Brand", value: "Student Alliance", highlight: true },
               { name: "Model 65", value: "E6521" },
               { name: "Model 75", value: "E7521" },
               { name: "Model 86", value: "E8621" },

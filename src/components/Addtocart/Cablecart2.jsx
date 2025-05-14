@@ -27,7 +27,7 @@ export default function CableCart2() {
   // Product details
   const product = {
     id: 2, // Different ID from the first product
-    name: "AIWaft 10m USB 3.0 Extension Cable, Male to Female",
+    name: "Student Alliance 10m USB 3.0 Extension Cable, Male to Female",
     price: basePrice,
     image: "/shop/cable1.png",
     description: "10M USB 3.0 Extension Cable with Type A male to type A female connectors",
@@ -105,7 +105,7 @@ export default function CableCart2() {
                   >
                     <Image
                       src={img}
-                      alt={i === 0 ? "AIWaft USB 3.0 Extension Cable" : `Feature ${i}`}
+                      alt={i === 0 ? "Student Alliance USB 3.0 Extension Cable" : `Feature ${i}`}
                       fill
                       className="object-contain p-8 hover:scale-105 transition-transform duration-500"
                       priority={i === 0}
@@ -286,7 +286,7 @@ export default function CableCart2() {
             {/* About Section Content */}
 <div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    AIWaft 10M USB 2.0 Extension Cable Features
+    Student Alliance 10M USB 2.0 Extension Cable Features
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
     <li className="flex items-start">
@@ -327,7 +327,7 @@ export default function CableCart2() {
             Brand
           </td>
           <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-            AIWaft
+            Student Alliance
           </td>
         </tr>
 
@@ -463,7 +463,7 @@ export default function CableCart2() {
             Manufacturer
           </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            AIWaft
+            Student Alliance
           </td>
         </tr>
 

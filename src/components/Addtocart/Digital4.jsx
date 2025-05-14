@@ -361,7 +361,7 @@ Eyes Care: TUV Low Blue light, TUV Flicker-free with ambient light sensor and an
           {/* Highlighted Brand Row */}
           <tr className="bg-blue-50">
             <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Brand</td>
-            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">AIWaft</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">Student Alliance</td>
           </tr>
 
           <tr>
