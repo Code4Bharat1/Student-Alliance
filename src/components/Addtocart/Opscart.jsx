@@ -1,11 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { StarIcon } from "@heroicons/react/solid";
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import { useRouter } from "next/navigation";
 
 export default function OpsCart() {
+  const router = useRouter();
   const [quantity, setQuantity] = useState(1);
   const [cartItems, setCartItems] = useState([]);
   const [isAdded, setIsAdded] = useState(false);
@@ -23,84 +25,142 @@ export default function OpsCart() {
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
 
-  const addToCart = () => {
-    const newItem = {
-      id: "ops-srx900", // Unique identifier for the product
-      name: "Student Alliance OPS SRX900 for Interactive Displays",
-      price: basePrice,
-      originalPrice: originalPrice,
+  // Product details
+  const product = {
+    id: 4,
+    name: "Student Alliance OPS SRX900 for Interactive Displays",
+    price: basePrice,
+    image: "/shop/opsx.png",
+    description: "12th Gen i5/i7 processors for fast interactive display performance",
+  };
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
       quantity: quantity,
-      image: "/shop/opsx.png"
     };
 
-    setCartItems([...cartItems, newItem]);
-    setIsAdded(true);
-    
-    // Reset the added state after 3 seconds
-    setTimeout(() => setIsAdded(false), 3000);
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
   };
+
+  //Scroll in Mobile
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollContainerRef = useRef(null);
+  const images = [
+    "/shop/opsx.png",
+    "/shop/aboutops1.png",
+    "/shop/aboutops1-1.png",
+    "/shop/aboutops1-2.png",
+  ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollContainerRef.current) {
+        const scrollLeft = scrollContainerRef.current.scrollLeft;
+        const containerWidth = scrollContainerRef.current.clientWidth;
+        const newIndex = Math.round(scrollLeft / containerWidth);
+        setActiveIndex(newIndex);
+      }
+    };
+
+    const container = scrollContainerRef.current;
+    container?.addEventListener("scroll", handleScroll);
+
+    return () => {
+      container?.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div className="bg-white min-h-screen">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        {/* Cart Notification */}
-        {isAdded && (
-          <div className="fixed top-4 right-4 z-50">
-            <div className="bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center animate-fade-in">
-              <CheckCircleIcon className="w-6 h-6 mr-2" />
-              <span>Item added to cart! ({quantity} x Student Alliance OPS SRX900)</span>
-            </div>
-          </div>
-        )}
-
         <div className="flex flex-col lg:flex-row gap-12 p-8">
           {/* Left Section: Main Product Image */}
-          <div className="flex flex-col lg:w-1/2">
-            <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
-              <Image
-                src="/shop/opsx.png"
-                alt="Student Alliance OPS SRX900 for Interactive Displays"
-                fill
-                className="object-contain p-8"
-                priority
-              />
-              <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                HOT DEAL
+          <div className="lg:w-1/2">
+            <div className="relative">
+              {/* Scrollable container */}
+              <div
+                ref={scrollContainerRef}
+                className="flex flex-row lg:flex-col overflow-x-auto snap-x snap-mandatory space-x-4 lg:space-x-0 pb-4 lg:pb-0 hide-scrollbar"
+              >
+                {images.map((img, i) => (
+                  <div
+                    key={i}
+                    className="relative rounded-xl overflow-hidden aspect-square bg-gray-50 min-w-[85vw] sm:min-w-[60vw] lg:min-w-0 snap-center shadow-lg hover:shadow-xl transition-shadow duration-300"
+                  >
+                    <Image
+                      src={img}
+                      alt={
+                        i === 0
+                          ? product.name
+                          : `Feature ${i}`
+                      }
+                      fill
+                      className="object-contain p-8 hover:scale-105 transition-transform duration-500"
+                      priority={i === 0}
+                    />
+                    {i === 0 && (
+                      <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full animate-pulse">
+                        HOT DEAL
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Scroll indicators with active state */}
+              <div className="lg:hidden flex justify-center space-x-2 mt-4">
+                {images.map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                      i === activeIndex
+                        ? "bg-purple-600 w-4"
+                        : "bg-gray-300 bg-opacity-60"
+                    }`}
+                  />
+                ))}
               </div>
             </div>
 
-            {/* About Section Image - Moved to left side */}
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/aboutops1.png"
-                alt="Student Alliance OPS SRX900 for Interactive Displays"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/aboutops1-1.png"
-                alt="Student Alliance OPS SRX900 for Interactive Displays"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
-            <div className="relative rounded-xl overflow-hidden mt-8 aspect-square bg-gray-50">
-              <Image
-                src="/shop/aboutops1-2.png"
-                alt="Student Alliance OPS SRX900 for Interactive Displayss"
-                fill
-                className="object-contain p-8"
-              />
-            </div>
+            {/* Style to hide scrollbar but keep functionality */}
+            <style jsx>{`
+              .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+              .hide-scrollbar {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+              }
+            `}</style>
           </div>
 
           {/* Right Section: Details */}
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                Student Alliance OPS SRX900 for Interactive Displays
+                {product.name}
               </h1>
             </div>
 
@@ -196,8 +256,8 @@ export default function OpsCart() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button 
-                onClick={addToCart}
+              <button
+                onClick={handleAddToCart}
                 className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium"
               >
                 <svg
@@ -265,7 +325,6 @@ export default function OpsCart() {
               </li>
             </ul>
 
-            {/* Technical Specifications */}
             {/* Clean Product Specifications Table with Brand Highlight */}
             <div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
@@ -373,8 +432,7 @@ export default function OpsCart() {
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">Compatible Devices</td>
         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">Interactive Flat Panel Displays, Monitors and Screens</td>
       </tr>
-      {/* Continue the rest of the specifications in same structure... */}
-      {/* Due to space limits, you can continue using the same pattern for remaining data */}
+      
     </tbody>
   </table>
 </div>

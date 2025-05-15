@@ -62,7 +62,7 @@ export default function Camcart9() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-               AIWaft EPTZ 4K Webcam – Ultra HD Webcam for PC & Laptop | Auto Framing, Noise Suppression, Low-Light Correction | Best for Zoom, YouTube, Streaming & Gaming
+               Student Alliance EPTZ 4K Webcam – Ultra HD Webcam for PC & Laptop | Auto Framing, Noise Suppression, Low-Light Correction | Best for Zoom, YouTube, Streaming & Gaming
               </h1>
               <p className="text-lg text-gray-600">
                Shop with Confidence – Your Transaction is 100% Secure.
@@ -171,12 +171,12 @@ export default function Camcart9() {
             {/* About Section Content (without image) */}
             <div className="mt-12 border-t border-gray-100 pt-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
-               About AIWaft EPTZ 4K Webcam
+               About Student Alliance EPTZ 4K Webcam
 
               </h2>
               <ul className="space-y-4 text-gray-700">
                 {[
-                  "Introducing the AIWaft EPTZ 4K Webcam, a cutting-edge solution designed to elevate your video communication and content creation experiences. Whether you're an educator, YouTuber, or professional, this webcam offers unparalleled clarity and functionality. .",
+                  "Introducing the Student Alliance EPTZ 4K Webcam, a cutting-edge solution designed to elevate your video communication and content creation experiences. Whether you're an educator, YouTuber, or professional, this webcam offers unparalleled clarity and functionality. .",
                 ].map((text, i) => (
                   <li key={i} className="flex items-start">
                     <span className="text-purple-500 mr-2">•</span>
@@ -197,8 +197,8 @@ export default function Camcart9() {
       <table className="min-w-full divide-y divide-gray-200">
         <tbody className="divide-y divide-gray-200 bg-white">
           {[
-             { name: "Brand", value: "AIWaft" },
-  { name: "Manufacturer", value: "AIWaft Private Limited" },
+             { name: "Brand", value: "Student Alliance" },
+  { name: "Manufacturer", value: "Student Alliance Private Limited" },
   { name: "Sensor", value: "1/2.8 inch high quality, 8.42 megapixel SONY CMOS sensor" },
   { name: "Video Format", value: `YUY2/NV12: 1280*720@15; 1024*576@20; 640*480@30
 MJPG: 3840*2160@30; 2560*1440@30; 1920*1080@30; 1280*720@30; 1024*576@30; 640*480@30

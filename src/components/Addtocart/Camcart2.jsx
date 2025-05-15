@@ -25,7 +25,7 @@ export default function Camcart2() {
           <div className="flex flex-col lg:w-1/2">
             <div className="relative rounded-xl overflow-hidden mb-4 aspect-square bg-gray-50">
               <Image
-                src="/shop/cam2.jpg"
+                src="/shop/cam2.png"
                 alt="Student Alliance 4K PTZ Camera Pro"
                 fill
                 className="object-contain p-8"

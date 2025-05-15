@@ -472,7 +472,7 @@ export default function CableCart2() {
             Packer
           </td>
           <td className="px-6 py-4 text-sm text-gray-500">
-            AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018 / aiwaft20@gmail.com / +91 9691688972
+            Student Alliance 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018 / Student Alliance20@gmail.com / +91 9691688972
           </td>
         </tr>
 

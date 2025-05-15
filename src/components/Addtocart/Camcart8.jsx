@@ -64,7 +64,7 @@ export default function Camcart8() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-            AIWAFT 4K Webcam with AI Auto Focus for Streaming, Video Conferencing, Zoom, YouTube & Live Streaming | Best 4K Webcam for Laptops & PC in India
+            Student Alliance 4K Webcam with AI Auto Focus for Streaming, Video Conferencing, Zoom, YouTube & Live Streaming | Best 4K Webcam for Laptops & PC in India
               </h1>
               <p className="text-lg text-gray-600">
                Shop with Confidence – Your Transaction is 100% Secure.
@@ -198,15 +198,15 @@ export default function Camcart8() {
       <table className="min-w-full divide-y divide-gray-200">
         <tbody className="divide-y divide-gray-200 bg-white">
           {[
-             { name: "Brand", value: "AIWaft" },
-  { name: "Manufacturer", value: "AIWaft Private Limited" },
+             { name: "Brand", value: "Student Alliance" },
+  { name: "Manufacturer", value: "Student Alliance Private Limited" },
   { name: "Model Name", value: "VEOαCAM" },
   { name: "Product Dimensions", value: "5.72 x 10.6 x 5.55 cm; 150 g" },
   { name: "Item model number", value: "VEOαCAM" },
   { name: "Operating System", value: "Windows" },
   { name: "Compatible Devices", value: "Linux Devices, macOS Devices, Android Devices, Windows PCs" },
   { name: "Special Features", value: "2D Noise Reduction for enhanced low-light performance., EPTZ Support for flexible framing and zooming., 4k for smooth, high-quality video., AI Auto-Focus ensures sharp and clear visuals., Dual Omnidirectional Microphones for superior audio clarity." },
-  { name: "Mounting Hardware", value: "User Manual, Warranty Card, AIWaft 4K EPTZ Webcam unit, 1.5m USB2.0 cable" },
+  { name: "Mounting Hardware", value: "User Manual, Warranty Card, Student Alliance 4K EPTZ Webcam unit, 1.5m USB2.0 cable" },
   { name: "Number of items", value: "1" },
   { name: "Image Aspect Ratio", value: "16:9" },
   { name: "Has Image Stabilisation", value: "No" },
@@ -233,7 +233,7 @@ export default function Camcart8() {
   { name: "Item Dimensions LxWxH", value: "5.7 x 10.6 x 5.5 Centimeters" },
   { name: "Is there a timer?", value: "No" },
   { name: "Item Weight", value: "150 g" },
-  { name: "Manufacturer", value: "AIWaft Private Limited" },
+  { name: "Manufacturer", value: "Student Alliance Private Limited" },
           ].map((spec, i) => (
             <tr
               key={i}

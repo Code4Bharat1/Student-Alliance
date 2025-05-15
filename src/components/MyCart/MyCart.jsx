@@ -152,7 +152,7 @@ export default function MyCart() {
                         >
                           -
                         </button>
-                        <span className="px-4 py-1 border-t border-b bg-gray-50 font-medium">
+                        <span className="px-4 py-1 bg-gray-50 font-medium">
                           {item.quantity}
                         </span>
                         <button

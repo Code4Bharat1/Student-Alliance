@@ -21,7 +21,7 @@ export default function Camcart1() {
   //Scroll in Mobile
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
-  const images = ["/shop/cam1.jpg", "/shop/aboutcam1.png", "/shop/aboutcam1-1.png", "/shop/aboutcam1-2.png"];
+  const images = ["/shop/cam1.png", "/shop/aboutcam1.png", "/shop/aboutcam1-1.png", "/shop/aboutcam1-2.png"];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -298,7 +298,7 @@ export default function Camcart1() {
               ['Photo Sensor Technology', 'CMOS'],
               ['Maximum Webcam Image Resolution', '8.51 MP'],
               ['Control Method', 'Remote'],
-              ['Manufacturer', 'Student Alliance Pvt Ltd, aiwaft20@gmail.com'],
+              ['Manufacturer', 'Student Alliance Pvt Ltd, Student Alliance20@gmail.com'],
               ['Model', 'AIW20A1'],
               ['Product Dimensions', '20 x 13 x 17.6 cm; 1.3 kg'],
               ['Operating System', 'Linux, Windows, iOS, Android'],

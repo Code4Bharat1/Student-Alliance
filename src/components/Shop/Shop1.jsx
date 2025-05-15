@@ -32,24 +32,24 @@ const Shop = () => {
     //camera
     {
       id: 1,
-      name: "AIWaft 4K PTZ Camera",
+      name: "Student Alliance 4K PTZ Camera",
       price: 60000,
       discount: 20000,
       rating: 5,
       category: "Camera",
       isNew: true,
-      image: "/Shop/cam1.jpg",
+      image: "/Shop/cam1.png",
       cartLink: "/addtocart/camcart1",
     },
     {
       id: 2,
-      name: "AIWaft 4K PTZ Camera Pro",
+      name: "Student Alliance 4K PTZ Camera Pro",
       price: 40000,
       discount: 10000,
       rating: 5,
       category: "Camera",
       isNew: false,
-      image: "/Shop/cam2.jpg",
+      image: "/Shop/cam2.png",
       cartLink: "/addtocart/camcart2",
     },
     {
@@ -109,7 +109,7 @@ const Shop = () => {
     },
     {
       id: 8,
-      name: "AIWAFT 4K Webcam with A1 Auto",
+      name: "Student Alliance 4K Webcam with A1 Auto",
       price: 20000,
       discount: 8000,
       rating: 5,
@@ -120,7 +120,7 @@ const Shop = () => {
     },
     {
       id: 9,
-      name: "AIWaft EPTZ 4K Webcam - Ultra HD",
+      name: "Student Alliance EPTZ 4K Webcam - Ultra HD",
       price: 9000,
       discount: 1000,
       rating: 5,

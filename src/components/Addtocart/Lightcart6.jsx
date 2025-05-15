@@ -5,9 +5,11 @@ import { useState } from "react";
 import React, { useRef, useEffect } from 'react'; //scroll in mobile
 import { StarIcon } from "@heroicons/react/solid";
 import { CheckCircleIcon } from "@heroicons/react/solid";
+import { useRouter } from 'next/navigation';
 
 export default function LightCart6() {
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
   
   // Base price and discount information
   const basePrice = 29500;
@@ -21,6 +23,45 @@ export default function LightCart6() {
 
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+
+  // Product details
+  const product = {
+    id: 48,
+    name: "Silver solution - 4 lights",
+    price: basePrice,
+    image: "/shop/light6.png",
+    description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+  };
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+      quantity: quantity,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
+  };
 
   //Scroll in Mobile
                 const [activeIndex, setActiveIndex] = useState(0);
@@ -207,9 +248,12 @@ export default function LightCart6() {
               </div>
             </div>
 
-            {/* Buttons */}
+              {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
+              <button
+                onClick={handleAddToCart}
+                className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="none"
@@ -229,6 +273,7 @@ export default function LightCart6() {
                 BUY IT NOW
               </button>
             </div>
+
 
             {/* Trust Badges */}
             <div className="flex flex-wrap gap-4 justify-center border-t border-gray-100 pt-6">
