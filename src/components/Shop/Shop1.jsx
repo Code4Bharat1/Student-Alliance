@@ -171,7 +171,7 @@ const Shop = () => {
       rating: 5,
       category: "Digital Board",
       isNew: false,
-      image: "/Shop/digital-d1.jpg",
+      image: "/Shop/digital-d1.png",
       cartLink: "addtocart/digital1",
     },
     {

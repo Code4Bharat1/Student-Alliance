@@ -45,7 +45,7 @@ export default function Digital1() {
     id: 5, // Different ID from previous products
     name: "Student Alliance Turbo Tab – AI-Powered 4K Interactive Flat Panel",
     basePrice: unitPrice,
-    image: "/shop/digital-d1.jpg",
+    image: "/shop/digital-d1.png",
     description: "Smart Digital Board for Teaching, Classrooms & Online Learning with Android 14 and Multi-Touch",
   };
 
@@ -85,7 +85,7 @@ export default function Digital1() {
   //Scroll in Mobile
   const [activeIndex, setActiveIndex] = useState(0);
   const scrollContainerRef = useRef(null);
-  const images = ["/shop/digital-d1.jpg", "/shop/D11.png", "/shop/D12.png", "/shop/D13.png", "/shop/D14.png", "/shop/D15.png"];
+  const images = ["/shop/digital-d1.png", "/shop/D11.png", "/shop/D12.png", "/shop/D13.png", "/shop/D14.png", "/shop/D15.png"];
 
   useEffect(() => {
     const handleScroll = () => {
