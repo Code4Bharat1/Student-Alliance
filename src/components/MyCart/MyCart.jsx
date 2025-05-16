@@ -275,12 +275,14 @@ export default function MyCart() {
               </div>
             </div>
 
+            <Link href={"/checkout"}>
             <button className="w-full mt-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.98] flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
               Proceed to Checkout
             </button>
+            </Link>
 
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center text-sm text-gray-500 space-y-2 sm:space-y-0 sm:space-x-4">
               <div className="flex items-center">
