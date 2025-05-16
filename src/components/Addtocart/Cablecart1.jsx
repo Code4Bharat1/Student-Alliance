@@ -27,7 +27,7 @@ export default function CableCart1() {
   // Product details
   const product = {
     id: 66,
-    name: "Student Alliance 10M USB 2.0 Extension Cable, Male to Female",
+    name: "AIWaft 10M USB 2.0 Extension Cable, Male to Female",
     price: basePrice,
     image: "/shop/cable1.png",
     description: "10M USB 2.0 Extension Cable with Type A male to type A female connectors",
@@ -105,7 +105,7 @@ export default function CableCart1() {
                   >
                     <Image
                       src={img}
-                      alt={i === 0 ? "Student Alliance 4K PTZ Camera Pro" : `Feature ${i}`}
+                      alt={i === 0 ? "AIWaft 4K PTZ Camera Pro" : `Feature ${i}`}
                       fill
                       className="object-contain p-8 hover:scale-105 transition-transform duration-500"
                       priority={i === 0}
@@ -287,7 +287,7 @@ export default function CableCart1() {
             {/* About Section Content */}
 <div className="mt-12 border-t border-gray-100 pt-8">
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    Student Alliance 10M USB 2.0 Extension Cable Features
+    AIWaft 10M USB 2.0 Extension Cable Features
   </h2>
   <ul className="space-y-3 text-gray-700 text-sm">
     <li className="flex items-start">
@@ -328,7 +328,7 @@ export default function CableCart1() {
           Brand
         </td>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-          Student Alliance
+          AIWaft
         </td>
       </tr>
 
@@ -464,7 +464,7 @@ export default function CableCart1() {
           Manufacturer
         </td>
         <td className="px-6 py-4 text-sm text-gray-500">
-         Student Alliance
+         AIWaft
         </td>
       </tr>
 
@@ -473,7 +473,7 @@ export default function CableCart1() {
           Packer
         </td>
         <td className="px-6 py-4 text-sm text-gray-500">
-          Student Alliance 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018 / Student Alliance20@gmail.com / +91 9691688972
+          AIWaft 5-B, Savindnagar, Swarn Vatika, Tilak Nagar, Indore, Madhya Pradesh 452018 / AIWaft20@gmail.com / +91 9691688972
         </td>
       </tr>
 

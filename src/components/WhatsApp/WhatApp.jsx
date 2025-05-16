@@ -55,15 +55,15 @@ const WhatsAppWidget = () => {
 
             {/* Person 1 */}
             <a
-              href="https://wa.me/9594430295"
+              href="https://wa.me/9594402775"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center mb-4 p-2 hover:bg-gray-100 rounded-lg transition"
             >
-              <img src="/images/p2.png" alt="Prasant" className="w-12 h-12 rounded-full mr-3 border-2 border-green-500" />
+              <img src="/images/p6.png" alt="Neha" className="w-12 h-12 rounded-full mr-3 border-2 border-green-500" />
               <div>
-                <p className="font-semibold text-sm">Prasant Patil</p>
-                <p className="text-xs text-gray-500">Customer Support</p>
+                <p className="font-semibold text-sm">Neha Fakih</p>
+                <p className="text-xs text-gray-500">Growth Head</p>
               </div>
             </a>
 

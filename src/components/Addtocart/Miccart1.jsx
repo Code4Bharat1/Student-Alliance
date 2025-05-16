@@ -27,7 +27,7 @@ export default function MicCart() {
   // Product details
   const product = {
     id: 3,
-    name: "Student Alliance Wireless Microphone | 48kHz/24bit Audio | Noise Reduction 2.0 | 100m Range | 10H Battery | Type-C Charging | For Smartphones",
+    name: "AIWaft Wireless Microphone | 48kHz/24bit Audio | Noise Reduction 2.0 | 100m Range | 10H Battery | Type-C Charging | For Smartphones",
     price: basePrice,
     image: "/shop/mic1.png",
     description: "Professional wireless microphone with advanced noise reduction and high-fidelity audio quality",
@@ -294,7 +294,7 @@ export default function MicCart() {
             <br /> <br />
             {/* OPS Module Features */}
             <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              Student Alliance Wireless Microphone (White) – Crystal-Clear Audio for
+              AIWaft Wireless Microphone (White) – Crystal-Clear Audio for
               Professionals
             </h2>
             <ul className="space-y-3 text-gray-700 text-sm">
@@ -341,7 +341,7 @@ export default function MicCart() {
                         Brand
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-                        Student Alliance
+                        AIWaft
                       </td>
                     </tr>
 
@@ -351,7 +351,7 @@ export default function MicCart() {
                         Manufacturer
                       </td>
                       <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        Student Alliance Pvt Ltd
+                        AIWaft Pvt Ltd
                       </td>
                     </tr>
 

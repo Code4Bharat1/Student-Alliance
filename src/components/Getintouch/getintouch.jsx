@@ -55,7 +55,7 @@ const GetinTouch = () => {
           {/* Contact Details */}
           <div className="mt-6 text-xs text-gray-700 space-y-2">
             <div>
-              📞 <a href="tel:+919022477293" className="text-blue-600 underline">+91 9022477293</a>
+              📞 <a href="tel:+919022477293" className="text-blue-600 underline">+91 9022477293 / +91-9594402775</a>
             </div>
             <div>
               📧 <a href="mailto:sales@studentalliance.in" className="text-blue-600 underline">sales@studentalliance.in</a>

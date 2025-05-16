@@ -8,13 +8,13 @@ export default function CheckoutForm() {
 
   return (
     <div className="p-10">
-      <h2 className="text-3xl font-bold mb-6 text-blue-700">Checkout</h2>
+      <h2 className="text-3xl font-bold mb-6 text-blue-500">Checkout</h2>
       
       <div className="flex gap-4 mb-6">
         {['Delivery', 'Pick up'].map(method => (
           <button
             key={method}
-            className={`px-4 py-2 rounded-lg border ${deliveryMethod === method ? 'bg-blue-600 text-white' : 'bg-white text-gray-600'} hover:shadow-md transition`}
+            className={`px-4 py-2 rounded-lg border ${deliveryMethod === method ? 'bg-blue-500 text-white' : 'bg-white text-gray-600'} hover:shadow-md transition`}
             onClick={() => setDeliveryMethod(method)}
           >
             {method}

@@ -29,7 +29,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <span className="text-indigo-300 mr-3">📞</span>
-                <p>+91-9022477293</p>
+                <p>+91-9022477293 <br />  +91-9594402775</p>
               </div>
             </div>
             

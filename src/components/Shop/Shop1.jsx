@@ -232,7 +232,7 @@ const Shop = () => {
     //mic
     {
       id: 20,
-      name: "Student Alliance Wireless Microphone | 48kHz/24bit Audio ",
+      name: "AIWaft Wireless Microphone | 48kHz/24bit Audio ",
       price: 6999,
       discount: 4000,
       rating: 5,
@@ -277,7 +277,7 @@ const Shop = () => {
     //cable
     {
       id: 24,
-      name: "Student Alliance 10M USB 2.0 Extension Cable, Male to Female",
+      name: "AIWaft 10M USB 2.0 Extension Cable, Male to Female",
       price: 4500,
       discount: 1000,
       rating: 5,
@@ -288,7 +288,7 @@ const Shop = () => {
     },
     {
       id: 25,
-      name: "Student Alliance 10m USB 3.0 Extension Cable, Male to Female",
+      name: "AIWaft 10m USB 3.0 Extension Cable, Male to Female",
       price: 5500,
       discount: 1000,
       rating: 5,
@@ -300,7 +300,7 @@ const Shop = () => {
     //Speaker
     {
       id: 26,
-      name: "Student Alliance Conference Speaker with Microphone",
+      name: "AIWaft Conference Speaker with Microphone",
       price: 20000,
       discount: 5000,
       rating: 5,
@@ -369,7 +369,7 @@ const Shop = () => {
     //Lighting
     {
       id: 32,
-      name: "Student Alliance 13-Inch Ring Light with Phone Holder",
+      name: "AIWaft 13-Inch Ring Light with Phone Holder",
       price: 3999,
       discount: 2849,
       rating: 5,
@@ -380,7 +380,7 @@ const Shop = () => {
     },
     {
       id: 33,
-      name: "Student Alliance 18-Inch Ring Light with Stand & Phone Holder",
+      name: "AIWaft 18-Inch Ring Light with Stand & Phone Holder",
       price: 6000,
       discount: 2150,
       rating: 5,

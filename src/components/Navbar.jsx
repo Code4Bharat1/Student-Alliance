@@ -50,9 +50,9 @@ const Navbar = () => {
             { href: "/product", label: "Products" },
             { href: "/shop1", label: "Shop" },
             { href: "/gallery", label: "Gallery" }, //removed it
-            { href: "/franchise", label: "Franchise" }, //removed it
+            // { href: "/franchise", label: "Franchise" }, //removed it
             { href: "/blog", label: "Blog" },
-            { href: "/resources", label: "Resources" }, //removed it
+            // { href: "/resources", label: "Resources" }, //removed it
             { href: "/getintouch", label: "Contact us" },
           ].map(({ href, label }) =>
             label === "Products" ? (

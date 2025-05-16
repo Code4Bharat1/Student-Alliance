@@ -27,7 +27,7 @@ export default function LightCart1() {
   // Product details
   const product = {
     id: 44,
-    name: "Student Alliance 13-Inch Ring Light with Phone Holder, 2700K-6500K Dimmable LED, 15W USB Powered, 10-100% Brightness Control for Video, Makeup & Live Streaming",
+    name: "AIWaft 13-Inch Ring Light with Phone Holder, 2700K-6500K Dimmable LED, 15W USB Powered, 10-100% Brightness Control for Video, Makeup & Live Streaming",
     price: basePrice,
     image: "/shop/light1.png",
     description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
@@ -155,7 +155,7 @@ export default function LightCart1() {
           <div className="lg:w-1/2">
             <div className="mb-6">
               <h1 className="text-3xl font-bold text-gray-900 mb-2 leading-tight">
-                Student Alliance 13-Inch Ring Light with Phone Holder, 2700K-6500K Dimmable LED, 15W USB Powered, 10-100% Brightness Control for Video, Makeup & Live Streaming
+                AIWaft 13-Inch Ring Light with Phone Holder, 2700K-6500K Dimmable LED, 15W USB Powered, 10-100% Brightness Control for Video, Makeup & Live Streaming
               </h1>
             </div>
 
@@ -297,7 +297,7 @@ export default function LightCart1() {
 
               {/* OPS Module Features */}
   <h2 className="text-2xl font-bold text-gray-900 mb-6">
-    About Student Alliance 13-inch Ring Light
+    About AIWaft 13-inch Ring Light
   </h2>
  <ul className="space-y-3 text-gray-700 text-sm">
   <li className="flex items-start">
@@ -344,7 +344,7 @@ export default function LightCart1() {
               Brand
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-sm font-bold text-blue-800">
-             Student Alliance
+             AIWaft
             </td>
           </tr>
 
@@ -353,7 +353,7 @@ export default function LightCart1() {
               Manufacturer
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-              Student Alliance Pvt Ltd
+              AIWaft Pvt Ltd
             </td>
           </tr>
 
