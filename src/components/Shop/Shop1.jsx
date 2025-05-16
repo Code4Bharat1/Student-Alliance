@@ -33,7 +33,7 @@ const Shop = () => {
     {
       id: 1,
       name: "Student Alliance 4K PTZ Camera",
-      price: 60000,
+      price: 95000,
       discount: 20000,
       rating: 5,
       category: "Camera",
@@ -44,7 +44,7 @@ const Shop = () => {
     {
       id: 2,
       name: "Student Alliance 4K PTZ Camera Pro",
-      price: 40000,
+      price: 105000,
       discount: 10000,
       rating: 5,
       category: "Camera",

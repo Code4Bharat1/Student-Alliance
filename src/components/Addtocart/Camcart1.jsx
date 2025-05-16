@@ -5,14 +5,56 @@ import { useState } from "react";
 import React, { useRef, useEffect } from 'react'; //scroll in mobile
 import { StarIcon } from "@heroicons/react/solid";
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
+
 export default function Camcart1() {
   const [quantity, setQuantity] = useState(1);
+    const router = useRouter();
 
   const basePrice = 75000;
   const discountPrice = 95000;
 
   const increment = () => setQuantity((q) => q + 1);
   const decrement = () => setQuantity((q) => (q > 1 ? q - 1 : 1));
+
+  // Product details
+  const product = {
+    id: 100,
+    name: "Student Alliance 13-Inch Ring Light with Phone Holder, 2700K-6500K Dimmable LED, 15W USB Powered, 10-100% Brightness Control for Video, Makeup & Live Streaming",
+    price: basePrice,
+    image: "/shop/cam1.png",
+    description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+  };
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+      quantity: quantity,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
+  };
 
   const totalPrice = basePrice * quantity;
   const totalDiscountPrice = discountPrice * quantity;
@@ -209,7 +251,10 @@ export default function Camcart1() {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <button className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium">
+              <button
+                onClick={handleAddToCart}
+                className="flex-1 bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-6 rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all shadow-md flex items-center justify-center gap-2 font-medium"
+              >
                 <svg
                   className="w-5 h-5"
                   fill="none"

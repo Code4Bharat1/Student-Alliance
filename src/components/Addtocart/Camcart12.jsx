@@ -39,8 +39,8 @@ export default function Camcart12() {
             </div>
              {/* About Section Images */}
                         {[
-                          "cam12-1.png",
-                          "cam12-2.png",
+                          "cam12-1.jpg",
+                          "cam12-2.jpg",
                           "cam12-3.png",
                           "cam12-4.png",
                           
