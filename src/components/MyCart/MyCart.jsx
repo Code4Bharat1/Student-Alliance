@@ -8,7 +8,7 @@ export default function MyCart() {
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
   const [showCouponInput, setShowCouponInput] = useState(false);
-  
+
   useEffect(() => {
     // Load cart from localStorage
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -52,7 +52,8 @@ export default function MyCart() {
     0
   );
 
-  const total = subtotal + (subtotal >= freeShippingThreshold ? 0 : shippingFee) - discount;
+  const total =
+    subtotal + (subtotal >= freeShippingThreshold ? 0 : shippingFee) - discount;
 
   const formatCurrency = (amount) => {
     return new Intl.NumberFormat("en-IN", {
@@ -67,21 +68,44 @@ export default function MyCart() {
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
         <div className="relative">
           <h1 className="text-2xl font-bold px-6 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white flex items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+              />
             </svg>
-            Your Shopping Cart ({cartItems.reduce((acc, item) => acc + item.quantity, 0)} items)
+            Your Shopping Cart (
+            {cartItems.reduce((acc, item) => acc + item.quantity, 0)} items)
           </h1>
           {cartItems.length > 0 && (
-            <button 
+            <button
               onClick={() => {
                 setCartItems([]);
                 localStorage.setItem("cart", JSON.stringify([]));
               }}
               className="absolute right-4 top-4 text-white hover:text-gray-200 transition-colors text-sm flex items-center"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-4 w-4 mr-1"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                />
               </svg>
               Clear Cart
             </button>
@@ -98,8 +122,19 @@ export default function MyCart() {
               </p>
               <Link href={"/shop1"}>
                 <button className="mt-4 px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full hover:from-orange-600 hover:to-pink-600 transition-colors hover:scale-105 transform transition-transform duration-300 flex items-center mx-auto">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 mr-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                    />
                   </svg>
                   Start Shopping
                 </button>
@@ -137,7 +172,10 @@ export default function MyCart() {
                           )}
                           {item.originalPrice && (
                             <span className="ml-2 bg-orange-100 text-orange-800 text-xs px-2 py-0.5 rounded-full">
-                              {Math.round((1 - item.price/item.originalPrice) * 100)}% OFF
+                              {Math.round(
+                                (1 - item.price / item.originalPrice) * 100
+                              )}
+                              % OFF
                             </span>
                           )}
                         </div>
@@ -200,10 +238,14 @@ export default function MyCart() {
           <div className="px-6 py-4 bg-gray-50 border-t">
             <div className="space-y-3">
               <div className="flex justify-between">
-                <span className="text-gray-600">Subtotal ({cartItems.reduce((acc, item) => acc + item.quantity, 0)} items)</span>
+                <span className="text-gray-600">
+                  Subtotal (
+                  {cartItems.reduce((acc, item) => acc + item.quantity, 0)}{" "}
+                  items)
+                </span>
                 <span className="font-medium">{formatCurrency(subtotal)}</span>
               </div>
-              
+
               <div className="flex justify-between">
                 <span className="text-gray-600">Shipping</span>
                 <span className="font-medium">
@@ -214,17 +256,20 @@ export default function MyCart() {
                   )}
                 </span>
               </div>
-              
+
               {subtotal < freeShippingThreshold && (
                 <div className="text-sm text-center py-2 bg-orange-50 text-orange-700 rounded-lg">
-                  Spend {formatCurrency(freeShippingThreshold - subtotal)} more to get <span className="font-bold">FREE shipping</span>!
+                  Spend {formatCurrency(freeShippingThreshold - subtotal)} more
+                  to get <span className="font-bold">FREE shipping</span>!
                 </div>
               )}
 
               {discount > 0 && (
                 <div className="flex justify-between text-green-600">
                   <span>Discount Applied</span>
-                  <span className="font-medium">-{formatCurrency(discount)}</span>
+                  <span className="font-medium">
+                    -{formatCurrency(discount)}
+                  </span>
                 </div>
               )}
 
@@ -253,12 +298,23 @@ export default function MyCart() {
               ) : (
                 <div className="flex justify-between items-center">
                   <span className="text-gray-600">Coupon / Discount</span>
-                  <button 
+                  <button
                     onClick={() => setShowCouponInput(true)}
                     className="text-orange-500 hover:text-orange-600 underline transition-colors flex items-center"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-4 w-4 mr-1"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z"
+                      />
                     </svg>
                     {discount > 0 ? "Change coupon" : "Apply coupon code"}
                   </button>
@@ -275,25 +331,63 @@ export default function MyCart() {
               </div>
             </div>
 
-            <Link href={"/checkout"}>
-            <button className="w-full mt-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.98] flex items-center justify-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-              </svg>
-              Proceed to Checkout
-            </button>
+            <Link
+              href={{
+                pathname: "/checkout",
+                query: { cart: JSON.stringify(cartItems) },
+              }}
+            >
+              <button className="w-full mt-6 py-3 bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white font-bold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 active:scale-[0.98] flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 mr-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                  />
+                </svg>
+                Proceed to Checkout
+              </button>
             </Link>
 
             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center text-sm text-gray-500 space-y-2 sm:space-y-0 sm:space-x-4">
               <div className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
                 </svg>
                 Delivery expected in 2-4 business days
               </div>
               <div className="flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-4 w-4 mr-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"
+                  />
                 </svg>
                 Free returns within 15 days
               </div>

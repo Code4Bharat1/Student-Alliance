@@ -27,7 +27,7 @@ export default function LightCart1() {
   // Product details
   const product = {
     id: 44,
-    name: "AIWaft 13-Inch Ring Light with Phone Holder, 2700K-6500K Dimmable LED, 15W USB Powered, 10-100% Brightness Control for Video, Makeup & Live Streaming",
+    name: "AIWaft 13-Inch Ring Light with Phone Holder",
     price: basePrice,
     image: "/shop/light1.png",
     description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
@@ -272,7 +272,7 @@ export default function LightCart1() {
                 </svg>
                 ADD TO CART
               </button>
-              <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
+              <button onClick={handleAddToCart} className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>

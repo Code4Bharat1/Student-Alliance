@@ -28,10 +28,10 @@ export default function Digital2() {
   // Product details
   const product = {
     id: 7,
-    name: "Student Alliance 4K Interactive Flat Panel | Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals",
+    name: "Student Alliance 4K Interactive Flat Panel ",
     basePrice: unitPrice,
     image: "/shop/digital-d2.png",
-    description: "High-resolution interactive display with multi-touch capability and built-in Android OS",
+    description: "High-resolution interactive display with multi-touch capability and built-in Android OS with Ultra HD (3840x2160) LED | Android | Touch Display | Ideal for Schools, Colleges, Offices & Hospitals",
   };
 
   const handleAddToCart = () => {
@@ -295,7 +295,7 @@ export default function Digital2() {
                 </svg>
                 ADD TO CART
               </button>
-              <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
+              <button onClick={handleAddToCart} className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>

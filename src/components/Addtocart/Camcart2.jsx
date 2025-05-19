@@ -20,10 +20,10 @@ export default function Camcart2() {
    // Product details
   const product = {
     id: 101,
-    name: "Student Alliance 4K PTZ Camera Pro Lens – 12X Zoom, Auto Tracking, Best for Online Teaching, Live Streaming & Classroom Recording, HDMI/SDI/USB/IP",
+    name: "Student Alliance 4K PTZ Camera Pro Lens",
     price: basePrice,
     image: "/shop/cam2.png",
-    description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+    description: "Professional – 12X Zoom, Auto Tracking, Best for Online Teaching, Live Streaming & Classroom Recording, HDMI/SDI/USB/IP",
   };
 
   const handleAddToCart = () => {
@@ -273,7 +273,7 @@ export default function Camcart2() {
                 </svg>
                 ADD TO CART
               </button>
-              <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
+              <button onClick={handleAddToCart} className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>

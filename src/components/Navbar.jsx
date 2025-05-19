@@ -159,9 +159,9 @@ const Navbar = () => {
             <Link href={'/mycart'}>
             <div className="relative p-2 rounded-full group-hover:bg-blue-50 transition-colors duration-300">
               <ShoppingCartIcon className="h-6 w-6 text-blue-600" />
-              <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
+              {/* <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center animate-pulse">
                 !
-              </span>
+              </span> */}
             </div>
             </Link>
           </motion.button>

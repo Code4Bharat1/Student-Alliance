@@ -28,7 +28,7 @@ export default function Camcart5() {
     name: "Evota 4K PTZ Camera 12X Optical Zoom",
     price: unitPrice,
     image: "/shop/cam5.jpg",
-    description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+    description: "Professional Evota 4K PTZ Camera 12X Optical Zoom",
   };
 
   const handleAddToCart = () => {
@@ -244,7 +244,7 @@ export default function Camcart5() {
                 </svg>
                 ADD TO CART
               </button>
-              <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
+              <button onClick={handleAddToCart} className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>

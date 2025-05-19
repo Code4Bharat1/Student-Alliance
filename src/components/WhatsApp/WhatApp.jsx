@@ -63,7 +63,7 @@ const WhatsAppWidget = () => {
               <img src="/images/p6.png" alt="Neha" className="w-12 h-12 rounded-full mr-3 border-2 border-green-500" />
               <div>
                 <p className="font-semibold text-sm">Neha Fakih</p>
-                <p className="text-xs text-gray-500">Growth Head</p>
+                <p className="text-xs text-gray-500">Owner</p>
               </div>
             </a>
 

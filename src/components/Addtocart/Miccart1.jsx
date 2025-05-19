@@ -27,10 +27,10 @@ export default function MicCart() {
   // Product details
   const product = {
     id: 3,
-    name: "AIWaft Wireless Microphone | 48kHz/24bit Audio | Noise Reduction 2.0 | 100m Range | 10H Battery | Type-C Charging | For Smartphones",
+    name: "AIWaft Wireless Microphone | 48kHz/24bit Audio ",
     price: basePrice,
     image: "/shop/mic1.png",
-    description: "Professional wireless microphone with advanced noise reduction and high-fidelity audio quality",
+    description: "Professional wireless microphone with advanced noise reduction and high-fidelity audio quality & Noise Reduction 2.0 | 100m Range | 10H Battery | Type-C Charging | For Smartphones",
   };
 
   const handleAddToCart = () => {
@@ -271,7 +271,7 @@ export default function MicCart() {
                 </svg>
                 ADD TO CART
               </button>
-              <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
+              <button onClick={handleAddToCart} className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>

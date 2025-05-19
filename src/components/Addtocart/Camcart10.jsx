@@ -25,10 +25,10 @@ export default function Camcart10() {
   // Product details
     const product = {
       id: 110,
-      name: "Logitech MeetUp HD 100x Optical Zoom Video and Audio Conferencing System for Small Meeting Rooms, Black",
+      name: "Logitech MeetUp HD 100x Camera",
       price: unitPrice,
       image: "/shop/cam10.png",
-      description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+      description: " Logitech MeetUp HD 100x Optical Zoom Video and Audio Conferencing System for Small Meeting Rooms, Black",
     };
   
     const handleAddToCart = () => {
@@ -228,7 +228,7 @@ export default function Camcart10() {
                 </svg>
                 ADD TO CART
               </button>
-              <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
+              <button onClick={handleAddToCart} className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>

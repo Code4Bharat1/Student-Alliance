@@ -28,7 +28,7 @@ export default function Camcart7() {
     name: "Evota 4K Webcam",
     price: unitPrice,
     image: "/shop/cam7.png",
-    description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+    description: "Professional Evota 4K WebCamera",
   };
 
   const handleAddToCart = () => {
@@ -244,7 +244,7 @@ export default function Camcart7() {
                 </svg>
                 ADD TO CART
               </button>
-              <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
+              <button onClick={handleAddToCart} className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>

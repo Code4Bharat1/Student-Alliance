@@ -28,7 +28,7 @@ export default function Camcart11() {
     name: "Logitech C920e Webcam – Full HD 1080p/30FPS",
     price: unitPrice,
     image: "/shop/cam11.png",
-    description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+    description: "Logitech C920e Webcam – Full HD 1080p/30FPS",
   };
 
   const handleAddToCart = () => {
@@ -228,7 +228,7 @@ export default function Camcart11() {
                 </svg>
                 ADD TO CART
               </button>
-              <button className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
+              <button onClick={handleAddToCart} className="flex-1 border-2 border-gray-800 text-gray-800 py-4 px-6 rounded-lg hover:bg-gray-50 transition font-medium shadow-sm">
                 BUY IT NOW
               </button>
             </div>

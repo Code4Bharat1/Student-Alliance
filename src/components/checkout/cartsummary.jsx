@@ -1,9 +1,44 @@
 "use client"
-
 import { motion } from 'framer-motion';
+import { useSearchParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 export default function CartSummary() {
-    
+  const searchParams = useSearchParams();
+  const [cartItems, setCartItems] = useState([]);
+  const [subtotal, setSubtotal] = useState(0);
+  const [shippingFee, setShippingFee] = useState(99);
+  const [discount, setDiscount] = useState(500); // You can modify this based on coupons
+
+  useEffect(() => {
+    const cartParam = searchParams.get('cart');
+    if (cartParam) {
+      try {
+        const parsedCart = JSON.parse(cartParam);
+        setCartItems(parsedCart);
+        
+        // Calculate subtotal
+        const calculatedSubtotal = parsedCart.reduce(
+          (acc, item) => acc + item.price * item.quantity,
+          0
+        );
+        setSubtotal(calculatedSubtotal);
+      } catch (error) {
+        console.error("Error parsing cart data:", error);
+      }
+    }
+  }, [searchParams]);
+
+  const total = subtotal + shippingFee - discount;
+
+  const formatCurrency = (amount) => {
+    return new Intl.NumberFormat("en-IN", {
+      style: "currency",
+      currency: "INR",
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
   return (
     <motion.div
       initial={{ x: 100, opacity: 0 }}
@@ -22,21 +57,32 @@ export default function CartSummary() {
         </h3>
 
         <div className="space-y-4">
-          <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all">
-            <div>
-              <p className="font-medium">DuoComfort Sofa Premium</p>
-              <span className="text-sm text-gray-300">1x</span>
+          {cartItems.map((item) => (
+            <div 
+              key={item.id}
+              className="flex items-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all"
+            >
+              {/* Product Image */}
+              <div className="mr-4 flex-shrink-0">
+                <img 
+                  src={item.image} 
+                  alt={item.name}
+                  className="w-16 h-16 object-cover rounded-lg border border-white/20"
+                />
+              </div>
+              
+              {/* Product Details */}
+              <div className="flex-1 flex justify-between items-center">
+                <div>
+                  <p className="font-medium">{item.name}</p>
+                  <span className="text-sm text-gray-300">{item.quantity}x</span>
+                </div>
+                <span className="font-semibold text-yellow-300">
+                  {formatCurrency(item.price * item.quantity)}
+                </span>
+              </div>
             </div>
-            <span className="font-semibold text-yellow-300">₹1,499</span>
-          </div>
-
-          <div className="flex items-center justify-between p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:bg-white/10 transition-all">
-            <div>
-              <p className="font-medium">IronOne Desk</p>
-              <span className="text-sm text-gray-300">1x</span>
-            </div>
-            <span className="font-semibold text-yellow-300">₹1,899</span>
-          </div>
+          ))}
 
           <div className="flex items-center gap-2 mt-6">
             <input 
@@ -54,20 +100,20 @@ export default function CartSummary() {
       <div className="mt-10 space-y-4">
         <div className="flex justify-between border-b border-white/20 pb-3">
           <span>Subtotal</span>
-          <span className="font-medium">₹3,398</span>
+          <span className="font-medium">{formatCurrency(subtotal)}</span>
         </div>
         <div className="flex justify-between border-b border-white/20 pb-3">
           <span>Shipping</span>
-          <span className="font-medium">₹99</span>
+          <span className="font-medium">{formatCurrency(shippingFee)}</span>
         </div>
         <div className="flex justify-between border-b border-white/20 pb-3 text-green-300">
           <span>Discount</span>
-          <span className="font-medium">-₹500</span>
+          <span className="font-medium">-{formatCurrency(discount)}</span>
         </div>
         <div className="flex justify-between font-bold text-2xl pt-3">
           <span>Total</span>
           <span className="text-yellow-300 bg-gradient-to-r from-yellow-300 to-yellow-400 bg-clip-text text-transparent">
-            ₹2,997
+            {formatCurrency(total)}
           </span>
         </div>
 
