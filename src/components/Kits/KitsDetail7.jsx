@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 const KitsDetail7 = () => {
   // Product price details
@@ -12,10 +14,50 @@ const KitsDetail7 = () => {
   
   // State for quantity
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
   
   // Calculate total price based on quantity
   const totalPrice = discountedPrice * quantity;
   const totalSavings = (originalPrice - discountedPrice) * quantity;
+
+  // Product details
+  const product = {
+    id: 207,
+    name: "Make A Line Follower Robot Using L293D Motor Driver Module Interfacing With Arduino Uno",
+    price: totalPrice,
+    image: "/images/k7.jpg",
+    description: "Ultimate Uno R3 kit compatible with Arduino IDE Note: The kit includes REES52 Uno R3 which is a compatible Uno R3 board. Kindly check the listing picture for details. The user guide and Source code are to be downloaded using the link provided with the kit. Skill level: Beginners to advanced level Package includes Sensors, modules and components in Quad Store retail box. One kit for all your project needs.",
+  };
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+      quantity: quantity,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
@@ -137,6 +179,7 @@ const KitsDetail7 = () => {
                   className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={handleAddToCart}
                 >
                   BUY NOW 
                 </motion.button>
@@ -144,6 +187,7 @@ const KitsDetail7 = () => {
                   className="flex-1 bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-3 px-6 rounded-lg shadow-sm transition duration-300"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={handleAddToCart}
                 >
                   ADD TO CART
                 </motion.button>
@@ -156,7 +200,7 @@ const KitsDetail7 = () => {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                 </svg>
-                <span>Need help? Call us at +91 1234567890</span>
+                <span>Need help? Call us at +91-9594402775</span>
               </div>
             </div>
           </motion.div>
