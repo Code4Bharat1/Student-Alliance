@@ -3,8 +3,48 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
+import { useRouter } from 'next/navigation';
 
 const PrinterDetails2 = () => {
+   const router = useRouter();
+    const [quantity, setQuantity] = useState();
+  
+    const totalPrice = 108000 * quantity;
+  
+    // Product details
+    const product = {
+      id: 302,
+      name: "3D Printer (Creator 3)",
+      price: totalPrice,
+      image: "/images/printer2.png",
+      description:
+        " Ideal for education and prototyping, it delivers smooth, detailed, and durable prints every time.",
+    };
+  
+    const handleAddToCart = () => {
+      const newProduct = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        description: product.description,
+        quantity: quantity,
+      };
+  
+      const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+  
+      const existingItem = existingCart.find((item) => item.id === newProduct.id);
+  
+      if (existingItem) {
+        existingItem.quantity += newProduct.quantity;
+      } else {
+        existingCart.push(newProduct);
+      }
+  
+      localStorage.setItem("cart", JSON.stringify(existingCart));
+  
+      router.push("/mycart");
+    };
   return (
     <div className="min-h-screen bg-gray-100 px-4 py-0">
       <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-8">
@@ -85,10 +125,10 @@ const PrinterDetails2 = () => {
               </div>
 
               <div className="flex gap-3">
-                <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded transition duration-300">
+                <button onClick={handleAddToCart} className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded transition duration-300">
                   BUY NOW
                 </button>
-                <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded transition duration-300">
+                <button onClick={handleAddToCart} className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded transition duration-300">
                   ADD TO CART
                 </button>
               </div>
