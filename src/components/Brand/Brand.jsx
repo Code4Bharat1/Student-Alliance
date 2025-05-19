@@ -7,7 +7,7 @@ const Brand = () => {
     {
       id: 1,
       img: "/shop/brand1.png",
-      link: "/page1",
+      link: "/shop1",
     },
     {
       id: 2,
@@ -17,22 +17,22 @@ const Brand = () => {
     {
       id: 3,
       img: "/shop/brand3.png",
-      link: "/page3",
+      link: "/shop1",
     },
     {
       id: 4,
       img: "/shop/brand4.png",
-      link: "/page4",
+      link: "/shop1",
     },
     {
       id: 5,
       img: "/shop/brand5.png",
-      link: "/page5",
+      link: "/shop1",
     },
     {
       id: 6,
       img: "/shop/brand6.png",
-      link: "/page6",
+      link: "/shop1",
     },
   ];
 
