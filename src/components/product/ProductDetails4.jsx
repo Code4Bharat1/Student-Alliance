@@ -1,10 +1,58 @@
 'use client'
-import React from 'react';
+import React, { useState } from "react";
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 const ProductDetails4 = () => {
+  const basePrice = 108000;
+    const [quantity, setQuantity] = useState(1);
+    const totalPrice = basePrice * quantity;
+      const router = useRouter();
+  
+    const increment = () => setQuantity((prev) => prev + 1);
+    const decrement = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+ // Product details
+  const product = {
+    id: 503,
+    name: "98 Inch IFPD - Interactive Flat Panel Display",
+    price: totalPrice,
+    image: "/images/98_inch.png",
+    description: "Our 98 Interactive Flat Panel Display is designed for powerful collaboration and immersive presentations. With crystal-clear 4K UHD resolution, advanced multi-touch capabilities, and dual operating system support (Android/Windows),t’s ideal for modern classrooms, conference rooms, and collaborative workspaces.",
+  };
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+      quantity: quantity,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 px-4 py-0">
       <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-8">
@@ -65,29 +113,47 @@ const ProductDetails4 = () => {
 
             {/* Price Section */}
             <div className="flex items-baseline gap-4 text-lg font-semibold">
-              <span className="text-indigo-600 text-2xl">₹108000</span>
-              <span className="line-through text-gray-500">₹145000</span>
+              <span className="text-indigo-600 text-2xl">
+                ₹{totalPrice.toLocaleString()}
+              </span>
+              <span className="line-through text-gray-500">
+                ₹{(145000 * quantity).toLocaleString()}
+              </span>
               <span className="text-green-600">25% Off</span>
             </div>
 
             {/* Quantity & Buttons */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
-              <div>
-                <label htmlFor="quantity" className="block text-gray-600 mb-1">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mt-4">
+              {/* Quantity Selector */}
+              <div className="flex items-center gap-4 text-gray-700">
+                <span className="text-sm font-medium text-gray-700">
                   Quantity:
-                </label>
-                <select id="quantity" className="border border-gray-300 text-black rounded px-3 py-1">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
+                </span>
+                <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <button
+                    onClick={decrement}
+                    className="px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 transition"
+                  >
+                    −
+                  </button>
+                  <div className="px-6 py-2 text-lg border-x border-gray-200 font-medium">
+                    {quantity}
+                  </div>
+                  <button
+                    onClick={increment}
+                    className="px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 transition"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
 
+              {/* Buttons */}
               <div className="flex gap-3">
-                <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded transition duration-300">
+                <button onClick={handleAddToCart} className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded transition duration-300">
                   BUY NOW
                 </button>
-                <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded transition duration-300">
+                <button onClick={handleAddToCart} className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded transition duration-300">
                   ADD TO CART
                 </button>
               </div>

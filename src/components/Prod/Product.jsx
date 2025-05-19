@@ -13,12 +13,12 @@ const products = [
   },
   {
     title: '75" Inch IFPD - Interactive Flat Panel Display',
-    image: '/images/75_inch.jpg',
+    image: '/images/75_inch.png',
     link: '/product2',
   },
   {
     title: '86" Inch IFPD - Interactive Flat Panel Display',
-    image: '/images/86_inch.jpg',
+    image: '/images/86_inch.png',
     link: '/product3',
   },
   {
