@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
+
 
 const KitsDetail2 = () => {
   // Product price details
@@ -12,10 +15,50 @@ const KitsDetail2 = () => {
   
   // State for quantity
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
   
   // Calculate total price based on quantity
   const totalPrice = discountedPrice * quantity;
   const totalSavings = (originalPrice - discountedPrice) * quantity;
+
+  // Product details
+  const product = {
+    id: 201,
+    name: "Make A Line Follower Robot Using Motor Driver",
+    price: totalPrice,
+    image: "/images/k2.jpg",
+    description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+  };
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+      quantity: quantity,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
@@ -138,6 +181,8 @@ const KitsDetail2 = () => {
                   className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
+                   onClick={handleAddToCart}
+
                 >
                   BUY NOW 
                 </motion.button>
@@ -145,6 +190,7 @@ const KitsDetail2 = () => {
                   className="flex-1 bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-3 px-6 rounded-lg shadow-sm transition duration-300"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={handleAddToCart}
                 >
                   ADD TO CART
                 </motion.button>

@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
+import Link from "next/link";
+import { useRouter } from 'next/navigation';
 
 const KitsDetail4 = () => {
   // Product price details
@@ -12,10 +14,51 @@ const KitsDetail4 = () => {
   
   // State for quantity
   const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
   
   // Calculate total price based on quantity
   const totalPrice = discountedPrice * quantity;
   const totalSavings = (originalPrice - discountedPrice) * quantity;
+
+  // Product details
+  const product = {
+    id: 204,
+    name: "Make a Line Follower Robot Car Using L293d Motor Driver IC And BO Motor Dual Shaft",
+    price: totalPrice,
+    image: "/images/k4.jpg",
+    description: "Professional wireless light with advanced noise reduction and high-fidelity audio quality",
+  };
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.image,
+      description: product.description,
+      quantity: quantity,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
+  };
+
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
@@ -31,7 +74,7 @@ const KitsDetail4 = () => {
           >
             <Image
               src="/images/k4.jpg"
-              alt='Multi-function 14WD Robot Car Kit'
+              alt='Make a Line Follower Robot Car Using L293d Motor Driver IC And BO Motor Dual Shaft'
               width={800}
               height={800}
               className="w-full h-auto object-cover transition duration-500 hover:scale-105"
@@ -144,6 +187,7 @@ const KitsDetail4 = () => {
                   className="flex-1 bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-3 px-6 rounded-lg shadow-sm transition duration-300"
                   whileHover={{ scale: 1.03 }}
                   whileTap={{ scale: 0.98 }}
+                  onClick={handleAddToCart}
                 >
                   ADD TO CART
                 </motion.button>

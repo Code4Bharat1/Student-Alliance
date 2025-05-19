@@ -18,7 +18,7 @@ const kits = [
   {
     title: "Advance Smart Robot Car Kit 4wd Robot Car Kit",
     image: "/images/k3.jpg",
-    link: "/kitsDetails/kits-d4",
+    link: "/kitsDetails/kits-d3",
   },
   {
     title: "Make a Line Follower Robot Car Motor Driver",
