@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 'use client';
 
 import React, { useState } from 'react';
@@ -5,6 +6,13 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
 import { useRouter } from 'next/navigation';
+=======
+"use client";
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import WhatsAppWidget from "../WhatsApp/WhatApp";
+>>>>>>> c4d680e34d971e413d1d8cc64a4a8c2d83ca2338
 
 const PrinterDetails1 = () => {
   const router = useRouter();
@@ -65,7 +73,12 @@ const PrinterDetails1 = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
+<<<<<<< HEAD
             <span>Home</span> &gt; <span>Products</span> &gt; <span className="text-purple-600">3D Printer (CR-5 Pro H)</span>
+=======
+            <span>Home</span> &gt; <span>Products</span> &gt;{" "}
+            <span className="text-purple-600">3D Printer (CR-5 Pro H)</span>
+>>>>>>> c4d680e34d971e413d1d8cc64a4a8c2d83ca2338
           </motion.h2>
         </div>
 
@@ -90,11 +103,15 @@ const PrinterDetails1 = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">3D Printer (CR-5 Pro H)</h3>
+            <h3 className="text-2xl md:text-3xl font-semibold text-gray-800">
+              3D Printer (CR-5 Pro H)
+            </h3>
             <p className="text-gray-600 leading-relaxed">
-              Bring ideas to life with the high-performance CR-5 Pro H 3D Printer.
-              Designed for precision, it supports high-temp printing with a fully enclosed chamber.
-              Ideal for education and prototyping, it delivers smooth, detailed, and durable prints every time.
+              Bring ideas to life with the high-performance CR-5 Pro H 3D
+              Printer. Designed for precision, it supports high-temp printing
+              with a fully enclosed chamber. Ideal for education and
+              prototyping, it delivers smooth, detailed, and durable prints
+              every time.
             </p>
 
             <div className="flex items-center gap-2">
@@ -116,8 +133,11 @@ const PrinterDetails1 = () => {
                 <select
                   id="quantity"
                   className="border text-gray-800 border-gray-300 rounded px-3 py-1"
+<<<<<<< HEAD
                   value={quantity}
                   onChange={(e) => setQuantity(Number(e.target.value))}
+=======
+>>>>>>> c4d680e34d971e413d1d8cc64a4a8c2d83ca2338
                 >
                   <option value="1">1</option>
                   <option value="2">2</option>
