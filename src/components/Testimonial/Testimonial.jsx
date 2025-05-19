@@ -17,6 +17,7 @@ const testimonials = [
 export default function Testimonial() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
+  const [direction, setDirection] = useState(0); // 0: initial, 1: right, -1: left
 
   useEffect(() => {
     const updateCardsPerPage = () => {
@@ -36,12 +37,14 @@ export default function Testimonial() {
   }, []);
 
   const handlePrev = () => {
+    setDirection(-1);
     setCurrentIndex((prev) =>
       prev === 0 ? testimonials.length - cardsPerPage : prev - cardsPerPage
     );
   };
 
   const handleNext = () => {
+    setDirection(1);
     setCurrentIndex((prev) =>
       prev + cardsPerPage >= testimonials.length ? 0 : prev + cardsPerPage
     );
@@ -52,6 +55,22 @@ export default function Testimonial() {
     currentIndex + cardsPerPage
   );
 
+  // Animation variants
+  const cardVariants = {
+    enter: (direction) => ({
+      x: direction > 0 ? 100 : -200,
+      opacity: 0
+    }),
+    center: {
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => ({
+      x: direction < 0 ? 100 : -200,
+      opacity: 0
+    })
+  };
+
   return (
     <div className="flex flex-col items-center px-4 py-8 bg-white text-center">
       <h1 className="text-4xl text-gray-800 font-bold mb-2">TESTIMONIALS</h1>
@@ -59,7 +78,6 @@ export default function Testimonial() {
       <h2 className="text-xl font-semibold text-gray-800 mb-8">
         What Our Clients Say
       </h2>
-
       <div className="relative flex items-center justify-center w-full max-w-6xl">
         {/* Left Arrow */}
         <button
@@ -70,40 +88,46 @@ export default function Testimonial() {
         </button>
 
         {/* Testimonial Cards */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentIndex}
-            className="flex gap-6 flex-wrap justify-center"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.4 }}
-          >
-            {visibleTestimonials.map((testimonial) => (
-              <div
-                key={testimonial.id}
-                className="relative w-full md:w-72 h-80 bg-white shadow-lg rounded-md flex flex-col items-center justify-start pt-16 pb-4 px-4"
-              >
-                {/* Floating image */}
-                <img
-                  src={testimonial.image}
-                  alt="Client"
-                  className="absolute top-[-30px] w-20 h-20 rounded-full object-cover border-4 border-white shadow-md"
-                />
+        <div className="flex gap-6 flex-wrap justify-center min-h-[400px]">
+          <AnimatePresence mode="wait" custom={direction}>
+            <motion.div
+              key={currentIndex}
+              className="flex gap-6 flex-wrap justify-center"
+              custom={direction}
+              variants={cardVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ duration: 0.5 }}
+            >
+              {visibleTestimonials.map((testimonial) => (
+                <motion.div
+                  key={testimonial.id}
+                  className="relative w-full md:w-72 h-80 bg-white shadow-lg rounded-md flex flex-col items-center justify-start pt-16 pb-4 px-4"
+                >
+                  {/* Floating image */}
+                  <img
+                    src={testimonial.image}
+                    alt="Client"
+                    className="absolute top-[-30px] w-20 h-20 rounded-full object-cover border-4 border-white shadow-md"
+                  />
 
-                <div className="bg-blue-100 rounded-t-3xl p-4 w-full mt-4">
-                  <p className="text-lg text-gray-700">
-                    <span className="text-3xl text-black">“</span>
-                    <br />
-                    {testimonial.message}
-                    <br />
-                    <span className="text-3xl text-black float-right">”</span>
-                  </p>
-                </div>
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
+                  <div className="bg-blue-100 rounded-t-3xl p-4 w-full mt-4">
+                    <p className="text-lg text-gray-700">
+                      <span className="text-3xl text-black">“</span>
+                      
+                      {testimonial.message}
+                      <br />
+                      
+                      <span className="text-3xl text-black float-right">”</span>
+                      
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
 
         {/* Right Arrow */}
         <button
@@ -115,12 +139,12 @@ export default function Testimonial() {
       </div>
 
       {/* Dots */}
-      <div className="flex space-x-2 mt-6">
+      <div className="flex space-x-3 mt-[2px]">
         {Array.from({ length: Math.ceil(testimonials.length / cardsPerPage) }).map(
           (_, index) => (
             <span
               key={index}
-              className={`w-3 h-3 rounded-full ${
+              className={`w-4 h-4 rounded-full ${
                 index === Math.floor(currentIndex / cardsPerPage)
                   ? "bg-blue-500"
                   : "bg-gray-300"
