@@ -74,7 +74,7 @@ const Footer = () => {
                 { name: 'Home', href: '/' },
                 { name: 'About', href: '/about' },
                 { name: 'Products', href: '/Prod' },
-                { name: 'STEM & Robotics', href: '/kits' },
+                { name: 'Shop', href: '/shop1' },
                 { name: 'Updates', href: '/blog' }
               ].map((item, index) => (
                 <motion.li 
@@ -102,7 +102,7 @@ const Footer = () => {
                 { name: 'IFPD', href: '/Prod' },
                 { name: 'Stem & Robotics', href: '/kits' },
                 { name: '3D Printers', href: '/printer' },
-                { name: 'Kits', href: '/kits' }
+                { name: 'STEM & Robotics', href: '/kits' }
               ].map((item, index) => (
                 <motion.li 
                   key={index}
