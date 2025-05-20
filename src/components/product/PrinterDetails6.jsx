@@ -1,10 +1,56 @@
 'use client'
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
+import { useRouter } from 'next/navigation';
+
+
 
 const PrinterDetails6 = () => {
+
+   const router = useRouter();
+      const [quantity, setQuantity] = useState(1);
+    
+      const originalPricePerUnit = 108000;
+      const totalOriginalPrice = originalPricePerUnit * quantity;
+      const totalPrice = Math.round(totalOriginalPrice * 0.75); // 25% discount
+    
+      const product = {
+        id: 306,
+        name: "3D Printer (Sermoon VI)",
+        price: totalPrice,
+        image: "/images/printer6.png",
+        description:
+          "Designed for precision, it supports high-temp printing with a fully enclosed chamber.",
+      };
+    
+      // ✅ Define increment and decrement handlers
+      const increment = () => setQuantity((prev) => prev + 1);
+      const decrement = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
+    
+      const handleAddToCart = () => {
+        const newProduct = {
+          id: product.id,
+          name: product.name,
+          price: product.price,
+          image: product.image,
+          description: product.description,
+          quantity,
+        };
+    
+        const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+        const existingItem = existingCart.find((item) => item.id === newProduct.id);
+    
+        if (existingItem) {
+          existingItem.quantity += newProduct.quantity;
+        } else {
+          existingCart.push(newProduct);
+        }
+    
+        localStorage.setItem("cart", JSON.stringify(existingCart));
+        router.push("/mycart");
+      };
   return (
     <div className="min-h-screen bg-gray-100 px-4 py-0">
       <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg p-8">
@@ -66,29 +112,47 @@ const PrinterDetails6 = () => {
 
             {/* Price Section */}
             <div className="flex items-baseline gap-4 text-lg font-semibold">
-              <span className="text-indigo-600 text-2xl">₹108000</span>
-              <span className="line-through text-gray-500">₹145000</span>
+              <span className="text-indigo-600 text-2xl">₹{totalPrice.toLocaleString()}</span>
+              <span className="line-through text-gray-500">₹{totalOriginalPrice.toLocaleString()}</span>
               <span className="text-green-600">25% Off</span>
             </div>
 
             {/* Quantity & Buttons */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
-              <div>
-                <label htmlFor="quantity" className="block text-gray-600 mb-1">
-                  Quantity:
-                </label>
-                <select id="quantity" className="border text-gray-800 border-gray-300 rounded px-3 py-1">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
+            <div className="flex flex-col sm:flex-row items-center gap-6 mt-4">
+              {/* Quantity Selector */}
+              <div className="flex items-center gap-4 text-gray-700">
+                <span className="text-sm font-medium text-gray-700">Quantity:</span>
+                <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <button
+                    onClick={decrement}
+                    className="px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 transition"
+                  >
+                    −
+                  </button>
+                  <div className="px-6 py-2 text-lg border-x border-gray-200 font-medium">
+                    {quantity}
+                  </div>
+                  <button
+                    onClick={increment}
+                    className="px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 transition"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
 
+              {/* Action Buttons */}
               <div className="flex gap-3">
-                <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded transition duration-300">
+                <button
+                  onClick={handleAddToCart}
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded transition duration-300"
+                >
                   BUY NOW
                 </button>
-                <button className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded transition duration-300">
+                <button
+                  onClick={handleAddToCart}
+                  className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded transition duration-300"
+                >
                   ADD TO CART
                 </button>
               </div>

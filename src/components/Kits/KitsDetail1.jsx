@@ -23,7 +23,7 @@ const KitsDetail1 = () => {
    // Product details
   const product = {
     id: 200,
-    name: "Multi-function 14WD Robot Car Kit",
+    name: "Multi-function 4WD Robot Car Kit",
     price: totalPrice,
     image: "/images/k1.jpg",
     description: "The Multi-function 4WD Robot Car Kit is an upgraded version of the auto-walk car",
@@ -74,7 +74,7 @@ const KitsDetail1 = () => {
           >
             <Image
               src="/images/k1.jpg"
-              alt='Multi-function 14WD Robot Car Kit'
+              alt='Multi-function 4WD Robot Car Kit'
               width={800}
               height={800}
               className="w-full h-auto object-cover transition duration-500 hover:scale-105"
@@ -95,7 +95,7 @@ const KitsDetail1 = () => {
             transition={{ duration: 0.8 }}
           >
             <div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-2">Multi-function 14WD Robot Car Kit</h3>
+              <h3 className="text-3xl font-bold text-gray-800 mb-2">Multi-function 4WD Robot Car Kit</h3>
               <div className="flex items-center gap-2">
                 <div className="flex text-yellow-400 text-lg">
                   ★★★★☆

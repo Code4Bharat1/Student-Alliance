@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 'use client';
 
 import React, { useState } from 'react';
@@ -6,19 +5,17 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
 import { useRouter } from 'next/navigation';
-=======
-"use client";
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import WhatsAppWidget from "../WhatsApp/WhatApp";
->>>>>>> c4d680e34d971e413d1d8cc64a4a8c2d83ca2338
 
 const PrinterDetails1 = () => {
   const router = useRouter();
   const [quantity, setQuantity] = useState(1);
 
-  const totalPrice = 108000 * quantity;
+  // Base price and price calculations
+  const originalPricePerUnit = 108000;
+  const totalOriginalPrice = originalPricePerUnit * quantity;
+  const totalPrice = Math.round(totalOriginalPrice * 0.75); // 25% discount
+
+  
 
   // Product details
   const product = {
@@ -27,7 +24,7 @@ const PrinterDetails1 = () => {
     price: totalPrice,
     image: "/images/printer1.png",
     description:
-      " Bring ideas to life with the high-performance CR-5 Pro H 3D Printer.Designed for precision, it supports high-temp printing with a fully enclosed chamber.",
+      "Bring ideas to life with the high-performance CR-5 Pro H 3D Printer. Designed for precision, it supports high-temp printing with a fully enclosed chamber.",
   };
 
   const handleAddToCart = () => {
@@ -51,9 +48,11 @@ const PrinterDetails1 = () => {
     }
 
     localStorage.setItem("cart", JSON.stringify(existingCart));
-
     router.push("/mycart");
   };
+
+  const increment = () => setQuantity((prev) => prev + 1);
+  const decrement = () => setQuantity((prev) => (prev > 1 ? prev - 1 : 1));
 
   return (
     <div className="min-h-screen bg-gray-100 px-4 py-0">
@@ -73,12 +72,7 @@ const PrinterDetails1 = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-<<<<<<< HEAD
             <span>Home</span> &gt; <span>Products</span> &gt; <span className="text-purple-600">3D Printer (CR-5 Pro H)</span>
-=======
-            <span>Home</span> &gt; <span>Products</span> &gt;{" "}
-            <span className="text-purple-600">3D Printer (CR-5 Pro H)</span>
->>>>>>> c4d680e34d971e413d1d8cc64a4a8c2d83ca2338
           </motion.h2>
         </div>
 
@@ -114,48 +108,49 @@ const PrinterDetails1 = () => {
               every time.
             </p>
 
+            {/* User Reviews */}
             <div className="flex items-center gap-2">
               <div className="text-yellow-400 text-xl">★★★★☆</div>
               <span className="text-sm text-gray-500">User Reviews</span>
             </div>
 
+            {/* Price Section */}
             <div className="flex items-baseline gap-4 text-lg font-semibold">
-              <span className="text-indigo-600 text-2xl">₹108000</span>
-              <span className="line-through text-gray-500">₹145000</span>
+              <span className="text-indigo-600 text-2xl">₹{totalPrice.toLocaleString()}</span>
+              <span className="line-through text-gray-500">₹{totalOriginalPrice.toLocaleString()}</span>
               <span className="text-green-600">25% Off</span>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
-              <div>
-                <label htmlFor="quantity" className="block text-gray-600 mb-1">
-                  Quantity:
-                </label>
-                <select
-                  id="quantity"
-                  className="border text-gray-800 border-gray-300 rounded px-3 py-1"
-<<<<<<< HEAD
-                  value={quantity}
-                  onChange={(e) => setQuantity(Number(e.target.value))}
-=======
->>>>>>> c4d680e34d971e413d1d8cc64a4a8c2d83ca2338
-                >
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                </select>
+            {/* Quantity Selector & Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-6 mt-4">
+              {/* Quantity Selector */}
+              <div className="flex items-center gap-4 text-gray-700">
+                <span className="text-sm font-medium text-gray-700">Quantity:</span>
+                <div className="flex items-center border border-gray-200 rounded-lg overflow-hidden">
+                  <button
+                    onClick={decrement}
+                    className="px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 transition"
+                  >
+                    −
+                  </button>
+                  <div className="px-6 py-2 text-lg border-x border-gray-200 font-medium">
+                    {quantity}
+                  </div>
+                  <button
+                    onClick={increment}
+                    className="px-4 py-2 text-lg text-gray-700 hover:bg-gray-100 transition"
+                  >
+                    +
+                  </button>
+                </div>
               </div>
 
+              {/* Action Buttons */}
               <div className="flex gap-3">
-                <button
-                  onClick={handleAddToCart}
-                  className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded transition duration-300"
-                >
+                <button onClick={handleAddToCart} className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-5 py-2 rounded transition duration-300">
                   BUY NOW
                 </button>
-                <button
-                  onClick={handleAddToCart}
-                  className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded transition duration-300"
-                >
+                <button onClick={handleAddToCart} className="bg-purple-500 hover:bg-purple-600 text-white font-semibold px-5 py-2 rounded transition duration-300">
                   ADD TO CART
                 </button>
               </div>
