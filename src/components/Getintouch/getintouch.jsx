@@ -14,7 +14,7 @@ const GetinTouch = () => {
 
     try {
       const formData = {
-        access_key: "b7567a52-2cc8-4c24-ae1b-c62115053fa8",
+        access_key: "3dd5ca1e-a41a-4a86-8b1a-582fc33bb779",
         name: e.target.name.value,
         email: e.target.email.value,
         message: e.target.message.value,
@@ -82,7 +82,8 @@ const GetinTouch = () => {
             <input
               type="tel"
               name="phone"
-              placeholder="Phone number"
+              placeholder="Phone number*"
+              required
               className="w-full p-2 border border-gray-300 text-black text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             />
             <select 
