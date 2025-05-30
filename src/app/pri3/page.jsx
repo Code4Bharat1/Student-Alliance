@@ -6,9 +6,9 @@ import React from 'react'
 const Page = () => {
   return (
     <div>
-      <Navbar/>
+     
       <PrinterDetails3/>
-      <Footer/>
+   
     </div>
   )
 }

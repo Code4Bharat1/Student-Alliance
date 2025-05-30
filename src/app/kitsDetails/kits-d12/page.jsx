@@ -6,9 +6,9 @@ import Footer from '@/components/Footer'
 const Page = () => {
   return (
     <div>
-      <Navbar/>
+     
       <KitsDetail12/>
-      <Footer/>
+     
     </div>
   )
 }

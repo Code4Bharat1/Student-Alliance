@@ -6,9 +6,9 @@ import Footer from '../../../../Student-Alliance/src/components/Footer'
 const Page = () => {
   return (
     <div>
-      <Navbar/>
+      
       <KitsDetail8/>
-      <Footer/>
+      
     </div>
   )
 }

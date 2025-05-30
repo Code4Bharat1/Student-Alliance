@@ -19,9 +19,9 @@ const HomePage = () => {
   return (
     <>
     {/* this is page.jsx */}
-    <Navbar/>
+    
     <Hero/>
-    <WhatsAppWidget/>
+  
     <Service/>
     <ShopByCat/>
     <Brand/>
@@ -31,7 +31,7 @@ const HomePage = () => {
     <Blog/>
     <Highlight/>
     <Testimonial/>
-    <Footer/>
+    
     </>
   );
 };
