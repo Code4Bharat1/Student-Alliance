@@ -18,9 +18,9 @@ import React from 'react'
 const Page = () => {
   return (
     <div>
-      <Navbar/>
+      
       <Hero/>
-      <WhatsAppWidget/>
+    
       <Service/>
       <ShopByCat/>
       <Brand/>
@@ -30,7 +30,7 @@ const Page = () => {
       <Blog/>
       <Highlight/>
       <Testimonial/>
-      <Footer/>
+     
     </div>
   )
 }

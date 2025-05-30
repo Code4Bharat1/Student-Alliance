@@ -10,9 +10,9 @@ import BlogsDetail12 from '@/components/blog/BlogDetail12'
 const Page = () => {
   return (
     <div>
-        <Navbar/>
+      
         <BlogsDetail12/>
-        <Footer/>
+      
     </div>
   )
 }

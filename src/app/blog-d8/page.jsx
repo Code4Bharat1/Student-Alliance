@@ -6,9 +6,9 @@ import Navbar from '@/components/Navbar'
 const Page = () => {
   return (
     <div>
-      <Navbar/>
+     
       <BlogsDetail8/>
-      <Footer/>
+    
     </div>
   )
 }

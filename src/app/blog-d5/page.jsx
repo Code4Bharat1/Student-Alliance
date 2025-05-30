@@ -7,10 +7,9 @@ import Navbar from '@/components/Navbar'
 const Page = () => {
   return (
     <div>
-        <Navbar/>
+        
         <BlogsDetail5/>
-        <Footer/>
-
+        
       
     </div>
   )

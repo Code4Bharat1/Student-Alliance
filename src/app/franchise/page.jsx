@@ -9,12 +9,12 @@ import React from 'react'
 const Page = () => {
   return (
     <div>
-      <Navbar/>
+     
       <Franchise/>
       <WhyChoose/>
       <Categories/>
       <Features/>
-      <Footer/>
+     
     </div>
   )
 }

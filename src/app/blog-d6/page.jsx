@@ -7,9 +7,9 @@ import React from 'react'
 const Page = () => {
   return (
     <div>
-      <Navbar/>
+  
       <BlogsDetail6/>
-      <Footer/>
+   
     </div>
   )
 }
