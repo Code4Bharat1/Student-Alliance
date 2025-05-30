@@ -27,7 +27,7 @@ const Shop = () => {
     "Speaker",
     "OPS",
     "Stand",
-    "Lighting",
+    "Light",
   ];
   const sortOptions = [
     "Featured",
