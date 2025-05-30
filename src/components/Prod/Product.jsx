@@ -72,7 +72,6 @@ export default function Products() {
               <div className="relative w-full aspect-[4/3] bg-white">
                 <Image
                   src={product.image}
-                  alt={product.title}
                   width={400}
                   height={300}
                   className="object-contain p-2"
