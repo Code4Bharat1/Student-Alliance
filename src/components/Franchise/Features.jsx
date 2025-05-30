@@ -11,7 +11,7 @@ const features = [
   },
   {
     title: 'DIY Tank STEM Kit',
-    desc: 'Wooden model, RC tracking tank, science experiment craft.',
+    desc: 'Wooden model, RC tracking tank, science experiment craft kits full set.',
     image: '/images/tank.png',
   },
   {
@@ -50,13 +50,13 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.15 }}
-            className="rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 bg-white border"
+            className="rounded-xl overflow-hidden shadow-xl border-gray-700 hover:shadow-2xl transition-shadow duration-300 bg-white "
           >
             <div className="overflow-hidden group p-6 flex justify-center">
               <Image
                 src={feature.image}
                 alt={feature.title}
-                width={240}
+                width={350}
                 height={180}
                 className="object-contain group-hover:scale-105 transition-transform duration-300"
               />

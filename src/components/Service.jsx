@@ -38,20 +38,23 @@ const Service = () => {
         Our Services
       </motion.h2>
 
-      <div className="grid gap-8 md:grid-cols-3 px-6">
+      <div className="grid gap-8 md:grid-cols-3 sm:w-fit px-6">
         {services.map((service, index) => (
           <motion.div
             key={index}
-            className="bg-white shadow-gray-300 rounded-lg shadow-lg overflow-hidden"
+            className="bg-white sm:w-fit shadow-gray-300 rounded-lg shadow-lg overflow-hidden"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
-            <img
-              src={service.imgSrc}
-              alt={service.title}
-              className="h-48 w-full object-cover"
-            />
+         <div className="p-4">
+               <img
+                src={service.imgSrc}
+                alt={service.title}
+                className="h-60 w-full object-center"
+              />
+               </div>
+
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>

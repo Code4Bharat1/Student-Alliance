@@ -1,7 +1,8 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const categories = [
   { id: 1, name: "Cable", image: "/shop/cable.png" },
@@ -16,6 +17,7 @@ const categories = [
 const ShopByCat = () => {
   // Duplicate the categories for seamless looping
   const duplicatedCategories = [...categories, ...categories];
+  const [isHovering, setIsHovering] = useState(false);
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-4">
@@ -26,13 +28,19 @@ const ShopByCat = () => {
         
         <div className="relative w-full overflow-hidden">
           {/* Marquee Container */}
-          <div className="flex w-max animate-marquee whitespace-nowrap">
+          <div 
+            className={`flex w-max whitespace-nowrap ${isHovering ? "" : "animate-marquee"}`}
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
             {duplicatedCategories.map((category, index) => (
               <div 
                 key={`${category.id}-${index}`} 
                 className="inline-flex flex-col items-center mx-8 group transition-all duration-300 hover:scale-105"
               >
+               <Link href={"/shop1"}>
                 <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg border-4 border-white bg-white group-hover:border-purple-600 transition-all duration-300">
+                  
                   <Image
                     src={category.image}
                     alt={category.name}
@@ -40,7 +48,9 @@ const ShopByCat = () => {
                     height={112}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
+                  
                 </div>
+                </Link>
                 <p className="text-center text-black font-medium mt-3 text-lg">
                   {category.name}
                 </p>
