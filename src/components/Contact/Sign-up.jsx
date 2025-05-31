@@ -43,14 +43,14 @@ export default function SignUp() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center text-black bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 px-4">
+    <div className="min-h-screen flex items-center justify-center pt-10 pb-10 text-black bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 px-4">
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         className="w-full max-w-md bg-white p-8 rounded-2xl shadow-2xl"
       >
-        <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
+        <h2 className="text-3xl font-bold  text-gray-900 mb-2 text-center">
           Create Account
         </h2>
         <p className="text-gray-600 text-center mb-6">
@@ -76,7 +76,7 @@ export default function SignUp() {
 
           {/* Contact No */}
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-1">
+            <label className="block text-sm pt-0 font-medium text-gray-900 mb-1">
               Contact No.
             </label>
             <input
