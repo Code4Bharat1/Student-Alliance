@@ -1,10 +1,47 @@
 "use client";
 
+import { useState } from "react";
+import axios from "axios";
 import { motion } from "framer-motion";
 import { FaGoogle, FaFacebookF, FaInstagram } from "react-icons/fa";
 import WhatsAppWidget from "../WhatsApp/WhatApp";
 
 export default function SignUp() {
+  const [form, setForm] = useState({
+    name: "",
+    contact: "",
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  // Sign Up handler
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+    try {
+      const res = await axios.post("http://localhost:5000/api/customers", {
+        name: form.name,
+        email: form.email,
+        password: form.password,
+        contact: form.contact,
+      });
+      setMessage("Account created successfully! Please sign in.");
+      setForm({ name: "", contact: "", email: "", password: "" });
+    } catch (err) {
+      setMessage(
+        err.response?.data?.message || "Sign up failed. Please try again."
+      );
+    }
+    setLoading(false);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center text-black bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 px-4">
       <motion.div
@@ -20,7 +57,7 @@ export default function SignUp() {
           Please fill in the details below
         </p>
 
-        <form className="space-y-5">
+        <form className="space-y-5" onSubmit={handleSubmit}>
           {/* Full Name */}
           <div>
             <label className="block text-sm font-medium text-gray-900 mb-1">
@@ -28,8 +65,12 @@ export default function SignUp() {
             </label>
             <input
               type="text"
+              name="name"
+              value={form.name}
+              onChange={handleChange}
               placeholder="Enter Your Full Name"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              required
             />
           </div>
 
@@ -40,8 +81,12 @@ export default function SignUp() {
             </label>
             <input
               type="tel"
+              name="contact"
+              value={form.contact}
+              onChange={handleChange}
               placeholder="Enter Your Contact Number"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              required
             />
           </div>
 
@@ -52,8 +97,12 @@ export default function SignUp() {
             </label>
             <input
               type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
               placeholder="Enter Your Email"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              required
             />
           </div>
 
@@ -64,8 +113,12 @@ export default function SignUp() {
             </label>
             <input
               type="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
               placeholder="Create a Password"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              required
             />
           </div>
 
@@ -74,9 +127,17 @@ export default function SignUp() {
             whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 1.03 }}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg shadow transition duration-200"
+            type="submit"
+            disabled={loading}
           >
-            Sign Up
+            {loading ? "Signing Up..." : "Sign Up"}
           </motion.button>
+
+          {message && (
+            <div className="text-center text-sm mt-2 text-red-500">
+              {message}
+            </div>
+          )}
 
           {/* Divider */}
           <div className="relative text-center text-gray-900 my-4">
