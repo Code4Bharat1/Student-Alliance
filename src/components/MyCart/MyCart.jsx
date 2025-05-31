@@ -18,17 +18,16 @@ export default function MyCart() {
   useEffect(() => {
     if (!token) {
       toast.error("Please login first to view your cart.");
-      router.replace("/contact"); // Redirect to login page
+      router.replace("/contact");
       return;
     }
-    // Optionally, fetch cart from backend using user._id
-    // Example:
-    fetch(`http://localhost:5000/api/cart/${user._id}`, { headers: { Authorization: `Bearer ${token}` } })
-      .then(res => res.json())
-      .then(data => setCartItems(data.items || []));
-    // For now, load from localStorage:
-    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(storedCart);
+    // Fetch cart from backend for this user
+    fetch(`http://localhost:5000/api/cart/${user._id}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    })
+      .then((res) => res.json())
+      .then((data) => setCartItems(data.items || []))
+      .catch(() => setCartItems([]));
   }, [token, user, router]);
 
   const shippingFee = 199; // Shipping fee in INR
