@@ -1,7 +1,8 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
 
 export default function MyCart() {
   const [cartItems, setCartItems] = useState([]);
@@ -9,11 +10,25 @@ export default function MyCart() {
   const [discount, setDiscount] = useState(0);
   const [showCouponInput, setShowCouponInput] = useState(false);
 
+  const token = useSelector((state) => state.auth.token);
+  const user = useSelector((state) => state.auth.user);
+  const router = useRouter();
+
   useEffect(() => {
-    // Load cart from localStorage
+    if (!token) {
+      alert("Please login first to view your cart.");
+      router.replace("/contact"); // Redirect to login page
+      return;
+    }
+    // Optionally, fetch cart from backend using user._id
+    // Example:
+    fetch(`http://localhost:5000/api/cart/${user._id}`, { headers: { Authorization: `Bearer ${token}` } })
+      .then(res => res.json())
+      .then(data => setCartItems(data.items || []));
+    // For now, load from localStorage:
     const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(storedCart);
-  }, []);
+  }, [token, user, router]);
 
   const shippingFee = 199; // Shipping fee in INR
   const freeShippingThreshold = 999; // Free shipping above this amount

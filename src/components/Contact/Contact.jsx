@@ -3,8 +3,54 @@
 import { motion } from "framer-motion";
 import { FaGoogle, FaFacebookF, FaInstagram } from "react-icons/fa";
 import WhatsAppWidget from "../WhatsApp/WhatApp";
+import { useState } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { loginSuccess } from "@/redux/slices/authSlice";
 
 export default function Login() {
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState("");
+  const router = useRouter();
+  const dispatch = useDispatch();
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage("");
+    try {
+      const res = await axios.post(
+        "http://localhost:5000/api/customers/login",
+        {
+          email: form.email,
+          password: form.password,
+        }
+      );
+      // Assuming your API returns { token, customer }
+      dispatch(
+        loginSuccess({
+          token: res.data.token,
+          user: res.data.customer,
+        })
+      );
+      localStorage.setItem("userToken", res.data.token);
+      localStorage.setItem("userInfo", JSON.stringify(res.data.customer));
+      setMessage("Login successful!");
+      router.push("/");
+    } catch (err) {
+      setMessage(
+        err.response?.data?.message || "Login failed. Please try again."
+      );
+    }
+    setLoading(false);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center text-black bg-gradient-to-r from-blue-100 via-purple-100 to-pink-100 px-4">
       <motion.div
@@ -20,15 +66,19 @@ export default function Login() {
           Welcome back please enter your details
         </p>
 
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label className="block text-sm font-medium text-gray-900 mb-1">
               Email
             </label>
             <input
               type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
               placeholder="Enter Your Email"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              required
             />
           </div>
           <div>
@@ -37,8 +87,12 @@ export default function Login() {
             </label>
             <input
               type="password"
+              name="password"
+              value={form.password}
+              onChange={handleChange}
               placeholder="Enter Your Password"
               className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
+              required
             />
           </div>
 
@@ -56,9 +110,16 @@ export default function Login() {
             whileTap={{ scale: 0.95 }}
             whileHover={{ scale: 1.03 }}
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg shadow transition duration-200"
+            type="submit"
+            disabled={loading}
           >
-            Sign In
+            {loading ? "Signing In..." : "Sign In"}
           </motion.button>
+          {message && (
+            <div className="text-center text-sm mt-2 text-red-500">
+              {message}
+            </div>
+          )}
 
           <div className="relative text-center text-gray-900 my-4">
             <span className="bg-white px-2">or</span>
@@ -95,7 +156,7 @@ export default function Login() {
           </p>
         </form>
       </motion.div>
-      <WhatsAppWidget/>
+      <WhatsAppWidget />
     </div>
   );
 }

@@ -71,6 +71,7 @@ export default function Products() {
             >
               <div className="relative w-full aspect-[4/3] bg-white">
                 <Image
+                  alt="Image of product"
                   src={product.image}
                   width={400}
                   height={300}
@@ -81,11 +82,12 @@ export default function Products() {
                 {product.name}
               </div>
               <div className="bg-white p-4 text-center">
-                  <button className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                <button
+                  className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
                   onClick={() => router.push(`/product/${product._id}`)}
-                  >
-                    Show More
-                  </button>
+                >
+                  Show More
+                </button>
               </div>
             </motion.div>
           ))}
