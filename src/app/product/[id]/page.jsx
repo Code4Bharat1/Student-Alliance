@@ -53,19 +53,22 @@ export default function ProductDetail() {
       return;
     }
     try {
-      const res = await fetch("http://localhost:5000/api/cart/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
+      const res = await axios.post(
+        "http://localhost:5000/api/cart/add",
+        {
           customerId: user._id,
           productId: product._id,
           quantity,
-        }),
-      });
-      if (res.ok) {
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("Add to cart response:", res);
+      if (res.status === 200) {
         toast.success("Product added to cart!");
         router.push("/mycart");
       } else {

@@ -4,12 +4,15 @@ import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import axios from "axios";
 
 export default function MyCart() {
   const [cartItems, setCartItems] = useState([]);
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
   const [showCouponInput, setShowCouponInput] = useState(false);
+  const [product, setProduct] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const token = useSelector((state) => state.auth.token);
   const user = useSelector((state) => state.auth.user);
@@ -21,7 +24,6 @@ export default function MyCart() {
       router.replace("/contact");
       return;
     }
-    // Fetch cart from backend for this user
     fetch(`http://localhost:5000/api/cart/${user._id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
@@ -30,12 +32,23 @@ export default function MyCart() {
       .catch(() => setCartItems([]));
   }, [token, user, router]);
 
-  const shippingFee = 199; // Shipping fee in INR
-  const freeShippingThreshold = 999; // Free shipping above this amount
+  // useEffect(() => {
+  //   if (!cartItems.length) return;
+  //   Promise.all(
+  //     cartItems.map((item) =>
+  //       axios
+  //         .get(`http://localhost:5000/api/products/${item.id}`)
+  //         .then((res) => ({ ...item, ...res.data }))
+  //     )
+  //   ).then(setCartItems);
+  // }, [cartItems]);
+
+  const shippingFee = 199;
+  const freeShippingThreshold = 999;
 
   const handleQuantityChange = (id, amount) => {
     const updatedCart = cartItems.map((item) =>
-      item.id === id
+      item.product._id === id
         ? { ...item, quantity: Math.max(1, item.quantity + amount) }
         : item
     );
@@ -44,15 +57,14 @@ export default function MyCart() {
   };
 
   const removeItem = (id) => {
-    const updatedCart = cartItems.filter((item) => item.id !== id);
+    const updatedCart = cartItems.filter((item) => item.product._id !== id);
     setCartItems(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
   };
 
   const applyCoupon = () => {
-    // Simple coupon logic - in a real app, this would validate with backend
     if (couponCode.toUpperCase() === "PETLOVER10") {
-      setDiscount(subtotal * 0.1); // 10% discount
+      setDiscount(subtotal * 0.1);
       setShowCouponInput(false);
     } else if (couponCode.toUpperCase() === "FREESHIP") {
       setDiscount(shippingFee);
@@ -63,7 +75,7 @@ export default function MyCart() {
   };
 
   const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.price * item.quantity,
+    (acc, item) => acc + item.product.price * item.quantity,
     0
   );
 
@@ -79,7 +91,12 @@ export default function MyCart() {
   };
 
   return (
-    <div className="p-4 text-black md:p-8 bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
+    <div
+      className="p-4 text-black md:p-8 bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen"
+      onClick={() => {
+        console.log(cartItems);
+      }}
+    >
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
         <div className="relative">
           <h1 className="text-2xl font-bold px-6 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white flex items-center">
@@ -160,35 +177,38 @@ export default function MyCart() {
               <div className="space-y-4">
                 {cartItems.map((item) => (
                   <div
-                    key={item.id}
+                    key={item.product._id}
                     className="flex flex-col md:flex-row items-center justify-between p-4 mb-4 border border-gray-100 hover:border-orange-200 hover:shadow-sm rounded-lg transition-all duration-200 bg-white"
                   >
                     <div className="flex items-center w-full md:w-auto">
                       <img
-                        src={item.image}
-                        alt={item.name}
+                        src={item.product.image}
+                        alt={item.product.name}
                         className="w-24 h-24 object-cover rounded-lg mr-4 border border-gray-200"
                       />
                       <div className="flex-1">
                         <h2 className="font-bold text-lg hover:text-orange-500 transition-colors">
-                          {item.name}
+                          {item.product.name}
                         </h2>
                         <p className="text-sm text-gray-500 line-clamp-2">
-                          {item.description}
+                          {item.product.description}
                         </p>
                         <div className="flex items-center mt-1">
                           <span className="text-orange-500 font-bold">
-                            {formatCurrency(item.price)}
+                            {formatCurrency(item.product.price)}
                           </span>
-                          {item.originalPrice && (
+                          {item.product.originalPrice && (
                             <span className="line-through text-gray-400 ml-2 text-sm">
-                              {formatCurrency(item.originalPrice)}
+                              {formatCurrency(item.product.originalPrice)}
                             </span>
                           )}
-                          {item.originalPrice && (
+                          {item.product.originalPrice && (
                             <span className="ml-2 bg-orange-100 text-orange-800 text-xs px-2 py-0.5 rounded-full">
                               {Math.round(
-                                (1 - item.price / item.originalPrice) * 100
+                                (1 -
+                                  item.product.price /
+                                    item.product.originalPrice) *
+                                  100
                               )}
                               % OFF
                             </span>
@@ -200,7 +220,9 @@ export default function MyCart() {
                     <div className="flex items-center justify-between w-full md:w-auto mt-4 md:mt-0">
                       <div className="flex items-center mr-6 md:mr-8">
                         <button
-                          onClick={() => handleQuantityChange(item.id, -1)}
+                          onClick={() =>
+                            handleQuantityChange(item.product._id, -1)
+                          }
                           className="px-3 py-1 bg-gray-100 rounded-l-full hover:bg-gray-200 transition-colors active:scale-95 text-gray-700"
                         >
                           -
@@ -209,7 +231,9 @@ export default function MyCart() {
                           {item.quantity}
                         </span>
                         <button
-                          onClick={() => handleQuantityChange(item.id, 1)}
+                          onClick={() =>
+                            handleQuantityChange(item.product._id, 1)
+                          }
                           className="px-3 py-1 bg-gray-100 rounded-r-full hover:bg-gray-200 transition-colors active:scale-95 text-gray-700"
                         >
                           +
@@ -218,10 +242,10 @@ export default function MyCart() {
 
                       <div className="flex items-center">
                         <span className="font-bold mr-4 text-lg">
-                          {formatCurrency(item.price * item.quantity)}
+                          {formatCurrency(item.product.price * item.quantity)}
                         </span>
                         <button
-                          onClick={() => removeItem(item.id)}
+                          onClick={() => removeItem(item.product._id)}
                           className="text-gray-400 hover:text-red-500 transition-colors p-1 rounded-full hover:bg-red-50"
                           aria-label="Remove item"
                         >
