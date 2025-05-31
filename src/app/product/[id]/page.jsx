@@ -17,6 +17,7 @@ export default function ProductDetail() {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
+  const [mainImage, setMainImage] = useState(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -24,6 +25,7 @@ export default function ProductDetail() {
     const fetchProduct = async () => {
       try {
         const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+        console.log(res.data);
         setProduct(res.data);
       } catch (error) {
         setProduct(null);
@@ -33,6 +35,12 @@ export default function ProductDetail() {
     };
     fetchProduct();
   }, [id]);
+
+  useEffect(() => {
+    if (product) {
+      setMainImage(product.image);
+    }
+  }, [product]);
 
   if (loading)
     return <div className="text-center py-10 text-lg">Loading...</div>;
@@ -53,19 +61,22 @@ export default function ProductDetail() {
       return;
     }
     try {
-      const res = await fetch("http://localhost:5000/api/cart/add", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
+      const res = await axios.post(
+        "http://localhost:5000/api/cart/add",
+        {
           customerId: user._id,
           productId: product._id,
           quantity,
-        }),
-      });
-      if (res.ok) {
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log("Add to cart response:", res);
+      if (res.status === 200) {
         toast.success("Product added to cart!");
         router.push("/mycart");
       } else {
@@ -81,26 +92,53 @@ export default function ProductDetail() {
       <div className="max-w-7xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
           {/* Product Image */}
-          <motion.div
-            className="relative overflow-hidden rounded-xl shadow-lg"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            whileHover={{ scale: 1.02 }}
-          >
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={800}
-              height={800}
-              className="w-full h-auto object-cover transition duration-500 hover:scale-105"
-            />
-            {product.discount > 0 && (
-              <div className="absolute top-4 right-4 bg-red-500 text-white font-bold px-3 py-1 rounded-full text-xs">
-                {product.discount}% OFF
-              </div>
-            )}
-          </motion.div>
+          <div>
+            <motion.div
+              className="relative overflow-hidden rounded-xl shadow-lg"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7 }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <Image
+                src={mainImage || product.image}
+                alt={product.name}
+                width={800}
+                height={800}
+                className="w-full h-auto object-cover transition duration-500 hover:scale-105"
+              />
+              {product.discount > 0 && (
+                <div className="absolute top-4 right-4 bg-red-500 text-white font-bold px-3 py-1 rounded-full text-xs">
+                  {product.discount}% OFF
+                </div>
+              )}
+            </motion.div>
+            {/* Additional Images (if any) */}
+            {Array.isArray(product.additionalImages) &&
+              product.additionalImages.filter(
+                (img) => typeof img === "string" && img.trim() !== ""
+              ).length > 0 && (
+                <div className="flex gap-4 mt-4">
+                  {product.additionalImages
+                    .filter(
+                      (img) => typeof img === "string" && img.trim() !== ""
+                    )
+                    .map((img, idx) => (
+                      <Image
+                        key={idx}
+                        src={img}
+                        alt={`${product.name} - ${idx + 1}`}
+                        width={120}
+                        height={120}
+                        className={`rounded-lg border border-gray-200 object-cover cursor-pointer ${
+                          mainImage === img ? "ring-2 ring-purple-500" : ""
+                        }`}
+                        onClick={() => setMainImage(img)}
+                      />
+                    ))}
+                </div>
+              )}
+          </div>
 
           {/* Product Info */}
           <motion.div

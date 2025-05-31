@@ -20,7 +20,6 @@ export default function Products() {
         const res = await axios.get(
           "http://localhost:5000/api/products/category/IFPD"
         );
-        console.log(res.data);
         setProducts(res.data);
         if (!res.data || res.data.length === 0) {
           console.warn("No products found in the database.");
