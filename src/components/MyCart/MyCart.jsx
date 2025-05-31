@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export default function MyCart() {
   const [cartItems, setCartItems] = useState([]);
@@ -16,7 +17,7 @@ export default function MyCart() {
 
   useEffect(() => {
     if (!token) {
-      alert("Please login first to view your cart.");
+      toast.error("Please login first to view your cart.");
       router.replace("/contact"); // Redirect to login page
       return;
     }
@@ -136,7 +137,7 @@ export default function MyCart() {
                 Your pet deserves the best! Fill your cart with goodies.
               </p>
               <Link href={"/shop1"}>
-                <button className="mt-4 px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full hover:from-orange-600 hover:to-pink-600 transition-colors hover:scale-105 transform transition-transform duration-300 flex items-center mx-auto">
+                <button className="mt-4 px-6 py-2 bg-gradient-to-r from-orange-500 to-pink-500 text-white rounded-full hover:from-orange-600 hover:to-pink-600  hover:scale-105 transform transition-transform duration-300 flex items-center mx-auto">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5 mr-2"

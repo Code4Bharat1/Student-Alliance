@@ -5,7 +5,7 @@ import { FaGoogle, FaFacebookF, FaInstagram } from "react-icons/fa";
 import WhatsAppWidget from "../WhatsApp/WhatApp";
 import { useState } from "react";
 import axios from "axios";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "@/redux/slices/authSlice";
 
@@ -15,6 +15,8 @@ export default function Login() {
   const [message, setMessage] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
+  const pathname = usePathname();
+  const hideAuthNav = ["/contact", "/sign_up"].includes(pathname);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -157,6 +159,13 @@ export default function Login() {
         </form>
       </motion.div>
       <WhatsAppWidget />
+
+      {/* Cart + Sign In/Profile (Desktop Only) */}
+      {!hideAuthNav && (
+        <div className="hidden md:flex items-center space-x-6">
+          {/* ...your existing code for cart, sign in, and profile dropdown... */}
+        </div>
+      )}
     </div>
   );
 }

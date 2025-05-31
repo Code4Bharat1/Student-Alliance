@@ -5,17 +5,29 @@ import { ShoppingCartIcon, ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "@/redux/slices/authSlice";
+import { UserCircleIcon } from "@heroicons/react/solid";
 
 const Navbar = () => {
   const pathname = usePathname();
+  const token = useSelector((state) => state.auth.token);
+  const user = useSelector((state) => state.auth.user);
+  const dispatch = useDispatch();
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isMobileProductDropdownOpen, setIsMobileProductDropdownOpen] = useState(false);
+  const [isMobileProductDropdownOpen, setIsMobileProductDropdownOpen] =
+    useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
 
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
-  const toggleMobileProductDropdown = () => setIsMobileProductDropdownOpen((prev) => !prev);
+  const toggleMobileProductDropdown = () =>
+    setIsMobileProductDropdownOpen((prev) => !prev);
+  const toggleProfileDropdown = () => setIsProfileDropdownOpen((prev) => !prev);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -27,7 +39,12 @@ const Navbar = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const isProductActive = ["/Prod", "/printer", "/kits"].includes(pathname);
+  const hideAuthNav = ["/contact", "/sign_up"].includes(pathname);
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50">
@@ -53,7 +70,10 @@ const Navbar = () => {
           </Link>
 
           {/* Hamburger Menu */}
-          <button onClick={toggleMobileMenu} className="text-gray-800 focus:outline-none">
+          <button
+            onClick={toggleMobileMenu}
+            className="text-gray-800 focus:outline-none"
+          >
             <svg
               className="h-6 w-6"
               fill="none"
@@ -62,9 +82,19 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               {isMobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -113,9 +143,36 @@ const Navbar = () => {
                       transition={{ duration: 0.2 }}
                       className="absolute top-full left-0 bg-white shadow-xl rounded-md mt-1 z-10 w-48 border border-gray-100 overflow-hidden"
                     >
-                      <Link href="/Prod" className={`block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200 ${pathname === "/Prod" ? "bg-blue-50 font-medium text-blue-600" : ""}`}>IFPD</Link>
-                      <Link href="/printer" className={`block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200 ${pathname === "/printer" ? "bg-blue-50 font-medium text-blue-600" : ""}`}>3D Printers</Link>
-                      <Link href="/kits" className={`block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200 ${pathname === "/kits" ? "bg-blue-50 font-medium text-blue-600" : ""}`}>STEM & Robotics</Link>
+                      <Link
+                        href="/Prod"
+                        className={`block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200 ${
+                          pathname === "/Prod"
+                            ? "bg-blue-50 font-medium text-blue-600"
+                            : ""
+                        }`}
+                      >
+                        IFPD
+                      </Link>
+                      <Link
+                        href="/printer"
+                        className={`block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200 ${
+                          pathname === "/printer"
+                            ? "bg-blue-50 font-medium text-blue-600"
+                            : ""
+                        }`}
+                      >
+                        3D Printers
+                      </Link>
+                      <Link
+                        href="/kits"
+                        className={`block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors duration-200 ${
+                          pathname === "/kits"
+                            ? "bg-blue-50 font-medium text-blue-600"
+                            : ""
+                        }`}
+                      >
+                        STEM & Robotics
+                      </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -148,32 +205,71 @@ const Navbar = () => {
         </nav>
 
         {/* Cart + Sign In (Desktop Only) */}
-        <div className="hidden md:flex items-center space-x-6">
-          <motion.button
-            className="relative hover:text-blue-600 focus:outline-none group"
-            aria-label="Shopping Cart"
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 300 }}
-          >
-            <Link href={"/mycart"}>
-              <div className="relative p-2 rounded-full group-hover:bg-blue-50 transition-colors duration-300">
-                <ShoppingCartIcon className="h-6 w-6 text-blue-600" />
-              </div>
-            </Link>
-          </motion.button>
-          <motion.a
-            href="/contact"
-            target="_blank"
-            className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0 5px 15px rgba(37, 99, 235, 0.4)",
-            }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Sign in
-          </motion.a>
-        </div>
+        {!hideAuthNav && (
+          <div className="hidden md:flex items-center space-x-6">
+            <motion.button
+              className="relative hover:text-blue-600 focus:outline-none group"
+              aria-label="Shopping Cart"
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <Link href={"/mycart"}>
+                <div className="relative p-2 rounded-full group-hover:bg-blue-50 transition-colors duration-300">
+                  <ShoppingCartIcon className="h-6 w-6 text-blue-600" />
+                </div>
+              </Link>
+            </motion.button>
+            {/* Only render auth UI after mount to avoid hydration mismatch */}
+            {mounted ? (
+              token ? (
+                <div className="relative">
+                  <button
+                    onClick={toggleProfileDropdown}
+                    className="flex items-center focus:outline-none"
+                    aria-label="User menu"
+                  >
+                    <UserCircleIcon className="h-8 w-8 text-blue-600" />
+                    {/* Optionally show user name */}
+                    {/* <span className="ml-2 text-gray-800 font-medium">{user?.name}</span> */}
+                  </button>
+                  <AnimatePresence>
+                    {isProfileDropdownOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -10 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50"
+                      >
+                        <button
+                          onClick={() => {
+                            dispatch(logout());
+                            setIsProfileDropdownOpen(false);
+                          }}
+                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50"
+                        >
+                          Logout
+                        </button>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              ) : (
+                <motion.a
+                  href="/contact"
+                  className="bg-gradient-to-r from-blue-600 to-blue-500 text-white px-6 py-2 rounded-lg hover:shadow-lg transition-all duration-300"
+                  whileHover={{
+                    scale: 1.05,
+                    boxShadow: "0 5px 15px rgba(37, 99, 235, 0.4)",
+                  }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  Sign in
+                </motion.a>
+              )
+            ) : null}
+          </div>
+        )}
       </div>
 
       {/* Mobile Nav Menu */}
@@ -200,15 +296,32 @@ const Navbar = () => {
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
                 </svg>
               </button>
             </div>
 
             {/* Mobile Menu Links */}
             <div className="flex flex-col space-y-4 text-gray-800 text-lg">
-              <Link href="/home" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-blue-600">Home</Link>
-              <Link href="/about" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-blue-600">About us</Link>
+              <Link
+                href="/home"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="hover:text-blue-600"
+              >
+                Home
+              </Link>
+              <Link
+                href="/about"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="hover:text-blue-600"
+              >
+                About us
+              </Link>
 
               <div>
                 <button
@@ -233,17 +346,65 @@ const Navbar = () => {
                       transition={{ duration: 0.3 }}
                       className="mt-2 ml-4 flex flex-col space-y-2 overflow-hidden"
                     >
-                      <Link href="/Prod" onClick={() => setIsMobileMenuOpen(false)} className={`text-base hover:text-blue-600 ${pathname === "/Prod" ? "font-semibold text-blue-600" : ""}`}>IFPD</Link>
-                      <Link href="/printer" onClick={() => setIsMobileMenuOpen(false)} className={`text-base hover:text-blue-600 ${pathname === "/printer" ? "font-semibold text-blue-600" : ""}`}>3D Printers</Link>
-                      <Link href="/kits" onClick={() => setIsMobileMenuOpen(false)} className={`text-base hover:text-blue-600 ${pathname === "/kits" ? "font-semibold text-blue-600" : ""}`}>STEM & Robotics</Link>
+                      <Link
+                        href="/Prod"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`text-base hover:text-blue-600 ${
+                          pathname === "/Prod"
+                            ? "font-semibold text-blue-600"
+                            : ""
+                        }`}
+                      >
+                        IFPD
+                      </Link>
+                      <Link
+                        href="/printer"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`text-base hover:text-blue-600 ${
+                          pathname === "/printer"
+                            ? "font-semibold text-blue-600"
+                            : ""
+                        }`}
+                      >
+                        3D Printers
+                      </Link>
+                      <Link
+                        href="/kits"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className={`text-base hover:text-blue-600 ${
+                          pathname === "/kits"
+                            ? "font-semibold text-blue-600"
+                            : ""
+                        }`}
+                      >
+                        STEM & Robotics
+                      </Link>
                     </motion.div>
                   )}
                 </AnimatePresence>
               </div>
 
-              <Link href="/shop1" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-blue-600">Shop</Link>
-              <Link href="/blog" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-blue-600">Blog</Link>
-              <Link href="/getintouch" onClick={() => setIsMobileMenuOpen(false)} className="hover:text-blue-600">Contact us</Link>
+              <Link
+                href="/shop1"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="hover:text-blue-600"
+              >
+                Shop
+              </Link>
+              <Link
+                href="/blog"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="hover:text-blue-600"
+              >
+                Blog
+              </Link>
+              <Link
+                href="/getintouch"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="hover:text-blue-600"
+              >
+                Contact us
+              </Link>
 
               <motion.a
                 href="/contact"
@@ -266,3 +427,14 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// After successful login (in your login handler)
+// dispatch(
+//   loginSuccess({
+//     token: res.data.token,
+//     user: res.data.customer,
+//   })
+// );
+// localStorage.setItem("userToken", res.data.token);
+// localStorage.setItem("userInfo", JSON.stringify(res.data.customer));
+// router.push("/home"); // or wherever you want to redirect
