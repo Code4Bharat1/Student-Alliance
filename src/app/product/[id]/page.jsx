@@ -1,14 +1,18 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import axios from "axios";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import WhatsAppWidget from "@/components/WhatsApp/WhatApp";
 
 export default function ProductDetail() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [quantity, setQuantity] = useState(1);
+  const router = useRouter();
 
   useEffect(() => {
     if (!id) return;
@@ -29,93 +33,175 @@ export default function ProductDetail() {
   if (!product)
     return <div className="text-center py-10 text-red-500">Product not found.</div>;
 
+  // Calculate prices
+  const discountedPrice = product.price * (1 - (product.discount || 0) / 100);
+  const totalPrice = discountedPrice * quantity;
+  const totalSavings = (product.price - discountedPrice) * quantity;
+
+  const handleAddToCart = () => {
+    const newProduct = {
+      id: product._id,
+      name: product.name,
+      price: totalPrice,
+      image: product.image,
+      description: product.description,
+      quantity: quantity,
+    };
+
+    const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Check if the product already exists in the cart
+    const existingItem = existingCart.find((item) => item.id === newProduct.id);
+
+    if (existingItem) {
+      // Increase quantity if the product exists
+      existingItem.quantity += newProduct.quantity;
+    } else {
+      // Add new product if it doesn't exist
+      existingCart.push(newProduct);
+    }
+
+    // Save updated cart to localStorage
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    // Navigate to MyCart page
+    router.push("/mycart");
+  };
+
   return (
-    <motion.div
-      className="max-w-5xl mx-auto bg-white p-6 rounded-2xl shadow-lg mt-10"
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-    >
-      <div className="flex flex-col md:flex-row gap-10 items-start">
-        {/* Product Image */}
-        <motion.div
-          className="flex-1 flex flex-col items-center"
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3 }}
-        >
-          <Image
-            src={product.image}
-            alt={product.name}
-            width={500}
-            height={350}
-            className="rounded-xl object-contain border shadow-md"
-          />
-          {product.additionalImages && product.additionalImages.length > 0 && (
-            <div className="flex flex-wrap justify-center gap-2 mt-4">
-              {product.additionalImages.filter(Boolean).map((img, idx) => (
-                <Image
-                  key={idx}
-                  src={img}
-                  alt={`Additional ${idx + 1}`}
-                  width={80}
-                  height={60}
-                  className="rounded border hover:scale-105 transition-transform duration-200"
-                />
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 px-4 py-8">
+      <div className="max-w-7xl mx-auto bg-white shadow-xl rounded-xl overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+          {/* Product Image */}
+          <motion.div
+            className="relative overflow-hidden rounded-xl shadow-lg"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7 }}
+            whileHover={{ scale: 1.02 }}
+          >
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={800}
+              height={800}
+              className="w-full h-auto object-cover transition duration-500 hover:scale-105"
+            />
+            {product.discount > 0 && (
+              <div className="absolute top-4 right-4 bg-red-500 text-white font-bold px-3 py-1 rounded-full text-xs">
+                {product.discount}% OFF
+              </div>
+            )}
+          </motion.div>
+
+          {/* Product Info */}
+          <motion.div
+            className="space-y-6"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-2">{product.name}</h3>
+              <div className="flex items-center gap-2">
+                <div className="flex text-yellow-400 text-lg">
+                  ★★★★☆
+                </div>
+                <span className="text-sm text-gray-500">(48 customer reviews)</span>
+              </div>
+            </div>
+
+            <p className="text-gray-600 leading-relaxed border-l-4 border-purple-500 pl-4 py-2 bg-purple-50 rounded">
+              {product.description}
+            </p>
+
+            {/* Features */}
+            <div className="grid grid-cols-2 gap-3">
+              {product.features && product.features.map((feature, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <svg className="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                  </svg>
+                  <span className="text-gray-700">{feature}</span>
+                </div>
               ))}
             </div>
-          )}
-        </motion.div>
 
-        {/* Product Info */}
-        <motion.div
-          className="flex-1 space-y-4"
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.4 }}
-        >
-          <h1 className="text-3xl font-bold text-gray-800">{product.name}</h1>
-          <p className="text-gray-600 leading-relaxed">{product.description}</p>
-
-          <div className="space-y-1 text-gray-700">
-            <div>
-              <span className="font-semibold">Category:</span> {product.category}
-            </div>
-            <div>
-              <span className="font-semibold">In Stock:</span> {product.stocks}
-            </div>
-            <div>
-              <span className="font-semibold">Quantity:</span> {product.quantity}
-            </div>
-            <div>
-              <span className="font-semibold">Price:</span>{" "}
-              <span className="text-blue-600 font-bold text-lg">
-                ₹{product.price.toLocaleString()}
-              </span>
-              {product.discount > 0 && (
-                <span className="ml-2 text-green-600 font-semibold">
-                  ({product.discount}% OFF)
+            {/* Price Section */}
+            <div className="bg-gray-50 p-4 rounded-lg">
+              <div className="flex items-baseline gap-4">
+                <span className="text-3xl font-bold text-indigo-600">
+                  ₹{totalPrice.toLocaleString('en-IN')}
                 </span>
-              )}
+                {product.discount > 0 && (
+                  <>
+                    <span className="text-lg line-through text-gray-500">
+                      ₹{(product.price * quantity).toLocaleString('en-IN')}
+                    </span>
+                    <span className="bg-green-100 text-green-800 font-medium px-2 py-1 rounded-full text-sm">
+                      Save ₹{totalSavings.toLocaleString('en-IN')}
+                    </span>
+                  </>
+                )}
+              </div>
+              <div className="mt-2 text-sm text-gray-500">
+                {quantity} {quantity > 1 ? 'items' : 'item'} × ₹{discountedPrice.toLocaleString('en-IN')} each
+              </div>
             </div>
-          </div>
 
-          <a
-            href={product.link || "#"}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block mt-4"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition-all"
-            >
-              BUY NOW
-            </motion.button>
-          </a>
-        </motion.div>
+            {/* Quantity & Buttons */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-4">
+                <label htmlFor="quantity" className="text-gray-700 font-medium">Quantity:</label>
+                <input
+                  type="number"
+                  id="quantity"
+                  min="1"
+                  value={quantity}
+                  onChange={(e) => setQuantity(Math.max(1, e.target.value))}
+                  className="w-20 p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Link href={'/mycart'}>
+                <motion.button 
+                  className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={handleAddToCart}
+                  disabled={product.stocks <= 0}
+                >
+                  BUY NOW 
+                </motion.button>
+                </Link>
+                <Link href={'/mycart'}>
+                <motion.button 
+                  className="flex-1 bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-3 px-6 rounded-lg shadow-sm transition duration-300"
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={handleAddToCart}
+                  disabled={product.stocks <= 0}
+                >
+                  ADD TO CART
+                </motion.button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Additional Info */}
+            <div className="pt-4 border-t border-gray-200">
+              <div className="flex items-center gap-2 text-gray-600">
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                <span>Need help? Call us at +91-9594402775</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
-    </motion.div>
+      <WhatsAppWidget/>
+    </div>
   );
 }
