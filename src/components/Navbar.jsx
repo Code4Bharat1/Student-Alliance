@@ -244,8 +244,10 @@ const Navbar = () => {
                         <button
                           onClick={() => {
                             dispatch(logout());
+                            window.dispatchEvent(new Event("Logout"));
                             setIsProfileDropdownOpen(false);
-                          }}
+                            window.location.reload();
+                            }}
                           className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50"
                         >
                           Logout

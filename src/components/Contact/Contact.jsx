@@ -8,6 +8,7 @@ import axios from "axios";
 import { useRouter, usePathname } from "next/navigation";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "@/redux/slices/authSlice";
+import Link from "next/link";
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -149,9 +150,9 @@ export default function Login() {
               <input type="checkbox" className="form-checkbox" />
               <span>Remember me</span>
             </label>
-            <a href="#" className="text-blue-500 hover:underline">
-              Forgot password
-            </a>
+            <Link href="/forgot-password">
+              <span className="text-blue-500 hover:underline">Forgot password</span>
+            </Link>
           </div>
 
           <motion.button
