@@ -64,13 +64,13 @@ export default function Printer() {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               viewport={{ once: true }}
             >
-              <div className="p-4 bg-white">
+              <div className="p-2 bg-white">
                 <Image
                   src={printer.image}
                   alt={printer.name}
                   width={300}
                   height={200}
-                  className="w-full h-48 object-cover rounded"
+                  className="w-full h-64 object-cover rounded"
                 />
               </div>
               <div className="p-4 text-center font-semibold text-sm">
