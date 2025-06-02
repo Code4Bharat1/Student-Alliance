@@ -1,6 +1,6 @@
 "use client";
 import React, { Suspense } from "react";
-import OTP from "../forgot-password/OTP";
+import OTP from "../../components/ForgetPass/OTP";
 
 const Page = () => {
   return (

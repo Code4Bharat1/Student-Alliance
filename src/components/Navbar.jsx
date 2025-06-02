@@ -4,16 +4,19 @@ import React, { useState, useEffect, useRef } from "react";
 import { ShoppingCartIcon, ChevronDownIcon } from "@heroicons/react/solid";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "@/redux/slices/authSlice";
 import { UserCircleIcon } from "@heroicons/react/solid";
+import ProfilePage from "./UserProfile/Profile";
 
 const Navbar = () => {
   const pathname = usePathname();
   const token = useSelector((state) => state.auth.token);
   const user = useSelector((state) => state.auth.user);
   const dispatch = useDispatch();
+
+  const router = useRouter();
 
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -242,12 +245,20 @@ const Navbar = () => {
                         className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50"
                       >
                         <button
+                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50"
+                          onClick={() => {
+                            router.push("/profile");
+                          }}
+                        >
+                          Profile
+                        </button>
+                        <button
                           onClick={() => {
                             dispatch(logout());
                             window.dispatchEvent(new Event("Logout"));
                             setIsProfileDropdownOpen(false);
                             window.location.reload();
-                            }}
+                          }}
                           className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50"
                         >
                           Logout

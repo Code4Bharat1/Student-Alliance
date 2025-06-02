@@ -37,32 +37,30 @@ export default function ForgotPass() {
 
     try {
       // 1. Check if email exists
-      await axios.get("http://localhost:5000/api/customers", { email });
+      const res = await axios.get(
+        `http://localhost:5000/api/customers/email/${encodeURIComponent(email)}`
+      );
+      const customer = res.data;
+      if (!customer || !customer._id) {
+        setEmailError("No user found with this email.");
+        setIsSubmitting(false);
+        return;
+      }
 
       // 2. Send OTP to email
-      const response = await axios.post(
-        "http://localhost:5000/api/auth/send-otp",
-        { email }
-      );
+      await axios.post("http://localhost:5000/api/auth/send-otp", { email });
 
       // 3. Route to OTP page
       toast.success("OTP sent successfully! Please check your email.");
       router.push(`/OTP?email=${encodeURIComponent(email)}`);
     } catch (error) {
       if (error.response) {
-        // The request was made and the server responded with a status code
-        if (error.response.status === 429) {
-          setEmailError(error.response.data.message);
-        } else {
-          setEmailError(
-            error.response.data.message || "Failed to verify email. Try again."
-          );
-        }
+        setEmailError(
+          error.response.data.message || "Failed to verify email. Try again."
+        );
       } else if (error.request) {
-        // The request was made but no response was received
         setEmailError("Network error. Please check your connection.");
       } else {
-        // Something happened in setting up the request
         setEmailError("An unexpected error occurred.");
       }
     } finally {

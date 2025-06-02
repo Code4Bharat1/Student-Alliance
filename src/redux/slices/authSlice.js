@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// Load token from localStorage
 const token = typeof window !== "undefined" ? localStorage.getItem("userToken") : null;
 const user = typeof window !== "undefined" ? JSON.parse(localStorage.getItem("userInfo")) : null;
 

@@ -1,80 +1,132 @@
-'use client';
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+"use client";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useSelector } from "react-redux";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 const ProfilePage = () => {
-  const [activeTab, setActiveTab] = useState('profile');
-  const [isEditing, setIsEditing] = useState(false);
-  const [user, setUser] = useState({
-    name: 'John Doe',
-    email: 'john.doe@example.com',
-    phone: '+1 (555) 123-4567',
-    address: '123 Main St, Apt 4B, New York, NY 10001',
-    profilePhoto: 'https://randomuser.me/api/portraits/men/1.jpg'
-  });
-  const [formData, setFormData] = useState({ ...user });
+  const token = useSelector((state) => state.auth.token);
+  const userFromRedux = useSelector((state) => state.auth.user);
+  const router = useRouter();
 
-  // Sample orders data
-  const [orders, setOrders] = useState([
-    {
-      id: '#ORD-12345',
-      date: '2023-05-15',
-      status: 'Delivered',
-      total: '$125.99',
-      items: [
-        { name: 'Wireless Headphones', quantity: 1, price: '$99.99' },
-        { name: 'Phone Case', quantity: 2, price: '$13.00' }
-      ]
-    },
-    {
-      id: '#ORD-12346',
-      date: '2023-06-02',
-      status: 'Shipped',
-      total: '$78.50',
-      items: [
-        { name: 'Smart Watch', quantity: 1, price: '$78.50' }
-      ]
-    }
-  ]);
+  const [user, setUser] = useState(null);
+  const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // In a real app, you would fetch user data here
-    setFormData({ ...user });
+    if (!token || !userFromRedux?._id) {
+      toast.error("Please login first!");
+      router.push("/contact");
+      return;
+    }
+
+    const fetchProfileAndOrders = async () => {
+      try {
+        // Fetch user profile
+        const profileRes = await axios.get(
+          `http://localhost:5000/api/customers/${userFromRedux._id}`
+        );
+        console.log(profileRes.data);
+        setUser(profileRes.data);
+
+        // Fetch user orders
+        const ordersRes = await axios.get(
+          `http://localhost:5000/api/orders/customer/${userFromRedux._id}`
+        );
+        setOrders(ordersRes.data);
+      } catch (err) {
+        toast.error("Failed to fetch profile or orders");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchProfileAndOrders();
+  }, [token, userFromRedux, router]);
+
+  const [activeTab, setActiveTab] = useState("profile");
+  const [isEditing, setIsEditing] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    profilePhoto: "",
+  });
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  useEffect(() => {
+    if (user) {
+      setFormData({
+        name: user.name || "",
+        email: user.email || "",
+        phone: user.phone || "",
+        address: user.address || "",
+        profilePhoto: user.profilePhoto || "",
+      });
+    }
   }, [user]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setUser({ ...formData });
-    setIsEditing(false);
-    // In a real app, you would send this to your backend
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      setSelectedFile(file);
+      // Optionally show preview:
       const reader = new FileReader();
       reader.onloadend = () => {
         setFormData({
           ...formData,
-          profilePhoto: reader.result
+          profilePhoto: reader.result,
         });
       };
       reader.readAsDataURL(file);
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsEditing(false);
+    try {
+      const data = new FormData();
+      data.append("name", formData.name);
+      data.append("email", formData.email);
+      data.append("phone", formData.phone);
+      data.append("address", formData.address);
+      if (selectedFile) {
+        data.append("profilePhoto", selectedFile);
+      }
+      const res = await axios.put(
+        `http://localhost:5000/api/customers/${userFromRedux._id}`,
+        data,
+        { headers: { "Content-Type": "multipart/form-data" } }
+      );
+      setUser(res.data.customer || res.data); // Adjust based on your backend response
+      toast.success("Profile updated successfully");
+    } catch (err) {
+      toast.error("Failed to update profile");
+    }
+  };
+
+  if (loading) {
+    return <div className="text-center py-12">Loading...</div>;
+  }
+
+  if (!user) return null; // Prevents rendering if not loaded
+
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -83,26 +135,42 @@ const ProfilePage = () => {
           {/* Profile Header */}
           <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 text-white">
             <div className="flex flex-col sm:flex-row items-center">
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="relative mb-4 sm:mb-0 sm:mr-6"
               >
-                <img 
-                  src={user.profilePhoto} 
-                  alt="Profile" 
+                <img
+                  src={user.profilePhoto || "/default-profile.png"}
+                  alt="Profile"
                   className="w-24 h-24 rounded-full border-4 border-white border-opacity-50 object-cover shadow-lg"
                 />
                 {isEditing && (
                   <label className="absolute bottom-0 right-0 bg-white p-2 rounded-full shadow-md cursor-pointer">
-                    <input 
-                      type="file" 
-                      className="hidden" 
+                    <input
+                      type="file"
+                      className="hidden"
                       onChange={handleFileChange}
                       accept="image/*"
                     />
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 text-indigo-600"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
                     </svg>
                   </label>
                 )}
@@ -128,14 +196,22 @@ const ProfilePage = () => {
           <div className="border-b border-gray-200">
             <nav className="flex -mb-px">
               <button
-                onClick={() => setActiveTab('profile')}
-                className={`py-4 px-6 text-center border-b-2 font-medium text-sm ${activeTab === 'profile' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+                onClick={() => setActiveTab("profile")}
+                className={`py-4 px-6 text-center border-b-2 font-medium text-sm ${
+                  activeTab === "profile"
+                    ? "border-indigo-500 text-indigo-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                }`}
               >
                 Profile
               </button>
               <button
-                onClick={() => setActiveTab('orders')}
-                className={`py-4 px-6 text-center border-b-2 font-medium text-sm ${activeTab === 'orders' ? 'border-indigo-500 text-indigo-600' : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'}`}
+                onClick={() => setActiveTab("orders")}
+                className={`py-4 px-6 text-center border-b-2 font-medium text-sm ${
+                  activeTab === "orders"
+                    ? "border-indigo-500 text-indigo-600"
+                    : "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300"
+                }`}
               >
                 My Orders
               </button>
@@ -145,7 +221,7 @@ const ProfilePage = () => {
           {/* Tab Content */}
           <div className="p-6">
             <AnimatePresence mode="wait">
-              {activeTab === 'profile' ? (
+              {activeTab === "profile" ? (
                 <motion.div
                   key="profile"
                   initial={{ opacity: 0, x: -20 }}
@@ -157,7 +233,9 @@ const ProfilePage = () => {
                     <form onSubmit={handleSubmit}>
                       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                         <div className="sm:col-span-2">
-                          <label className="block text-sm font-medium text-gray-700">Full Name</label>
+                          <label className="block text-sm font-medium text-gray-700">
+                            Full Name
+                          </label>
                           <input
                             type="text"
                             name="name"
@@ -167,7 +245,9 @@ const ProfilePage = () => {
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700">Email</label>
+                          <label className="block text-sm font-medium text-gray-700">
+                            Email
+                          </label>
                           <input
                             type="email"
                             name="email"
@@ -177,7 +257,9 @@ const ProfilePage = () => {
                           />
                         </div>
                         <div>
-                          <label className="block text-sm font-medium text-gray-700">Phone</label>
+                          <label className="block text-sm font-medium text-gray-700">
+                            Phone
+                          </label>
                           <input
                             type="tel"
                             name="phone"
@@ -187,7 +269,9 @@ const ProfilePage = () => {
                           />
                         </div>
                         <div className="sm:col-span-2">
-                          <label className="block text-sm font-medium text-gray-700">Address</label>
+                          <label className="block text-sm font-medium text-gray-700">
+                            Address
+                          </label>
                           <textarea
                             name="address"
                             rows={3}
@@ -221,20 +305,36 @@ const ProfilePage = () => {
                     <div className="space-y-6">
                       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                         <div>
-                          <h3 className="text-sm font-medium text-gray-500">Full Name</h3>
-                          <p className="mt-1 text-sm text-gray-900">{user.name}</p>
+                          <h3 className="text-sm font-medium text-gray-500">
+                            Full Name
+                          </h3>
+                          <p className="mt-1 text-sm text-gray-900">
+                            {user.name}
+                          </p>
                         </div>
                         <div>
-                          <h3 className="text-sm font-medium text-gray-500">Email</h3>
-                          <p className="mt-1 text-sm text-gray-900">{user.email}</p>
+                          <h3 className="text-sm font-medium text-gray-500">
+                            Email
+                          </h3>
+                          <p className="mt-1 text-sm text-gray-900">
+                            {user.email}
+                          </p>
                         </div>
                         <div>
-                          <h3 className="text-sm font-medium text-gray-500">Phone</h3>
-                          <p className="mt-1 text-sm text-gray-900">{user.phone}</p>
+                          <h3 className="text-sm font-medium text-gray-500">
+                            Phone
+                          </h3>
+                          <p className="mt-1 text-sm text-gray-900">
+                            {user.phone}
+                          </p>
                         </div>
                         <div>
-                          <h3 className="text-sm font-medium text-gray-500">Address</h3>
-                          <p className="mt-1 text-sm text-gray-900">{user.address}</p>
+                          <h3 className="text-sm font-medium text-gray-500">
+                            Address
+                          </h3>
+                          <p className="mt-1 text-sm text-gray-900">
+                            {user.address}
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -249,60 +349,113 @@ const ProfilePage = () => {
                   transition={{ duration: 0.3 }}
                   className="space-y-6"
                 >
-                  <h2 className="text-lg font-medium text-gray-900">Order History</h2>
+                  <h2 className="text-lg font-medium text-gray-900">
+                    Order History
+                  </h2>
                   {orders.length === 0 ? (
                     <div className="text-center py-12">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="mx-auto h-12 w-12 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="mx-auto h-12 w-12 text-gray-400"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
                       </svg>
-                      <h3 className="mt-2 text-sm font-medium text-gray-900">No orders yet</h3>
-                      <p className="mt-1 text-sm text-gray-500">Your order history will appear here</p>
+                      <h3 className="mt-2 text-sm font-medium text-gray-900">
+                        No orders yet
+                      </h3>
+                      <p className="mt-1 text-sm text-gray-500">
+                        Your order history will appear here
+                      </p>
                     </div>
                   ) : (
                     <div className="space-y-8">
                       {orders.map((order) => (
-                        <motion.div 
-                          key={order.id}
+                        <motion.div
+                          key={order._id} // Changed from order.id to order._id
                           whileHover={{ y: -2 }}
                           className="bg-gray-50 rounded-lg p-6 shadow-sm"
                         >
                           <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
                             <div>
-                              <h3 className="text-lg font-medium text-gray-900">Order {order.id}</h3>
-                              <p className="text-sm text-gray-500">Placed on {order.date}</p>
+                              <h3 className="text-lg font-medium text-gray-900">
+                                Order #{order._id}
+                              </h3>
+                              <p className="text-sm text-gray-500">
+                                Placed on{" "}
+                                {new Date(order.orderDate).toLocaleDateString()}
+                              </p>
                             </div>
                             <div className="mt-3 sm:mt-0">
-                              <span className={`px-3 py-1 rounded-full text-sm font-medium ${order.status === 'Delivered' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'}`}>
+                              <span
+                                className={`px-3 py-1 rounded-full text-sm font-medium ${
+                                  order.status === "Delivered"
+                                    ? "bg-green-100 text-green-800"
+                                    : "bg-blue-100 text-blue-800"
+                                }`}
+                              >
                                 {order.status}
                               </span>
                             </div>
                           </div>
+
                           <div className="mt-4 border-t border-gray-200 pt-4">
                             <h4 className="sr-only">Items</h4>
                             <ul className="space-y-4">
-                              {order.items.map((item, itemIdx) => (
-                                <li key={itemIdx} className="flex items-center">
+                              {order.items.map((item) => (
+                                <li
+                                  key={item._id || item.product}
+                                  className="flex items-center"
+                                >
                                   <div className="flex-shrink-0">
                                     <div className="h-10 w-10 rounded-md bg-gray-200 flex items-center justify-center">
-                                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                                      <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        className="h-6 w-6 text-gray-500"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
+                                        stroke="currentColor"
+                                      >
+                                        <path
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          strokeWidth={2}
+                                          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
+                                        />
                                       </svg>
                                     </div>
                                   </div>
                                   <div className="ml-4 flex-1 flex flex-col sm:flex-row sm:justify-between">
                                     <div>
-                                      <h5 className="text-sm font-medium text-gray-900">{item.name}</h5>
-                                      <p className="text-sm text-gray-500">Qty: {item.quantity}</p>
+                                      <h5 className="text-sm font-medium text-gray-900">
+                                        {item.name}
+                                      </h5>
+                                      <p className="text-sm text-gray-500">
+                                        Qty: {item.quantity}
+                                      </p>
                                     </div>
-                                    <p className="mt-1 sm:mt-0 text-sm font-medium text-gray-900">{item.price}</p>
+                                    <p className="mt-1 sm:mt-0 text-sm font-medium text-gray-900">
+                                      {item.price}
+                                    </p>
                                   </div>
                                 </li>
                               ))}
                             </ul>
                           </div>
                           <div className="mt-4 flex justify-between items-center">
-                            <p className="text-sm text-gray-500">Total {order.items.length} items</p>
-                            <p className="text-lg font-medium text-gray-900">{order.total}</p>
+                            <p className="text-sm text-gray-500">
+                              Total {order.items.length} items
+                            </p>
+                            <p className="text-lg font-medium text-gray-900">
+                              {order.total}
+                            </p>
                           </div>
                         </motion.div>
                       ))}

@@ -1,5 +1,5 @@
 import React from 'react'
-import UpdatePass from '../forgot-password/UpdatePass'
+import UpdatePass from '../../components/ForgetPass/UpdatePass'
 
 const page = () => {
   return (
