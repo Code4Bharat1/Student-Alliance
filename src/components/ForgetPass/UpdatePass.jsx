@@ -46,7 +46,9 @@ const UpdatePass = () => {
       const customer = res.data;
       console.log("Customer data:", customer);
 
-      await axios.put(`http://localhost:5000/api/customers/${customer._id}/password`, {
+      console.log(email)
+      await axios.post(`http://localhost:5000/api/customers/update-password`, {
+        email,
         password,
       });
 
