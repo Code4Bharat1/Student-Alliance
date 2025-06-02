@@ -53,9 +53,7 @@ const ProfilePage = () => {
     email: "",
     phone: "",
     address: "",
-    profilePhoto: "",
   });
-  const [selectedFile, setSelectedFile] = useState(null);
 
   useEffect(() => {
     if (user) {
@@ -64,7 +62,6 @@ const ProfilePage = () => {
         email: user.email || "",
         phone: user.phone || "",
         address: user.address || "",
-        profilePhoto: user.profilePhoto || "",
       });
     }
   }, [user]);
@@ -77,38 +74,13 @@ const ProfilePage = () => {
     });
   };
 
-  const handleFileChange = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      setSelectedFile(file);
-      // Optionally show preview:
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setFormData({
-          ...formData,
-          profilePhoto: reader.result,
-        });
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsEditing(false);
     try {
-      const data = new FormData();
-      data.append("name", formData.name);
-      data.append("email", formData.email);
-      data.append("phone", formData.phone);
-      data.append("address", formData.address);
-      if (selectedFile) {
-        data.append("profilePhoto", selectedFile);
-      }
       const res = await axios.put(
         `http://localhost:5000/api/customers/${userFromRedux._id}`,
-        data,
-        { headers: { "Content-Type": "multipart/form-data" } }
+        formData
       );
       setUser(res.data.customer || res.data); // Adjust based on your backend response
       toast.success("Profile updated successfully");
@@ -135,46 +107,6 @@ const ProfilePage = () => {
           {/* Profile Header */}
           <div className="bg-gradient-to-r from-indigo-500 to-purple-600 p-6 text-white">
             <div className="flex flex-col sm:flex-row items-center">
-              <motion.div
-                whileHover={{ scale: 1.05 }}
-                className="relative mb-4 sm:mb-0 sm:mr-6"
-              >
-                <img
-                  src={user.profilePhoto || "/default-profile.png"}
-                  alt="Profile"
-                  className="w-24 h-24 rounded-full border-4 border-white border-opacity-50 object-cover shadow-lg"
-                />
-                {isEditing && (
-                  <label className="absolute bottom-0 right-0 bg-white p-2 rounded-full shadow-md cursor-pointer">
-                    <input
-                      type="file"
-                      className="hidden"
-                      onChange={handleFileChange}
-                      accept="image/*"
-                    />
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-indigo-600"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </label>
-                )}
-              </motion.div>
               <div>
                 <h1 className="text-2xl font-bold">{user.name}</h1>
                 <p className="text-indigo-100">{user.email}</p>
@@ -379,7 +311,7 @@ const ProfilePage = () => {
                     <div className="space-y-8">
                       {orders.map((order) => (
                         <motion.div
-                          key={order._id} // Changed from order.id to order._id
+                          key={order._id}
                           whileHover={{ y: -2 }}
                           className="bg-gray-50 rounded-lg p-6 shadow-sm"
                         >
