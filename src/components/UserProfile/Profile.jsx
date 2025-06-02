@@ -89,11 +89,40 @@ const ProfilePage = () => {
     }
   };
 
+  useEffect(() => {
+    const fetchOrders = async () => {
+      const order = await axios.get(`http://localhost:5000/api/orders`);
+      console.log(order.data);
+      setOrders(order.data);
+    };
+
+    fetchOrders();
+  }, []);
+
+  const handleCancel = async (orderId) => {
+    try {
+
+      const res = await axios.put(
+        `http://localhost:5000/api/orders/${orderId}/cancel`
+      );
+      setOrders((prevOrders) =>
+        prevOrders.map((order) =>
+          order._id === orderId ? { ...order, orderStatus: "Cancelled" } : order
+        )
+      );
+      toast.success("Order cancelled successfully!");
+    } catch (err) {
+      toast.error(
+        err.response?.data?.message || "Failed to cancel order. Try again."
+      );
+    }
+  };
+
   if (loading) {
     return <div className="text-center py-12">Loading...</div>;
   }
 
-  if (!user) return null; // Prevents rendering if not loaded
+  if (!user) return null;
 
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -324,70 +353,78 @@ const ProfilePage = () => {
                                 Placed on{" "}
                                 {new Date(order.orderDate).toLocaleDateString()}
                               </p>
+                              <p className="text-sm text-gray-500">
+                                Payment: {order.paymentStatus}
+                              </p>
+                              <p className="text-sm text-gray-500">
+                                Status: {order.orderStatus}
+                              </p>
                             </div>
                             <div className="mt-3 sm:mt-0">
                               <span
                                 className={`px-3 py-1 rounded-full text-sm font-medium ${
-                                  order.status === "Delivered"
+                                  order.orderStatus === "Delivered"
                                     ? "bg-green-100 text-green-800"
+                                    : order.orderStatus === "Cancelled"
+                                    ? "bg-red-100 text-red-800"
                                     : "bg-blue-100 text-blue-800"
                                 }`}
                               >
-                                {order.status}
+                                {order.orderStatus}
                               </span>
                             </div>
                           </div>
 
+                          {/* Order Items */}
                           <div className="mt-4 border-t border-gray-200 pt-4">
-                            <h4 className="sr-only">Items</h4>
                             <ul className="space-y-4">
-                              {order.items.map((item) => (
+                              {order.items.map((item, idx) => (
                                 <li
-                                  key={item._id || item.product}
+                                  key={item._id || item.product || idx}
                                   className="flex items-center"
                                 >
-                                  <div className="flex-shrink-0">
-                                    <div className="h-10 w-10 rounded-md bg-gray-200 flex items-center justify-center">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        className="h-6 w-6 text-gray-500"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        stroke="currentColor"
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          strokeWidth={2}
-                                          d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                                        />
-                                      </svg>
-                                    </div>
-                                  </div>
                                   <div className="ml-4 flex-1 flex flex-col sm:flex-row sm:justify-between">
                                     <div>
                                       <h5 className="text-sm font-medium text-gray-900">
-                                        {item.name}
+                                        Product:{" "}
+                                        {item.product?.name || item.product}
                                       </h5>
                                       <p className="text-sm text-gray-500">
                                         Qty: {item.quantity}
                                       </p>
                                     </div>
-                                    <p className="mt-1 sm:mt-0 text-sm font-medium text-gray-900">
-                                      {item.price}
-                                    </p>
+                                    {/* If you have price per item, show it here */}
                                   </div>
                                 </li>
                               ))}
                             </ul>
                           </div>
-                          <div className="mt-4 flex justify-between items-center">
-                            <p className="text-sm text-gray-500">
-                              Total {order.items.length} items
-                            </p>
-                            <p className="text-lg font-medium text-gray-900">
-                              {order.total}
-                            </p>
+
+                          {/* Totals */}
+                          <div className="mt-4 flex flex-col sm:flex-row sm:justify-between sm:items-center">
+                            <div>
+                              <p className="text-sm text-gray-500">
+                                Subtotal: {order.subtotal}
+                              </p>
+                              <p className="text-sm text-gray-500">
+                                Shipping: {order.shippingFee}
+                              </p>
+                              <p className="text-sm text-gray-500">
+                                Discount: {order.discount}
+                              </p>
+                              <p className="text-lg font-medium text-gray-900">
+                                Total: {order.total}
+                              </p>
+                            </div>
+                            {order.orderStatus !== "Cancelled" &&
+                              order.orderStatus !== "Delivered" && (
+                                <button
+                                  onClick={() => handleCancel(order._id)}
+                                  className="px-3 py-1 text-sm text-white bg-red-600 rounded hover:bg-red-700 transition"
+                                >
+                                  Cancel Order
+                                </button>
+                              )}
                           </div>
                         </motion.div>
                       ))}
