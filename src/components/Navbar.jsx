@@ -59,9 +59,9 @@ const Navbar = () => {
           transition={{ type: "spring", stiffness: 300 }}
         >
           <img
-            src="/images/logo.png"
+            src="/images/logo.jpg"
             alt="Logo"
-            className="h-20 hover:rotate-[-5deg] transition-transform duration-300"
+            className="h-18 hover:rotate-[-5deg] transition-transform duration-300"
           />
         </motion.div>
 
