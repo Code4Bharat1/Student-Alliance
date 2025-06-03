@@ -1,12 +1,10 @@
-import React from 'react'
-import UpdatePass from '../../components/ForgetPass/UpdatePass'
+import React, { Suspense } from "react";
+import UpdatePass from "../../components/ForgetPass/UpdatePass";
 
-const page = () => {
+export default function Page() {
   return (
-    <div>
-      <UpdatePass/>
-    </div>
-  )
+    <Suspense fallback={<div>Loading...</div>}>
+      <UpdatePass />
+    </Suspense>
+  );
 }
-
-export default page
