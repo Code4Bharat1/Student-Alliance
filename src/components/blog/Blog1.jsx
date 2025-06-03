@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
+import Head from 'next/head'; // Add this import
 
 const blogData = [
   {
@@ -72,139 +73,152 @@ const blogData = [
 
 export default function Blog() {
   return (
-    <section className="bg-gradient-to-b from-white to-gray-50 text-black py-12 px-4 md:px-16">
-      <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2 className="text-4xl font-bold text-center mb-10 relative">
-          <span className="relative inline-block">
-            Latest Blogs
-            <motion.span 
-              className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600"
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            />
-          </span>
-        </h2>
-      </motion.div>
+    <>
+      <Head>
+        <title>Latest Blogs | Student Alliance</title>
+        <meta name="description" content="Explore the latest blogs from Student Alliance on IFPD, digital boards, online teaching, coaching, and more. Stay updated with industry trends and expert tips." />
+        <meta name="keywords" content="Student Alliance, blog, IFPD, digital board, online teaching, coaching, education technology, India" />
+        <meta property="og:title" content="Latest Blogs | Student Alliance" />
+        <meta property="og:description" content="Explore the latest blogs from Student Alliance on IFPD, digital boards, online teaching, coaching, and more." />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="/images/IFPD-home.png" />
+        <meta property="og:url" content="https://yourdomain.com/blog" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
+      <section className="bg-gradient-to-b from-white to-gray-50 text-black py-12 px-4 md:px-16">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="text-4xl font-bold text-center mb-10 relative">
+            <span className="relative inline-block">
+              Latest Blogs
+              <motion.span 
+                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              />
+            </span>
+          </h2>
+        </motion.div>
 
-      <h3 className="text-2xl font-bold text-gray-800 p-4 mb-6 border-l-4 border-blue-500 pl-3">IFPD</h3>
-      
-      <div className="grid md:grid-cols-3 gap-8">
-        {blogData.map((blog, index) => (
-          <React.Fragment key={index}>
-            <motion.div
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
-              transition={{ 
-                duration: 0.6, 
-                delay: index * 0.1,
-                whileHover: { duration: 0.3 }
-              }}
-              viewport={{ once: true }}
-              className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-2xl transition-all bg-white group"
-            >
-              <div className="overflow-hidden">
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <Image
-                    src={blog.image}
-                    alt={blog.title}
-                    width={500}
-                    height={300}
-                    className="w-full h-52 object-cover transform transition-transform duration-300 group-hover:scale-105"
-                  />
-                </motion.div>
-              </div>
-              
-              <div className="p-5 text-center">
-                <p className="text-md text-gray-600 font-medium mb-2">{blog.date}</p>
-                <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">{blog.title}</h3>
-              </div>
-              
-              <div className="px-6 pb-6">
-                <Link href={blog.link}>
-                  <motion.button
-                    initial={{ background: "linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)" }}
-                    whileHover={{ 
-                      scale: 1.05,
-                      background: "linear-gradient(135deg, #2563EB 0%, #4F46E5 100%)",
-                      boxShadow: "0 0 20px rgba(59, 130, 246, 0.6)"
-                    }}
-                    whileTap={{ scale: 0.98 }}
-                    transition={{ 
-                      duration: 0.3,
-                      hover: { duration: 0.2 }
-                    }}
-                    className="relative w-full py-3 px-6 rounded-lg font-bold text-white overflow-hidden"
+        <h3 className="text-2xl font-bold text-gray-800 p-4 mb-6 border-l-4 border-blue-500 pl-3">IFPD</h3>
+        
+        <div className="grid md:grid-cols-3 gap-8">
+          {blogData.map((blog, index) => (
+            <React.Fragment key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                whileHover={{ y: -10, boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)" }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: index * 0.1,
+                  whileHover: { duration: 0.3 }
+                }}
+                viewport={{ once: true }}
+                className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-2xl transition-all bg-white group"
+              >
+                <div className="overflow-hidden">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ duration: 0.3 }}
                   >
-                    <span className="relative z-10 flex items-center justify-center">
-                      READ MORE
-                      <motion.span
-                        initial={{ x: -20, opacity: 0 }}
-                        whileHover={{ x: 5, opacity: 1 }}
-                        transition={{ duration: 0.3 }}
-                        className="ml-2"
-                      >
-                        →
-                      </motion.span>
-                    </span>
-                    <motion.span
-                      className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-10"
-                      whileHover={{ opacity: 0.1 }}
-                      transition={{ duration: 0.3 }}
+                    <Image
+                      src={blog.image}
+                      alt={blog.title}
+                      width={500}
+                      height={300}
+                      className="w-full h-52 object-cover transform transition-transform duration-300 group-hover:scale-105"
                     />
-                  </motion.button>
-                </Link>
-              </div>
-            </motion.div>
+                  </motion.div>
+                </div>
+                
+                <div className="p-5 text-center">
+                  <p className="text-md text-gray-600 font-medium mb-2">{blog.date}</p>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">{blog.title}</h3>
+                </div>
+                
+                <div className="px-6 pb-6">
+                  <Link href={blog.link}>
+                    <motion.button
+                      initial={{ background: "linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)" }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        background: "linear-gradient(135deg, #2563EB 0%, #4F46E5 100%)",
+                        boxShadow: "0 0 20px rgba(0, 130, 246, 0.6)"
+                      }}
+                      whileTap={{ scale: 0.98 }}
+                      transition={{ 
+                        duration: 0.3,
+                        hover: { duration: 0.2 }
+                      }}
+                      className="relative w-full py-3 px-6 rounded-lg font-bold text-white overflow-hidden"
+                    >
+                      <span className="relative z-10 flex items-center justify-center">
+                        READ MORE
+                        <motion.span
+                          initial={{ x: -20, opacity: 0 }}
+                          whileHover={{ x: 5, opacity: 1 }}
+                          transition={{ duration: 0.3 }}
+                          className="ml-2"
+                        >
+                          →
+                        </motion.span>
+                      </span>
+                      <motion.span
+                        className="absolute top-0 left-0 w-full h-full bg-white opacity-0 group-hover:opacity-10"
+                        whileHover={{ opacity: 0.1 }}
+                        transition={{ duration: 0.3 }}
+                      />
+                    </motion.button>
+                  </Link>
+                </div>
+              </motion.div>
 
-            {index === 2 && (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="md:col-span-3 text-left mt-8 mb-4"
-              >
-                <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Studio Setup</h3>
-              </motion.div>
-            )}
+              {index === 2 && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="md:col-span-3 text-left mt-8 mb-4"
+                >
+                  <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Studio Setup</h3>
+                </motion.div>
+              )}
 
-            {index === 5 && (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="md:col-span-3 text-left mt-8 mb-4"
-              >
-                <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Online Teaching</h3>
-              </motion.div>
-            )}
-            
-            {index === 8 && (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="md:col-span-3 text-left mt-8 mb-4"
-              >
-                <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Coaching Growth</h3>
-              </motion.div>
-            )}
-          </React.Fragment>
-        ))}
-      </div>
-      
-      <WhatsAppWidget />
-    </section>
+              {index === 5 && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="md:col-span-3 text-left mt-8 mb-4"
+                >
+                  <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Online Teaching</h3>
+                </motion.div>
+              )}
+              
+              {index === 8 && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.6 }}
+                  viewport={{ once: true }}
+                  className="md:col-span-3 text-left mt-8 mb-4"
+                >
+                  <h3 className="text-2xl font-bold text-gray-800 border-l-4 border-blue-500 pl-3">Coaching Growth</h3>
+                </motion.div>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+        
+        <WhatsAppWidget />
+      </section>
+    </>
   );
 }
