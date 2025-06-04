@@ -5,7 +5,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
-import Head from 'next/head'; // Add this import
 
 const blogData = [
   {
@@ -74,17 +73,6 @@ const blogData = [
 export default function Blog() {
   return (
     <>
-      <Head>
-        <title>Latest Blogs | Student Alliance</title>
-        <meta name="description" content="Explore the latest blogs from Student Alliance on IFPD, digital boards, online teaching, coaching, and more. Stay updated with industry trends and expert tips." />
-        <meta name="keywords" content="Student Alliance, blog, IFPD, digital board, online teaching, coaching, education technology, India" />
-        <meta property="og:title" content="Latest Blogs | Student Alliance" />
-        <meta property="og:description" content="Explore the latest blogs from Student Alliance on IFPD, digital boards, online teaching, coaching, and more." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/IFPD-home.png" />
-        <meta property="og:url" content="https://yourdomain.com/blog" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
       <section className="bg-gradient-to-b from-white to-gray-50 text-black py-12 px-4 md:px-16">
         <motion.div
           initial={{ opacity: 0, y: -20 }}

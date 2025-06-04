@@ -18,7 +18,7 @@ export default function Products() {
       setLoading(true);
       try {
         const res = await axios.get(
-          "https://student-alliance-api.code4bharat.com/api/products/category/IFPD"
+          "http://localhost:5000/api/products/category/IFPD"
         );
         setProducts(res.data);
         if (!res.data || res.data.length === 0) {

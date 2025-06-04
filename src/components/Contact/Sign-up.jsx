@@ -27,7 +27,7 @@ export default function SignUp() {
     setLoading(true);
     setMessage("");
     try {
-      const res = await axios.post("https://student-alliance-api.code4bharat.com/api/customers", {
+      const res = await axios.post("http://localhost:5000/api/customers", {
         name: form.name,
         email: form.email,
         password: form.password,

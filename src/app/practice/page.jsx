@@ -27,7 +27,7 @@ const page = () => {
   console.log("Submitting form data:", formData);
 
   try {
-    const response = await axios.post("https://student-alliance-api.code4bharat.com/api/users", formData);
+    const response = await axios.post("http://localhost:5000/api/users", formData);
     setMessage(response.data.message || "User created successfully");
     console.log("Success response:", response.data);
   } catch (error) {

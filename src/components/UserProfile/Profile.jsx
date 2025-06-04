@@ -26,14 +26,14 @@ const ProfilePage = () => {
       try {
         // Fetch user profile
         const profileRes = await axios.get(
-          `https://student-alliance-api.code4bharat.com/api/customers/${userFromRedux._id}`
+          `http://localhost:5000/api/customers/${userFromRedux._id}`
         );
         console.log(profileRes.data);
         setUser(profileRes.data);
 
         // Fetch user orders
         const ordersRes = await axios.get(
-          `https://student-alliance-api.code4bharat.com/api/orders/customer/${userFromRedux._id}`
+          `http://localhost:5000/api/orders/customer/${userFromRedux._id}`
         );
         setOrders(ordersRes.data);
       } catch (err) {
@@ -79,7 +79,7 @@ const ProfilePage = () => {
     setIsEditing(false);
     try {
       const res = await axios.put(
-        `https://student-alliance-api.code4bharat.com/api/customers/${userFromRedux._id}`,
+        `http://localhost:5000/api/customers/${userFromRedux._id}`,
         formData
       );
       setUser(res.data.customer || res.data); // Adjust based on your backend response
@@ -91,7 +91,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const order = await axios.get(`https://student-alliance-api.code4bharat.com/api/orders`);
+      const order = await axios.get(`http://localhost:5000/api/orders`);
       console.log(order.data);
       setOrders(order.data);
     };
@@ -103,7 +103,7 @@ const ProfilePage = () => {
     try {
 
       const res = await axios.put(
-        `https://student-alliance-api.code4bharat.com/api/orders/${orderId}/cancel`
+        `http://localhost:5000/api/orders/${orderId}/cancel`
       );
       setOrders((prevOrders) =>
         prevOrders.map((order) =>

@@ -3,22 +3,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
-import Head from 'next/head'; // Add this import
 
 export default function BlogsDetail2() {
   return (
     <>
-      <Head>
-        <title>IFPDs for Work & Office | Student Alliance Blog</title>
-        <meta name="description" content="Discover how Interactive Flat Panel Displays (IFPDs) transform modern offices. Learn about features, benefits, and how Student Alliance IFPDs boost productivity and collaboration in the workplace." />
-        <meta name="keywords" content="IFPD, Interactive Flat Panel Display, office technology, Student Alliance, business collaboration, digital workplace, meeting room solutions, India" />
-        <meta property="og:title" content="IFPDs for Work & Office | Student Alliance Blog" />
-        <meta property="og:description" content="Explore the advantages of IFPDs for offices and businesses. Enhance meetings, presentations, and teamwork with Student Alliance solutions." />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="/images/b-img4.jpg" />
-        <meta property="og:url" content="https://yourdomain.com/blog-d2" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
       <div className="px-4 py-8 md:px-16 lg:px-32 bg-white text-gray-800">
         <h1 className="text-4xl font-bold text-center border-b-4 border-blue-600 pb-4 mb-12">
           Blogs Detail

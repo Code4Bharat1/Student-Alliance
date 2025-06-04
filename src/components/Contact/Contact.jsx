@@ -30,7 +30,7 @@ export default function Login() {
     setMessage("");
     try {
       const res = await axios.post(
-        "https://student-alliance-api.code4bharat.com/api/customers/login",
+        "http://localhost:5000/api/customers/login",
         {
           email: form.email,
           password: form.password,
