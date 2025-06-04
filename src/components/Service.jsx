@@ -22,7 +22,7 @@ const Service = () => {
       title: "Stem & Robotics",
       description: "Unlock young minds with our STEM & Robotics. interactive sessions in coding, robotics, AI, and more!",
       buttonText: "See More",
-      imgSrc: "/images/k5.png",
+      imgSrc: "/images/K5.png",
       link: "/kits",
     },
   ];
