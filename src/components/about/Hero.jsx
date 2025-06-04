@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import WhatsAppWidget from "../WhatsApp/WhatApp";
-import Head from "next/head"; // Add this import
 
 const Hero = () => {
   const faqs = [
@@ -37,7 +36,6 @@ const Hero = () => {
       answer:
         "Yes, Student Alliance offers product demos. Please contact our sales team to schedule a demo and explore how our solutions can fit your needs.",
     },
-  
   ];
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -48,17 +46,6 @@ const Hero = () => {
 
   return (
     <>
-      <Head>
-        <title>About Student Alliance | STEM & Robotics Lab Solutions India</title>
-        <meta name="description" content="Student Alliance LLP is India’s leading provider of innovative STEM and robotics lab solutions for schools, corporates, and government. Discover our mission, vision, and FAQs." />
-        <meta name="keywords" content="Student Alliance, STEM labs, Robotics labs, Educational solutions, India, School labs, Technology, Consulting, IT integration" />
-        <meta property="og:title" content="About Student Alliance | STEM & Robotics Lab Solutions India" />
-        <meta property="og:description" content="India’s pioneer in STEM & robotics lab solutions. Learn about our mission, vision, values, and frequently asked questions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/about-bg.png" />
-        <meta property="og:url" content="https://yourdomain.com/about" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-white"
@@ -80,8 +67,6 @@ const Hero = () => {
           >
             India’s Pioneer in STEM & Robotics Lab Solutions
           </motion.h1>
-
-         
 
           <motion.p
             className="text-md md:text-lg leading-relaxed text-gray-200"
@@ -172,8 +157,6 @@ const Hero = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-black text-center mb-10">
             Frequently Asked Questions
           </h2>
-
-          
 
           <div className="space-y-4 ">
             {faqs.map((faq, idx) => (

@@ -3,22 +3,10 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import WhatsAppWidget from '../WhatsApp/WhatApp';
-import Head from 'next/head'; // Add this import
 
 export default function BlogsDetail() {
   return (
     <>
-      <Head>
-        <title>Interactive Flat Panel Displays Blog | Student Alliance</title>
-        <meta name="description" content="Discover the benefits and features of Interactive Flat Panel Displays (IFPD) for education and business. Learn how Student Alliance IFPDs enhance collaboration, engagement, and learning outcomes." />
-        <meta name="keywords" content="Interactive Flat Panel Display, IFPD, Student Alliance, digital board, education technology, classroom, meeting room, India" />
-        <meta property="og:title" content="Interactive Flat Panel Displays Blog | Student Alliance" />
-        <meta property="og:description" content="Explore how IFPDs from Student Alliance transform classrooms and meetings with advanced technology and interactive features." />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="/images/b-img1.png" />
-        <meta property="og:url" content="https://yourdomain.com/blog-d1" />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
       <div className="px-4 py-8 md:px-16 lg:px-32 bg-white text-gray-800">
         <h1 className="text-4xl font-bold text-center border-b-4 border-blue-600 pb-4 mb-12">
           Blogs Detail
@@ -56,7 +44,6 @@ export default function BlogsDetail() {
             </div>
           </motion.div>
         </section>
-
 
         {/* Complete Range Section */}
         <section className="mb-16">
