@@ -24,7 +24,7 @@ export default function MyCart() {
       router.replace("/contact");
       return;
     }
-    fetch(`http://localhost:5000/api/cart/${user._id}`, {
+    fetch(`https://student-alliance-api.code4bharat.com/api/cart/${user._id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -37,7 +37,7 @@ export default function MyCart() {
   //   Promise.all(
   //     cartItems.map((item) =>
   //       axios
-  //         .get(`http://localhost:5000/api/products/${item.id}`)
+  //         .get(`https://student-alliance-api.code4bharat.com/api/products/${item.id}`)
   //         .then((res) => ({ ...item, ...res.data }))
   //     )
   //   ).then(setCartItems);

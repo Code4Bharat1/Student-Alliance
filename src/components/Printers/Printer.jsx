@@ -17,7 +17,7 @@ export default function Printer() {
       setLoading(true);
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/products/category/3D%20Printers"
+          "https://student-alliance-api.code4bharat.com/api/products/category/3D%20Printers"
         );
         console.log("Fetched products:", res.data);
         setPrinters(res.data);

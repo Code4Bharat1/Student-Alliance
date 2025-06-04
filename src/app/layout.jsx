@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  metadataBase: new URL("https://yourdomain.com"), // <-- Add this line
   title: "Student Alliance | STEM & Robotics Lab Solutions India",
   description:
     "Student Alliance LLP is India’s leading provider of innovative STEM and robotics lab solutions for schools, corporates, and government. Discover our mission, vision, and FAQs.",
@@ -47,57 +48,25 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-         {/* Google tag (gtag.js) */}
-<Script 
- src="https://www.googletagmanager.com/gtag/js?id=G-L48FSWY2HB"
- strategy="afterInteractive">
-  
- </Script>
-<Script id="ga-init" strategy="afterInteractive"> 
- {
-  `
-   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-L48FSWY2HB');
-  `
- }
-</Script>
-      </head>
-      <head>
-        <meta
-          name="keywords"
-          content="Student Alliance, STEM labs, Robotics labs, Educational solutions, India, School labs, Technology, Consulting, IT integration"
+        {/* Google tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-L48FSWY2HB"
+          strategy="afterInteractive"
         />
-        <meta
-          property="og:title"
-          content="Student Alliance | STEM & Robotics Lab Solutions India"
-        />
-        <meta
-          property="og:description"
-          content="India’s pioneer in STEM & robotics lab solutions. Learn about our mission, vision, values, and frequently asked questions."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:image" content="/images/about-bg.png" />
-        <meta property="og:url" content="https://yourdomain.com" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content="Student Alliance | STEM & Robotics Lab Solutions India"
-        />
-        <meta
-          name="twitter:description"
-          content="India’s pioneer in STEM & robotics lab solutions. Learn about our mission, vision, values, and frequently asked questions."
-        />
-        <meta name="twitter:image" content="/images/about-bg.png" />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-L48FSWY2HB');
+          `}
+        </Script>
+        {/* No second <head> here! */}
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <LayoutClientWrapper>{children}</LayoutClientWrapper>
-
-        
       </body>
     </html>
   );

@@ -38,7 +38,7 @@ export default function Check() {
       return;
     }
     axios
-      .get(`http://localhost:5000/api/cart/${user._id}`, {
+      .get(`https://student-alliance-api.code4bharat.com/api/cart/${user._id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
@@ -100,7 +100,7 @@ export default function Check() {
 
       // Send order to backend
       const response = await axios.post(
-        "http://localhost:5000/api/orders",
+        "https://student-alliance-api.code4bharat.com/api/orders",
         orderData,
         {
           headers: {
