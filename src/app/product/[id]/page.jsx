@@ -24,7 +24,7 @@ export default function ProductDetail() {
     if (!id) return;
     const fetchProduct = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/products/${id}`);
+        const res = await axios.get(`https://student-alliance-api.code4bharat.com/api/products/${id}`);
         console.log(res.data);
         setProduct(res.data);
       } catch (error) {
@@ -62,7 +62,7 @@ export default function ProductDetail() {
     }
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/cart/add",
+        "https://student-alliance-api.code4bharat.com/api/cart/add",
         {
           customerId: user._id,
           productId: product._id,
