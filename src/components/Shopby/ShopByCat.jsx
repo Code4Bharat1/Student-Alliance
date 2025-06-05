@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const categories = [
-  { id: 1, name: "Cable", image: "/shop/cable.png" },
-  { id: 2, name: "Lighting", image: "/shop/light.jpg" },
+  // { id: 1, name: "Cable", image: "/shop/cable.png" }, // Removed Cable
+  { id: 2, name: "Lighting", image: "/shop/light3.png" },
   { id: 3, name: "Speaker", image: "/shop/speaker.jpg" },
   { id: 4, name: "Digital Board", image: "/shop/board.png" },
   { id: 5, name: "Camera", image: "/shop/camera.jpeg" },
-  { id: 6, name: "Mic", image: "/shop/mic.jpg" },
+  { id: 6, name: "Mic", image: "/shop/aboutmic3-2.png" },
   { id: 7, name: "OPS", image: "/shop/ops.png" },
 ];
 
