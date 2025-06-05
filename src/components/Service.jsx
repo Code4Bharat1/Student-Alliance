@@ -8,14 +8,14 @@ const Service = () => {
       title: "3D Printers",
       description: "Unlock the power of precision and creativity with our expert 3D printer services. we bring your ideas to life!",
       buttonText: "See More",
-      imgSrc: "/images/3DP2.jpg",
+      imgSrc: "/images/3DP2.png",
       link: "/printer",
     },
     {
-      title: "IFPD Panel Services",
+      title: "IFPD Panel",
       description: "Discover precision and reliability with IFPD Panel Services — your trusted partner for custom-built electrical panels.",
       buttonText: "See More",
-      imgSrc: "/images/65_inch.png",
+      imgSrc: "/images/digital-d1.png",
       link: "/Prod",
     },
     {
@@ -48,12 +48,14 @@ const Service = () => {
             transition={{ duration: 0.6, delay: index * 0.2 }}
           >
          <div className="p-4">
-               <img
-                src={service.imgSrc}
-                alt={service.title}
-                className="h-60 w-full object-center"
-              />
-               </div>
+  <div className="w-full aspect-[4/3] bg-gray-100 flex items-center justify-center rounded overflow-hidden">
+    <img
+      src={service.imgSrc}
+      alt={service.title}
+      className="w-full h-full object-contain"
+    />
+  </div>
+</div>
 
             <div className="p-4">
               <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
