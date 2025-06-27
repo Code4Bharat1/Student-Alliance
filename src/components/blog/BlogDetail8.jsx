@@ -27,7 +27,7 @@ export default function BlogsDetail8() {
                 transition={{ delay: 0.2, duration: 0.6 }}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  Maxhub U3 Series 86-Inch Digital Board
+                   Student Alliance 86-Inch Digital Board
                 </span>
               </motion.h1>
               
@@ -63,7 +63,7 @@ export default function BlogsDetail8() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/cl.png"
-                  alt="Maxhub U3 Series Digital Board"
+                  alt="Student Alliance Digital Board"
                   width={800}
                   height={500}
                   className="w-full h-60"
@@ -171,14 +171,14 @@ export default function BlogsDetail8() {
           <div className="md:w-1/2 relative h-96 md:h-auto">
             <Image
               src="/images/cll.png"
-              alt="Maxhub U3 Series Features"
+              alt="Student Alliance U3 Series Features"
               fill
               className="object-cover"
             />
           </div>
           <div className="md:w-1/2 p-8 md:p-12">
             <h2 className="text-2xl font-bold mb-6 text-purple-700">
-              Key Features of Maxhub U3 Series
+              Key Features of Student Alliance 86-Inch Digital Board
             </h2>
             
             <div className="space-y-6">
@@ -296,7 +296,7 @@ export default function BlogsDetail8() {
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Assess Your Needs</h3>
                     <p className="text-gray-600">
-                      For large coaching centers, the Maxhub U3 Series offers premium features. Smaller setups might consider more compact options.
+                      For large coaching centers, the Student Alliance offers premium features. Smaller setups might consider more compact options.
                     </p>
                   </div>
                 </div>

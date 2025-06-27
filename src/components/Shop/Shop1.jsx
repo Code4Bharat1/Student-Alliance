@@ -113,18 +113,10 @@ const Shop = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold  sm:text-6xl lg:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
-            Premium AV Solutions
+          <h1 className="text-5xl font-bold  sm:text-6xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+            Explore advanced IFPDs, 3D printers, and cameras for education excellence
           </h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="mt-6 max-w-2xl mx-auto text-xl text-gray-600"
-          >
-            Discover cutting-edge audio-visual technology for your professional
-            needs
-          </motion.p>
+         
         </motion.div>
 
         {/* Filters with hover effects */}

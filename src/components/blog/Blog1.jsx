@@ -43,7 +43,7 @@ const blogData = [
     link: '/blog-d9',
   },
   {
-    title: '86-Inch Digital Boards: Features, Pricing, and Why Maxhub U3 Series is a Top Choice',
+    title: '86-Inch Digital Boards: Features, Pricing, and Why Student Alliance Panel is a Top Choice',
     image: '/images/866i.png',
     link: '/blog-d8',
   },
@@ -59,7 +59,7 @@ const blogData = [
   },
   {
     title: 'Start an Offline Coaching Center Costs and Requirements How to Start an Offline Coaching',
-    image: '/images/hqdefault.jpg',
+    image: '/images/how.jpg',
     link: '/blog-d11',
   },
   {

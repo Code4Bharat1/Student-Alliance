@@ -27,7 +27,7 @@ export default function BlogsDetail12() {
                 transition={{ delay: 0.2, duration: 0.6 }}
               >
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  Physics Wallah's Hybrid Teaching Success
+                  Hybrid Teaching Success
                 </span>
               </motion.h1>
               
@@ -63,7 +63,7 @@ export default function BlogsDetail12() {
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/h.png"
-                  alt="Physics Wallah Hybrid Model"
+                  alt="Hybrid Model"
                   width={800}
                   height={500}
                   className="w-full h-60"
@@ -351,7 +351,7 @@ export default function BlogsDetail12() {
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <p className="text-gray-700 mb-6">
-                Physics Wallah's hybrid teaching model demonstrates how technology can revolutionize education while being financially sustainable. This approach maintains the personal touch of classroom teaching while leveraging digital advantages for scale.
+                 Hybrid teaching model demonstrates how technology can revolutionize education while being financially sustainable. This approach maintains the personal touch of classroom teaching while leveraging digital advantages for scale.
               </p>
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <h3 className="font-semibold text-lg mb-2 text-blue-600">Key Takeaways:</h3>

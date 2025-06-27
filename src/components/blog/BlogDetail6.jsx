@@ -48,13 +48,13 @@ export default function BlogsDetail6() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.3, duration: 0.7 }}
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
                   src="/images/wp.png"
                   alt="Digital Board Comparison"
                   width={800}
                   height={500}
-                  className="w-100 h-60"
+                  className="w-280 h-60"
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>

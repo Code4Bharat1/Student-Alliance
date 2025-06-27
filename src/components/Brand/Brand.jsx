@@ -6,12 +6,13 @@ const Brand = () => {
   const cards = [
     {
       id: 1,
-      img: "/shop/brand1.png",
+      img: "/shop/computer-brand.png",
       link: "/shop1",
+
     },
     {
       id: 2,
-      img: "/shop/brand2.png",
+      img: "/shop/camera-brand.png",
       link: "/shop1",
     },
     {
@@ -21,7 +22,7 @@ const Brand = () => {
     },
     {
       id: 4,
-      img: "/shop/brand4.png",
+      img: "/shop/brand4-4.png",
       link: "/shop1",
     },
     {
@@ -39,11 +40,11 @@ const Brand = () => {
   return (
     <section className="py-10 bg-gray-100">
       <div className="container mx-auto text-center">
-        <h2 className="text-3xl text-black font-bold mb-8">Shop By Brand</h2>
+        <h2 className="text-5xl text-black font-bold mb-8">Shop By Brand</h2>
         <div className="grid mx-6 grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-1">
           {cards.map((card) => (
             <Link href={card.link} key={card.id}>
-              <div className="group relative block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
+              <div className="group w-full h-full relative block overflow-hidden rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300 cursor-pointer">
                 <img
                   src={card.img}
                   alt={`Card ${card.id}`}
