@@ -49,9 +49,9 @@ const Hero = () => {
       {/* Hero Section */}
       <section
         className="relative bg-cover bg-center h-[90vh] flex items-center justify-center text-white"
-        style={{ backgroundImage: "url('/images/about-bg.png')" }}
+        style={{ backgroundImage: "url('/images/about-bg2.png')" }}
       >
-        <div className="absolute inset-0 bg-opacity-50 backdrop-brightness-80"></div>
+        <div className="absolute inset-0 bg-opacity-70 backdrop-brightness-50"></div>
 
         <motion.div
           className="relative z-10 max-w-4xl px-6 text-center"
@@ -69,7 +69,7 @@ const Hero = () => {
           </motion.h1>
 
           <motion.p
-            className="text-md md:text-lg leading-relaxed text-gray-200"
+            className="text-md md:text-2xl leading-relaxed  text-gray-200"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 1 }}
