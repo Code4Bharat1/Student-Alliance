@@ -15,26 +15,26 @@ const Brand = () => {
       img: "/shop/camera-brand.png",
       link: "/shop1",
     },
-    {
-      id: 3,
-      img: "/shop/brand3.png",
-      link: "/shop1",
-    },
-    {
-      id: 4,
-      img: "/shop/brand4-4.png",
-      link: "/shop1",
-    },
+    // {
+    //   id: 3,
+    //   img: "/shop/brand3.png",
+    //   link: "/shop1",
+    // },
+    // {
+    //   id: 4,
+    //   img: "/shop/brand4-4.png",
+    //   link: "/shop1",
+    // },
     {
       id: 5,
       img: "/shop/brand5.png",
       link: "/shop1",
     },
-    {
-      id: 6,
-      img: "/shop/brand6.png",
-      link: "/shop1",
-    },
+    // {
+    //   id: 6,
+    //   img: "/shop/brand6.png",
+    //   link: "/shop1",
+    // },
   ];
 
   return (
