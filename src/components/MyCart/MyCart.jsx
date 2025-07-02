@@ -11,7 +11,6 @@ export default function MyCart() {
   const [couponCode, setCouponCode] = useState("");
   const [discount, setDiscount] = useState(0);
   const [showCouponInput, setShowCouponInput] = useState(false);
-  const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const token = useSelector((state) => state.auth.token);
@@ -24,24 +23,50 @@ export default function MyCart() {
       router.replace("/contact");
       return;
     }
-    fetch(`https://student-alliance-api.code4bharat.com/api/cart/${user._id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((res) => res.json())
-      .then((data) => setCartItems(data.items || []))
-      .catch(() => setCartItems([]));
-  }, [token, user, router]);
 
-  // useEffect(() => {
-  //   if (!cartItems.length) return;
-  //   Promise.all(
-  //     cartItems.map((item) =>
-  //       axios
-  //         .get(`https://student-alliance-api.code4bharat.com/api/products/${item.id}`)
-  //         .then((res) => ({ ...item, ...res.data }))
-  //     )
-  //   ).then(setCartItems);
-  // }, [cartItems]);
+    const fetchCartItems = async () => {
+      try {
+        setLoading(true);
+        const response = await fetch(
+          `https://student-alliance-api.code4bharat.com/api/cart/${user._id}`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+        
+        const data = await response.json();
+        
+        // Validate and normalize cart items with unique keys
+        const validatedItems = (data.items || []).map((item, index) => {
+          const product = item.product || {};
+          return {
+            ...item,
+            // Create a unique key combining product ID and index as fallback
+            key: product._id ? `${product._id}-${index}` : `item-${index}`,
+            product: {
+              _id: product._id || `temp-${index}`,
+              name: product.name || 'Unnamed Product',
+              price: product.price || 0,
+              originalPrice: product.originalPrice || null,
+              description: product.description || '',
+              image: product.image || '/placeholder-product.jpg'
+            },
+            quantity: item.quantity || 1
+          };
+        });
+        
+        setCartItems(validatedItems);
+      } catch (error) {
+        console.error("Failed to fetch cart items:", error);
+        setCartItems([]);
+        toast.error("Failed to load cart items");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCartItems();
+  }, [token, user, router]);
 
   const shippingFee = 199;
   const freeShippingThreshold = 999;
@@ -49,7 +74,10 @@ export default function MyCart() {
   const handleQuantityChange = (id, amount) => {
     const updatedCart = cartItems.map((item) =>
       item.product._id === id
-        ? { ...item, quantity: Math.max(1, item.quantity + amount) }
+        ? { 
+            ...item, 
+            quantity: Math.max(1, (item.quantity || 1) + amount) 
+          }
         : item
     );
     setCartItems(updatedCart);
@@ -63,19 +91,23 @@ export default function MyCart() {
   };
 
   const applyCoupon = () => {
+    if (!subtotal) return;
+    
     if (couponCode.toUpperCase() === "PETLOVER10") {
       setDiscount(subtotal * 0.1);
       setShowCouponInput(false);
+      toast.success("10% discount applied!");
     } else if (couponCode.toUpperCase() === "FREESHIP") {
       setDiscount(shippingFee);
       setShowCouponInput(false);
+      toast.success("Free shipping applied!");
     } else {
-      alert("Invalid coupon code");
+      toast.error("Invalid coupon code");
     }
   };
 
   const subtotal = cartItems.reduce(
-    (acc, item) => acc + item.product.price * item.quantity,
+    (acc, item) => acc + (item.product?.price || 0) * (item.quantity || 1),
     0
   );
 
@@ -90,13 +122,16 @@ export default function MyCart() {
     }).format(amount);
   };
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-orange-500"></div>
+      </div>
+    );
+  }
+
   return (
-    <div
-      className="p-4 text-black md:p-8 bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen"
-      onClick={() => {
-        console.log(cartItems);
-      }}
-    >
+    <div className="p-4 text-black md:p-8 bg-gradient-to-b from-gray-50 to-gray-100 min-h-screen">
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl">
         <div className="relative">
           <h1 className="text-2xl font-bold px-6 py-4 bg-gradient-to-r from-orange-500 to-pink-500 text-white flex items-center">
@@ -115,13 +150,14 @@ export default function MyCart() {
               />
             </svg>
             Your Shopping Cart (
-            {cartItems.reduce((acc, item) => acc + item.quantity, 0)} items)
+            {cartItems.reduce((acc, item) => acc + (item.quantity || 0), 0)} items)
           </h1>
           {cartItems.length > 0 && (
             <button
               onClick={() => {
                 setCartItems([]);
                 localStorage.setItem("cart", JSON.stringify([]));
+                toast.success("Cart cleared successfully");
               }}
               className="absolute right-4 top-4 text-white hover:text-gray-200 transition-colors text-sm flex items-center"
             >
@@ -177,7 +213,7 @@ export default function MyCart() {
               <div className="space-y-4">
                 {cartItems.map((item) => (
                   <div
-                    key={item.product._id}
+                    key={item.key}
                     className="flex flex-col md:flex-row items-center justify-between p-4 mb-4 border border-gray-100 hover:border-orange-200 hover:shadow-sm rounded-lg transition-all duration-200 bg-white"
                   >
                     <div className="flex items-center w-full md:w-auto">
@@ -185,6 +221,9 @@ export default function MyCart() {
                         src={item.product.image}
                         alt={item.product.name}
                         className="w-24 h-24 object-cover rounded-lg mr-4 border border-gray-200"
+                        onError={(e) => {
+                          e.target.src = "/placeholder-product.jpg";
+                        }}
                       />
                       <div className="flex-1">
                         <h2 className="font-bold text-lg hover:text-orange-500 transition-colors">
@@ -198,20 +237,20 @@ export default function MyCart() {
                             {formatCurrency(item.product.price)}
                           </span>
                           {item.product.originalPrice && (
-                            <span className="line-through text-gray-400 ml-2 text-sm">
-                              {formatCurrency(item.product.originalPrice)}
-                            </span>
-                          )}
-                          {item.product.originalPrice && (
-                            <span className="ml-2 bg-orange-100 text-orange-800 text-xs px-2 py-0.5 rounded-full">
-                              {Math.round(
-                                (1 -
-                                  item.product.price /
-                                    item.product.originalPrice) *
-                                  100
-                              )}
-                              % OFF
-                            </span>
+                            <>
+                              <span className="line-through text-gray-400 ml-2 text-sm">
+                                {formatCurrency(item.product.originalPrice)}
+                              </span>
+                              <span className="ml-2 bg-orange-100 text-orange-800 text-xs px-2 py-0.5 rounded-full">
+                                {Math.round(
+                                  (1 -
+                                    item.product.price /
+                                      item.product.originalPrice) *
+                                    100
+                                )}
+                                % OFF
+                              </span>
+                            </>
                           )}
                         </div>
                       </div>
@@ -279,7 +318,7 @@ export default function MyCart() {
               <div className="flex justify-between">
                 <span className="text-gray-600">
                   Subtotal (
-                  {cartItems.reduce((acc, item) => acc + item.quantity, 0)}{" "}
+                  {cartItems.reduce((acc, item) => acc + (item.quantity || 0), 0)}{" "}
                   items)
                 </span>
                 <span className="font-medium">{formatCurrency(subtotal)}</span>
