@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const categories = [
-  { id: 4, name: "Digital Board", image: "/shop/board.png", link: "/Prod" },
+  { id: 4, name: "IFPD Panel", image: "/shop/board.png", link: "/Prod" },
   { id: 5, name: "Camera", image: "/shop/camera.jpeg", link: "/shop1" },
   { id: 7, name: "OPS", image: "/shop/ops.png", link: "/shop1" },
   { id: 8, name: "3D Printers", image: "/images/printer.png", link:"/printer" },
