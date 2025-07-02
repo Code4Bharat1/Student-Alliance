@@ -5,13 +5,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 const categories = [
-  // { id: 1, name: "Cable", image: "/shop/cable.png" }, // Removed Cable
-  { id: 2, name: "Lighting", image: "/shop/light3.png" },
-  { id: 3, name: "Speaker", image: "/shop/speaker.jpg" },
-  { id: 4, name: "Digital Board", image: "/shop/board.png" },
-  { id: 5, name: "Camera", image: "/shop/camera.jpeg" },
-  { id: 6, name: "Mic", image: "/shop/aboutmic3-2.png" },
-  { id: 7, name: "OPS", image: "/shop/ops.png" },
+  { id: 4, name: "Digital Board", image: "/shop/board.png", link: "/Prod" },
+  { id: 5, name: "Camera", image: "/shop/camera.jpeg", link: "/shop1" },
+  { id: 7, name: "OPS", image: "/shop/ops.png", link: "/shop1" },
+  { id: 8, name: "3D Printers", image: "/images/printer.png", link:"/printer" },
+  { id: 9, name: "Kits", image: "/images/K1.jpg", link: "/kits" },
 ];
 
 const ShopByCat = () => {
@@ -38,18 +36,16 @@ const ShopByCat = () => {
                 key={`${category.id}-${index}`} 
                 className="inline-flex flex-col items-center mx-8 group transition-all duration-300 hover:scale-105"
               >
-               <Link href={"/shop1"}>
-                <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg border-4 border-white bg-white group-hover:border-purple-600 transition-all duration-300">
-                  
-                  <Image
-                    src={category.image}
-                    alt={category.name}
-                    width={112}
-                    height={112}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  
-                </div>
+                <Link href={category.link}>
+                  <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg border-4 border-white bg-white group-hover:border-purple-600 transition-all duration-300">
+                    <Image
+                      src={category.image}
+                      alt={category.name}
+                      width={112}
+                      height={112}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
                 </Link>
                 <p className="text-center text-black font-medium mt-3 text-lg">
                   {category.name}
