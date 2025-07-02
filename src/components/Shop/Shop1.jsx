@@ -18,17 +18,7 @@ const Shop = () => {
 
   const router = useRouter();
 
-  const filters = [
-    "All",
-    "Camera",
-    "Digital Board",
-    // "Mic",
-    // "Cable",
-    // "Speaker",
-    "OPS",
-    "Stand",
-    // "Light",
-  ];
+  const filters = ["All", "Camera", "IFPD", "OPS", "Stand"];
   const sortOptions = [
     "Featured",
     "Price: Low to High",
@@ -40,11 +30,10 @@ const Shop = () => {
     const fetchProducts = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_API_URL}/api/products`
+        );
         setProducts(res.data);
-        if (!res.data || res.data.length === 0) {
-          console.warn("No products found in the database.");
-        }
       } catch (error) {
         console.error("Failed to fetch products:", error);
       } finally {
@@ -106,20 +95,19 @@ const Shop = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        {/* Header with enhanced animation */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-16"
         >
-          <h1 className="text-5xl font-bold  sm:text-6xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
+          <h1 className="text-5xl font-bold sm:text-6xl lg:text-4xl bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">
             Explore advanced IFPDs, 3D printers, and cameras for education excellence
           </h1>
-         
         </motion.div>
 
-        {/* Filters with hover effects */}
+        {/* Filters */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -184,7 +172,7 @@ const Shop = () => {
           </div>
         </motion.div>
 
-        {/* Products with enhanced animations */}
+        {/* Products Grid */}
         {isLoading ? (
           <div className="text-center py-10 text-lg">Loading products...</div>
         ) : (
@@ -258,23 +246,9 @@ const Shop = () => {
                       ))}
                     </div>
                   </div>
-                  <div className="mt-4 flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      {product.discount > 0 ? (
-                        <>
-                          <span className="text-gray-400 line-through text-sm">
-                            {formatINR(product.price)}
-                          </span>
-                          <span className="text-xl font-bold text-gray-900">
-                            {formatINR(product.price - product.discount)}
-                          </span>
-                        </>
-                      ) : (
-                        <span className="text-xl font-bold text-gray-900">
-                          {formatINR(product.price)}
-                        </span>
-                      )}
-                    </div>
+
+                  {/* PRICE REMOVED */}
+                  <div className="mt-4 flex items-center justify-end">
                     <button
                       className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300"
                       onClick={() => {
