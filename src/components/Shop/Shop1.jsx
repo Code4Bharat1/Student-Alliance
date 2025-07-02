@@ -40,7 +40,7 @@ const Shop = () => {
     const fetchProducts = async () => {
       setIsLoading(true);
       try {
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/products`);
+        const res = await axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
         setProducts(res.data);
         if (!res.data || res.data.length === 0) {
           console.warn("No products found in the database.");
