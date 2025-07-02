@@ -226,7 +226,7 @@ export default function ProductDetail() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href={"/mycart"}>
+                <Link href={"https://wa.me/9594402775"} target="_blank">
                   <motion.button
                     className="flex-1 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300"
                     whileHover={{ scale: 1.03 }}
@@ -237,7 +237,7 @@ export default function ProductDetail() {
                     BUY NOW
                   </motion.button>
                 </Link>
-                <Link href={"/mycart"}>
+                {/* <Link href={"/mycart"}>
                   <motion.button
                     className="flex-1 bg-white border-2 border-purple-600 text-purple-600 hover:bg-purple-50 font-bold py-3 px-6 rounded-lg shadow-sm transition duration-300"
                     whileHover={{ scale: 1.03 }}
@@ -247,7 +247,7 @@ export default function ProductDetail() {
                   >
                     ADD TO CART
                   </motion.button>
-                </Link>
+                </Link> */}
               </div>
             </div>
 
