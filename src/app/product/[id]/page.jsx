@@ -78,7 +78,7 @@ export default function ProductDetail() {
       console.log("Add to cart response:", res);
       if (res.status === 200) {
         toast.success("Product added to cart!");
-        router.push("/mycart");
+        // router.push("/mycart");
       } else {
         toast.error("Failed to add to cart.");
       }
