@@ -6,9 +6,9 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import WhatsAppWidget from "../WhatsApp/WhatApp";
 
 const testimonials = [
-  { id: 1, image: "/images/s1.png", message: "Rizwan Sir: Student Alliance, thank you for helping us regaining trust on technology" },
-  { id: 2, image: "/images/p2.png", message: "We are at a time where we need service more than the product, thanks for giving us the trust factor" },
-  { id: 3, image: "/images/p3.png", message: "We are happy with the open source technologies where we can use more features on the Panels" },
+  { id: 1, image: "/images/s2.png", message: "Shubham Prajapti: Thank you IFPD for providing such a smooth and reliable experience.Truly helped me alot." },
+  { id: 2, image: "/images/s1.png", message: "Rohan Pawar: We are at a time where we need service more than the product, thanks for giving us the trust factor " },
+  { id: 3, image: "/images/s3.png", message: "Shubham Thakare: We are happy with the open source technologies where we can use more features on the Panels" },
   { id: 4, image: "/images/p4.png", message: "This platform is truly student-friendly and future-ready!" },
   { id: 5, image: "/images/p5.png", message: "Seamless integration and robust support, highly appreciated." },
   { id: 6, image: "/images/p6.png", message: "Grateful for the transparent and open development culture." },

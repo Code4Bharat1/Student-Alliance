@@ -187,27 +187,29 @@ export default function ProductDetail() {
             </div>
 
             {/* Price Section */}
-            <div className="bg-gray-50 p-4 rounded-lg">
-              <div className="flex items-baseline gap-4">
-                <span className="text-3xl font-bold text-indigo-600">
-                  ₹{totalPrice.toLocaleString("en-IN")}
-                </span>
-                {product.discount > 0 && (
-                  <>
-                    <span className="text-lg line-through text-gray-500">
-                      ₹{(product.price * quantity).toLocaleString("en-IN")}
-                    </span>
-                    <span className="bg-green-100 text-green-800 font-medium px-2 py-1 rounded-full text-sm">
-                      Save ₹{totalSavings.toLocaleString("en-IN")}
-                    </span>
-                  </>
-                )}
+            {product.price > 0 && (
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="flex items-baseline gap-4">
+                  <span className="text-3xl font-bold text-indigo-600">
+                    ₹{totalPrice.toLocaleString("en-IN")}
+                  </span>
+                  {product.discount > 0 && (
+                    <>
+                      <span className="text-lg line-through text-gray-500">
+                        ₹{(product.price * quantity).toLocaleString("en-IN")}
+                      </span>
+                      <span className="bg-green-100 text-green-800 font-medium px-2 py-1 rounded-full text-sm">
+                        Save ₹{totalSavings.toLocaleString("en-IN")}
+                      </span>
+                    </>
+                  )}
+                </div>
+                <div className="mt-2 text-sm text-gray-500">
+                  {quantity} {quantity > 1 ? "items" : "item"} × ₹
+                  {discountedPrice.toLocaleString("en-IN")} each
+                </div>
               </div>
-              <div className="mt-2 text-sm text-gray-500">
-                {quantity} {quantity > 1 ? "items" : "item"} × ₹
-                {discountedPrice.toLocaleString("en-IN")} each
-              </div>
-            </div>
+            )}
 
             {/* Quantity & Buttons */}
             <div className="space-y-4">
