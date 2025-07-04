@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGoogle, FaFacebookF, FaInstagram } from "react-icons/fa";
-import WhatsAppWidget from "../WhatsApp/WhatApp";
+import WhatsAppWidget from "@/components/WhatsApp/WhatApp";
 import { useState } from "react";
 import axios from "axios";
 import { useRouter, usePathname } from "next/navigation";

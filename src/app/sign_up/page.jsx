@@ -1,6 +1,5 @@
-import SignUp from '@/components/Contact/Sign-up'
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
+
+import SignUp from '@/components/ForgetPass/Contact/Sign-up'
 import React from 'react'
 
 const Page = () => {

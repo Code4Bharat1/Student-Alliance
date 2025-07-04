@@ -4,7 +4,8 @@ import { useState } from "react";
 import axios from "axios";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGoogle, FaFacebookF, FaInstagram } from "react-icons/fa";
-import WhatsAppWidget from "../WhatsApp/WhatApp";
+import WhatsAppWidget from "@/components/WhatsApp/WhatApp";
+
 
 export default function SignUp() {
   const [form, setForm] = useState({
@@ -223,7 +224,7 @@ export default function SignUp() {
         </form>
       </motion.div>
 
-      <WhatsAppWidget />
+      <WhatsAppWidget/>
     </div>
   );
 }

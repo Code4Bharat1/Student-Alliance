@@ -1,6 +1,4 @@
-import Login from '@/components/Contact/Contact'
-import Footer from '@/components/Footer'
-import Navbar from '@/components/Navbar'
+import Login from '@/components/ForgetPass/Contact/Contact'
 import React from 'react'
 
 const Page = () => {
