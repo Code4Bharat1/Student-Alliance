@@ -119,7 +119,7 @@ const GetinTouch = () => {
         <div className="flex-1">
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
-              <h2 className="text-xl font-semibold text-center text-[#0000FF] mb-4">
+              <h2 className="text-2xl font-semibold text-center text-[#0000FF] mb-4">
                Contact Us
               </h2>
               <input
