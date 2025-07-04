@@ -40,7 +40,7 @@ const Brand = () => {
   return (
     <section className="py-10 bg-gray-100">
       <div className="container mx-auto text-center">
-        <h2 className="text-5xl text-black font-bold mb-8">Shop By Brand</h2>
+        <h2 className="text-4xl text-black font-bold mb-8">Shop By Brand</h2>
         <div className="grid mx-6 grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-1">
           {cards.map((card) => (
             <Link href={card.link} key={card.id}>
