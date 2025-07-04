@@ -31,7 +31,7 @@ const Shop = () => {
       setIsLoading(true);
       try {
         const res = await axios.get(
-          `${process.env.NEXT_PUBLIC_API_URL}/products`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/products`
         );
         setProducts(res.data);
       } catch (error) {
