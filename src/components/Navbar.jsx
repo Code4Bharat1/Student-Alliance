@@ -228,10 +228,10 @@ const Navbar = () => {
                 <div className="relative">
                   <button
                     onClick={toggleProfileDropdown}
-                    className="flex items-center focus:outline-none"
+                    className="flex items-center focus:outline-none cursor-pointer"
                     aria-label="User menu"
                   >
-                    <UserCircleIcon className="h-8 w-8 text-blue-600" />
+                    <UserCircleIcon className="h-8 w-8 text-blue-600 cursor-pointer" />
                     {/* Optionally show user name */}
                     {/* <span className="ml-2 text-gray-800 font-medium">{user?.name}</span> */}
                   </button>
@@ -246,7 +246,7 @@ const Navbar = () => {
                       >
                         <Link href={'/profile'}>
                         <button
-                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50"
+                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer"
                           onClick={() => {
                             router.push("/profile");
                           }}
@@ -261,7 +261,7 @@ const Navbar = () => {
                             setIsProfileDropdownOpen(false);
                             window.location.reload();
                           }}
-                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50"
+                          className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-blue-50 cursor-pointer"
                         >
                           Logout
                         </button>
