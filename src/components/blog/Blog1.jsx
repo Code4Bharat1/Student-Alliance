@@ -83,7 +83,8 @@ export default function Blog() {
             <span className="relative inline-block">
               Latest Blogs
               <motion.span 
-                className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600"
+                className="absolute left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-purple-600"
+                style={{ bottom: '-6px' }} // Move underline lower
                 initial={{ scaleX: 0 }}
                 animate={{ scaleX: 1 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
@@ -107,29 +108,29 @@ export default function Blog() {
                   whileHover: { duration: 0.3 }
                 }}
                 viewport={{ once: true }}
-                className="rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-2xl transition-all bg-white group"
+                className="flex flex-col justify-between rounded-xl overflow-hidden shadow-lg border border-gray-200 hover:shadow-2xl transition-all bg-white group h-full"
               >
-                <div className="overflow-hidden">
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <Image
-                      src={blog.image}
-                      alt={blog.title}
-                      width={500}
-                      height={300}
-                      className="w-full h-52 object-cover transform transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </motion.div>
+                <div>
+                  <div className="overflow-hidden">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <Image
+                        src={blog.image}
+                        alt={blog.title}
+                        width={500}
+                        height={300}
+                        className="w-full h-52 object-cover transform transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </motion.div>
+                  </div>
+                  <div className="p-5 text-center">
+                    <p className="text-md text-gray-600 font-medium mb-2">{blog.date}</p>
+                    <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">{blog.title}</h3>
+                  </div>
                 </div>
-                
-                <div className="p-5 text-center">
-                  <p className="text-md text-gray-600 font-medium mb-2">{blog.date}</p>
-                  <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">{blog.title}</h3>
-                </div>
-                
-                <div className="px-6 pb-6">
+                <div className="px-6 pb-6 mt-auto">
                   <Link href={blog.link}>
                     <motion.button
                       initial={{ background: "linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)" }}
@@ -143,7 +144,7 @@ export default function Blog() {
                         duration: 0.3,
                         hover: { duration: 0.2 }
                       }}
-                      className="relative w-full py-3 px-6 rounded-lg font-bold text-white overflow-hidden"
+                      className="relative w-full py-3 px-6 rounded-lg font-bold text-white overflow-hidden cursor-pointer"
                     >
                       <span className="relative z-10 flex items-center justify-center">
                         READ MORE

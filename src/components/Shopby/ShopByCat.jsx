@@ -8,19 +8,18 @@ const categories = [
   { id: 4, name: "IFPD Panel", image: "/shop/board.png", link: "/Prod" },
   { id: 5, name: "Camera", image: "/shop/camera.jpeg", link: "/shop1" },
   { id: 7, name: "OPS", image: "/shop/ops.png", link: "/shop1" },
-  { id: 8, name: "3D Printers", image: "/images/printer.png", link:"/printer" },
+  { id: 8, name: "3D Printers", image: "/images/printer.png", link: "/printer" },
   { id: 9, name: "Kits", image: "/images/K1.jpg", link: "/kits" },
 ];
 
 const ShopByCat = () => {
-  // Duplicate the categories for seamless looping
   const duplicatedCategories = [...categories, ...categories];
   const [isHovering, setIsHovering] = useState(false);
 
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-gray-50 to-gray-100 py-12 px-4">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-10  bg-clip-text text-black">
           Shop By Category
         </h2>
         
@@ -34,16 +33,20 @@ const ShopByCat = () => {
             {duplicatedCategories.map((category, index) => (
               <div 
                 key={`${category.id}-${index}`} 
-                className="inline-flex flex-col items-center mx-8 group transition-all duration-300 hover:scale-105"
+                className="inline-flex flex-col items-center mx-8 group transition-all duration-300"
               >
                 <Link href={category.link}>
-                  <div className="w-28 h-28 rounded-full overflow-hidden shadow-lg border-4 border-white bg-white group-hover:border-purple-600 transition-all duration-300">
+                  <div className="relative w-28 h-28 rounded-full overflow-hidden shadow-lg border-4 border-white bg-white transition-all duration-300 group-hover:border-purple-600">
                     <Image
                       src={category.image}
                       alt={category.name}
-                      width={112}
-                      height={112}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      className="object-contain transition-transform duration-500 group-hover:scale-110"
+                      style={{
+                        objectPosition: 'center',
+                        padding: '4px'
+                      }}
                     />
                   </div>
                 </Link>
