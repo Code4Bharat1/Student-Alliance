@@ -75,7 +75,7 @@ export default function Testimonial() {
     <div className="flex flex-col items-center px-4 py-8 bg-white text-center">
       <h1 className="text-4xl text-gray-800 font-bold mb-2">TESTIMONIALS</h1>
       <div className="w-24 h-1 bg-purple-300 mb-6"></div>
-      <h2 className="text-xl font-semibold text-gray-800 mb-8">
+      <h2 className="text-xl font-semibold text-gray-800 mb-12 ">
         What Our Clients Say
       </h2>
       <div className="relative flex items-center justify-center w-full max-w-6xl">
