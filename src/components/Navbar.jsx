@@ -68,9 +68,9 @@ const Navbar = () => {
         {/* Mobile Icons: Hamburger + Cart */}
         <div className="flex items-center space-x-4 md:hidden">
           {/* Cart Icon (Mobile Only) */}
-          <Link href="/mycart" aria-label="Shopping Cart">
+          {/* <Link href="/mycart" aria-label="Shopping Cart">
             <ShoppingCartIcon className="h-6 w-6 text-blue-600" />
-          </Link>
+          </Link> */}
 
           {/* Hamburger Menu */}
           <button
@@ -216,11 +216,11 @@ const Navbar = () => {
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <Link href={"/mycart"}>
+              {/* <Link href={"/mycart"}>
                 <div className="relative p-2 rounded-full group-hover:bg-blue-50 transition-colors duration-300">
                   <ShoppingCartIcon className="h-6 w-6 text-blue-600" />
                 </div>
-              </Link>
+              </Link> */}
             </motion.button>
             {/* Only render auth UI after mount to avoid hydration mismatch */}
             {mounted ? (
