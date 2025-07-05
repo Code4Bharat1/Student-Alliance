@@ -9,9 +9,13 @@ const testimonials = [
   { id: 1, image: "/images/s2.png", message: "Shubham Prajapti: Thank you IFPD for providing such a smooth and reliable experience.Truly helped me alot." },
   { id: 2, image: "/images/s1.png", message: "Rohan Pawar: We are at a time where we need service more than the product, thanks for giving us the trust factor " },
   { id: 3, image: "/images/s3.png", message: "Shubham Thakare: We are happy with the open source technologies where we can use more features on the Panels" },
-  { id: 4, image: "/images/p4.png", message: "This platform is truly student-friendly and future-ready!" },
-  { id: 5, image: "/images/p5.png", message: "Seamless integration and robust support, highly appreciated." },
-  { id: 6, image: "/images/p6.png", message: "Grateful for the transparent and open development culture." },
+  { id: 4, image: "/images/p4.png", message: "Nitesh pawar:Great digital teaching device by Student Alliance ,Screen interactive make virtual classes engaging and effective." },
+  { id: 5, image: "/images/p5.png", message: "Siddharth Bhagat:Student Alliance is excellent for great camera quality and interactive tools keep the audience engaged." },
+  { id: 6, image: "/images/feedbackpic1.png", message: "Maksud Kureshi:Student Alliance device is ideal for virtual events large screen and great camera quality enhance the experience." },
+  { id: 7, image: "/images/feedbackpic2.png", message: "Umar Afrad: The Student Alliance device is excellent for language learning interactive features boost speaking  listening practice." },
+  { id: 8, image: "/images/feedbackpic3.png", message: "Gaurang Mahankar:The Student Alliance device is perfect for online teaching excellent video and audio quality." },
+  { id: 9, image: "/images/feedbackpic4.png", message: "Pritilesh Surve: This digital lectern from Student Alliance is ideal for training sessions intuitive, modern, and very satisfying to use" },
+
 ];
 
 export default function Testimonial() {
